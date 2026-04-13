@@ -541,9 +541,7 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   height: 64px;
-  background: rgba(2, 6, 23, 0.6);
-  backdrop-filter: blur(20px);
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.1);
+  background: #131318;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -555,7 +553,7 @@ onUnmounted(() => {
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.15em;
-  color: #60a5fa;
+  color: #e4e1e9;
   text-transform: uppercase;
 }
 
@@ -579,18 +577,20 @@ onUnmounted(() => {
 }
 
 .nav-link.active {
-  color: #60a5fa;
-  border-bottom-color: #60a5fa;
+  color: #e4e1e9;
+  border-bottom-color: #e4e1e9;
   font-weight: 600;
 }
 
 .user-actions {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 8px;
 }
 
 .icon-btn {
+  position: relative;
+  border-radius: 50%;
   background: none;
   border: none;
   color: #94a3b8;
@@ -600,12 +600,12 @@ onUnmounted(() => {
 }
 
 .icon-btn:hover {
-  color: #60a5fa;
+  color: #e4e1e9;
 }
 
 .icon {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
 }
 
 .notification-dot {
@@ -618,9 +618,6 @@ onUnmounted(() => {
   background: #ffb4ab;
 }
 
-.icon-btn {
-  position: relative;
-}
 
 /* SideNavBar */
 .side-nav {
@@ -641,7 +638,7 @@ onUnmounted(() => {
 
 .side-title {
   font-size: 12px;
-  color: #60a5fa;
+  color: #e4e1e9;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -680,9 +677,9 @@ onUnmounted(() => {
 }
 
 .side-link.active {
-  color: #60a5fa;
+  color: #e4e1e9;
   background: rgba(59, 130, 246, 0.1);
-  border-right-color: #60a5fa;
+  border-right-color: #e4e1e9;
   font-weight: 600;
 }
 
@@ -875,7 +872,7 @@ onUnmounted(() => {
 
 .tag-control {
   background: rgba(59, 130, 246, 0.2);
-  color: #60a5fa;
+  color: #e4e1e9;
   border: 1px solid rgba(59, 130, 246, 0.4);
 }
 
@@ -1077,7 +1074,7 @@ onUnmounted(() => {
 .live-badge {
   padding: 2px 8px;
   background: rgba(59, 130, 246, 0.1);
-  color: #60a5fa;
+  color: #e4e1e9;
   font-family: 'Fira Code', monospace;
   font-size: 10px;
   border-radius: 4px;
@@ -1088,7 +1085,7 @@ onUnmounted(() => {
 .telemetry-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  gap: 8px;
 }
 
 .telemetry-item {

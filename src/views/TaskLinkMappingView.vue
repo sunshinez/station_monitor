@@ -638,7 +638,7 @@ onUnmounted(() => {
 .user-actions {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 8px;
 }
 
 .icon-btn {
@@ -841,7 +841,7 @@ onUnmounted(() => {
 .mission-select-group {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 8px;
 }
 
 .select-label {
@@ -1342,7 +1342,7 @@ onUnmounted(() => {
 
 .footer-right {
   display: flex;
-  gap: 16px;
+  gap: 8px;
   font-size: 11px;
   color: #64748b;
   font-family: 'Fira Code', monospace;
@@ -1356,7 +1356,7 @@ onUnmounted(() => {
 @media (max-width: 1400px) {
   .link-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    gap: 8px;
   }
 }
 

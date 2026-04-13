@@ -352,7 +352,6 @@ onUnmounted(() => {
   right: 0;
   height: 64px;
   background: rgba(11, 12, 16, 0.8);
-  backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   display: flex;
   justify-content: space-between;
@@ -365,7 +364,7 @@ onUnmounted(() => {
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.15em;
-  color: #60a5fa;
+  color: #e4e1e9;
   text-transform: uppercase;
 }
 
@@ -385,17 +384,19 @@ onUnmounted(() => {
 
 .nav-link:hover,
 .nav-link.active {
-  color: #60a5fa;
-  border-bottom-color: #60a5fa;
+  color: #e4e1e9;
+  border-bottom-color: #e4e1e9;
 }
 
 .user-actions {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 8px;
 }
 
 .icon-btn {
+  position: relative;
+  border-radius: 50%;
   background: none;
   border: none;
   color: #94a3b8;
@@ -405,12 +406,12 @@ onUnmounted(() => {
 }
 
 .icon-btn:hover {
-  color: #60a5fa;
+  color: #e4e1e9;
 }
 
 .icon {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
 }
 
 .notification-dot {
@@ -423,9 +424,6 @@ onUnmounted(() => {
   background: #ffb4ab;
 }
 
-.icon-btn {
-  position: relative;
-}
 
 /* SideNavBar */
 .side-nav {
@@ -447,7 +445,7 @@ onUnmounted(() => {
 
 .side-title {
   font-size: 12px;
-  color: #60a5fa;
+  color: #e4e1e9;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -486,9 +484,9 @@ onUnmounted(() => {
 }
 
 .side-link.active {
-  color: #60a5fa;
+  color: #e4e1e9;
   background: rgba(59, 130, 246, 0.1);
-  border-right-color: #60a5fa;
+  border-right-color: #e4e1e9;
   font-weight: 600;
 }
 
@@ -843,7 +841,7 @@ onUnmounted(() => {
 .health-metrics {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 8px;
 }
 
 .health-row {
@@ -881,7 +879,7 @@ onUnmounted(() => {
 
 .log-item {
   display: flex;
-  gap: 16px;
+  gap: 8px;
   font-family: 'Fira Code', monospace;
   font-size: 10px;
   padding-bottom: 8px;

@@ -373,6 +373,10 @@ onUnmounted(() => {
 
 /* TopNavBar */
 .top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 64px;
   background: #131318;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);

@@ -550,9 +550,7 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   height: 64px;
-  background: rgba(2, 6, 23, 0.6);
-  backdrop-filter: blur(20px);
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.1);
+  background: #131318;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -564,7 +562,7 @@ onUnmounted(() => {
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.15em;
-  color: #60a5fa;
+  color: #e4e1e9;
   text-transform: uppercase;
 }
 
@@ -588,18 +586,20 @@ onUnmounted(() => {
 }
 
 .nav-link.active {
-  color: #60a5fa;
-  border-bottom-color: #60a5fa;
+  color: #e4e1e9;
+  border-bottom-color: #e4e1e9;
   font-weight: 600;
 }
 
 .user-actions {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 8px;
 }
 
 .icon-btn {
+  position: relative;
+  border-radius: 50%;
   background: none;
   border: none;
   color: #94a3b8;
@@ -609,12 +609,12 @@ onUnmounted(() => {
 }
 
 .icon-btn:hover {
-  color: #60a5fa;
+  color: #e4e1e9;
 }
 
 .icon {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
 }
 
 .notification-dot {
@@ -627,9 +627,6 @@ onUnmounted(() => {
   background: #ffb4ab;
 }
 
-.icon-btn {
-  position: relative;
-}
 
 /* SideNavBar */
 .side-nav {
@@ -650,7 +647,7 @@ onUnmounted(() => {
 
 .side-title {
   font-size: 12px;
-  color: #60a5fa;
+  color: #e4e1e9;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -689,9 +686,9 @@ onUnmounted(() => {
 }
 
 .side-link.active {
-  color: #60a5fa;
+  color: #e4e1e9;
   background: rgba(59, 130, 246, 0.1);
-  border-right-color: #60a5fa;
+  border-right-color: #e4e1e9;
   font-weight: 600;
 }
 
@@ -743,7 +740,7 @@ onUnmounted(() => {
 }
 
 .sub-link.active {
-  color: #60a5fa;
+  color: #e4e1e9;
   background: rgba(59, 130, 246, 0.08);
 }
 
@@ -888,8 +885,8 @@ onUnmounted(() => {
 }
 
 .panel-icon {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   color: #a4c9ff;
 }
 
@@ -914,7 +911,7 @@ onUnmounted(() => {
   background: rgba(59, 130, 246, 0.1);
   border: 1px solid rgba(59, 130, 246, 0.2);
   border-radius: 4px;
-  color: #60a5fa;
+  color: #e4e1e9;
   font-size: 12px;
   cursor: pointer;
   transition: all 0.2s;
@@ -978,7 +975,7 @@ onUnmounted(() => {
 .status-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 16px;
+  gap: 8px;
   background: rgba(14, 14, 19, 0.5);
   padding: 20px;
   border-radius: 8px;

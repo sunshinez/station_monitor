@@ -415,16 +415,18 @@ onUnmounted(() => {
 
 /* TopNavBar */
 .top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 64px;
-  background: rgba(2, 6, 23, 0.6);
-  backdrop-filter: blur(20px);
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.1);
+  background: #131318;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 24px;
   z-index: 50;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .logo {
@@ -462,25 +464,28 @@ onUnmounted(() => {
 .user-actions {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 8px;
 }
 
 .icon-btn {
+  position: relative;
   background: none;
   border: none;
   color: #94a3b8;
   cursor: pointer;
   padding: 8px;
-  transition: color 0.2s;
+  border-radius: 50%;
+  transition: all 0.2s;
 }
 
 .icon-btn:hover {
-  color: #60a5fa;
+  background: rgba(255, 255, 255, 0.05);
+  color: #e4e1e9;
 }
 
 .icon {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
 }
 
 .notification-dot {
@@ -491,10 +496,6 @@ onUnmounted(() => {
   height: 8px;
   border-radius: 50%;
   background: #ffb4ab;
-}
-
-.icon-btn {
-  position: relative;
 }
 
 /* Side Navigation - Control */

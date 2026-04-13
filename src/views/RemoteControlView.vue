@@ -506,10 +506,12 @@ onUnmounted(() => {
 
 /* TopNavBar */
 .top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 64px;
-  background: rgba(2, 6, 23, 0.6);
-  backdrop-filter: blur(20px);
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.1);
+  background: #131318;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -522,7 +524,7 @@ onUnmounted(() => {
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.15em;
-  color: #60a5fa;
+  color: #e4e1e9;
   text-transform: uppercase;
 }
 
@@ -545,18 +547,20 @@ onUnmounted(() => {
 }
 
 .nav-link.active {
-  color: #60a5fa;
-  border-bottom-color: #60a5fa;
+  color: #e4e1e9;
+  border-bottom-color: #e4e1e9;
   font-weight: 600;
 }
 
 .user-actions {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 8px;
 }
 
 .icon-btn {
+  position: relative;
+  border-radius: 50%;
   background: none;
   border: none;
   color: #94a3b8;
@@ -566,12 +570,12 @@ onUnmounted(() => {
 }
 
 .icon-btn:hover {
-  color: #60a5fa;
+  color: #e4e1e9;
 }
 
 .icon {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
 }
 
 .notification-dot {
@@ -584,9 +588,6 @@ onUnmounted(() => {
   background: #ffb4ab;
 }
 
-.icon-btn {
-  position: relative;
-}
 
 /* Side Navigation */
 .side-nav-control {
@@ -770,7 +771,7 @@ onUnmounted(() => {
 }
 
 .rack-card.selected .rack-name {
-  color: #60a5fa;
+  color: #e4e1e9;
 }
 
 .rack-status-dot {
@@ -894,7 +895,7 @@ onUnmounted(() => {
 .panel-icon {
   width: 20px;
   height: 20px;
-  color: #60a5fa;
+  color: #e4e1e9;
 }
 
 .panel-title {
@@ -1032,7 +1033,7 @@ onUnmounted(() => {
 }
 
 .grid-cell {
-  height: 24px;
+  height: 20px;
   background: rgba(255, 180, 171, 0.2);
   border: 1px solid rgba(255, 180, 171, 0.2);
 }
@@ -1227,7 +1228,7 @@ onUnmounted(() => {
 .maintenance-list {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 8px;
 }
 
 .maintenance-item {
@@ -1293,7 +1294,7 @@ onUnmounted(() => {
   padding: 8px;
   background: rgba(59, 130, 246, 0.1);
   border: 1px solid rgba(59, 130, 246, 0.2);
-  color: #60a5fa;
+  color: #e4e1e9;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -1310,7 +1311,7 @@ onUnmounted(() => {
 .env-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 8px;
   margin-bottom: 24px;
 }
 
@@ -1338,7 +1339,7 @@ onUnmounted(() => {
 }
 
 .text-primary {
-  color: #60a5fa;
+  color: #e4e1e9;
 }
 
 .env-bar {
@@ -1402,7 +1403,7 @@ onUnmounted(() => {
 }
 
 .btn-adjust:hover {
-  color: #60a5fa;
+  color: #e4e1e9;
 }
 
 .env-control-value {
