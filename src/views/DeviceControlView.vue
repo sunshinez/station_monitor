@@ -19,7 +19,7 @@
       </div>
     </header>
 
-    <div class="flex flex-1 overflow-hidden">
+    <div class="main-layout">
       <!-- Side Navigation - 设备控制专用菜单 -->
       <aside class="side-nav-control">
         <div class="side-header">
@@ -381,6 +381,13 @@ onUnmounted(() => {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   display: flex;
   flex-direction: column;
+}
+
+.main-layout {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  height: calc(100vh - 64px);
 }
 
 /* TopNavBar */
