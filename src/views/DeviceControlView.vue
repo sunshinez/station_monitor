@@ -88,13 +88,12 @@
           </div>
           <!-- Level 1: 远程控制 -->
           <div class="menu-group">
-            <button class="menu-level1" @click="toggleMenu('remoteControl')">
+            <router-link to="/remote-control" class="menu-level1">
               <span class="menu-icon-wrapper">
                 <RemoteIcon class="menu-icon" />
                 <span>远程控制</span>
               </span>
-              <span class="expand-icon" :class="{ expanded: expandedMenus.remoteControl }">▼</span>
-            </button>
+            </router-link>
           </div>
         </nav>
       </aside>

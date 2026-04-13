@@ -38,6 +38,11 @@ const router = createRouter({
       path: '/device-control',
       name: 'device-control',
       component: () => import('../views/DeviceControlView.vue')
+    },
+    {
+      path: '/remote-control',
+      name: 'remote-control',
+      component: () => import('../views/RemoteControlView.vue')
     }
   ]
 })
