@@ -159,7 +159,7 @@ const handleLogin = async () => {
 
     if (data.success) {
       localStorage.setItem('token', data.token)
-      router.push('/dashboard')
+      router.push('/topology')
     } else {
       alert(data.message || '登录失败')
     }

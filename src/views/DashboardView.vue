@@ -17,6 +17,12 @@
       <div class="welcome-card">
         <h2>欢迎访问</h2>
         <p>您已成功登录卫星地面站监控系统</p>
+        <div class="nav-links">
+          <router-link to="/topology" class="nav-card">
+            <SatelliteIcon class="nav-icon" />
+            <span>系统拓扑图监视</span>
+          </router-link>
+        </div>
       </div>
     </main>
   </div>
@@ -135,5 +141,43 @@ const logout = () => {
 
 .welcome-card p {
   color: var(--text-dim);
+}
+
+.nav-links {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.nav-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.5rem 2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text-white);
+  transition: all 0.3s;
+}
+
+.nav-card:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-4px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.nav-icon {
+  width: 32px;
+  height: 32px;
+  color: var(--color-primary);
+}
+
+.nav-card span {
+  font-size: 14px;
+  font-weight: 500;
 }
 </style>

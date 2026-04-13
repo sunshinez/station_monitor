@@ -13,6 +13,16 @@ const router = createRouter({
       path: '/dashboard',
       name: 'dashboard',
       component: () => import('../views/DashboardView.vue')
+    },
+    {
+      path: '/topology',
+      name: 'topology',
+      component: () => import('../views/TopologyView.vue')
+    },
+    {
+      path: '/baseband',
+      name: 'baseband',
+      component: () => import('../views/BasebandView.vue')
     }
   ]
 })
