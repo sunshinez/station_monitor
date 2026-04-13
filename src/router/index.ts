@@ -73,6 +73,11 @@ const router = createRouter({
       path: '/task-script-editor',
       name: 'task-script-editor',
       component: () => import('../views/TaskScriptEditorView.vue')
+    },
+    {
+      path: '/task-plan-template',
+      name: 'task-plan-template',
+      component: () => import('../views/TaskPlanTemplateView.vue')
     }
   ]
 })

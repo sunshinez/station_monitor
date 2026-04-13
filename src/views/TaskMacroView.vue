@@ -49,10 +49,10 @@
             <TerminalIcon class="side-icon" />
             <span>脚本命令编辑</span>
           </router-link>
-          <a href="#" class="side-link">
+          <router-link to="/task-plan-template" class="side-link">
             <DescriptionIcon class="side-icon" />
             <span>操作计划模板</span>
-          </a>
+          </router-link>
           <a href="#" class="side-link">
             <InputIcon class="side-icon" />
             <span>型号任务参数接收</span>
