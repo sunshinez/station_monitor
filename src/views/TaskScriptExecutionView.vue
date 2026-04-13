@@ -77,10 +77,10 @@
             <AltRouteIcon class="side-icon" />
             <span>中心调度指令执行</span>
           </router-link>
-          <a href="#" class="side-link">
+          <router-link to="/task-local-dispatch" class="side-link">
             <LanIcon class="side-icon" />
             <span>本地调度执行</span>
-          </a>
+          </router-link>
           <a href="#" class="side-link">
             <BiotechIcon class="side-icon" />
             <span>故障诊断</span>
