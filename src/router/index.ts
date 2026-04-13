@@ -68,6 +68,11 @@ const router = createRouter({
       path: '/task-link-mapping',
       name: 'task-link-mapping',
       component: () => import('../views/TaskLinkMappingView.vue')
+    },
+    {
+      path: '/task-script-editor',
+      name: 'task-script-editor',
+      component: () => import('../views/TaskScriptEditorView.vue')
     }
   ]
 })
