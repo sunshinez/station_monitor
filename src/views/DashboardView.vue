@@ -42,7 +42,8 @@
 </template>
 
 <script setup lang="ts">
-import { useRouter, h } from 'vue-router'
+import { useRouter } from 'vue-router'
+import { h } from 'vue'
 import UserIcon from '@/components/icons/UserIcon.vue'
 
 const router = useRouter()
