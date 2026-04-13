@@ -85,10 +85,6 @@
             <BiotechIcon class="side-icon" />
             <span>故障诊断</span>
           </router-link>
-          <a href="#" class="side-link">
-            <AnalyticsIcon class="side-icon" />
-            <span>数据统计管理</span>
-          </a>
         </nav>
       </aside>
 
