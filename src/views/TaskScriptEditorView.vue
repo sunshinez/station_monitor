@@ -69,10 +69,10 @@
             <PlayCircleIcon class="side-icon" />
             <span>脚本执行</span>
           </router-link>
-          <a href="#" class="side-link">
+          <router-link to="/task-carrier-wave-monitor" class="side-link">
             <SendIcon class="side-icon" />
             <span>载波监视任务计划发送</span>
-          </a>
+          </router-link>
           <a href="#" class="side-link">
             <AltRouteIcon class="side-icon" />
             <span>中心调度指令执行</span>
