@@ -73,10 +73,10 @@
             <SendIcon class="side-icon" />
             <span>载波监视任务计划发送</span>
           </router-link>
-          <a href="#" class="side-link">
+          <router-link to="/task-central-dispatch" class="side-link">
             <AltRouteIcon class="side-icon" />
             <span>中心调度指令执行</span>
-          </a>
+          </router-link>
           <a href="#" class="side-link">
             <LanIcon class="side-icon" />
             <span>本地调度执行</span>

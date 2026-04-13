@@ -1,5 +1,5 @@
 <template>
-  <div class="task-carrier-wave-monitor-page">
+  <div class="task-central-dispatch-page">
     <!-- 顶部导航栏 - 全局统一 -->
     <header class="top-nav">
       <div class="logo">XX地面站软件</div>
@@ -69,11 +69,11 @@
             <PlayCircleIcon class="side-icon" />
             <span>脚本执行</span>
           </router-link>
-          <router-link to="/task-carrier-wave-monitor" class="side-link active">
+          <router-link to="/task-carrier-wave-monitor" class="side-link">
             <SendIcon class="side-icon" />
             <span>载波监视任务计划发送</span>
           </router-link>
-          <router-link to="/task-central-dispatch" class="side-link">
+          <router-link to="/task-central-dispatch" class="side-link active">
             <AltRouteIcon class="side-icon" />
             <span>中心调度指令执行</span>
           </router-link>
@@ -90,129 +90,98 @@
 
       <!-- 主内容区 -->
       <main class="main-content">
-        <!-- 页面头部 -->
+        <!-- 头部 -->
         <div class="page-header">
           <div class="header-left">
-            <h1 class="page-title">载波监视任务计划发送</h1>
-            <p class="page-subtitle">载波监视任务计划发送控制台</p>
+            <h1 class="page-title">中心调度指令执行</h1>
+            <p class="page-subtitle">Central Command Execution & Telemetry Validation</p>
           </div>
           <div class="header-right">
-            <p class="time-label">Current UTC Time</p>
-            <p class="time-value mono">{{ currentTime }}</p>
+            <div class="status-badge">
+              <span class="status-dot pulse"></span>
+              <span class="mono">上行链路激活: 2.4kbps</span>
+            </div>
+            <div class="status-badge">
+              <span class="mono">UTC: {{ currentTime }}</span>
+            </div>
           </div>
         </div>
 
-        <!-- 主布局 -->
-        <div class="content-grid">
-          <!-- 左侧：操作计划列表 -->
-          <section class="plan-list-section">
-            <div class="section-header">
-              <div class="section-title-group">
-                <span class="title-bar"></span>
-                <h2 class="section-title">操作计划列表</h2>
-              </div>
-              <span class="count-badge mono">COUNT: 14 ACTIVE</span>
+        <!-- 实时调度指令流 -->
+        <section class="command-stream-section">
+          <div class="section-header-bar">
+            <div class="section-title-group">
+              <DynamicFeedIcon class="section-icon" />
+              <h2 class="section-title">实时调度指令流</h2>
             </div>
-            <div class="plan-table-panel">
-              <table class="data-table">
-                <thead>
-                  <tr>
-                    <th>任务名称</th>
-                    <th>起止时间 (UTC)</th>
-                    <th>计划状态</th>
-                    <th>推送状态</th>
-                    <th class="text-right">操作</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr v-for="(plan, index) in planList" :key="index"
-                      :class="['table-row', selectedPlan === index ? 'selected-row' : '']"
-                      @click="selectPlan(index)">
-                    <td>
-                      <div class="plan-name">{{ plan.name }}</div>
-                      <div :class="['plan-id mono', selectedPlan === index ? 'text-primary-dim' : 'text-dim']">ID: {{ plan.id }}</div>
-                    </td>
-                    <td>
-                      <div class="plan-time mono">{{ plan.startTime }}</div>
-                      <div class="plan-time mono">{{ plan.endTime }}</div>
-                    </td>
-                    <td>
-                      <div class="status-group">
-                        <span :class="['status-dot', plan.statusDotClass]"></span>
-                        <span :class="['status-text', plan.statusClass]">{{ plan.status }}</span>
-                      </div>
-                    </td>
-                    <td>
-                      <span :class="['push-tag', plan.pushClass]">{{ plan.pushStatus }}</span>
-                    </td>
-                    <td class="text-right">
-                      <button :class="['action-btn', selectedPlan === index ? 'text-primary' : 'text-dim']">
-                        <ArrowForwardIcon class="action-icon" />
-                      </button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </section>
+            <span class="stream-badge">实时流数据</span>
+          </div>
+          <div class="table-wrapper">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>指令ID (Hex)</th>
+                  <th>时间戳</th>
+                  <th>操作类型</th>
+                  <th>执行脚本</th>
+                  <th class="text-center">优先级</th>
+                  <th class="text-right">执行状态</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="(cmd, index) in commandStream" :key="index" class="table-row">
+                  <td class="mono text-primary font-bold">{{ cmd.id }}</td>
+                  <td class="mono text-dim">{{ cmd.timestamp }}</td>
+                  <td>{{ cmd.type }}</td>
+                  <td>{{ cmd.script }}</td>
+                  <td class="text-center">
+                    <span :class="['priority-tag', cmd.priorityClass]">{{ cmd.priority }}</span>
+                  </td>
+                  <td class="text-right">
+                    <span :class="['exec-status', cmd.statusClass]">
+                      <component :is="cmd.statusIcon" class="status-icon" />
+                      {{ cmd.status }}
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
 
-          <!-- 右侧：推送详情面板 -->
-          <section class="push-panel-section">
-            <div class="panel-header">
-              <div class="section-title-group">
-                <span class="title-bar bar-tertiary"></span>
-                <h2 class="section-title">推送详情面板</h2>
-              </div>
-              <button class="info-btn">
-                <InfoIcon class="info-icon" />
-              </button>
+        <!-- 执行日志 -->
+        <section class="execution-log-section">
+          <div class="section-header-bar">
+            <div class="section-title-group">
+              <AssignmentLateIcon class="section-icon text-error" />
+              <h2 class="section-title">执行日志</h2>
             </div>
-            <div class="push-detail-card">
-              <div class="target-header">
-                <div class="target-label">Target Mission</div>
-                <h3 class="target-name">{{ currentPlan.name }}</h3>
-                <p class="target-uuid mono">PLAN_UUID: <span class="uuid-value">77a1-89bc-44fe-112d</span></p>
-              </div>
-              <div class="detail-body">
-                <div class="detail-grid">
-                  <div class="detail-item">
-                    <p class="detail-label">型号任务名称</p>
-                    <p class="detail-value">{{ currentPlan.modelName }}</p>
-                  </div>
-                  <div class="detail-item">
-                    <p class="detail-label">监测点位</p>
-                    <p class="detail-value">{{ currentPlan.monitorPoint }}</p>
-                  </div>
-                </div>
-                <div class="freq-card">
-                  <p class="detail-label">监测频点</p>
-                  <div class="freq-value-row">
-                    <span class="freq-value mono">2245.500</span>
-                    <span class="freq-unit mono">MHz</span>
-                  </div>
-                  <WavesIcon class="freq-bg-icon" />
-                </div>
-                <div class="monitor-items">
-                  <p class="detail-label">监测项目</p>
-                  <div class="item-tags">
-                    <span class="item-tag">载波中心频率</span>
-                    <span class="item-tag">信号电平值</span>
-                    <span class="item-tag">相位噪声</span>
-                    <span class="item-tag">调制指数监测</span>
-                  </div>
-                </div>
-                <div class="push-time">
-                  <p class="detail-label">推送时间 (Latest)</p>
-                  <p class="detail-value mono">{{ currentPlan.pushTime }}</p>
-                </div>
-              </div>
-              <button class="push-btn">
-                <SendIcon class="push-btn-icon" />
-                推送至联试系统
-              </button>
-            </div>
-          </section>
-        </div>
+          </div>
+          <div class="table-wrapper">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>时间戳</th>
+                  <th>干预操作</th>
+                  <th>干预结果</th>
+                  <th>分机ACK状态</th>
+                  <th>执行备注</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="(log, index) in executionLogs" :key="index" class="table-row">
+                  <td class="mono text-dim">{{ log.timestamp }}</td>
+                  <td :class="['font-bold', log.opClass]">{{ log.operation }}</td>
+                  <td>
+                    <span :class="['result-badge', log.resultClass]">{{ log.result }}</span>
+                  </td>
+                  <td :class="['mono', log.ackClass]">{{ log.ack }}</td>
+                  <td class="text-dim font-body">{{ log.remark }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
       </main>
     </div>
 
@@ -374,99 +343,134 @@ const LanIcon = {
 }
 
 // 业务区图标
-const ArrowForwardIcon = {
+const DynamicFeedIcon = {
   render() {
     return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
-      h('line', { x1: '5', y1: '12', x2: '19', y2: '12' }),
-      h('polyline', { points: '12 5 19 12 12 19' })
+      h('path', { d: 'M12 2v20' }),
+      h('path', { d: 'M2 10h20' }),
+      h('path', { d: 'M2 14h20' }),
+      h('path', { d: 'M2 6h20' }),
+      h('path', { d: 'M2 18h20' })
     ])
   }
 }
 
-const InfoIcon = {
+const AssignmentLateIcon = {
   render() {
     return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
-      h('circle', { cx: '12', cy: '12', r: '10' }),
-      h('line', { x1: '12', y1: '16', x2: '12', y2: '12' }),
-      h('line', { x1: '12', y1: '8', x2: '12.01', y2: '8' })
+      h('path', { d: 'M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z' }),
+      h('path', { d: 'M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z' })
     ])
   }
 }
 
-const WavesIcon = {
+const CheckCircleIcon = {
   render() {
     return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
-      h('path', { d: 'M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1' }),
-      h('path', { d: 'M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1' }),
-      h('path', { d: 'M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1' })
+      h('path', { d: 'M22 11.08V12a10 10 0 1 1-5.93-9.14' }),
+      h('polyline', { points: '22 4 12 14.01 9 11.01' })
+    ])
+  }
+}
+
+const SyncIcon = {
+  render() {
+    return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
+      h('path', { d: 'M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.3' })
+    ])
+  }
+}
+
+const SendSmallIcon = {
+  render() {
+    return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
+      h('line', { x1: '22', y1: '2', x2: '11', y2: '13' }),
+      h('polygon', { points: '22 2 15 22 11 13 2 9 22 2' })
     ])
   }
 }
 
 // 数据
-const selectedPlan = ref(0)
-
-const planList = ref([
+const commandStream = ref([
   {
-    name: '天舟八号货运飞船载波监视',
-    id: 'TZ-8-CR-001',
-    startTime: '08:00:00',
-    endTime: '12:30:00',
-    status: '正在执行',
-    statusClass: 'text-success',
-    statusDotClass: 'dot-success-glow',
-    pushStatus: '已推送',
-    pushClass: 'tag-success',
-    modelName: '天舟八号 (TZ-8)',
-    monitorPoint: '北京站-ANT-02',
-    pushTime: '2024-05-20 08:30:11 UTC'
+    id: '0x55AA02FFE10A',
+    timestamp: '14:30:04.221',
+    type: '紧急转储 (EMERG_DUMP)',
+    script: 'EMERG_DUMP',
+    priority: '高优先级',
+    priorityClass: 'priority-high',
+    status: '执行成功',
+    statusClass: 'status-success',
+    statusIcon: CheckCircleIcon
   },
   {
-    name: '中星6D卫星S频段标校',
-    id: 'ZX-6D-SB-442',
-    startTime: '13:15:00',
-    endTime: '14:00:00',
-    status: '等待执行',
-    statusClass: 'text-amber',
-    statusDotClass: 'dot-amber-glow',
-    pushStatus: '待推送',
-    pushClass: 'tag-primary',
-    modelName: '中星6D (ZX-6D)',
-    monitorPoint: '上海站-ANT-01',
-    pushTime: '未推送'
+    id: '0x55AA03A10204',
+    timestamp: '14:29:58.105',
+    type: '频率切换 (FREQ_SW)',
+    script: 'FREQ_SW_V2',
+    priority: '中优先级',
+    priorityClass: 'priority-medium',
+    status: '解析中',
+    statusClass: 'status-parsing',
+    statusIcon: SyncIcon
   },
   {
-    name: '北斗三号G3星轨道监视',
-    id: 'BDS-3-G3-OM',
-    startTime: '04:00:00',
-    endTime: '07:30:00',
-    status: '已执行',
-    statusClass: 'text-muted',
-    statusDotClass: 'dot-muted',
-    pushStatus: '无需发送',
-    pushClass: 'tag-muted',
-    modelName: '北斗三号G3 (BDS-3-G3)',
-    monitorPoint: '西安站-ANT-03',
-    pushTime: '2024-05-20 04:15:22 UTC'
+    id: '0x55AA01000000',
+    timestamp: '14:29:45.002',
+    type: '心跳校准 (HEARTBEAT)',
+    script: 'HEARTBEAT_CHECK',
+    priority: '低优先级',
+    priorityClass: 'priority-low',
+    status: '已分发',
+    statusClass: 'status-sent',
+    statusIcon: SendSmallIcon
   }
 ])
 
-const currentPlan = ref({
-  name: planList.value[0].name,
-  modelName: planList.value[0].modelName,
-  monitorPoint: planList.value[0].monitorPoint,
-  pushTime: planList.value[0].pushTime
-})
+const executionLogs = ref([
+  {
+    timestamp: '2024-05-20 14:02:11',
+    operation: '强制切断执行流',
+    opClass: 'text-error',
+    result: 'SUCCESS',
+    resultClass: 'result-success',
+    ack: 'EMERG_DUMP',
+    ackClass: 'text-dim',
+    remark: '操作员手动接入，防止上行频率冲突'
+  },
+  {
+    timestamp: '2024-05-20 13:45:00',
+    operation: '重定向至备机脚本',
+    opClass: 'text-primary',
+    result: 'SUCCESS',
+    resultClass: 'result-success',
+    ack: 'FREQ_SW_V2',
+    ackClass: 'text-dim',
+    remark: '主分机通信链路超时，系统自动执行切换逻辑'
+  },
+  {
+    timestamp: '2024-05-20 12:12:44',
+    operation: '参数手动覆盖',
+    opClass: 'text-error',
+    result: 'FAILED',
+    resultClass: 'result-failed',
+    ack: 'HEARTBEAT_CHECK',
+    ackClass: 'text-error font-bold',
+    remark: '当前用户权限等级不足，指令被分机控制单元拒绝'
+  },
+  {
+    timestamp: '2024-05-20 09:30:15',
+    operation: '清空解析队列',
+    opClass: 'text-primary',
+    result: 'SUCCESS',
+    resultClass: 'result-success',
+    ack: '0x00 (NORMAL)',
+    ackClass: 'text-dim',
+    remark: '日常系统维护操作，清除所有挂起的低优先级任务'
+  }
+])
 
-const selectPlan = (index: number) => {
-  selectedPlan.value = index
-  currentPlan.value.name = planList.value[index].name
-  currentPlan.value.modelName = planList.value[index].modelName
-  currentPlan.value.monitorPoint = planList.value[index].monitorPoint
-  currentPlan.value.pushTime = planList.value[index].pushTime
-}
-
-const currentTime = ref('2024-05-20 08:42:11')
+const currentTime = ref('2024-05-20 14:30:05')
 
 // 更新时间
 let timeInterval: number | null = null
@@ -484,7 +488,7 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-.task-carrier-wave-monitor-page {
+.task-central-dispatch-page {
   min-height: 100vh;
   background-color: #131318;
   color: #e4e1e9;
@@ -674,6 +678,7 @@ onUnmounted(() => {
   overflow-y: auto;
   position: relative;
   margin-bottom: 32px;
+  gap: 20px;
 }
 
 /* 页面头部 */
@@ -681,8 +686,6 @@ onUnmounted(() => {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  padding-bottom: 16px;
-  margin-bottom: 8px;
   flex-shrink: 0;
 }
 
@@ -690,114 +693,157 @@ onUnmounted(() => {
   font-size: 24px;
   font-weight: 700;
   color: #ffffff;
-  text-transform: uppercase;
-  letter-spacing: -0.02em;
   margin: 0;
 }
 
 .page-subtitle {
-  font-size: 13px;
+  font-size: 12px;
   color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
   margin: 6px 0 0 0;
 }
 
 .header-right {
-  text-align: right;
+  display: flex;
+  gap: 12px;
 }
 
-.time-label {
-  font-size: 10px;
-  color: #64748b;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin: 0 0 4px 0;
+.status-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px;
+  background: #1b1b20;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  font-size: 12px;
+  color: #94a3b8;
 }
 
-.time-value {
-  font-size: 18px;
-  color: #60a5fa;
-  font-weight: 500;
-  margin: 0;
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4ae176;
+  box-shadow: 0 0 2px #4ae176, 0 0 10px rgba(74, 225, 118, 0.4);
+}
+
+.pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .5; }
 }
 
 .mono {
   font-family: 'Fira Code', monospace;
 }
 
-/* 主网格 */
-.content-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 24px;
-  flex: 1;
-  min-height: 0;
+/* 区域通用 */
+.command-stream-section {
+  background: #1b1b20;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-left: 4px solid #60a5fa;
+  padding: 24px;
+  flex-shrink: 0;
 }
 
-/* 区域头部 */
-.section-header {
+.execution-log-section {
+  background: #1b1b20;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-left: 4px solid #ffb4ab;
+  padding: 24px;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.section-header-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
 }
 
 .section-title-group {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
-.title-bar {
-  width: 3px;
-  height: 14px;
-  background: #60a5fa;
-  border-radius: 2px;
-}
-
-.bar-tertiary {
-  background: #4ae176;
+.section-icon {
+  width: 20px;
+  height: 20px;
+  color: #60a5fa;
 }
 
 .section-title {
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 700;
-  color: #94a3b8;
+  color: #ffffff;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
   margin: 0;
 }
 
-.count-badge {
+.stream-badge {
+  padding: 4px 10px;
+  background: rgba(96, 165, 250, 0.1);
+  color: #60a5fa;
+  border: 1px solid rgba(96, 165, 250, 0.2);
+  border-radius: 4px;
   font-size: 10px;
-  color: #64748b;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
-/* 计划列表表格 */
-.plan-list-section {
-  display: flex;
-  flex-direction: column;
-  min-height: 0;
+.text-error {
+  color: #ffb4ab;
 }
 
-.plan-table-panel {
-  background: #1b1b20;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  overflow: hidden;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+.text-primary {
+  color: #60a5fa;
+}
+
+.text-dim {
+  color: #94a3b8;
+}
+
+.font-body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* 表格 */
+.table-wrapper {
+  overflow-x: auto;
 }
 
 .data-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .data-table th {
-  background: rgba(42, 41, 47, 0.5);
-  padding: 14px 20px;
+  padding: 12px 16px;
   text-align: left;
   font-size: 10px;
   font-weight: 600;
@@ -808,345 +854,99 @@ onUnmounted(() => {
 }
 
 .data-table td {
-  padding: 16px 20px;
+  padding: 14px 16px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.02);
 }
 
 .table-row {
   transition: all 0.2s;
-  cursor: pointer;
 }
 
 .table-row:hover {
   background: rgba(255, 255, 255, 0.03);
 }
 
-.selected-row {
-  background: rgba(96, 165, 250, 0.08);
-  border-left: 3px solid #60a5fa;
-}
-
-.plan-name {
-  font-size: 13px;
-  font-weight: 700;
-  color: #ffffff;
-}
-
-.plan-id {
-  font-size: 10px;
-  margin-top: 3px;
-}
-
-.text-primary-dim {
-  color: rgba(96, 165, 250, 0.7);
-}
-
-.text-dim {
-  color: #64748b;
-}
-
-.plan-time {
-  font-size: 12px;
-  color: #94a3b8;
-  line-height: 1.5;
-}
-
-.status-group {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.status-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-}
-
-.dot-success-glow {
-  background: #4ae176;
-  box-shadow: 0 0 2px #4ae176, 0 0 10px rgba(74, 225, 118, 0.4);
-}
-
-.dot-amber-glow {
-  background: #f59e0b;
-  box-shadow: 0 0 2px #f59e0b, 0 0 10px rgba(245, 158, 11, 0.4);
-}
-
-.dot-muted {
-  background: #64748b;
-}
-
-.status-text {
-  font-size: 12px;
-}
-
-.text-success {
-  color: #4ae176;
-}
-
-.text-amber {
-  color: #f59e0b;
-}
-
-.text-muted {
-  color: #64748b;
-}
-
-.push-tag {
+/* 优先级标签 */
+.priority-tag {
   display: inline-block;
-  padding: 3px 8px;
+  padding: 3px 10px;
   border-radius: 4px;
   font-size: 10px;
+  font-weight: 700;
 }
 
-.tag-success {
-  background: rgba(74, 225, 118, 0.1);
-  color: #4ae176;
-  border: 1px solid rgba(74, 225, 118, 0.2);
+.priority-high {
+  background: rgba(255, 180, 171, 0.1);
+  color: #ffb4ab;
+  border: 1px solid rgba(255, 180, 171, 0.2);
 }
 
-.tag-primary {
+.priority-medium {
   background: rgba(96, 165, 250, 0.1);
   color: #60a5fa;
   border: 1px solid rgba(96, 165, 250, 0.2);
 }
 
-.tag-muted {
-  background: #35343a;
+.priority-low {
+  background: rgba(100, 116, 139, 0.15);
   color: #94a3b8;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(100, 116, 139, 0.2);
 }
 
-.action-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 4px;
-  border-radius: 4px;
-  transition: all 0.2s;
-}
-
-.action-btn:hover {
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.action-icon {
-  width: 18px;
-  height: 18px;
-}
-
-.text-right {
-  text-align: right;
-}
-
-.text-primary {
-  color: #60a5fa;
-}
-
-/* 右侧面板 */
-.push-panel-section {
-  display: flex;
-  flex-direction: column;
-  min-height: 0;
-}
-
-.panel-header {
-  display: flex;
-  justify-content: space-between;
+/* 执行状态 */
+.exec-status {
+  display: inline-flex;
   align-items: center;
-  margin-bottom: 12px;
+  justify-content: flex-end;
+  gap: 4px;
+  font-weight: 700;
 }
 
-.info-btn {
-  background: none;
-  border: none;
-  color: #64748b;
-  cursor: pointer;
-  padding: 4px;
-  border-radius: 4px;
-  transition: all 0.2s;
+.status-success {
+  color: #4ae176;
 }
 
-.info-btn:hover {
-  color: #e4e1e9;
-}
-
-.info-icon {
-  width: 18px;
-  height: 18px;
-}
-
-.push-detail-card {
-  flex: 1;
-  background: rgba(53, 52, 58, 0.4);
-  backdrop-filter: blur(20px);
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-
-.target-header {
-  margin-bottom: 24px;
-}
-
-.target-label {
-  font-size: 10px;
+.status-parsing {
   color: #60a5fa;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-weight: 700;
-  margin: 0 0 6px 0;
 }
 
-.target-name {
-  font-size: 20px;
-  font-weight: 700;
-  color: #ffffff;
-  margin: 0 0 6px 0;
-}
-
-.target-uuid {
-  font-size: 10px;
+.status-sent {
   color: #64748b;
-  margin: 0;
 }
 
-.uuid-value {
-  color: #cbd5e1;
+.status-icon {
+  width: 14px;
+  height: 14px;
 }
 
-.detail-body {
-  flex: 1;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+:deep(.animate-spin) {
+  animation: spin 1s linear infinite;
 }
 
-.detail-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
-.detail-item {
-  background: #0e0e13;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 12px;
-  border-radius: 6px;
-}
-
-.detail-label {
+/* 结果徽章 */
+.result-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 9999px;
   font-size: 9px;
-  color: #64748b;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
   font-weight: 700;
-  margin: 0 0 6px 0;
 }
 
-.detail-value {
-  font-size: 12px;
-  font-weight: 700;
-  color: #ffffff;
-  margin: 0;
+.result-success {
+  background: rgba(74, 225, 118, 0.1);
+  color: #4ae176;
+  border: 1px solid rgba(74, 225, 118, 0.2);
 }
 
-.freq-card {
-  background: #0e0e13;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 16px;
-  border-radius: 6px;
-  position: relative;
-  overflow: hidden;
-}
-
-.freq-value-row {
-  display: flex;
-  align-items: flex-end;
-  gap: 6px;
-}
-
-.freq-value {
-  font-size: 28px;
-  font-weight: 500;
-  color: #60a5fa;
-  line-height: 1;
-}
-
-.freq-unit {
-  font-size: 11px;
-  color: #64748b;
-  margin-bottom: 4px;
-}
-
-.freq-bg-icon {
-  position: absolute;
-  right: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
-  color: rgba(96, 165, 250, 0.15);
-}
-
-.monitor-items {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.item-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.item-tag {
-  padding: 5px 10px;
-  background: rgba(53, 52, 58, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 4px;
-  font-size: 11px;
-  color: #e4e1e9;
-}
-
-.push-time {
-  padding-top: 16px;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.push-btn {
-  width: 100%;
-  margin-top: 20px;
-  padding: 14px;
-  background: #3b82f6;
-  color: #ffffff;
-  border: none;
-  border-radius: 6px;
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  cursor: pointer;
-  transition: all 0.2s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-.push-btn:hover {
-  box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
-}
-
-.push-btn-icon {
-  width: 16px;
-  height: 16px;
+.result-failed {
+  background: rgba(255, 180, 171, 0.1);
+  color: #ffb4ab;
+  border: 1px solid rgba(255, 180, 171, 0.2);
 }
 
 /* 底部状态栏 */

@@ -103,6 +103,11 @@ const router = createRouter({
       path: '/task-carrier-wave-monitor',
       name: 'task-carrier-wave-monitor',
       component: () => import('../views/TaskCarrierWaveMonitorView.vue')
+    },
+    {
+      path: '/task-central-dispatch',
+      name: 'task-central-dispatch',
+      component: () => import('../views/TaskCentralDispatchView.vue')
     }
   ]
 })
