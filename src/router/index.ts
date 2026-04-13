@@ -43,6 +43,11 @@ const router = createRouter({
       path: '/remote-control',
       name: 'remote-control',
       component: () => import('../views/RemoteControlView.vue')
+    },
+    {
+      path: '/task-status',
+      name: 'task-status',
+      component: () => import('../views/TaskStatusView.vue')
     }
   ]
 })

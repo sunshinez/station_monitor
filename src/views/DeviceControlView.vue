@@ -6,7 +6,7 @@
       <nav class="main-nav">
         <router-link to="/topology" class="nav-link">图形化监视</router-link>
         <router-link to="/device-control" class="nav-link active">控制功能</router-link>
-        <a href="#" class="nav-link">状态监视</a>
+        <router-link to="/task-status" class="nav-link">状态监视</router-link>
         <a href="#" class="nav-link">任务管理</a>
         <a href="#" class="nav-link">日志管理</a>
         <a href="#" class="nav-link">操作手册</a>
