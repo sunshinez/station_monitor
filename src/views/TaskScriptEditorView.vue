@@ -53,10 +53,10 @@
             <DescriptionIcon class="side-icon" />
             <span>操作计划模板</span>
           </router-link>
-          <a href="#" class="side-link">
+          <router-link to="/task-mission-param" class="side-link">
             <InputIcon class="side-icon" />
             <span>型号任务参数接收</span>
-          </a>
+          </router-link>
           <a href="#" class="side-link">
             <DownloadIcon class="side-icon" />
             <span>任务计划接收</span>

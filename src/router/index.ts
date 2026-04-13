@@ -78,6 +78,11 @@ const router = createRouter({
       path: '/task-plan-template',
       name: 'task-plan-template',
       component: () => import('../views/TaskPlanTemplateView.vue')
+    },
+    {
+      path: '/task-mission-param',
+      name: 'task-mission-param',
+      component: () => import('../views/TaskMissionParamView.vue')
     }
   ]
 })
