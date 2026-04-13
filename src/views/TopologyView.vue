@@ -5,7 +5,7 @@
       <div class="logo">XX地面站软件</div>
       <nav class="main-nav">
         <a href="#" class="nav-link active">图形化监视</a>
-        <a href="#" class="nav-link">控制功能</a>
+        <router-link to="/device-control" class="nav-link">控制功能</router-link>
         <a href="#" class="nav-link">状态监视</a>
         <a href="#" class="nav-link">任务管理</a>
         <a href="#" class="nav-link">日志管理</a>
