@@ -4,15 +4,22 @@
     <header class="top-nav">
       <div class="logo">XX地面站软件</div>
       <nav class="main-nav">
-        <a href="#" class="nav-link active">图形化监视</a>
+        <router-link to="/topology" class="nav-link active">图形化监视</router-link>
         <router-link to="/device-control" class="nav-link">控制功能</router-link>
         <router-link to="/task-status" class="nav-link">状态监视</router-link>
-        <a href="#" class="nav-link">任务管理</a>
+        <router-link to="/task-macro" class="nav-link">任务管理</router-link>
         <a href="#" class="nav-link">日志管理</a>
         <a href="#" class="nav-link">操作手册</a>
         <a href="#" class="nav-link">文件传输</a>
       </nav>
       <div class="user-actions">
+        <button class="icon-btn" title="设置">
+          <SettingsIcon class="icon" />
+        </button>
+        <button class="icon-btn" title="通知">
+          <NotificationIcon class="icon" />
+          <span class="notification-dot"></span>
+        </button>
         <button class="icon-btn" title="用户账户">
           <UserIcon class="icon" />
         </button>
@@ -163,9 +170,27 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
-import { h } from 'vue'
+import { ref, onMounted, onUnmounted, h } from 'vue'
 import UserIcon from '@/components/icons/UserIcon.vue'
+
+// Icons for top nav
+const SettingsIcon = {
+  render() {
+    return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
+      h('circle', { cx: '12', cy: '12', r: '3' }),
+      h('path', { d: 'M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z' })
+    ])
+  }
+}
+
+const NotificationIcon = {
+  render() {
+    return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
+      h('path', { d: 'M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9' }),
+      h('path', { d: 'M13.73 21a2 2 0 0 1-3.46 0' })
+    ])
+  }
+}
 
 // Icons
 const TopologyIcon = {
@@ -386,6 +411,20 @@ onUnmounted(() => {
 .icon {
   width: 24px;
   height: 24px;
+}
+
+.notification-dot {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ffb4ab;
+}
+
+.icon-btn {
+  position: relative;
 }
 
 /* SideNavBar */

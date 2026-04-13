@@ -7,7 +7,7 @@
         <router-link to="/topology" class="nav-link">图形化监视</router-link>
         <router-link to="/device-control" class="nav-link">控制功能</router-link>
         <router-link to="/task-status" class="nav-link active">状态监视</router-link>
-        <a href="#" class="nav-link">任务管理</a>
+        <router-link to="/task-macro" class="nav-link">任务管理</router-link>
         <a href="#" class="nav-link">日志管理</a>
         <a href="#" class="nav-link">操作手册</a>
         <a href="#" class="nav-link">文件传输</a>
@@ -42,14 +42,14 @@
             <RemoteIcon class="side-icon" />
             <span>测控状态监视</span>
           </a>
-          <a href="#" class="side-link">
+          <router-link to="/data-transmission" class="side-link">
             <AntennaIcon class="side-icon" />
             <span>数据传输监视</span>
-          </a>
-          <a href="#" class="side-link">
+          </router-link>
+          <router-link to="/task-execution" class="side-link">
             <AssignmentIcon class="side-icon" />
             <span>任务执行状态监视</span>
-          </a>
+          </router-link>
         </nav>
         <div class="side-footer">
           <div class="health-card">

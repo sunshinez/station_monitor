@@ -48,6 +48,26 @@ const router = createRouter({
       path: '/task-status',
       name: 'task-status',
       component: () => import('../views/TaskStatusView.vue')
+    },
+    {
+      path: '/data-transmission',
+      name: 'data-transmission',
+      component: () => import('../views/DataTransmissionView.vue')
+    },
+    {
+      path: '/task-execution',
+      name: 'task-execution',
+      component: () => import('../views/TaskExecutionView.vue')
+    },
+    {
+      path: '/task-macro',
+      name: 'task-macro',
+      component: () => import('../views/TaskMacroView.vue')
+    },
+    {
+      path: '/task-link-mapping',
+      name: 'task-link-mapping',
+      component: () => import('../views/TaskLinkMappingView.vue')
     }
   ]
 })
