@@ -27,7 +27,7 @@
     </header>
 
     <div class="main-layout">
-      <!-- 任务管理侧边栏 - 与任务参数宏管理一致 -->
+      <!-- 任务管理侧边栏 -->
       <aside class="side-nav">
         <div class="side-header">
           <div class="side-title-row">
@@ -42,7 +42,7 @@
             <span>任务参数宏管理</span>
           </router-link>
           <a href="#" class="side-link active">
-            <AccountTreeIcon class="side-icon" />
+            <HubIcon class="side-icon" />
             <span>任务链路映射管理</span>
           </a>
           <a href="#" class="side-link">
@@ -51,55 +51,41 @@
           </a>
           <a href="#" class="side-link">
             <DescriptionIcon class="side-icon" />
-            <span>操作计划模版</span>
+            <span>操作计划模板</span>
           </a>
           <a href="#" class="side-link">
-            <SatelliteAltIcon class="side-icon" />
+            <InputIcon class="side-icon" />
             <span>型号任务参数接收</span>
           </a>
           <a href="#" class="side-link">
-            <EventNoteIcon class="side-icon" />
+            <DownloadIcon class="side-icon" />
             <span>任务计划接收</span>
           </a>
           <a href="#" class="side-link">
-            <AutoFixIcon class="side-icon" />
-            <span>操作计划生成</span>
+            <EditCalendarIcon class="side-icon" />
+            <span>操作计划生成与执行</span>
           </a>
           <a href="#" class="side-link">
             <PlayCircleIcon class="side-icon" />
             <span>脚本执行</span>
           </a>
           <a href="#" class="side-link">
-            <RssFeedIcon class="side-icon" />
+            <SendIcon class="side-icon" />
             <span>载波监视任务计划发送</span>
           </a>
           <a href="#" class="side-link">
-            <HubIcon class="side-icon" />
+            <AltRouteIcon class="side-icon" />
             <span>中心调度指令执行</span>
           </a>
           <a href="#" class="side-link">
-            <DnsIcon class="side-icon" />
+            <LanIcon class="side-icon" />
             <span>本地调度执行</span>
           </a>
           <a href="#" class="side-link">
             <BiotechIcon class="side-icon" />
             <span>故障诊断</span>
           </a>
-          <a href="#" class="side-link">
-            <AnalyticsIcon class="side-icon" />
-            <span>数据统计管理</span>
-          </a>
         </nav>
-        <div class="side-footer">
-          <div class="operator-card">
-            <div class="operator-avatar"></div>
-            <div class="operator-info">
-              <p class="operator-name">Operator-042</p>
-              <p class="operator-station">Delta Station</p>
-            </div>
-            <span class="status-dot-online"></span>
-          </div>
-        </div>
       </aside>
 
       <!-- 主内容区 -->
@@ -331,18 +317,6 @@ const SettingsInputIcon = {
   }
 }
 
-const AccountTreeIcon = {
-  render() {
-    return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
-      h('circle', { cx: '18', cy: '5', r: '3' }),
-      h('circle', { cx: '6', cy: '12', r: '3' }),
-      h('circle', { cx: '18', cy: '19', r: '3' }),
-      h('path', { d: 'M8 12h6a4 4 0 0 1 4-4' }),
-      h('path', { d: 'M8 12h6a4 4 0 0 0 4 4' })
-    ])
-  }
-}
-
 const TerminalIcon = {
   render() {
     return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
@@ -369,7 +343,25 @@ const SatelliteAltIcon = {
   }
 }
 
-const EventNoteIcon = {
+const InputIcon = {
+  render() {
+    return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
+      h('path', { d: 'M12 5v14M5 12h14' })
+    ])
+  }
+}
+
+const DownloadIcon = {
+  render() {
+    return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
+      h('path', { d: 'M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4' }),
+      h('polyline', { points: '7 10 12 15 17 10' }),
+      h('line', { x1: '12', y1: '15', x2: '12', y2: '3' })
+    ])
+  }
+}
+
+const EditCalendarIcon = {
   render() {
     return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
       h('rect', { x: '3', y: '4', width: '18', height: '18', rx: '2', ry: '2' }),
@@ -380,10 +372,34 @@ const EventNoteIcon = {
   }
 }
 
-const AutoFixIcon = {
+const SendIcon = {
   render() {
     return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
-      h('path', { d: 'M7 11l5-5 5 5M7 17l5-5 5 5' })
+      h('line', { x1: '22', y1: '2', x2: '11', y2: '13' }),
+      h('polygon', { points: '22 2 15 22 11 13 2 9 22 2' })
+    ])
+  }
+}
+
+const AltRouteIcon = {
+  render() {
+    return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
+      h('path', { d: 'M9 18c0 .8.7 1.5 1.5 1.5h4c.8 0 1.5-.7 1.5-1.5' }),
+      h('path', { d: 'M12 3v15' }),
+      h('path', { d: 'M16 7l-4-4-4 4' }),
+      h('path', { d: 'M8 13l4 4 4-4' })
+    ])
+  }
+}
+
+const LanIcon = {
+  render() {
+    return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
+      h('rect', { x: '4', y: '3', width: '16', height: '2', rx: '1' }),
+      h('rect', { x: '4', y: '19', width: '16', height: '2', rx: '1' }),
+      h('rect', { x: '11', y: '5', width: '2', height: '14' }),
+      h('rect', { x: '6', y: '8', width: '2', height: '8', rx: '1' }),
+      h('rect', { x: '16', y: '8', width: '2', height: '8', rx: '1' })
     ])
   }
 }
@@ -397,43 +413,11 @@ const PlayCircleIcon = {
   }
 }
 
-const RssFeedIcon = {
-  render() {
-    return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
-      h('path', { d: 'M4 11a9 9 0 0 1 9 9' }),
-      h('path', { d: 'M4 4a16 16 0 0 1 16 16' }),
-      h('circle', { cx: '5', cy: '19', r: '1' })
-    ])
-  }
-}
-
 const HubIcon = {
   render() {
     return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
       h('circle', { cx: '12', cy: '12', r: '3' }),
       h('path', { d: 'M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83' })
-    ])
-  }
-}
-
-const DnsIcon = {
-  render() {
-    return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
-      h('rect', { x: '4', y: '3', width: '16', height: '2', rx: '1' }),
-      h('rect', { x: '4', y: '19', width: '16', height: '2', rx: '1' }),
-      h('rect', { x: '11', y: '5', width: '2', height: '14' }),
-      h('rect', { x: '6', y: '8', width: '2', height: '8', rx: '1' }),
-      h('rect', { x: '16', y: '8', width: '2', height: '8', rx: '1' })
-    ])
-  }
-}
-
-const AnalyticsIcon = {
-  render() {
-    return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
-      h('line', { x1: '18', y1: '20', x2: '18', y2: '10' }),
-      h('line', { x1: '12', y1: '20', x2: '12', y2: '4' }),
-      h('line', { x1: '6', y1: '20', x2: '6', y2: '14' })
     ])
   }
 }
@@ -687,11 +671,12 @@ onUnmounted(() => {
   border-right: 1px solid rgba(255, 255, 255, 0.05);
   display: flex;
   flex-direction: column;
+  padding: 16px 0;
   flex-shrink: 0;
 }
 
 .side-header {
-  padding: 24px;
+  padding: 0 24px 24px;
 }
 
 .side-title-row {
@@ -726,94 +711,38 @@ onUnmounted(() => {
 .side-menu {
   flex: 1;
   overflow-y: auto;
-  padding: 0 8px;
-}
-
-.side-menu::-webkit-scrollbar {
-  width: 4px;
-}
-
-.side-menu::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.side-menu::-webkit-scrollbar-thumb {
-  background: #2a2d35;
-  border-radius: 2px;
+  padding: 0 12px;
 }
 
 .side-link {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 12px 16px;
+  padding: 12px;
   color: #94a3b8;
   text-decoration: none;
   font-size: 13px;
   border-radius: 4px;
   transition: all 0.2s;
+  border-left: 4px solid transparent;
   margin-bottom: 2px;
 }
 
 .side-link:hover {
   background: rgba(255, 255, 255, 0.05);
-  color: #ffffff;
+  color: #e4e1e9;
 }
 
 .side-link.active {
-  background: rgba(255, 255, 255, 0.05);
-  color: #ffffff;
-  border-left: 4px solid #4c93e7;
+  background: #2a292f;
+  color: #60a5fa;
+  border-left-color: #60a5fa;
+  font-weight: 600;
 }
 
 .side-icon {
   width: 18px;
   height: 18px;
-}
-
-.side-footer {
-  padding: 16px;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.operator-card {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 8px;
-  background: rgba(255, 255, 255, 0.02);
-  border-radius: 8px;
-}
-
-.operator-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: #f59e0b;
-}
-
-.operator-info {
-  flex: 1;
-}
-
-.operator-name {
-  font-size: 13px;
-  font-weight: 600;
-  color: #e4e1e9;
-  margin: 0;
-}
-
-.operator-station {
-  font-size: 11px;
-  color: #64748b;
-  margin: 0;
-}
-
-.status-dot-online {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #4ae176;
 }
 
 /* 主内容区 */
@@ -1285,7 +1214,7 @@ onUnmounted(() => {
 .status-footer {
   position: fixed;
   bottom: 0;
-  left: 260px;
+  left: 288px;
   right: 0;
   height: 40px;
   background: #1b1b20;
