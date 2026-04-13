@@ -742,7 +742,7 @@ onUnmounted(() => {
 
 /* 侧边栏 */
 .side-nav {
-  width: 288px;
+  width: 256px;
   background: #1b1b20;
   border-right: 1px solid rgba(255, 255, 255, 0.05);
   display: flex;

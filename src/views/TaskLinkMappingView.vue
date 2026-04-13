@@ -595,7 +595,7 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   height: 64px;
-  background: #0b0b10;
+  background: #1b1b20;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   display: flex;
   justify-content: space-between;
@@ -682,8 +682,8 @@ onUnmounted(() => {
 
 /* 侧边栏 */
 .side-nav {
-  width: 260px;
-  background: #0b0b10;
+  width: 256px;
+  background: #1b1b20;
   border-right: 1px solid rgba(255, 255, 255, 0.05);
   display: flex;
   flex-direction: column;
@@ -1288,7 +1288,7 @@ onUnmounted(() => {
   left: 260px;
   right: 0;
   height: 40px;
-  background: #0b0b10;
+  background: #1b1b20;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   display: flex;
   align-items: center;
