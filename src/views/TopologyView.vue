@@ -38,10 +38,10 @@
           <GridIcon class="side-icon" />
           <span>矩阵设备监视</span>
         </router-link>
-        <a href="#" class="side-link">
+        <router-link to="/other-devices" class="side-link">
           <DevicesIcon class="side-icon" />
           <span>其它设备监视</span>
-        </a>
+        </router-link>
       </nav>
       <div class="side-footer">
         <div class="health-card">

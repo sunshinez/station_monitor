@@ -28,6 +28,11 @@ const router = createRouter({
       path: '/matrix',
       name: 'matrix',
       component: () => import('../views/MatrixView.vue')
+    },
+    {
+      path: '/other-devices',
+      name: 'other-devices',
+      component: () => import('../views/OtherDevicesView.vue')
     }
   ]
 })

@@ -28,27 +28,17 @@
       <nav class="side-menu">
         <router-link to="/topology" class="side-link">
           <TopologyIcon class="side-icon" />
-          <span>系统拓扑图监视</span>
-        </router-link>
-        <router-link to="/baseband" class="side-link active">
+          <span>系统拓扑图监视</span>        </router-link>        <router-link to="/baseband" class="side-link active">
           <ComponentIcon class="side-icon" />
-          <span>基带一体化监视</span>
-        </router-link>
-        <router-link to="/matrix" class="side-link">
+          <span>基带一体化监视</span>        </router-link>        <router-link to="/matrix" class="side-link">
           <GridIcon class="side-icon" />
-          <span>矩阵设备监视</span>
-        </router-link>
-        <a href="#" class="side-link">
+          <span>矩阵设备监视</span>        </router-link>        <router-link to="/other-devices" class="side-link">
           <DevicesIcon class="side-icon" />
-          <span>其它设备监视</span>
-        </a>
-      </nav>
+          <span>其它设备监视</span>        </router-link>      </nav>
       <div class="side-footer">
         <div class="health-card">
           <div class="health-header">
-            <span class="health-label">上行链路健康度</span>
-            <span class="status-dot success"></span>
-          </div>
+            <span class="health-label">上行链路健康度</span>            <span class="status-dot success"></span>          </div>
           <div class="health-bar">
             <div class="health-fill" style="width: 88%"></div>
           </div>
@@ -67,13 +57,9 @@
           </div>
           <div class="header-stats">
             <div class="stat-box">
-              <span class="stat-label">Uplink Status</span>
-              <span class="stat-value success">NOMINAL</span>
-            </div>
+              <span class="stat-label">Uplink Status</span>              <span class="stat-value success">NOMINAL</span>            </div>
             <div class="stat-box">
-              <span class="stat-label">Downlink Bitrate</span>
-              <span class="stat-value primary">1.2 Gbps</span>
-            </div>
+              <span class="stat-label">Downlink Bitrate</span>              <span class="stat-value primary">1.2 Gbps</span>            </div>
           </div>
         </div>
 
@@ -88,25 +74,19 @@
           <!-- Column 1: Control & Tracking -->
           <div class="column col-tracking">
             <div class="column-title">
-              <span class="title-line"></span>
-              <span>控制与跟踪单元</span>
-            </div>
+              <span class="title-line"></span>              <span>控制与跟踪单元</span>            </div>
 
             <!-- Tracking Basebands -->
             <div class="card">
               <div class="card-header">
-                <span class="card-id">TRK-BB-01</span>
-                <span class="status-dot success"></span>
-              </div>
+                <span class="card-id">TRK-BB-01</span>                <span class="status-dot success"></span>              </div>
               <h3 class="card-name">跟踪基带 A</h3>
               <p class="card-metrics">AZ: {{ trackingMetrics.az }}° | EL: {{ trackingMetrics.el }}°</p>
             </div>
 
             <div class="card">
               <div class="card-header">
-                <span class="card-id">TRK-BB-02</span>
-                <span class="status-dot success"></span>
-              </div>
+                <span class="card-id">TRK-BB-02</span>                <span class="status-dot success"></span>              </div>
               <h3 class="card-name">跟踪基带 B</h3>
               <p class="card-metrics">STANDBY / READY</p>
             </div>
@@ -114,9 +94,7 @@
             <!-- Control Basebands -->
             <div class="card card-control">
               <div class="card-header">
-                <span class="card-id">CMD-BB-01</span>
-                <span class="status-dot success"></span>
-              </div>
+                <span class="card-id">CMD-BB-01</span>                <span class="status-dot success"></span>              </div>
               <h3 class="card-name">测控基带 01</h3>
               <div class="progress-bar">
                 <div class="progress-fill" style="width: 75%"></div>
@@ -125,9 +103,7 @@
 
             <div class="card card-control">
               <div class="card-header">
-                <span class="card-id">CMD-BB-02</span>
-                <span class="status-dot success"></span>
-              </div>
+                <span class="card-id">CMD-BB-02</span>                <span class="status-dot success"></span>              </div>
               <h3 class="card-name">测控基带 02</h3>
               <div class="progress-bar">
                 <div class="progress-fill" style="width: 25%"></div>
@@ -138,16 +114,13 @@
           <!-- Column 2: Uplink Basebands -->
           <div class="column col-uplink">
             <div class="column-title">
-              <span class="title-line secondary"></span>
-              <span>上行基带矩阵 (测控/前向)</span>
-            </div>
+              <span class="title-line secondary"></span>              <span>上行基带矩阵 (测控/前向)</span>            </div>
 
             <div class="uplink-grid">
               <div class="uplink-card">
                 <div class="uplink-header">
                   <UploadIcon class="uplink-icon" />
-                  <span class="status-dot success"></span>
-                </div>
+                  <span class="status-dot success"></span>                </div>
                 <div class="uplink-name">上行基带 #01</div>
                 <div class="uplink-band">S-BAND / 2.4GHz</div>
               </div>
@@ -155,8 +128,7 @@
               <div class="uplink-card">
                 <div class="uplink-header">
                   <UploadIcon class="uplink-icon" />
-                  <span class="status-dot success"></span>
-                </div>
+                  <span class="status-dot success"></span>                </div>
                 <div class="uplink-name">上行基带 #02</div>
                 <div class="uplink-band">S-BAND / 2.4GHz</div>
               </div>
@@ -164,8 +136,7 @@
               <div class="uplink-card error">
                 <div class="uplink-header">
                   <UploadIcon class="uplink-icon error" />
-                  <span class="status-dot error pulse"></span>
-                </div>
+                  <span class="status-dot error pulse"></span>                </div>
                 <div class="uplink-name error">上行基带 #03</div>
                 <div class="uplink-band error">X-BAND / ALARM</div>
               </div>
@@ -173,8 +144,7 @@
               <div class="uplink-card">
                 <div class="uplink-header">
                   <UploadIcon class="uplink-icon" />
-                  <span class="status-dot success"></span>
-                </div>
+                  <span class="status-dot success"></span>                </div>
                 <div class="uplink-name">上行基带 #04</div>
                 <div class="uplink-band">X-BAND / 8.2GHz</div>
               </div>
@@ -183,14 +153,10 @@
             <!-- Real-time Telemetry Stream -->
             <div class="telemetry-stream">
               <div class="stream-header">
-                <span class="stream-title">REAL-TIME TELEMETRY STREAM</span>
-                <span class="stream-time">UTC {{ utcTime }}</span>
-              </div>
+                <span class="stream-title">REAL-TIME TELEMETRY STREAM</span>                <span class="stream-time">UTC {{ utcTime }}</span>              </div>
               <div class="stream-list">
                 <div v-for="(packet, index) in telemetryPackets" :key="index" class="stream-item">
-                  <span>{{ packet.id }}</span>
-                  <span :class="['stream-status', packet.status]">{{ packet.statusText }}</span>
-                </div>
+                  <span>{{ packet.id }}</span>                  <span :class="['stream-status', packet.status]">{{ packet.statusText }}</span>                </div>
               </div>
             </div>
           </div>
@@ -198,15 +164,11 @@
           <!-- Column 3: Downlink Basebands -->
           <div class="column col-downlink">
             <div class="column-title">
-              <span class="title-line accent"></span>
-              <span>下行基带矩阵 (数传返向)</span>
-            </div>
+              <span class="title-line accent"></span>              <span>下行基带矩阵 (数传返向)</span>            </div>
 
             <div class="downlink-grid">
               <div v-for="n in 8" :key="n" class="downlink-cell" :class="{ warning: n === 4 }">
-                <span class="status-dot" :class="n === 4 ? 'warning' : 'success'"></span>
-                <span class="downlink-id">RX-{{ String(n).padStart(2, '0') }}</span>
-              </div>
+                <span class="status-dot" :class="n === 4 ? 'warning' : 'success'"></span>                <span class="downlink-id">RX-{{ String(n).padStart(2, '0') }}</span>              </div>
             </div>
 
             <!-- Downlink Visual Map -->
@@ -216,13 +178,11 @@
               </div>
               <div class="map-overlay">
                 <div class="map-header">
-                  <span class="map-title">信号流向视图</span>
-                  <SatelliteIcon class="map-icon" />
+                  <span class="map-title">信号流向视图</span>                  <SatelliteIcon class="map-icon" />
                 </div>
                 <div class="map-sync">
                   <div class="sync-line"></div>
-                  <span class="sync-text">SYNCING</span>
-                  <div class="sync-line"></div>
+                  <span class="sync-text">SYNCING</span>                  <div class="sync-line"></div>
                 </div>
               </div>
             </div>

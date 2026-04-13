@@ -28,27 +28,17 @@
       <nav class="side-menu">
         <router-link to="/topology" class="side-link">
           <TopologyIcon class="side-icon" />
-          <span>系统拓扑图监视</span>
-        </router-link>
-        <router-link to="/baseband" class="side-link">
+          <span>系统拓扑图监视</span>        </router-link>        <router-link to="/baseband" class="side-link">
           <ComponentIcon class="side-icon" />
-          <span>基带一体化监视</span>
-        </router-link>
-        <router-link to="/matrix" class="side-link active">
+          <span>基带一体化监视</span>        </router-link>        <router-link to="/matrix" class="side-link active">
           <GridIcon class="side-icon" />
-          <span>矩阵设备监视</span>
-        </router-link>
-        <a href="#" class="side-link">
+          <span>矩阵设备监视</span>        </router-link>        <router-link to="/other-devices" class="side-link">
           <DevicesIcon class="side-icon" />
-          <span>其它设备监视</span>
-        </a>
-      </nav>
+          <span>其它设备监视</span>        </router-link>      </nav>
       <div class="side-footer">
         <div class="health-card">
           <div class="health-header">
-            <span class="health-label">上行链路健康度</span>
-            <span class="status-dot success"></span>
-          </div>
+            <span class="health-label">上行链路健康度</span>            <span class="status-dot success"></span>          </div>
           <div class="health-bar">
             <div class="health-fill" style="width: 78%"></div>
           </div>
@@ -67,18 +57,13 @@
           </div>
           <div class="header-status">
             <div class="status-item">
-              <span class="status-dot success"></span>
-              <span class="status-label">已连接 (CONNECTED)</span>
-            </div>
+              <span class="status-dot success"></span>              <span class="status-label">已连接 (CONNECTED)</span>            </div>
             <div class="status-item">
-              <span class="status-dot disconnected"></span>
-              <span class="status-label">未连接 (DISCONNECTED)</span>
-            </div>
+              <span class="status-dot disconnected"></span>              <span class="status-label">未连接 (DISCONNECTED)</span>            </div>
             <div class="status-divider"></div>
             <button class="refresh-btn" @click="refreshMatrix">
               <RefreshIcon class="refresh-icon" />
-              <span>更新矩阵 (REFRESH)</span>
-            </button>
+              <span>更新矩阵 (REFRESH)</span>            </button>
           </div>
         </div>
 
@@ -88,8 +73,7 @@
             <div class="matrix-content">
               <!-- X-Axis Label -->
               <div class="axis-label-top">
-                <span>输入设备 (基带) — INPUT (BASEBAND)</span>
-              </div>
+                <span>输入设备 (基带) — INPUT (BASEBAND)</span>              </div>
 
               <div class="matrix-body">
                 <!-- Y-Axis Labels -->
@@ -117,15 +101,13 @@
                       :class="{ active: cell.active }"
                       @click="toggleCell(index)"
                     >
-                      <span class="cell-dot" :class="cell.active ? 'active' : 'inactive'"></span>
-                    </div>
+                      <span class="cell-dot" :class="cell.active ? 'active' : 'inactive'"></span>                    </div>
                   </div>
                 </div>
 
                 <!-- Y-Axis Label (Rotated) -->
                 <div class="axis-label-right">
-                  <span>输出设备 (变频单元) — OUTPUT (FREQUENCY CONVERTER)</span>
-                </div>
+                  <span>输出设备 (变频单元) — OUTPUT (FREQUENCY CONVERTER)</span>                </div>
               </div>
             </div>
           </div>
@@ -141,17 +123,11 @@
             </div>
             <div class="health-metrics">
               <div class="health-row">
-                <span class="health-name">核心温度 (CORE TEMP)</span>
-                <span class="health-value">{{ systemHealth.temp }}°C</span>
-              </div>
+                <span class="health-name">核心温度 (CORE TEMP)</span>                <span class="health-value">{{ systemHealth.temp }}°C</span>              </div>
               <div class="health-row">
-                <span class="health-name">负载均衡 (LOAD BALANCER)</span>
-                <span class="health-value">{{ systemHealth.loadBalancer }}</span>
-              </div>
+                <span class="health-name">负载均衡 (LOAD BALANCER)</span>                <span class="health-value">{{ systemHealth.loadBalancer }}</span>              </div>
               <div class="health-row">
-                <span class="health-name">实时延迟 (LATENCY RT)</span>
-                <span class="health-value highlight">{{ systemHealth.latency }}ms</span>
-              </div>
+                <span class="health-name">实时延迟 (LATENCY RT)</span>                <span class="health-value highlight">{{ systemHealth.latency }}ms</span>              </div>
             </div>
           </div>
 
@@ -162,15 +138,10 @@
                 <ListIcon class="panel-icon primary" />
                 <h3 class="panel-title">实时切换日志 (SWITCHING LOG)</h3>
               </div>
-              <span class="auto-update">自动更新: 开启 (AUTO-UPDATE: ENABLED)</span>
-            </div>
+              <span class="auto-update">自动更新: 开启 (AUTO-UPDATE: ENABLED)</span>            </div>
             <div class="log-list scrollbar-thin">
               <div v-for="(log, index) in switchLogs" :key="index" class="log-item" :class="{ dimmed: index > 2 }">
-                <span class="log-time">{{ log.time }}</span>
-                <span class="log-type" :class="log.type">[{{ log.typeText }}]</span>
-                <span class="log-message">{{ log.message }}</span>
-                <span class="log-status" :class="log.status">{{ log.statusText }}</span>
-              </div>
+                <span class="log-time">{{ log.time }}</span>                <span class="log-type" :class="log.type">[{{ log.typeText }}]</span>                <span class="log-message">{{ log.message }}</span>                <span class="log-status" :class="log.status">{{ log.statusText }}</span>              </div>
             </div>
           </div>
         </div>
@@ -185,8 +156,7 @@
             <div class="footer-bar active"></div>
             <div class="footer-bar active"></div>
           </div>
-          <span class="footer-text">ASTRA GROUND STATION PROTOCOL • SECURE LINK • ALPHA 7-2</span>
-        </div>
+          <span class="footer-text">ASTRA GROUND STATION PROTOCOL • SECURE LINK • ALPHA 7-2</span>        </div>
       </div>
     </main>
   </div>
