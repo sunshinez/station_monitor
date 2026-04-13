@@ -113,6 +113,11 @@ const router = createRouter({
       path: '/task-local-dispatch',
       name: 'task-local-dispatch',
       component: () => import('../views/TaskLocalDispatchView.vue')
+    },
+    {
+      path: '/task-fault-diagnosis',
+      name: 'task-fault-diagnosis',
+      component: () => import('../views/TaskFaultDiagnosisView.vue')
     }
   ]
 })

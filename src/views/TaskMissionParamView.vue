@@ -81,10 +81,10 @@
             <LanIcon class="side-icon" />
             <span>本地调度执行</span>
           </router-link>
-          <a href="#" class="side-link">
+          <router-link to="/task-fault-diagnosis" class="side-link">
             <BiotechIcon class="side-icon" />
             <span>故障诊断</span>
-          </a>
+          </router-link>
         </nav>
       </aside>
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="task-central-dispatch-page">
+  <div class="task-fault-diagnosis-page">
     <!-- 顶部导航栏 - 全局统一 -->
     <header class="top-nav">
       <div class="logo">XX地面站软件</div>
@@ -73,7 +73,7 @@
             <SendIcon class="side-icon" />
             <span>载波监视任务计划发送</span>
           </router-link>
-          <router-link to="/task-central-dispatch" class="side-link active">
+          <router-link to="/task-central-dispatch" class="side-link">
             <AltRouteIcon class="side-icon" />
             <span>中心调度指令执行</span>
           </router-link>
@@ -81,67 +81,64 @@
             <LanIcon class="side-icon" />
             <span>本地调度执行</span>
           </router-link>
-          <router-link to="/task-fault-diagnosis" class="side-link">
+          <router-link to="/task-fault-diagnosis" class="side-link active">
             <BiotechIcon class="side-icon" />
             <span>故障诊断</span>
           </router-link>
+          <a href="#" class="side-link">
+            <AnalyticsIcon class="side-icon" />
+            <span>数据统计管理</span>
+          </a>
         </nav>
       </aside>
 
       <!-- 主内容区 -->
       <main class="main-content">
-        <!-- 头部 -->
-        <div class="page-header">
-          <div class="header-left">
-            <h1 class="page-title">中心调度指令执行</h1>
-            <p class="page-subtitle">Central Command Execution & Telemetry Validation</p>
-          </div>
-          <div class="header-right">
-            <div class="status-badge">
-              <span class="status-dot pulse"></span>
-              <span class="mono">上行链路激活: 2.4kbps</span>
+        <!-- 故障参数定制 -->
+        <section class="param-panel">
+          <div class="panel-header-bar">
+            <div class="panel-title-group">
+              <TuneIcon class="panel-icon text-primary" />
+              <h2 class="panel-title">故障参数定制</h2>
             </div>
-            <div class="status-badge">
-              <span class="mono">UTC: {{ currentTime }}</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 实时调度指令流 -->
-        <section class="command-stream-section">
-          <div class="section-header-bar">
-            <div class="section-title-group">
-              <DynamicFeedIcon class="section-icon" />
-              <h2 class="section-title">实时调度指令流</h2>
-            </div>
-            <span class="stream-badge">实时流数据</span>
+            <button class="btn-add">
+              <PlusIcon class="btn-add-icon" />
+              增加故障参数
+            </button>
           </div>
           <div class="table-wrapper">
             <table class="data-table">
               <thead>
                 <tr>
-                  <th>指令ID (Hex)</th>
-                  <th>时间戳</th>
-                  <th>操作类型</th>
-                  <th>执行脚本</th>
-                  <th class="text-center">优先级</th>
-                  <th class="text-right">执行状态</th>
+                  <th>分机名称</th>
+                  <th>监控参数</th>
+                  <th>报警阈值 (LOW / HIGH)</th>
+                  <th>当前值</th>
+                  <th>状态</th>
+                  <th class="text-right">操作</th>
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="(cmd, index) in commandStream" :key="index" class="table-row">
-                  <td class="mono text-primary font-bold">{{ cmd.id }}</td>
-                  <td class="mono text-dim">{{ cmd.timestamp }}</td>
-                  <td>{{ cmd.type }}</td>
-                  <td>{{ cmd.script }}</td>
-                  <td class="text-center">
-                    <span :class="['priority-tag', cmd.priorityClass]">{{ cmd.priority }}</span>
+                <tr v-for="(param, index) in paramList" :key="index" class="table-row">
+                  <td class="font-medium">{{ param.device }}</td>
+                  <td class="text-dim">{{ param.param }}</td>
+                  <td class="mono text-primary">{{ param.threshold }}</td>
+                  <td :class="['mono', param.valueClass]">{{ param.value }}</td>
+                  <td>
+                    <span :class="['status-group', param.statusClass]">
+                      <span :class="['status-dot-sm', param.dotClass]"></span>
+                      {{ param.status }}
+                    </span>
                   </td>
                   <td class="text-right">
-                    <span :class="['exec-status', cmd.statusClass]">
-                      <component :is="cmd.statusIcon" class="status-icon" />
-                      {{ cmd.status }}
-                    </span>
+                    <div class="action-btns">
+                      <button class="action-btn" title="编辑">
+                        <EditIcon class="action-icon" />
+                      </button>
+                      <button class="action-btn danger" title="删除">
+                        <DeleteIcon class="action-icon" />
+                      </button>
+                    </div>
                   </td>
                 </tr>
               </tbody>
@@ -149,37 +146,82 @@
           </div>
         </section>
 
-        <!-- 执行日志 -->
-        <section class="execution-log-section">
-          <div class="section-header-bar">
-            <div class="section-title-group">
-              <AssignmentLateIcon class="section-icon text-error" />
-              <h2 class="section-title">执行日志</h2>
+        <!-- 实时故障监视 -->
+        <section class="monitor-section">
+          <div class="section-title-group">
+            <AnalyticsIcon class="section-icon text-primary" />
+            <h2 class="section-title">实时故障监视</h2>
+          </div>
+          <div class="monitor-cards">
+            <div v-for="(card, index) in monitorCards" :key="index"
+                 :class="['monitor-card', card.error ? 'card-error' : '']">
+              <div class="card-header">
+                <div>
+                  <p class="card-category">{{ card.category }}</p>
+                  <h3 class="card-name">{{ card.name }}</h3>
+                </div>
+                <span :class="['card-dot', card.dotClass]"></span>
+              </div>
+              <div class="card-value-row">
+                <span :class="['card-value mono', card.valueClass]">{{ card.value }}</span>
+                <span class="card-unit">{{ card.unit }}</span>
+              </div>
+              <div class="card-footer">
+                <span class="card-range mono">范围: {{ card.range }}</span>
+                <span :class="['card-status', card.statusClass]">{{ card.status }}</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 故障历史日志 -->
+        <section class="log-panel">
+          <div class="panel-header-bar border-bottom">
+            <div class="panel-title-group">
+              <ListAltIcon class="panel-icon text-primary" />
+              <h2 class="panel-title">故障历史日志</h2>
+            </div>
+            <div class="header-actions">
+              <button class="btn-text">导出报表</button>
+              <button class="btn-text">清除记录</button>
             </div>
           </div>
           <div class="table-wrapper">
             <table class="data-table">
               <thead>
-                <tr>
-                  <th>时间戳</th>
-                  <th>干预操作</th>
-                  <th>干预结果</th>
-                  <th>分机ACK状态</th>
-                  <th>执行备注</th>
+                <tr class="log-thead">
+                  <th>发生时间 (UTC)</th>
+                  <th>故障分机</th>
+                  <th>故障等级</th>
+                  <th>故障描述</th>
+                  <th class="text-right">当前状态</th>
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="(log, index) in executionLogs" :key="index" class="table-row">
-                  <td class="mono text-dim">{{ log.timestamp }}</td>
-                  <td :class="['font-bold', log.opClass]">{{ log.operation }}</td>
+                <tr v-for="(log, index) in faultLogs" :key="index" class="table-row">
+                  <td :class="['mono', index === 0 ? 'text-on-surface' : 'text-dim']">{{ log.time }}</td>
+                  <td class="font-medium">{{ log.device }}</td>
                   <td>
-                    <span :class="['result-badge', log.resultClass]">{{ log.result }}</span>
+                    <span :class="['level-badge', log.levelClass]">{{ log.level }}</span>
                   </td>
-                  <td :class="['mono', log.ackClass]">{{ log.ack }}</td>
-                  <td class="text-dim font-body">{{ log.remark }}</td>
+                  <td class="text-dim">{{ log.desc }}</td>
+                  <td class="text-right">
+                    <span :class="['log-status mono', log.statusClass]">
+                      <span v-if="log.active" class="status-dot-xs pulse"></span>
+                      {{ log.status }}
+                    </span>
+                  </td>
                 </tr>
               </tbody>
             </table>
+          </div>
+          <div class="log-footer">
+            <p class="footer-text">当前任务阶段显示 3 条记录</p>
+            <div class="pagination">
+              <button class="page-btn">上一页</button>
+              <span class="page-current">01</span>
+              <button class="page-btn">下一页</button>
+            </div>
           </div>
         </section>
       </main>
@@ -342,135 +384,202 @@ const LanIcon = {
   }
 }
 
+const AnalyticsIcon = {
+  render() {
+    return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
+      h('line', { x1: '18', y1: '20', x2: '18', y2: '10' }),
+      h('line', { x1: '12', y1: '20', x2: '12', y2: '4' }),
+      h('line', { x1: '6', y1: '20', x2: '6', y2: '14' })
+    ])
+  }
+}
+
 // 业务区图标
-const DynamicFeedIcon = {
+const TuneIcon = {
   render() {
     return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
-      h('path', { d: 'M12 2v20' }),
-      h('path', { d: 'M2 10h20' }),
-      h('path', { d: 'M2 14h20' }),
-      h('path', { d: 'M2 6h20' }),
-      h('path', { d: 'M2 18h20' })
+      h('line', { x1: '4', y1: '21', x2: '4', y2: '14' }),
+      h('line', { x1: '4', y1: '10', x2: '4', y2: '3' }),
+      h('line', { x1: '12', y1: '21', x2: '12', y2: '12' }),
+      h('line', { x1: '12', y1: '8', x2: '12', y2: '3' }),
+      h('line', { x1: '20', y1: '21', x2: '20', y2: '16' }),
+      h('line', { x1: '20', y1: '12', x2: '20', y2: '3' }),
+      h('circle', { cx: '4', cy: '12', r: '2' }),
+      h('circle', { cx: '12', cy: '10', r: '2' }),
+      h('circle', { cx: '20', cy: '14', r: '2' })
     ])
   }
 }
 
-const AssignmentLateIcon = {
+const PlusIcon = {
   render() {
-    return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
-      h('path', { d: 'M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z' }),
-      h('path', { d: 'M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z' })
+    return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '3' }, [
+      h('line', { x1: '12', y1: '5', x2: '12', y2: '19' }),
+      h('line', { x1: '5', y1: '12', x2: '19', y2: '12' })
     ])
   }
 }
 
-const CheckCircleIcon = {
+const EditIcon = {
   render() {
     return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
-      h('path', { d: 'M22 11.08V12a10 10 0 1 1-5.93-9.14' }),
-      h('polyline', { points: '22 4 12 14.01 9 11.01' })
+      h('path', { d: 'M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7' }),
+      h('path', { d: 'M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z' })
     ])
   }
 }
 
-const SyncIcon = {
+const DeleteIcon = {
   render() {
     return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
-      h('path', { d: 'M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.3' })
+      h('polyline', { points: '3 6 5 6 21 6' }),
+      h('path', { d: 'M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2' })
     ])
   }
 }
 
-const SendSmallIcon = {
+const ListAltIcon = {
   render() {
     return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
-      h('line', { x1: '22', y1: '2', x2: '11', y2: '13' }),
-      h('polygon', { points: '22 2 15 22 11 13 2 9 22 2' })
+      h('line', { x1: '8', y1: '6', x2: '21', y2: '6' }),
+      h('line', { x1: '8', y1: '12', x2: '21', y2: '12' }),
+      h('line', { x1: '8', y1: '18', x2: '21', y2: '18' }),
+      h('line', { x1: '3', y1: '6', x2: '3.01', y2: '6' }),
+      h('line', { x1: '3', y1: '12', x2: '3.01', y2: '12' }),
+      h('line', { x1: '3', y1: '18', x2: '3.01', y2: '18' })
     ])
   }
 }
 
 // 数据
-const commandStream = ref([
+const paramList = ref([
   {
-    id: '0x55AA02FFE10A',
-    timestamp: '14:30:04.221',
-    type: '紧急转储 (EMERG_DUMP)',
-    script: 'EMERG_DUMP',
-    priority: '高优先级',
-    priorityClass: 'priority-high',
-    status: '执行成功',
-    statusClass: 'status-success',
-    statusIcon: CheckCircleIcon
+    device: '天线控制分机 (ANT-CTRL-01)',
+    param: '核心温度 (Core Temp)',
+    threshold: '10.0 ~ 85.0 °C',
+    value: '42.8',
+    valueClass: '',
+    status: '正常',
+    statusClass: 'text-tertiary',
+    dotClass: 'dot-success-glow'
   },
   {
-    id: '0x55AA03A10204',
-    timestamp: '14:29:58.105',
-    type: '频率切换 (FREQ_SW)',
-    script: 'FREQ_SW_V2',
-    priority: '中优先级',
-    priorityClass: 'priority-medium',
-    status: '解析中',
-    statusClass: 'status-parsing',
-    statusIcon: SyncIcon
+    device: '数传基带分机 (BASEBAND-D-02)',
+    param: 'AGC电平 (AGC Level)',
+    threshold: '-80.0 ~ -20.0 dBm',
+    value: '-12.4',
+    valueClass: 'text-error',
+    status: '越限',
+    statusClass: 'text-error',
+    dotClass: 'dot-error-glow pulse'
   },
   {
-    id: '0x55AA01000000',
-    timestamp: '14:29:45.002',
-    type: '心跳校准 (HEARTBEAT)',
-    script: 'HEARTBEAT_CHECK',
-    priority: '低优先级',
-    priorityClass: 'priority-low',
-    status: '已分发',
-    statusClass: 'status-sent',
-    statusIcon: SendSmallIcon
+    device: '变频单元分机 (CONV-UNIT-04)',
+    param: '发射功率 (TX Power)',
+    threshold: '15.0 ~ 30.0 dBW',
+    value: '24.1',
+    valueClass: '',
+    status: '正常',
+    statusClass: 'text-tertiary',
+    dotClass: 'dot-success-glow'
+  },
+  {
+    device: '功率放大分机 (HPA-UNIT-01)',
+    param: '供电电压 (VCC Input)',
+    threshold: '180.0 ~ 240.0 V',
+    value: '219.4',
+    valueClass: '',
+    status: '正常',
+    statusClass: 'text-tertiary',
+    dotClass: 'dot-success-glow'
   }
 ])
 
-const executionLogs = ref([
+const monitorCards = ref([
   {
-    timestamp: '2024-05-20 14:02:11',
-    operation: '强制切断执行流',
-    opClass: 'text-error',
-    result: 'SUCCESS',
-    resultClass: 'result-success',
-    ack: 'EMERG_DUMP',
-    ackClass: 'text-dim',
-    remark: '操作员手动接入，防止上行频率冲突'
+    category: '天线控制 / 核心温度',
+    name: 'ANT-TEMP-01',
+    value: '42.8',
+    valueClass: '',
+    unit: '°C',
+    range: '10.0 - 85.0',
+    status: '正常 (NOMINAL)',
+    statusClass: 'text-tertiary',
+    dotClass: 'dot-success-glow',
+    error: false
   },
   {
-    timestamp: '2024-05-20 13:45:00',
-    operation: '重定向至备机脚本',
-    opClass: 'text-primary',
-    result: 'SUCCESS',
-    resultClass: 'result-success',
-    ack: 'FREQ_SW_V2',
-    ackClass: 'text-dim',
-    remark: '主分机通信链路超时，系统自动执行切换逻辑'
+    category: '数传基带 / AGC电平',
+    name: 'BASE-AGC-02',
+    value: '-12.4',
+    valueClass: 'text-error',
+    unit: 'dBm',
+    range: '-80.0 - -20.0',
+    status: '严重越限 (CRITICAL)',
+    statusClass: 'text-error font-bold',
+    dotClass: 'dot-error-glow pulse',
+    error: true
   },
   {
-    timestamp: '2024-05-20 12:12:44',
-    operation: '参数手动覆盖',
-    opClass: 'text-error',
-    result: 'FAILED',
-    resultClass: 'result-failed',
-    ack: 'HEARTBEAT_CHECK',
-    ackClass: 'text-error font-bold',
-    remark: '当前用户权限等级不足，指令被分机控制单元拒绝'
+    category: '变频单元 / 发射功率',
+    name: 'CONV-TX-04',
+    value: '24.1',
+    valueClass: '',
+    unit: 'dBW',
+    range: '15.0 - 30.0',
+    status: '正常 (NOMINAL)',
+    statusClass: 'text-tertiary',
+    dotClass: 'dot-success-glow',
+    error: false
   },
   {
-    timestamp: '2024-05-20 09:30:15',
-    operation: '清空解析队列',
-    opClass: 'text-primary',
-    result: 'SUCCESS',
-    resultClass: 'result-success',
-    ack: '0x00 (NORMAL)',
-    ackClass: 'text-dim',
-    remark: '日常系统维护操作，清除所有挂起的低优先级任务'
+    category: '供电单元 / 输入电压',
+    name: 'PWR-VCC-01',
+    value: '219.4',
+    valueClass: '',
+    unit: 'V',
+    range: '180.0 - 240.0',
+    status: '正常 (NOMINAL)',
+    statusClass: 'text-tertiary',
+    dotClass: 'dot-success-glow',
+    error: false
   }
 ])
 
-const currentTime = ref('2024-05-20 14:30:05')
+const faultLogs = ref([
+  {
+    time: '2023-11-24 14:02:11.452',
+    device: '数传基带分机 BASEBAND-D-02',
+    level: '严重 (CRITICAL)',
+    levelClass: 'level-critical',
+    desc: 'AGC电平持续低于 -12dBm，超出设定下限阈值。',
+    status: '未恢复',
+    statusClass: 'text-error font-bold',
+    active: true
+  },
+  {
+    time: '2023-11-24 13:45:02.109',
+    device: '天线控制分机 ANT-CTRL-01',
+    level: '一般 (WARNING)',
+    levelClass: 'level-warning',
+    desc: '方位轴伺服电机电流瞬时突跳至 12A。',
+    status: '已恢复',
+    statusClass: 'text-tertiary font-bold',
+    active: false
+  },
+  {
+    time: '2023-11-24 12:20:55.882',
+    device: '变频单元分机 CONV-UNIT-04',
+    level: '一般 (WARNING)',
+    levelClass: 'level-warning',
+    desc: '本振1锁定指示信号丢失，自动切换备机。',
+    status: '已恢复',
+    statusClass: 'text-tertiary font-bold',
+    active: false
+  }
+])
+
+const currentTime = ref('2024-05-20 15:44:22')
 
 // 更新时间
 let timeInterval: number | null = null
@@ -488,7 +597,7 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-.task-central-dispatch-page {
+.task-fault-diagnosis-page {
   min-height: 100vh;
   background-color: #131318;
   color: #e4e1e9;
@@ -674,161 +783,128 @@ onUnmounted(() => {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 24px;
+  padding: 20px;
   overflow-y: auto;
   position: relative;
   margin-bottom: 32px;
   gap: 20px;
 }
 
-/* 页面头部 */
-.page-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  flex-shrink: 0;
-}
-
-.page-title {
-  font-size: 24px;
-  font-weight: 700;
-  color: #ffffff;
-  margin: 0;
-}
-
-.page-subtitle {
-  font-size: 12px;
-  color: #94a3b8;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin: 6px 0 0 0;
-}
-
-.header-right {
-  display: flex;
-  gap: 12px;
-}
-
-.status-badge {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 16px;
-  background: #1b1b20;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 4px;
-  font-size: 12px;
-  color: #94a3b8;
-}
-
-.status-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #4ae176;
-  box-shadow: 0 0 2px #4ae176, 0 0 10px rgba(74, 225, 118, 0.4);
-}
-
-.pulse {
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: .5; }
-}
-
-.mono {
-  font-family: 'Fira Code', monospace;
-}
-
-/* 区域通用 */
-.command-stream-section {
-  background: #1b1b20;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-left: 4px solid #60a5fa;
-  padding: 24px;
-  flex-shrink: 0;
-}
-
-.execution-log-section {
-  background: #1b1b20;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-left: 4px solid #ffb4ab;
-  padding: 24px;
-  flex: 1;
-  min-height: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-.section-header-bar {
+/* 面板头部 */
+.panel-header-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
-.section-title-group {
+.panel-header-bar.border-bottom {
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.panel-title-group {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.section-icon {
+.panel-icon {
   width: 20px;
   height: 20px;
-  color: #60a5fa;
 }
 
-.section-title {
-  font-size: 13px;
+.panel-title {
+  font-size: 18px;
   font-weight: 700;
   color: #ffffff;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
   margin: 0;
-}
-
-.stream-badge {
-  padding: 4px 10px;
-  background: rgba(96, 165, 250, 0.1);
-  color: #60a5fa;
-  border: 1px solid rgba(96, 165, 250, 0.2);
-  border-radius: 4px;
-  font-size: 10px;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.text-error {
-  color: #ffb4ab;
 }
 
 .text-primary {
   color: #60a5fa;
 }
 
+.text-tertiary {
+  color: #4ae176;
+}
+
+.text-error {
+  color: #ffb4ab;
+}
+
 .text-dim {
   color: #94a3b8;
 }
 
-.font-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+.text-on-surface {
+  color: #e4e1e9;
+}
+
+.mono {
+  font-family: 'Fira Code', monospace;
+}
+
+.font-medium {
+  font-weight: 500;
 }
 
 .font-bold {
   font-weight: 700;
 }
 
-.text-center {
-  text-align: center;
-}
-
 .text-right {
   text-align: right;
+}
+
+/* 按钮 */
+.btn-add {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: #60a5fa;
+  color: #00315d;
+  border: none;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-add:hover {
+  box-shadow: 0 0 15px rgba(96, 165, 250, 0.4);
+}
+
+.btn-add-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.btn-text {
+  padding: 6px 12px;
+  background: #35343a;
+  color: #94a3b8;
+  border: none;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-text:hover {
+  color: #ffffff;
+}
+
+.header-actions {
+  display: flex;
+  gap: 8px;
 }
 
 /* 表格 */
@@ -845,11 +921,9 @@ onUnmounted(() => {
 .data-table th {
   padding: 12px 16px;
   text-align: left;
-  font-size: 10px;
-  font-weight: 600;
+  font-size: 11px;
+  font-weight: 500;
   color: #94a3b8;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -863,90 +937,299 @@ onUnmounted(() => {
 }
 
 .table-row:hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.02);
 }
 
-/* 优先级标签 */
-.priority-tag {
+.log-thead {
+  background: rgba(14, 14, 19, 0.3);
+}
+
+.log-thead th {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 400;
+}
+
+/* 操作按钮 */
+.action-btns {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.action-btn:hover {
+  color: #60a5fa;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.action-btn.danger:hover {
+  color: #ffb4ab;
+}
+
+.action-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* 状态 */
+.status-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.status-dot-sm {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.status-dot-xs {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ffb4ab;
+}
+
+.dot-success-glow {
+  background: #4ae176;
+  box-shadow: 0 0 2px #4ae176, 0 0 8px rgba(74, 225, 118, 0.4);
+}
+
+.dot-error-glow {
+  background: #ffb4ab;
+  box-shadow: 0 0 2px #ffb4ab, 0 0 8px rgba(255, 180, 171, 0.4);
+}
+
+.pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .5; }
+}
+
+/* 故障参数定制面板 */
+.param-panel {
+  background: #1b1b20;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-left: 4px solid #60a5fa;
+  padding: 20px;
+  flex-shrink: 0;
+}
+
+/* 实时故障监视 */
+.monitor-section {
+  flex-shrink: 0;
+}
+
+.section-title-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.section-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.monitor-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.monitor-card {
+  background: #1b1b20;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 20px;
+  transition: all 0.2s;
+}
+
+.monitor-card:hover {
+  border-color: rgba(96, 165, 250, 0.3);
+}
+
+.card-error {
+  background: #2a292f;
+  border-color: rgba(255, 180, 171, 0.2);
+  box-shadow: inset 0 0 20px rgba(255, 180, 171, 0.05);
+}
+
+.card-error:hover {
+  border-color: rgba(255, 180, 171, 0.4);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.card-category {
+  font-size: 10px;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 4px 0;
+}
+
+.card-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.card-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.card-value-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.card-value {
+  font-size: 28px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.card-unit {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px;
+}
+
+.card-range {
+  color: #64748b;
+}
+
+.card-status {
+  font-size: 10px;
+}
+
+/* 故障历史日志 */
+.log-panel {
+  flex: 1;
+  min-height: 0;
+  background: #1b1b20;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.level-badge {
   display: inline-block;
   padding: 3px 10px;
   border-radius: 4px;
   font-size: 10px;
   font-weight: 700;
+  text-transform: uppercase;
 }
 
-.priority-high {
-  background: rgba(255, 180, 171, 0.1);
-  color: #ffb4ab;
-  border: 1px solid rgba(255, 180, 171, 0.2);
+.level-critical {
+  background: rgba(147, 0, 10, 0.6);
+  color: #ffdad6;
 }
 
-.priority-medium {
-  background: rgba(96, 165, 250, 0.1);
-  color: #60a5fa;
-  border: 1px solid rgba(96, 165, 250, 0.2);
+.level-warning {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.2);
 }
 
-.priority-low {
-  background: rgba(100, 116, 139, 0.15);
-  color: #94a3b8;
-  border: 1px solid rgba(100, 116, 139, 0.2);
-}
-
-/* 执行状态 */
-.exec-status {
+.log-status {
   display: inline-flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 4px;
-  font-weight: 700;
+  gap: 6px;
+  font-size: 11px;
 }
 
-.status-success {
-  color: #4ae176;
+.log-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  background: rgba(14, 14, 19, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.status-parsing {
-  color: #60a5fa;
+.footer-text {
+  font-size: 10px;
+  color: #64748b;
+  font-family: 'Fira Code', monospace;
+  margin: 0;
 }
 
-.status-sent {
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 10px;
   color: #64748b;
 }
 
-.status-icon {
-  width: 14px;
-  height: 14px;
-}
-
-:deep(.animate-spin) {
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-/* 结果徽章 */
-.result-badge {
-  display: inline-block;
-  padding: 3px 10px;
-  border-radius: 9999px;
-  font-size: 9px;
+.page-btn {
+  background: none;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  font-size: 10px;
   font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.2s;
 }
 
-.result-success {
-  background: rgba(74, 225, 118, 0.1);
-  color: #4ae176;
-  border: 1px solid rgba(74, 225, 118, 0.2);
+.page-btn:hover {
+  color: #60a5fa;
 }
 
-.result-failed {
-  background: rgba(255, 180, 171, 0.1);
-  color: #ffb4ab;
-  border: 1px solid rgba(255, 180, 171, 0.2);
+.page-current {
+  color: #60a5fa;
+  font-weight: 700;
 }
 
 /* 底部状态栏 */
