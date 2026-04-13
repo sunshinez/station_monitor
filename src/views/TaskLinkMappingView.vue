@@ -45,10 +45,10 @@
             <HubIcon class="side-icon" />
             <span>任务链路映射管理</span>
           </a>
-          <a href="#" class="side-link">
+          <router-link to="/task-script-editor" class="side-link">
             <TerminalIcon class="side-icon" />
             <span>脚本命令编辑</span>
-          </a>
+          </router-link>
           <a href="#" class="side-link">
             <DescriptionIcon class="side-icon" />
             <span>操作计划模板</span>
