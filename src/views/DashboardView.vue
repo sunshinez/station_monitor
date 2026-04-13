@@ -1,18 +1,31 @@
 <template>
   <div class="dashboard">
-    <header class="dashboard-header">
-      <div class="header-left">
-        <SatelliteIcon class="header-icon" />
-        <h1>卫星地面站监控系统</h1>
-      </div>
-      <div class="header-right">
-        <span class="status-badge">
-          <span class="status-dot"></span>
-          系统运行中
-        </span>
-        <button @click="logout" class="logout-btn">退出</button>
+    <!-- 顶部导航栏 - 全局统一 -->
+    <header class="top-nav">
+      <div class="logo">XX地面站软件</div>
+      <nav class="main-nav">
+        <router-link to="/topology" class="nav-link">图形化监视</router-link>
+        <router-link to="/device-control" class="nav-link">控制功能</router-link>
+        <router-link to="/task-status" class="nav-link">状态监视</router-link>
+        <router-link to="/task-macro" class="nav-link">任务管理</router-link>
+        <a href="#" class="nav-link">日志管理</a>
+        <a href="#" class="nav-link">操作手册</a>
+        <a href="#" class="nav-link">文件传输</a>
+      </nav>
+      <div class="user-actions">
+        <button class="icon-btn" title="设置">
+          <SettingsIcon class="icon" />
+        </button>
+        <button class="icon-btn" title="通知">
+          <NotificationIcon class="icon" />
+          <span class="notification-dot"></span>
+        </button>
+        <button class="icon-btn" title="用户账户" @click="logout">
+          <UserIcon class="icon" />
+        </button>
       </div>
     </header>
+
     <main class="dashboard-content">
       <div class="welcome-card">
         <h2>欢迎访问</h2>
@@ -29,10 +42,29 @@
 </template>
 
 <script setup lang="ts">
-import { useRouter } from 'vue-router'
-import SatelliteIcon from '@/components/icons/SatelliteIcon.vue'
+import { useRouter, h } from 'vue-router'
+import UserIcon from '@/components/icons/UserIcon.vue'
 
 const router = useRouter()
+
+// 顶部导航图标
+const SettingsIcon = {
+  render() {
+    return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
+      h('circle', { cx: '12', cy: '12', r: '3' }),
+      h('path', { d: 'M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z' })
+    ])
+  }
+}
+
+const NotificationIcon = {
+  render() {
+    return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
+      h('path', { d: 'M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9' }),
+      h('path', { d: 'M13.73 21a2 2 0 0 1-3.46 0' })
+    ])
+  }
+}
 
 const logout = () => {
   localStorage.removeItem('token')
@@ -46,81 +78,94 @@ const logout = () => {
   background-color: var(--bg-primary);
 }
 
-.dashboard-header {
+/* 顶部导航栏 */
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background: #131318;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 1rem 2rem;
-  background-color: var(--bg-card);
-  border-bottom: 1px solid var(--border-card);
-}
-
-.header-left {
-  display: flex;
   align-items: center;
-  gap: 1rem;
+  padding: 0 24px;
+  z-index: 50;
 }
 
-.header-icon {
-  width: 32px;
-  height: 32px;
-  color: var(--color-primary);
+.logo {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #60a5fa;
+  text-transform: uppercase;
 }
 
-.header-left h1 {
-  font-family: var(--font-headline);
-  font-size: 1.25rem;
+.main-nav {
+  display: flex;
+  gap: 32px;
+}
+
+.nav-link {
+  font-size: 14px;
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.2s;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-link:hover {
+  color: #e4e1e9;
+}
+
+.nav-link.active {
+  color: #60a5fa;
+  border-bottom-color: #60a5fa;
   font-weight: 600;
-  letter-spacing: 0.1em;
-  color: var(--text-white);
 }
 
-.header-right {
+.user-actions {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 8px;
 }
 
-.status-badge {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: var(--font-mono);
-  font-size: 12px;
-  color: var(--color-success);
-}
-
-.status-dot {
-  width: 8px;
-  height: 8px;
-  background-color: var(--color-success);
-  border-radius: 50%;
-  animation: breathe 2s ease-in-out infinite;
-}
-
-@keyframes breathe {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 1; }
-}
-
-.logout-btn {
-  padding: 0.5rem 1rem;
-  background-color: transparent;
-  border: 1px solid var(--border-card);
-  color: var(--text-dim);
-  font-family: var(--font-mono);
-  font-size: 12px;
+.icon-btn {
+  position: relative;
+  background: none;
+  border: none;
+  color: #94a3b8;
   cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
   transition: all 0.2s;
 }
 
-.logout-btn:hover {
-  border-color: var(--color-primary);
-  color: var(--color-primary);
+.icon-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #e4e1e9;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.notification-dot {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ffb4ab;
 }
 
 .dashboard-content {
-  padding: 2rem;
+  padding: 88px 2rem 2rem;
+  min-height: 100vh;
 }
 
 .welcome-card {
