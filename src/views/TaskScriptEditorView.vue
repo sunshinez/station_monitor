@@ -65,10 +65,10 @@
             <EditCalendarIcon class="side-icon" />
             <span>操作计划生成与执行</span>
           </router-link>
-          <a href="#" class="side-link">
+          <router-link to="/task-script-execution" class="side-link">
             <PlayCircleIcon class="side-icon" />
             <span>脚本执行</span>
-          </a>
+          </router-link>
           <a href="#" class="side-link">
             <SendIcon class="side-icon" />
             <span>载波监视任务计划发送</span>
