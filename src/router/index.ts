@@ -88,6 +88,11 @@ const router = createRouter({
       path: '/task-plan-reception',
       name: 'task-plan-reception',
       component: () => import('../views/TaskPlanReceptionView.vue')
+    },
+    {
+      path: '/task-plan-execution',
+      name: 'task-plan-execution',
+      component: () => import('../views/TaskPlanExecutionView.vue')
     }
   ]
 })

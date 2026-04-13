@@ -61,10 +61,10 @@
             <DownloadIcon class="side-icon" />
             <span>任务计划接收</span>
           </router-link>
-          <a href="#" class="side-link">
+          <router-link to="/task-plan-execution" class="side-link">
             <EditCalendarIcon class="side-icon" />
             <span>操作计划生成与执行</span>
-          </a>
+          </router-link>
           <a href="#" class="side-link">
             <PlayCircleIcon class="side-icon" />
             <span>脚本执行</span>
