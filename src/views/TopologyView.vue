@@ -34,10 +34,10 @@
           <ComponentIcon class="side-icon" />
           <span>基带一体化监视</span>
         </router-link>
-        <a href="#" class="side-link">
+        <router-link to="/matrix" class="side-link">
           <GridIcon class="side-icon" />
           <span>矩阵设备监视</span>
-        </a>
+        </router-link>
         <a href="#" class="side-link">
           <DevicesIcon class="side-icon" />
           <span>其它设备监视</span>

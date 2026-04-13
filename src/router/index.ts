@@ -23,6 +23,11 @@ const router = createRouter({
       path: '/baseband',
       name: 'baseband',
       component: () => import('../views/BasebandView.vue')
+    },
+    {
+      path: '/matrix',
+      name: 'matrix',
+      component: () => import('../views/MatrixView.vue')
     }
   ]
 })
