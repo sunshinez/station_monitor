@@ -1,70 +1,5 @@
 <template>
-  <div class="topology-page">
-    <!-- TopNavBar -->
-    <header class="top-nav">
-      <div class="logo">XX地面站软件</div>
-      <nav class="main-nav">
-        <router-link to="/topology" class="nav-link active">图形化监视</router-link>
-        <router-link to="/device-control" class="nav-link">控制功能</router-link>
-        <router-link to="/task-status" class="nav-link">状态监视</router-link>
-        <router-link to="/task-macro" class="nav-link">任务管理</router-link>
-        <router-link to="/log-record" class="nav-link">日志管理</router-link>
-        <a href="#" class="nav-link">操作手册</a>
-        <router-link to="/file-transfer" class="nav-link">文件传输</router-link>
-      </nav>
-      <div class="user-actions">
-        <button class="icon-btn" title="设置">
-          <SettingsIcon class="icon" />
-        </button>
-        <button class="icon-btn" title="通知">
-          <NotificationIcon class="icon" />
-          <span class="notification-dot"></span>
-        </button>
-        <button class="icon-btn" title="用户账户">
-          <UserIcon class="icon" />
-        </button>
-      </div>
-    </header>
-
-    <!-- SideNavBar -->
-    <aside class="side-nav">
-      <div class="side-header">
-        <h2 class="side-title">XX地面站软件</h2>
-        <p class="side-subtitle">SUB-SYSTEM ALPHA</p>
-      </div>
-      <nav class="side-menu">
-        <router-link to="/topology" class="side-link active">
-          <TopologyIcon class="side-icon" />
-          <span>系统拓扑图监视</span>
-        </router-link>
-        <router-link to="/baseband" class="side-link">
-          <ComponentIcon class="side-icon" />
-          <span>基带一体化监视</span>
-        </router-link>
-        <router-link to="/matrix" class="side-link">
-          <GridIcon class="side-icon" />
-          <span>矩阵设备监视</span>
-        </router-link>
-        <router-link to="/other-devices" class="side-link">
-          <DevicesIcon class="side-icon" />
-          <span>其它设备监视</span>
-        </router-link>
-      </nav>
-      <div class="side-footer">
-        <div class="health-card">
-          <div class="health-header">
-            <span class="health-label">上行链路健康度</span>
-            <span class="status-dot success"></span>
-          </div>
-          <div class="health-bar">
-            <div class="health-fill" style="width: 88%"></div>
-          </div>
-        </div>
-      </div>
-    </aside>
-
-    <!-- Main Content -->
-    <main class="main-content">
+  <main class="main-content">
       <div class="bg-glow top-right"></div>
       <div class="bg-glow bottom-right"></div>
 
@@ -314,7 +249,6 @@
         </div>
       </div>
     </main>
-  </div>
 </template>
 
 <script setup lang="ts">
@@ -730,9 +664,6 @@ onUnmounted(() => {
 
 /* Main Content */
 .main-content {
-  margin-left: 256px;
-  padding-top: 64px;
-  min-height: 100vh;
   position: relative;
   overflow: hidden;
 }
@@ -1181,11 +1112,6 @@ onUnmounted(() => {
   .side-nav {
     transform: translateX(-100%);
   }
-
-  .main-content {
-    margin-left: 0;
-  }
-
   .main-nav {
     display: none;
   }

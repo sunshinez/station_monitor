@@ -1,54 +1,5 @@
 <template>
-  <div class="file-transfer-page">
-    <!-- TopNavBar -->
-    <header class="top-nav">
-      <div class="logo">XX地面站软件</div>
-      <nav class="main-nav">
-        <router-link to="/topology" class="nav-link">图形化监视</router-link>
-        <router-link to="/device-control" class="nav-link">控制功能</router-link>
-        <router-link to="/task-status" class="nav-link">状态监视</router-link>
-        <router-link to="/task-macro" class="nav-link">任务管理</router-link>
-        <router-link to="/log-record" class="nav-link">日志管理</router-link>
-        <a href="#" class="nav-link">操作手册</a>
-        <router-link to="/file-transfer" class="nav-link active">文件传输</router-link>
-      </nav>
-      <div class="user-actions">
-        <button class="icon-btn" title="设置">
-          <SettingsIcon class="icon" />
-        </button>
-        <button class="icon-btn" title="通知">
-          <NotificationIcon class="icon" />
-          <span class="notification-dot"></span>
-        </button>
-        <button class="icon-btn" title="用户账户" @click="logout">
-          <UserIcon class="icon" />
-        </button>
-      </div>
-    </header>
-
-    <div class="main-layout">
-      <!-- SideNavBar -->
-      <aside class="side-nav">
-        <div class="side-header">
-          <h2 class="side-title">文件传输</h2>
-          <p class="side-subtitle">File Transfer Service</p>
-        </div>
-        <nav class="side-menu">
-          <router-link to="/file-transfer" class="side-link active">
-            <FolderIcon class="side-icon" />
-            <span>文件传输</span>
-          </router-link>
-        </nav>
-        <div class="side-footer">
-          <div class="status-indicator">
-            <span class="status-dot"></span>
-            <span class="status-text">UPLINK ACTIVE</span>
-          </div>
-        </div>
-      </aside>
-
-      <!-- Main Content -->
-      <main class="main-content">
+  <main class="main-content">
         <div class="content-wrapper">
           <!-- Header Stats -->
           <div class="stats-grid">
@@ -165,8 +116,6 @@
           </div>
         </div>
       </main>
-    </div>
-  </div>
 </template>
 
 <script setup lang="ts">

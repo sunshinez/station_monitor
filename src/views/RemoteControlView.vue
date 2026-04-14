@@ -1,56 +1,5 @@
 <template>
-  <div class="remote-control-page">
-    <!-- TopNavBar - 与DeviceControlView一致 -->
-    <header class="top-nav">
-      <div class="logo">XX地面站软件</div>
-      <nav class="main-nav">
-        <router-link to="/topology" class="nav-link">图形化监视</router-link>
-        <router-link to="/device-control" class="nav-link active">控制功能</router-link>
-        <router-link to="/task-status" class="nav-link">状态监视</router-link>
-        <router-link to="/task-macro" class="nav-link">任务管理</router-link>
-        <router-link to="/log-record" class="nav-link">日志管理</router-link>
-        <a href="#" class="nav-link">操作手册</a>
-        <router-link to="/file-transfer" class="nav-link">文件传输</router-link>
-      </nav>
-      <div class="user-actions">
-        <button class="icon-btn" title="设置">
-          <SettingsIcon class="icon" />
-        </button>
-        <button class="icon-btn" title="通知">
-          <NotificationIcon class="icon" />
-          <span class="notification-dot"></span>
-        </button>
-        <button class="icon-btn" title="用户账户">
-          <UserIcon class="icon" />
-        </button>
-      </div>
-    </header>
-
-    <div class="main-layout">
-      <!-- Side Navigation -->
-      <aside class="side-nav-control">
-        <div class="side-header">
-          <h2 class="side-title">控制功能</h2>
-        </div>
-        <nav class="side-menu">
-          <router-link to="/device-control" class="menu-item">
-            <span class="menu-icon-wrapper">
-              <TuneIcon class="menu-icon" />
-              <span>设备控制</span>
-            </span>
-            <span class="expand-icon">▼</span>
-          </router-link>
-          <router-link to="/remote-control" class="menu-item active">
-            <span class="menu-icon-wrapper">
-              <RemoteIcon class="menu-icon" />
-              <span>远程控制</span>
-            </span>
-          </router-link>
-        </nav>
-      </aside>
-
-      <!-- Main Content -->
-      <main class="main-content">
+  <main class="main-content">
         <div class="content-wrapper">
           <!-- Dashboard Header -->
           <div class="dashboard-header">
@@ -272,8 +221,6 @@
           </div>
         </div>
       </main>
-    </div>
-  </div>
 </template>
 
 <script setup lang="ts">

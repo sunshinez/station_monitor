@@ -1,32 +1,5 @@
 <template>
-  <div class="dashboard">
-    <!-- 顶部导航栏 - 全局统一 -->
-    <header class="top-nav">
-      <div class="logo">XX地面站软件</div>
-      <nav class="main-nav">
-        <router-link to="/topology" class="nav-link">图形化监视</router-link>
-        <router-link to="/device-control" class="nav-link">控制功能</router-link>
-        <router-link to="/task-status" class="nav-link">状态监视</router-link>
-        <router-link to="/task-macro" class="nav-link">任务管理</router-link>
-        <router-link to="/log-record" class="nav-link">日志管理</router-link>
-        <a href="#" class="nav-link">操作手册</a>
-        <router-link to="/file-transfer" class="nav-link">文件传输</router-link>
-      </nav>
-      <div class="user-actions">
-        <button class="icon-btn" title="设置">
-          <SettingsIcon class="icon" />
-        </button>
-        <button class="icon-btn" title="通知">
-          <NotificationIcon class="icon" />
-          <span class="notification-dot"></span>
-        </button>
-        <button class="icon-btn" title="用户账户" @click="logout">
-          <UserIcon class="icon" />
-        </button>
-      </div>
-    </header>
-
-    <main class="dashboard-content">
+  <main class="dashboard-content">
       <div class="welcome-card">
         <h2>欢迎访问</h2>
         <p>您已成功登录卫星地面站监控系统</p>
@@ -38,7 +11,6 @@
         </div>
       </div>
     </main>
-  </div>
 </template>
 
 <script setup lang="ts">
@@ -165,7 +137,7 @@ const logout = () => {
 }
 
 .dashboard-content {
-  padding: 88px 2rem 2rem;
+  padding: 24px 2rem 2rem;
   min-height: 100vh;
 }
 

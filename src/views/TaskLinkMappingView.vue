@@ -1,95 +1,5 @@
 <template>
-  <div class="task-link-mapping-page">
-    <!-- 顶部导航栏 - 全局统一 -->
-    <header class="top-nav">
-      <div class="logo">XX地面站软件</div>
-      <nav class="main-nav">
-        <router-link to="/topology" class="nav-link">图形化监视</router-link>
-        <router-link to="/device-control" class="nav-link">控制功能</router-link>
-        <router-link to="/task-status" class="nav-link">状态监视</router-link>
-        <router-link to="/task-macro" class="nav-link active">任务管理</router-link>
-        <router-link to="/log-record" class="nav-link">日志管理</router-link>
-        <a href="#" class="nav-link">操作手册</a>
-        <router-link to="/file-transfer" class="nav-link">文件传输</router-link>
-      </nav>
-      <div class="user-actions">
-        <button class="icon-btn" title="设置">
-          <SettingsIcon class="icon" />
-        </button>
-        <button class="icon-btn" title="通知">
-          <NotificationIcon class="icon" />
-          <span class="notification-dot"></span>
-        </button>
-        <button class="icon-btn" title="用户账户">
-          <UserIcon class="icon" />
-        </button>
-      </div>
-    </header>
-
-    <div class="main-layout">
-      <!-- 任务管理侧边栏 -->
-      <aside class="side-nav">
-        <div class="side-header">
-          <div class="side-title-row">
-            <BiotechIcon class="side-header-icon" />
-            <h2 class="side-title">任务管理</h2>
-          </div>
-          <p class="side-subtitle">MISSION CONTROL</p>
-        </div>
-        <nav class="side-menu">
-          <router-link to="/task-macro" class="side-link">
-            <SettingsInputIcon class="side-icon" />
-            <span>任务参数宏管理</span>
-          </router-link>
-          <a href="#" class="side-link active">
-            <HubIcon class="side-icon" />
-            <span>任务链路映射管理</span>
-          </a>
-          <router-link to="/task-script-editor" class="side-link">
-            <TerminalIcon class="side-icon" />
-            <span>脚本命令编辑</span>
-          </router-link>
-          <router-link to="/task-plan-template" class="side-link">
-            <DescriptionIcon class="side-icon" />
-            <span>操作计划模板</span>
-          </router-link>
-          <router-link to="/task-mission-param" class="side-link">
-            <InputIcon class="side-icon" />
-            <span>型号任务参数接收</span>
-          </router-link>
-          <router-link to="/task-plan-reception" class="side-link">
-            <DownloadIcon class="side-icon" />
-            <span>任务计划接收</span>
-          </router-link>
-          <router-link to="/task-plan-execution" class="side-link">
-            <EditCalendarIcon class="side-icon" />
-            <span>操作计划生成与执行</span>
-          </router-link>
-          <router-link to="/task-script-execution" class="side-link">
-            <PlayCircleIcon class="side-icon" />
-            <span>脚本执行</span>
-          </router-link>
-          <router-link to="/task-carrier-wave-monitor" class="side-link">
-            <SendIcon class="side-icon" />
-            <span>载波监视任务计划发送</span>
-          </router-link>
-          <router-link to="/task-central-dispatch" class="side-link">
-            <AltRouteIcon class="side-icon" />
-            <span>中心调度指令执行</span>
-          </router-link>
-          <router-link to="/task-local-dispatch" class="side-link">
-            <LanIcon class="side-icon" />
-            <span>本地调度执行</span>
-          </router-link>
-          <router-link to="/task-fault-diagnosis" class="side-link">
-            <BiotechIcon class="side-icon" />
-            <span>故障诊断</span>
-          </router-link>
-        </nav>
-      </aside>
-
-      <!-- 主内容区 -->
-      <main class="main-content">
+  <main class="main-content">
         <!-- 任务选择栏 -->
         <div class="mission-bar">
           <div class="mission-select-group">
@@ -251,26 +161,6 @@
           </div>
         </div>
       </main>
-
-      <!-- 底部状态栏 -->
-      <footer class="status-footer">
-        <div class="footer-left">
-          <div class="status-item">
-            <span class="status-dot-pulse"></span>
-            <span class="status-text">系统运行正常</span>
-          </div>
-          <div class="status-item">
-            <span class="status-dot-default"></span>
-            <span class="status-text">同步延迟: <span class="status-value">{{ syncDelay }}ms</span></span>
-          </div>
-        </div>
-        <div class="footer-right">
-          <span>世界协调时: <span class="time-value">{{ utcTime }}</span></span>
-          <span>恒星时: <span class="time-value">{{ lstTime }}</span></span>
-        </div>
-      </footer>
-    </div>
-  </div>
 </template>
 
 <script setup lang="ts">

@@ -1,69 +1,5 @@
 <template>
-  <div class="task-execution-page">
-    <!-- TopNavBar -->
-    <header class="top-nav">
-      <div class="logo">XX地面站软件</div>
-      <nav class="main-nav">
-        <router-link to="/topology" class="nav-link">图形化监视</router-link>
-        <router-link to="/device-control" class="nav-link">控制功能</router-link>
-        <router-link to="/task-status" class="nav-link active">状态监视</router-link>
-        <router-link to="/task-macro" class="nav-link">任务管理</router-link>
-        <router-link to="/log-record" class="nav-link">日志管理</router-link>
-        <a href="#" class="nav-link">操作手册</a>
-        <router-link to="/file-transfer" class="nav-link">文件传输</router-link>
-      </nav>
-      <div class="user-actions">
-        <button class="icon-btn" title="设置">
-          <SettingsIcon class="icon" />
-        </button>
-        <button class="icon-btn" title="通知">
-          <NotificationIcon class="icon" />
-          <span class="notification-dot"></span>
-        </button>
-        <button class="icon-btn" title="用户账户">
-          <UserIcon class="icon" />
-        </button>
-      </div>
-    </header>
-
-    <div class="main-layout">
-      <!-- Side Navigation -->
-      <aside class="side-nav">
-        <div class="side-header">
-          <h2 class="side-title">状态监视</h2>
-          <p class="side-subtitle">轨道状态</p>
-        </div>
-        <nav class="side-menu">
-          <router-link to="/task-status" class="side-link">
-            <MonitorIcon class="side-icon" />
-            <span>任务状态监视</span>
-          </router-link>
-          <a href="#" class="side-link">
-            <RemoteIcon class="side-icon" />
-            <span>测控状态监视</span>
-          </a>
-          <router-link to="/data-transmission" class="side-link">
-            <AntennaIcon class="side-icon" />
-            <span>数据传输监视</span>
-          </router-link>
-          <router-link to="/task-execution" class="side-link active">
-            <AssignmentIcon class="side-icon" />
-            <span>任务执行状态监视</span>
-          </router-link>
-        </nav>
-        <div class="side-footer">
-          <div class="health-card">
-            <div class="health-label">系统健康度</div>
-            <div class="health-value">
-              <span class="health-dot"></span>
-              <span class="health-text">正常 - 98.4%</span>
-            </div>
-          </div>
-        </div>
-      </aside>
-
-      <!-- Main Content -->
-      <main class="main-content">
+  <main class="main-content">
         <div class="content-wrapper">
           <!-- Page Header -->
           <div class="page-header">
@@ -241,8 +177,6 @@
           </div>
         </div>
       </main>
-    </div>
-  </div>
 </template>
 
 <script setup lang="ts">

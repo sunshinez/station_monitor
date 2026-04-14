@@ -1,112 +1,5 @@
 <template>
-  <div class="device-control-page">
-    <!-- TopNavBar - 与TopologyView一致 -->
-    <header class="top-nav">
-      <div class="logo">XX地面站软件</div>
-      <nav class="main-nav">
-        <router-link to="/topology" class="nav-link">图形化监视</router-link>
-        <router-link to="/device-control" class="nav-link active">控制功能</router-link>
-        <router-link to="/task-status" class="nav-link">状态监视</router-link>
-        <router-link to="/task-macro" class="nav-link">任务管理</router-link>
-        <router-link to="/log-record" class="nav-link">日志管理</router-link>
-        <a href="#" class="nav-link">操作手册</a>
-        <router-link to="/file-transfer" class="nav-link">文件传输</router-link>
-      </nav>
-      <div class="user-actions">
-        <button class="icon-btn" title="设置">
-          <SettingsIcon class="icon" />
-        </button>
-        <button class="icon-btn" title="通知">
-          <NotificationIcon class="icon" />
-          <span class="notification-dot"></span>
-        </button>
-        <button class="icon-btn" title="用户账户">
-          <UserIcon class="icon" />
-        </button>
-      </div>
-    </header>
-
-    <div class="main-layout">
-      <!-- Side Navigation - 设备控制专用菜单 -->
-      <aside class="side-nav-control">
-        <div class="side-header">
-          <h2 class="side-title">控制终端</h2>
-        </div>
-        <nav class="side-menu">
-          <!-- Level 1: 设备控制 (Selected) -->
-          <div class="menu-group">
-            <button class="menu-level1 active" @click="toggleMenu('deviceControl')">
-              <span class="menu-icon-wrapper">
-                <AntennaIcon class="menu-icon" />
-                <span>设备控制</span>
-              </span>
-              <span class="expand-icon" :class="{ expanded: expandedMenus.deviceControl }">▼</span>
-            </button>
-            <!-- Level 2 -->
-            <div class="menu-level2-container" v-show="expandedMenus.deviceControl">
-              <!-- 天线伺服设备 (Expanded) -->
-              <div class="menu-group">
-                <button class="menu-level2" :class="{ active: expandedMenus.antenna }" @click="toggleMenu('antenna')">
-                  <span class="level2-dot" :class="{ active: expandedMenus.antenna }"></span>
-                  <span>天线伺服设备</span>
-                  <span class="expand-icon" :class="{ expanded: expandedMenus.antenna }">▼</span>
-                </button>
-                <!-- Level 3 -->
-                <div class="menu-level3-container" v-show="expandedMenus.antenna">
-                  <a
-                    href="#"
-                    class="menu-level3"
-                    :class="{ active: selectedDevice === 'antenna-01' }"
-                    @click.prevent="selectDevice('antenna-01')"
-                  >
-                    标准测控天线-01
-                  </a>
-                  <a
-                    href="#"
-                    class="menu-level3"
-                    :class="{ active: selectedDevice === 'antenna-02' }"
-                    @click.prevent="selectDevice('antenna-02')"
-                  >
-                    标准测控天线-02
-                  </a>
-                </div>
-              </div>
-              <!-- 变频设备 -->
-              <button class="menu-level2" @click="selectDevice('converter')">
-                <span class="level2-dot"></span>
-                <span>变频设备</span>
-              </button>
-              <!-- 数传基带设备 -->
-              <button class="menu-level2" @click="selectDevice('baseband')">
-                <span class="level2-dot"></span>
-                <span>数传基带设备</span>
-              </button>
-              <!-- 数据分发与存储设备 -->
-              <button class="menu-level2" @click="selectDevice('storage')">
-                <span class="level2-dot"></span>
-                <span>数据分发与存储设备</span>
-              </button>
-              <!-- 环境设备 -->
-              <button class="menu-level2" @click="selectDevice('environment')">
-                <span class="level2-dot"></span>
-                <span>环境设备</span>
-              </button>
-            </div>
-          </div>
-          <!-- Level 1: 远程控制 -->
-          <div class="menu-group">
-            <router-link to="/remote-control" class="menu-level1">
-              <span class="menu-icon-wrapper">
-                <RemoteIcon class="menu-icon" />
-                <span>远程控制</span>
-              </span>
-            </router-link>
-          </div>
-        </nav>
-      </aside>
-
-      <!-- Main Content -->
-      <main class="main-content">
+  <main class="main-content">
         <div class="content-wrapper">
           <!-- Header Section -->
           <div class="page-header">
@@ -211,27 +104,6 @@
           </div>
         </div>
       </main>
-    </div>
-
-    <!-- Status Bar Footer -->
-    <footer class="status-footer">
-      <div class="footer-left">
-        <div class="status-item">
-          <span class="status-dot success"></span>
-          <span class="status-text">服务器连接: 正常</span>
-        </div>
-        <div class="status-item">
-          <span class="status-dot success"></span>
-          <span class="status-text">射频链路: 已锁定</span>
-        </div>
-      </div>
-      <div class="footer-right">
-        <span>丢包率: 0.00%</span>
-        <span>延迟: 14ms</span>
-        <span class="version">GND-V.2.4.1</span>
-      </div>
-    </footer>
-  </div>
 </template>
 
 <script setup lang="ts">
@@ -342,6 +214,22 @@ const selectDevice = (device: string) => {
     deviceInfo.value = deviceNames[device]
   }
 }
+
+// 监听全局侧边栏动作
+const handleSidebarAction = (e: Event) => {
+  const action = (e as CustomEvent).detail
+  if (typeof action === 'string' && action.startsWith('device:')) {
+    selectDevice(action.replace('device:', ''))
+  }
+}
+
+onMounted(() => {
+  document.addEventListener('sidebar-action', handleSidebarAction)
+})
+
+onUnmounted(() => {
+  document.removeEventListener('sidebar-action', handleSidebarAction)
+})
 
 // 切换解锁状态
 const toggleUnlock = (index: number) => {

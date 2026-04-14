@@ -1,52 +1,5 @@
 <template>
-  <div class="log-query-page">
-    <!-- TopNavBar -->
-    <header class="top-nav">
-      <div class="logo">XX地面站软件</div>
-      <nav class="main-nav">
-        <router-link to="/topology" class="nav-link">图形化监视</router-link>
-        <router-link to="/device-control" class="nav-link">控制功能</router-link>
-        <router-link to="/task-status" class="nav-link">状态监视</router-link>
-        <router-link to="/task-macro" class="nav-link">任务管理</router-link>
-        <router-link to="/log-record" class="nav-link active">日志管理</router-link>
-        <a href="#" class="nav-link">操作手册</a>
-        <router-link to="/file-transfer" class="nav-link">文件传输</router-link>
-      </nav>
-      <div class="user-actions">
-        <button class="icon-btn" title="设置">
-          <SettingsIcon class="icon" />
-        </button>
-        <button class="icon-btn" title="通知">
-          <NotificationIcon class="icon" />
-          <span class="notification-dot"></span>
-        </button>
-        <button class="icon-btn" title="用户账户" @click="logout">
-          <UserIcon class="icon" />
-        </button>
-      </div>
-    </header>
-
-    <div class="main-layout">
-      <!-- SideNavBar -->
-      <aside class="side-nav">
-        <div class="side-header">
-          <h2 class="side-title">日志管理</h2>
-        </div>
-        <nav class="side-menu">
-          <router-link to="/log-record" class="side-link">
-            <DocIcon class="side-icon" />
-            <span>日志记录</span>
-          </router-link>
-          <router-link to="/log-query" class="side-link active">
-            <SearchIcon class="side-icon" />
-            <span>日志查询</span>
-          </router-link>
-        </nav>
-
-      </aside>
-
-      <!-- Main Content Area -->
-      <main class="main-content">
+  <main class="main-content">
         <div class="content-wrapper">
           <!-- Header Section -->
           <div class="page-header">
@@ -229,8 +182,6 @@
           </section>
         </div>
       </main>
-    </div>
-  </div>
 </template>
 
 <script setup lang="ts">
