@@ -375,6 +375,7 @@ onUnmounted(() => {
   flex: 1;
   overflow: hidden;
   height: calc(100vh - 64px);
+  margin-top: 64px;
 }
 
 .top-nav {
