@@ -8,9 +8,9 @@
         <router-link to="/device-control" class="nav-link">控制功能</router-link>
         <router-link to="/task-status" class="nav-link">状态监视</router-link>
         <router-link to="/task-macro" class="nav-link">任务管理</router-link>
-        <a href="#" class="nav-link">日志管理</a>
+        <router-link to="/log-record" class="nav-link">日志管理</router-link>
         <a href="#" class="nav-link">操作手册</a>
-        <a href="#" class="nav-link">文件传输</a>
+        <router-link to="/file-transfer" class="nav-link">文件传输</router-link>
       </nav>
       <div class="user-actions">
         <button class="icon-btn" title="设置">

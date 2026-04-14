@@ -118,6 +118,21 @@ const router = createRouter({
       path: '/task-fault-diagnosis',
       name: 'task-fault-diagnosis',
       component: () => import('../views/TaskFaultDiagnosisView.vue')
+    },
+    {
+      path: '/log-record',
+      name: 'log-record',
+      component: () => import('../views/LogRecordView.vue')
+    },
+    {
+      path: '/log-query',
+      name: 'log-query',
+      component: () => import('../views/LogQueryView.vue')
+    },
+    {
+      path: '/file-transfer',
+      name: 'file-transfer',
+      component: () => import('../views/FileTransferView.vue')
     }
   ]
 })
