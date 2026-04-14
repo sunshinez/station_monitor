@@ -1,3 +1,6 @@
 <template>
-  <div>Hello Vercel</div>
+  <router-view />
 </template>
+
+<script setup lang="ts">
+</script>
