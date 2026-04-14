@@ -4,8 +4,6 @@ import { resolve } from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  root: '.',
-  publicDir: false,
   plugins: [vue()],
   resolve: {
     alias: {
