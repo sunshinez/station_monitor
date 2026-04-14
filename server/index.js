@@ -131,7 +131,13 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../dist/index.html'));
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-  console.log(`默认测试用户: test / 123456`);
-});
+// 仅在直接运行此文件时启动 HTTP 服务（本地开发）
+const isMainModule = process.argv[1] && import.meta.url.startsWith('file://') && import.meta.url.endsWith(process.argv[1].replace(/\\/g, '/'));
+if (isMainModule) {
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+    console.log(`默认测试用户: test / 123456`);
+  });
+}
+
+export default app;
