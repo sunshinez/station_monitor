@@ -280,11 +280,11 @@ onUnmounted(() => {
 <style scoped>
 .matrix-page {
   min-height: 100vh;
-  background-color: #0b0c10;
-  background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.02) 1px, transparent 0);
+  background-color: #EDEFF3;
+  background-image: radial-gradient(circle at 2px 2px, rgba(0,0,0,0.02) 1px, transparent 0);
   background-size: 40px 40px;
-  color: #e4e1e9;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #4B4C57;
+  font-family: 'Microsoft YaHei', 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
   user-select: none;
 }
 
@@ -295,8 +295,8 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   height: 64px;
-  background: rgba(11, 12, 16, 0.8);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(247, 248, 251, 0.95);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -308,7 +308,7 @@ onUnmounted(() => {
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.15em;
-  color: #e4e1e9;
+  color: #4B4C57;
   text-transform: uppercase;
 }
 
@@ -319,7 +319,7 @@ onUnmounted(() => {
 
 .nav-link {
   font-size: 14px;
-  color: #94a3b8;
+  color: #9C9DA6;
   text-decoration: none;
   transition: color 0.2s;
   padding: 20px 0;
@@ -328,8 +328,8 @@ onUnmounted(() => {
 
 .nav-link:hover,
 .nav-link.active {
-  color: #e4e1e9;
-  border-bottom-color: #e4e1e9;
+  color: #4B4C57;
+  border-bottom-color: #4B4C57;
 }
 
 .user-actions {
@@ -343,14 +343,14 @@ onUnmounted(() => {
   border-radius: 50%;
   background: none;
   border: none;
-  color: #94a3b8;
+  color: #9C9DA6;
   cursor: pointer;
   padding: 8px;
   transition: color 0.2s;
 }
 
 .icon-btn:hover {
-  color: #e4e1e9;
+  color: #4B4C57;
 }
 
 .icon {
@@ -365,7 +365,7 @@ onUnmounted(() => {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #ffb4ab;
+  background: #ED3B3B;
 }
 
 
@@ -376,8 +376,8 @@ onUnmounted(() => {
   top: 64px;
   bottom: 0;
   width: 256px;
-  background: #0b0c10;
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  background: #EDEFF3;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   z-index: 40;
@@ -389,7 +389,7 @@ onUnmounted(() => {
 
 .side-title {
   font-size: 12px;
-  color: #e4e1e9;
+  color: #4B4C57;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -398,7 +398,7 @@ onUnmounted(() => {
 
 .side-subtitle {
   font-size: 10px;
-  color: #64748b;
+  color: #9C9DA6;
   letter-spacing: 0.2em;
   margin: 0;
 }
@@ -413,7 +413,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 12px;
   padding: 12px 24px;
-  color: #64748b;
+  color: #9C9DA6;
   text-decoration: none;
   font-size: 12px;
   text-transform: uppercase;
@@ -423,14 +423,14 @@ onUnmounted(() => {
 }
 
 .side-link:hover {
-  color: #93c5fd;
-  background: rgba(255, 255, 255, 0.05);
+  color: #1C6AFF;
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .side-link.active {
-  color: #e4e1e9;
-  background: rgba(59, 130, 246, 0.1);
-  border-right-color: #e4e1e9;
+  color: #4B4C57;
+  background: rgba(28, 106, 255, 0.1);
+  border-right-color: #4B4C57;
   font-weight: 600;
 }
 
@@ -445,10 +445,10 @@ onUnmounted(() => {
 }
 
 .health-card {
-  background: rgba(27, 27, 32, 0.5);
+  background: rgba(247, 248, 251, 0.8);
   padding: 16px;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .health-header {
@@ -460,21 +460,21 @@ onUnmounted(() => {
 
 .health-label {
   font-size: 10px;
-  color: #64748b;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
 .health-bar {
   height: 4px;
-  background: #1f2937;
+  background: #DFE3EA;
   border-radius: 2px;
   overflow: hidden;
 }
 
 .health-fill {
   height: 100%;
-  background: #60a5fa;
+  background: #1C6AFF;
   border-radius: 2px;
   transition: width 0.3s;
 }
@@ -493,7 +493,7 @@ onUnmounted(() => {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   padding-bottom: 24px;
   margin-bottom: 32px;
 }
@@ -501,16 +501,16 @@ onUnmounted(() => {
 .page-title {
   font-size: 36px;
   font-weight: 700;
-  color: #e4e1e9;
+  color: #4B4C57;
   margin: 0 0 8px 0;
   text-transform: uppercase;
   letter-spacing: -0.02em;
 }
 
 .page-subtitle {
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
   font-size: 11px;
-  color: #8c909f;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   margin: 0;
@@ -536,16 +536,16 @@ onUnmounted(() => {
 
 .status-dot.success {
   background: #4ae176;
-  box-shadow: 0 0 12px rgba(74, 225, 118, 0.4);
+  box-shadow: 0 0 12px rgba(0, 167, 75, 0.3);
 }
 
 .status-dot.disconnected {
-  background: #35343a;
+  background: #F7F8FB;
 }
 
 .status-label {
   font-size: 11px;
-  color: #8c909f;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
@@ -553,7 +553,7 @@ onUnmounted(() => {
 .status-divider {
   width: 1px;
   height: 32px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .refresh-btn {
@@ -561,17 +561,17 @@ onUnmounted(() => {
   align-items: center;
   gap: 8px;
   padding: 8px 16px;
-  background: #2a292f;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #e4e1e9;
-  font-family: 'Fira Code', monospace;
+  background: #F7F8FB;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  color: #4B4C57;
+  font-family: 'Microsoft YaHei', monospace;
   font-size: 11px;
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .refresh-btn:hover {
-  background: #35343a;
+  background: #F7F8FB;
 }
 
 .refresh-icon {
@@ -586,10 +586,10 @@ onUnmounted(() => {
 
 /* Matrix Section */
 .matrix-section {
-  background: rgba(27, 27, 32, 0.3);
+  background: rgba(247, 248, 251, 0.6);
   padding: 40px;
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   margin-bottom: 32px;
 }
 
@@ -605,7 +605,7 @@ onUnmounted(() => {
 .axis-label-top span {
   font-size: 10px;
   font-weight: 700;
-  color: rgba(164, 201, 255, 0.6);
+  color: rgba(28, 106, 255, 0.5);
   text-transform: uppercase;
   letter-spacing: 0.4em;
 }
@@ -625,9 +625,9 @@ onUnmounted(() => {
 }
 
 .axis-label {
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
   font-size: 10px;
-  color: #8c909f;
+  color: #9C9DA6;
   text-transform: uppercase;
   text-align: right;
 }
@@ -645,9 +645,9 @@ onUnmounted(() => {
 }
 
 .col-header {
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
   font-size: 10px;
-  color: #8c909f;
+  color: #9C9DA6;
   text-transform: uppercase;
 }
 
@@ -659,7 +659,7 @@ onUnmounted(() => {
   background: rgba(0, 0, 0, 0.2);
   padding: 32px;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .matrix-cell {
@@ -672,7 +672,7 @@ onUnmounted(() => {
 }
 
 .matrix-cell:hover {
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(0, 0, 0, 0.02);
 }
 
 .cell-dot {
@@ -683,14 +683,14 @@ onUnmounted(() => {
 .cell-dot.inactive {
   width: 6px;
   height: 6px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .cell-dot.active {
   width: 10px;
   height: 10px;
   background: #4ae176;
-  box-shadow: 0 0 12px rgba(74, 225, 118, 0.4);
+  box-shadow: 0 0 12px rgba(0, 167, 75, 0.3);
 }
 
 .axis-label-right {
@@ -704,7 +704,7 @@ onUnmounted(() => {
 .axis-label-right span {
   font-size: 10px;
   font-weight: 700;
-  color: rgba(164, 201, 255, 0.6);
+  color: rgba(28, 106, 255, 0.5);
   text-transform: uppercase;
   letter-spacing: 0.4em;
   white-space: nowrap;
@@ -721,10 +721,10 @@ onUnmounted(() => {
 }
 
 .panel {
-  background: rgba(27, 27, 32, 0.3);
+  background: rgba(247, 248, 251, 0.6);
   padding: 24px;
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .panel-header {
@@ -759,22 +759,22 @@ onUnmounted(() => {
 }
 
 .panel-icon.primary {
-  color: #a4c9ff;
+  color: #1C6AFF;
 }
 
 .panel-title {
   font-size: 12px;
   font-weight: 600;
-  color: #e4e1e9;
+  color: #4B4C57;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin: 0;
 }
 
 .auto-update {
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
   font-size: 10px;
-  color: #8c909f;
+  color: #9C9DA6;
 }
 
 /* Health Panel */
@@ -791,16 +791,16 @@ onUnmounted(() => {
 }
 
 .health-name {
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
   font-size: 11px;
-  color: #8c909f;
+  color: #9C9DA6;
   text-transform: uppercase;
 }
 
 .health-value {
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
   font-size: 11px;
-  color: #e4e1e9;
+  color: #4B4C57;
 }
 
 .health-value.highlight {
@@ -820,10 +820,10 @@ onUnmounted(() => {
 .log-item {
   display: flex;
   gap: 8px;
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
   font-size: 10px;
   padding-bottom: 8px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .log-item.dimmed {
@@ -831,17 +831,17 @@ onUnmounted(() => {
 }
 
 .log-time {
-  color: #8c909f;
+  color: #9C9DA6;
   min-width: 60px;
 }
 
 .log-type {
-  color: #a4c9ff;
+  color: #1C6AFF;
   min-width: 40px;
 }
 
 .log-message {
-  color: #e4e1e9;
+  color: #4B4C57;
   flex: 1;
 }
 
@@ -863,7 +863,7 @@ onUnmounted(() => {
 }
 
 .scrollbar-thin::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.06);
   border-radius: 10px;
 }
 
@@ -884,15 +884,15 @@ onUnmounted(() => {
 .footer-bar {
   width: 4px;
   height: 16px;
-  background: rgba(164, 201, 255, 0.4);
+  background: rgba(28, 106, 255, 0.4);
 }
 
 .footer-bar.active {
-  background: #a4c9ff;
+  background: #1C6AFF;
 }
 
 .footer-text {
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
   font-size: 10px;
   letter-spacing: 0.5em;
   text-transform: uppercase;

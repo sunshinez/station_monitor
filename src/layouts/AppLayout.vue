@@ -16,7 +16,7 @@ import AppSidebar from '@/components/layout/AppSidebar.vue'
 <style scoped>
 .app-layout {
   min-height: 100vh;
-  background-color: var(--bg-primary, #0B0B10);
+  background-color: var(--bg-primary, #EDEFF3);
 }
 
 .app-main {

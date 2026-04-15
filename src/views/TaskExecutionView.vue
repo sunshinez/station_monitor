@@ -291,9 +291,9 @@ onUnmounted(() => {
 <style scoped>
 .task-execution-page {
   min-height: 100vh;
-  background-color: #131318;
-  color: #e4e1e9;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #EDEFF3;
+  color: #4B4C57;
+  font-family: 'Microsoft YaHei', 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
   display: flex;
   flex-direction: column;
 }
@@ -312,8 +312,8 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   height: 64px;
-  background: #131318;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: #EDEFF3;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -325,7 +325,7 @@ onUnmounted(() => {
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.15em;
-  color: #60a5fa;
+  color: #1C6AFF;
   text-transform: uppercase;
 }
 
@@ -336,7 +336,7 @@ onUnmounted(() => {
 
 .nav-link {
   font-size: 14px;
-  color: #94a3b8;
+  color: #9C9DA6;
   text-decoration: none;
   transition: color 0.2s;
   padding-bottom: 4px;
@@ -344,12 +344,12 @@ onUnmounted(() => {
 }
 
 .nav-link:hover {
-  color: #e4e1e9;
+  color: #4B4C57;
 }
 
 .nav-link.active {
-  color: #60a5fa;
-  border-bottom-color: #60a5fa;
+  color: #1C6AFF;
+  border-bottom-color: #1C6AFF;
   font-weight: 600;
 }
 
@@ -363,7 +363,7 @@ onUnmounted(() => {
   position: relative;
   background: none;
   border: none;
-  color: #94a3b8;
+  color: #9C9DA6;
   cursor: pointer;
   padding: 8px;
   border-radius: 50%;
@@ -371,8 +371,8 @@ onUnmounted(() => {
 }
 
 .icon-btn:hover {
-  background: #1b1b20;
-  color: #e4e1e9;
+  background: #F7F8FB;
+  color: #4B4C57;
 }
 
 .icon {
@@ -387,14 +387,14 @@ onUnmounted(() => {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #ffb4ab;
+  background: #ED3B3B;
 }
 
 /* Side Navigation */
 .side-nav {
   width: 256px;
-  background: #1b1b20;
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  background: #F7F8FB;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   z-index: 40;
@@ -409,13 +409,13 @@ onUnmounted(() => {
 .side-title {
   font-size: 18px;
   font-weight: 700;
-  color: #60a5fa;
+  color: #1C6AFF;
   margin: 0 0 4px 0;
 }
 
 .side-subtitle {
   font-size: 10px;
-  color: #64748b;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   margin: 0;
@@ -431,7 +431,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 12px;
   padding: 16px 24px;
-  color: #64748b;
+  color: #9C9DA6;
   text-decoration: none;
   font-size: 13px;
   transition: all 0.2s;
@@ -439,14 +439,14 @@ onUnmounted(() => {
 }
 
 .side-link:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: #e4e1e9;
+  background: rgba(0, 0, 0, 0.05);
+  color: #4B4C57;
 }
 
 .side-link.active {
-  background: rgba(59, 130, 246, 0.1);
-  border-right-color: #60a5fa;
-  color: #60a5fa;
+  background: rgba(28, 106, 255, 0.1);
+  border-right-color: #1C6AFF;
+  color: #1C6AFF;
 }
 
 .side-icon {
@@ -460,15 +460,15 @@ onUnmounted(() => {
 }
 
 .health-card {
-  background: #0e0e13;
+  background: #F2F4F7;
   padding: 16px;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .health-label {
   font-size: 10px;
-  color: #64748b;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 8px;
@@ -485,20 +485,20 @@ onUnmounted(() => {
   height: 8px;
   border-radius: 50%;
   background: #4ae176;
-  box-shadow: 0 0 8px rgba(74, 225, 118, 0.5);
+  box-shadow: 0 0 8px rgba(0, 167, 75, 0.5);
 }
 
 .health-text {
   font-size: 12px;
-  font-family: 'Fira Code', monospace;
-  color: #e4e1e9;
+  font-family: 'Microsoft YaHei', monospace;
+  color: #4B4C57;
 }
 
 /* Main Content */
 .main-content {
   flex: 1;
   overflow-y: auto;
-  background: #131318;
+  background: #EDEFF3;
   padding: 32px;
 }
 
@@ -517,14 +517,14 @@ onUnmounted(() => {
 .page-title {
   font-size: 28px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
   margin: 0 0 4px 0;
 }
 
 .page-subtitle {
   font-size: 12px;
-  color: #94a3b8;
-  font-family: 'Fira Code', monospace;
+  color: #9C9DA6;
+  font-family: 'Microsoft YaHei', monospace;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin: 0;
@@ -532,7 +532,7 @@ onUnmounted(() => {
 
 .utc-label {
   font-size: 10px;
-  color: #64748b;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 4px;
@@ -540,8 +540,8 @@ onUnmounted(() => {
 
 .utc-time {
   font-size: 20px;
-  font-family: 'Fira Code', monospace;
-  color: #a4c9ff;
+  font-family: 'Microsoft YaHei', monospace;
+  color: #1C6AFF;
 }
 
 /* Content Grid */
@@ -574,10 +574,10 @@ onUnmounted(() => {
 
 /* Executing Card */
 .executing-card {
-  background: #1b1b20;
+  background: #F7F8FB;
   border-radius: 8px;
   padding: 24px;
-  border-left: 4px solid #60a5fa;
+  border-left: 4px solid #1C6AFF;
 }
 
 .executing-header {
@@ -593,8 +593,8 @@ onUnmounted(() => {
 
 .executing-badge {
   display: inline-block;
-  background: rgba(96, 165, 250, 0.2);
-  color: #60a5fa;
+  background: rgba(28, 106, 255, 0.2);
+  color: #1C6AFF;
   font-size: 10px;
   padding: 2px 8px;
   border-radius: 4px;
@@ -607,14 +607,14 @@ onUnmounted(() => {
 .executing-title {
   font-size: 22px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
   margin: 0 0 4px 0;
 }
 
 .executing-uuid {
   font-size: 12px;
-  color: #64748b;
-  font-family: 'Fira Code', monospace;
+  color: #9C9DA6;
+  font-family: 'Microsoft YaHei', monospace;
   margin: 0;
 }
 
@@ -630,7 +630,7 @@ onUnmounted(() => {
 
 .timer-label {
   font-size: 10px;
-  color: #64748b;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin: 0 0 4px 0;
@@ -638,19 +638,19 @@ onUnmounted(() => {
 
 .timer-value {
   font-size: 18px;
-  font-family: 'Fira Code', monospace;
-  color: #ffffff;
+  font-family: 'Microsoft YaHei', monospace;
+  color: #4B4C57;
   margin: 0;
 }
 
 .timer-value.remaining {
-  color: #a4c9ff;
+  color: #1C6AFF;
 }
 
 .timer-divider {
   width: 1px;
   height: 32px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.06);
 }
 
 /* Progress Section */
@@ -662,14 +662,14 @@ onUnmounted(() => {
   display: flex;
   justify-content: space-between;
   font-size: 11px;
-  font-family: 'Fira Code', monospace;
-  color: #64748b;
+  font-family: 'Microsoft YaHei', monospace;
+  color: #9C9DA6;
   margin-bottom: 8px;
 }
 
 .progress-bar {
   height: 12px;
-  background: #0e0e13;
+  background: #F2F4F7;
   border-radius: 6px;
   overflow: hidden;
   position: relative;
@@ -677,7 +677,7 @@ onUnmounted(() => {
 
 .progress-fill {
   height: 100%;
-  background: #60a5fa;
+  background: #1C6AFF;
   border-radius: 6px;
   transition: width 1s linear;
 }
@@ -705,7 +705,7 @@ onUnmounted(() => {
 }
 
 .metric-item {
-  background: #0e0e13;
+  background: #F2F4F7;
   padding: 16px;
   border-radius: 6px;
   display: flex;
@@ -716,23 +716,23 @@ onUnmounted(() => {
 
 .metric-label-small {
   font-size: 10px;
-  color: #64748b;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
 .metric-value-green {
   font-size: 14px;
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
   font-weight: 700;
   color: #4ae176;
 }
 
 .metric-value-blue {
   font-size: 14px;
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
   font-weight: 700;
-  color: #60a5fa;
+  color: #1C6AFF;
 }
 
 .subsystem-dots {
@@ -745,21 +745,21 @@ onUnmounted(() => {
   height: 8px;
   border-radius: 50%;
   background: #4ae176;
-  box-shadow: 0 0 6px rgba(74, 225, 118, 0.5);
+  box-shadow: 0 0 6px rgba(0, 167, 75, 0.5);
 }
 
 /* Resource Card */
 .resource-card {
-  background: #1b1b20;
+  background: #F7F8FB;
   border-radius: 8px;
   padding: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   height: 100%;
 }
 
 .resource-title {
   font-size: 11px;
-  color: #64748b;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin: 0 0 24px 0;
@@ -785,16 +785,16 @@ onUnmounted(() => {
 }
 
 .resource-header span:first-child {
-  color: #e4e1e9;
+  color: #4B4C57;
 }
 
 .resource-percent {
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
   font-weight: 700;
 }
 
 .text-blue {
-  color: #60a5fa;
+  color: #1C6AFF;
 }
 
 .text-green {
@@ -802,12 +802,12 @@ onUnmounted(() => {
 }
 
 .text-red {
-  color: #ffb4ab;
+  color: #ED3B3B;
 }
 
 .resource-bar {
   height: 6px;
-  background: #0e0e13;
+  background: #F2F4F7;
   border-radius: 3px;
   overflow: hidden;
 }
@@ -818,7 +818,7 @@ onUnmounted(() => {
 }
 
 .resource-fill.blue {
-  background: #60a5fa;
+  background: #1C6AFF;
 }
 
 .resource-fill.green {
@@ -826,12 +826,12 @@ onUnmounted(() => {
 }
 
 .resource-fill.red {
-  background: #ffb4ab;
+  background: #ED3B3B;
 }
 
 .bandwidth-section {
   padding-top: 16px;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .bandwidth-row {
@@ -842,24 +842,24 @@ onUnmounted(() => {
 
 .bandwidth-label {
   font-size: 11px;
-  color: #94a3b8;
+  color: #9C9DA6;
 }
 
 .bandwidth-value {
   font-size: 11px;
-  font-family: 'Fira Code', monospace;
-  background: #2a292f;
+  font-family: 'Microsoft YaHei', monospace;
+  background: #F7F8FB;
   padding: 4px 8px;
   border-radius: 4px;
-  color: #e4e1e9;
+  color: #4B4C57;
 }
 
 /* Plans Card */
 .plans-card {
-  background: #1b1b20;
+  background: #F7F8FB;
   border-radius: 8px;
   padding: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .plans-header {
@@ -871,7 +871,7 @@ onUnmounted(() => {
 
 .plans-title {
   font-size: 11px;
-  color: #64748b;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin: 0;
@@ -880,7 +880,7 @@ onUnmounted(() => {
 .view-all-btn {
   background: none;
   border: none;
-  color: #60a5fa;
+  color: #1C6AFF;
   font-size: 10px;
   font-weight: 700;
   text-transform: uppercase;
@@ -901,18 +901,18 @@ onUnmounted(() => {
 
 .plans-table th {
   font-size: 10px;
-  color: #64748b;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-weight: 500;
   padding: 12px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .plans-table td {
   padding: 16px 0;
   font-size: 13px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.02);
 }
 
 .plans-table tr:last-child td {
@@ -920,23 +920,23 @@ onUnmounted(() => {
 }
 
 .plan-name {
-  color: #ffffff;
+  color: #4B4C57;
   font-weight: 600;
 }
 
 .plan-time {
-  color: #64748b;
-  font-family: 'Fira Code', monospace;
+  color: #9C9DA6;
+  font-family: 'Microsoft YaHei', monospace;
   font-size: 12px;
 }
 
 .resource-tag {
-  background: #2a292f;
+  background: #F7F8FB;
   padding: 2px 8px;
   border-radius: 4px;
   font-size: 10px;
-  font-family: 'Fira Code', monospace;
-  color: #94a3b8;
+  font-family: 'Microsoft YaHei', monospace;
+  color: #9C9DA6;
 }
 
 .priority-badge {
@@ -945,11 +945,11 @@ onUnmounted(() => {
 }
 
 .priority-badge.high {
-  color: #f59e0b;
+  color: #ED6B01;
 }
 
 .priority-badge.normal {
-  color: #64748b;
+  color: #9C9DA6;
 }
 
 .text-right {
@@ -958,10 +958,10 @@ onUnmounted(() => {
 
 /* Completed Card */
 .completed-card {
-  background: #1b1b20;
+  background: #F7F8FB;
   border-radius: 8px;
   padding: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .completed-header {
@@ -973,7 +973,7 @@ onUnmounted(() => {
 
 .completed-title {
   font-size: 11px;
-  color: #64748b;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin: 0;
@@ -982,12 +982,12 @@ onUnmounted(() => {
 .history-icon {
   width: 16px;
   height: 16px;
-  color: #64748b;
+  color: #9C9DA6;
   cursor: pointer;
 }
 
 .history-icon:hover {
-  color: #e4e1e9;
+  color: #4B4C57;
 }
 
 .completed-list {
@@ -999,14 +999,14 @@ onUnmounted(() => {
 .completed-item {
   display: flex;
   gap: 12px;
-  background: #0e0e13;
+  background: #F2F4F7;
   padding: 12px;
   border-radius: 6px;
   transition: background 0.2s;
 }
 
 .completed-item:hover {
-  background: #2a292f;
+  background: #F7F8FB;
 }
 
 .status-bar {
@@ -1017,12 +1017,12 @@ onUnmounted(() => {
 
 .status-bar.success {
   background: #4ae176;
-  box-shadow: 0 0 6px rgba(74, 225, 118, 0.5);
+  box-shadow: 0 0 6px rgba(0, 167, 75, 0.5);
 }
 
 .status-bar.error {
-  background: #ffb4ab;
-  box-shadow: 0 0 6px rgba(255, 180, 171, 0.5);
+  background: #ED3B3B;
+  box-shadow: 0 0 6px rgba(237, 59, 59, 0.3);
 }
 
 .completed-content {
@@ -1038,7 +1038,7 @@ onUnmounted(() => {
 .completed-name {
   font-size: 13px;
   font-weight: 600;
-  color: #ffffff;
+  color: #4B4C57;
   margin: 0;
 }
 
@@ -1054,23 +1054,23 @@ onUnmounted(() => {
 }
 
 .completed-status.error {
-  color: #ffb4ab;
+  color: #ED3B3B;
 }
 
 .completed-time {
   font-size: 10px;
-  color: #64748b;
-  font-family: 'Fira Code', monospace;
+  color: #9C9DA6;
+  font-family: 'Microsoft YaHei', monospace;
 }
 
 .completed-duration {
   font-size: 10px;
-  color: #64748b;
-  font-family: 'Fira Code', monospace;
+  color: #9C9DA6;
+  font-family: 'Microsoft YaHei', monospace;
 }
 
 .completed-duration.error-text {
-  color: rgba(255, 180, 171, 0.7);
+  color: rgba(237, 59, 59, 0.7);
 }
 
 /* Responsive */

@@ -1,39 +1,61 @@
-/* CSS Variables */
+/* CSS Variables - 星网规范配色 */
 :root {
-  --color-primary: #60A5FA;
-  --color-success: #4ae176;
-  --bg-primary: #0B0B10;
-  --bg-card: #0F172A;
-  --border-card: #1E293B;
-  --text-primary: #e2e8f0;
-  --text-white: #ffffff;
-  --text-dim: #94A3B8;
-  --text-muted: #64748b;
-  --font-headline: 'Space Grotesk', system-ui, -apple-system, sans-serif;
-  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-mono: 'Fira Code', 'Courier New', monospace;
-}
+  /* 主色 */
+  --color-primary: #1C6AFF;
+  --color-primary-hover: rgba(28, 106, 255, 0.85);
+  --color-primary-light: rgba(28, 106, 255, 0.1);
 
-/* Font Face - Using system fonts as fallback for offline deployment */
-@font-face {
-  font-family: 'Space Grotesk';
-  src: local('Space Grotesk'), local('SpaceGrotesk');
-  font-weight: 300 700;
-  font-display: swap;
-}
+  /* 中性色 */
+  --nav-bg: #EDEFF3;
+  --nav-sidebar-bg: #EDEFF3;
+  --nav-text: #98AAE7;
+  --bg-page: #EDEFF3;
+  --bg-card: #F7F8FB;
+  --bg-disabled: #F2F4F7;
+  --bg-hover: #F2F4F7;
+  --border-input: #D8DCE5;
+  --border-card: #DFE3EA;
+  --border-divider: #DFE3EA;
+  --icon-btn-bg-hover: rgba(0, 0, 0, 0.1);
+  --icon-btn-bg-active: rgba(0, 0, 0, 0.1);
+  --scrollbar-hover: rgba(0, 0, 0, 0.25);
+  --scrollbar-normal: rgba(0, 0, 0, 0.1);
 
-@font-face {
-  font-family: 'Inter';
-  src: local('Inter');
-  font-weight: 300 600;
-  font-display: swap;
-}
+  /* 文字 */
+  --text-title: #4B4C57;
+  --text-primary: #4B4C57;
+  --text-body: #656774;
+  --text-secondary: #9C9DA6;
+  --text-hint: #B1BECE;
+  --text-detail: #7F808F;
+  --text-white: #4B4C57;
+  --text-nav: #98AAE7;
 
-@font-face {
-  font-family: 'Fira Code';
-  src: local('Fira Code'), local('FiraCode');
-  font-weight: 300 500;
-  font-display: swap;
+  /* 系统色（状态色） */
+  --color-success: #00a74b;
+  --color-success-bg: #e6f7ed;
+  --color-error: #ED3B3B;
+  --color-error-bg: #FFF1F0;
+  --color-error-border: #FEA39D;
+  --color-warning: #ED6B01;
+  --color-warning-bg: #FFF2E8;
+  --color-warning-border: #FFC68A;
+  --color-info: #F5A218;
+  --color-info-bg: #FFFAE6;
+  --color-info-border: #FFE173;
+
+  /* 字体 */
+  --font-family: 'Microsoft YaHei', 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
+  --font-headline: 'Microsoft YaHei', 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'Microsoft YaHei', 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'Microsoft YaHei', 'SF Mono', 'Fira Code', 'Courier New', monospace;
+
+  /* 兼容性别名（旧变量映射） */
+  --text-dim: var(--text-secondary);
+  --text-muted: var(--text-secondary);
+  --bg-primary: var(--bg-page);
+  --text-white: var(--text-title);
+  --text-primary: var(--text-title);
 }
 
 /* Reset */
@@ -50,14 +72,10 @@ html {
   overflow-y: scroll;
 }
 
-html.dark {
-  color-scheme: dark;
-}
-
 body {
   font-family: var(--font-body);
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
+  background-color: var(--bg-page);
+  color: var(--text-body);
   line-height: 1.5;
   min-height: 100vh;
 }
@@ -68,6 +86,25 @@ body {
 
 /* Selection */
 ::selection {
-  background-color: rgba(96, 165, 250, 0.3);
-  color: var(--text-white);
+  background-color: rgba(28, 106, 255, 0.2);
+  color: var(--text-title);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-normal);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-hover);
 }

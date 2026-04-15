@@ -49,8 +49,8 @@ const subtitle = computed(() => {
   top: 64px;
   bottom: 0;
   width: 256px;
-  background: #020617;
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  background: #EDEFF3;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   z-index: 40;
@@ -58,19 +58,19 @@ const subtitle = computed(() => {
 
 .side-header {
   padding: 24px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .side-title {
   font-size: 18px;
   font-weight: 600;
-  color: #e4e1e9;
+  color: #4B4C57;
   margin: 0;
 }
 
 .side-subtitle {
   font-size: 11px;
-  color: #64748b;
+  color: #9C9DA6;
   letter-spacing: 0.1em;
   margin-top: 4px;
   text-transform: uppercase;
@@ -84,7 +84,7 @@ const subtitle = computed(() => {
 
 .side-footer {
   padding: 16px;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 @media (max-width: 1024px) {

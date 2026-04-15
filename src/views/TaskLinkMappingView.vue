@@ -457,9 +457,9 @@ onUnmounted(() => {
 <style scoped>
 .task-link-mapping-page {
   min-height: 100vh;
-  background-color: #0b0b10;
-  color: #e4e1e9;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #EDEFF3;
+  color: #4B4C57;
+  font-family: 'Microsoft YaHei', 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
 }
 
 /* 顶部导航栏 */
@@ -469,8 +469,8 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   height: 64px;
-  background: #1b1b20;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: #F7F8FB;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -481,7 +481,7 @@ onUnmounted(() => {
 .logo {
   font-size: 20px;
   font-weight: 700;
-  color: #3b82f6;
+  color: #1C6AFF;
   letter-spacing: -0.02em;
 }
 
@@ -492,7 +492,7 @@ onUnmounted(() => {
 
 .nav-link {
   font-size: 13px;
-  color: #94a3b8;
+  color: #9C9DA6;
   text-decoration: none;
   transition: color 0.2s;
   padding-bottom: 4px;
@@ -501,12 +501,12 @@ onUnmounted(() => {
 }
 
 .nav-link:hover {
-  color: #ffffff;
+  color: #4B4C57;
 }
 
 .nav-link.active {
-  color: #ffffff;
-  border-bottom-color: #4c93e7;
+  color: #4B4C57;
+  border-bottom-color: #1C6AFF;
 }
 
 .user-actions {
@@ -519,7 +519,7 @@ onUnmounted(() => {
   position: relative;
   background: none;
   border: none;
-  color: #94a3b8;
+  color: #9C9DA6;
   cursor: pointer;
   padding: 8px;
   border-radius: 4px;
@@ -527,8 +527,8 @@ onUnmounted(() => {
 }
 
 .icon-btn:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: #ffffff;
+  background: rgba(0, 0, 0, 0.05);
+  color: #4B4C57;
 }
 
 .icon {
@@ -543,7 +543,7 @@ onUnmounted(() => {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #ffb4ab;
+  background: #ED3B3B;
 }
 
 /* 主布局 */
@@ -557,8 +557,8 @@ onUnmounted(() => {
 /* 侧边栏 */
 .side-nav {
   width: 256px;
-  background: #1b1b20;
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  background: #F7F8FB;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   padding: 16px 0;
@@ -579,19 +579,19 @@ onUnmounted(() => {
 .side-header-icon {
   width: 20px;
   height: 20px;
-  color: #60a5fa;
+  color: #1C6AFF;
 }
 
 .side-title {
   font-size: 18px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
   margin: 0;
 }
 
 .side-subtitle {
   font-size: 10px;
-  color: #64748b;
+  color: #9C9DA6;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   margin: 0;
@@ -609,7 +609,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 12px;
   padding: 12px;
-  color: #94a3b8;
+  color: #9C9DA6;
   text-decoration: none;
   font-size: 13px;
   border-radius: 4px;
@@ -619,14 +619,14 @@ onUnmounted(() => {
 }
 
 .side-link:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: #e4e1e9;
+  background: rgba(0, 0, 0, 0.05);
+  color: #4B4C57;
 }
 
 .side-link.active {
-  background: #2a292f;
-  color: #60a5fa;
-  border-left-color: #60a5fa;
+  background: #F7F8FB;
+  color: #1C6AFF;
+  border-left-color: #1C6AFF;
   font-weight: 600;
 }
 
@@ -653,7 +653,7 @@ onUnmounted(() => {
   background: rgba(19, 20, 24, 0.4);
   padding: 20px 24px;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   margin-bottom: 24px;
 }
 
@@ -665,7 +665,7 @@ onUnmounted(() => {
 
 .select-label {
   font-size: 13px;
-  color: #64748b;
+  color: #9C9DA6;
 }
 
 .select-wrapper {
@@ -673,11 +673,11 @@ onUnmounted(() => {
 }
 
 .mission-select {
-  background: #1b1c21;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #F7F8FB;
+  border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 4px;
   padding: 10px 40px 10px 16px;
-  color: #e4e1e9;
+  color: #4B4C57;
   font-size: 13px;
   min-width: 280px;
   appearance: none;
@@ -686,7 +686,7 @@ onUnmounted(() => {
 }
 
 .mission-select:focus {
-  border-color: #4c93e7;
+  border-color: #1C6AFF;
 }
 
 .select-icon {
@@ -696,13 +696,13 @@ onUnmounted(() => {
   transform: translateY(-50%);
   width: 16px;
   height: 16px;
-  color: #64748b;
+  color: #9C9DA6;
   pointer-events: none;
 }
 
 .btn-save {
-  background: #4c93e7;
-  color: #ffffff;
+  background: #1C6AFF;
+  color: #4B4C57;
   border: none;
   padding: 10px 32px;
   border-radius: 4px;
@@ -714,7 +714,7 @@ onUnmounted(() => {
 }
 
 .btn-save:hover {
-  background: #3b82f6;
+  background: #1C6AFF;
   transform: translateY(-1px);
 }
 
@@ -726,7 +726,7 @@ onUnmounted(() => {
 .link-panel {
   background: rgba(19, 20, 24, 0.6);
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   padding: 32px;
   margin-bottom: 24px;
   box-shadow: 0 4px 24px -2px rgba(0, 0, 0, 0.5);
@@ -745,12 +745,12 @@ onUnmounted(() => {
   gap: 12px;
   font-size: 18px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
   margin: 0;
 }
 
 .uplink-panel .panel-title {
-  color: #4c93e7;
+  color: #1C6AFF;
 }
 
 .panel-icon {
@@ -767,24 +767,24 @@ onUnmounted(() => {
   font-size: 11px;
   padding: 4px 12px;
   border-radius: 4px;
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
 }
 
 .badge-success {
-  background: rgba(74, 225, 118, 0.1);
+  background: rgba(0, 167, 75, 0.1);
   color: #4ae176;
-  border: 1px solid rgba(74, 225, 118, 0.2);
+  border: 1px solid rgba(0, 167, 75, 0.2);
 }
 
 .badge-primary {
   background: rgba(76, 147, 231, 0.1);
-  color: #4c93e7;
+  color: #1C6AFF;
   border: 1px solid rgba(76, 147, 231, 0.2);
 }
 
 .badge-default {
-  background: #1b1c21;
-  color: #64748b;
+  background: #F7F8FB;
+  color: #9C9DA6;
 }
 
 /* 链路网格 */
@@ -802,7 +802,7 @@ onUnmounted(() => {
 
 .column-label {
   font-size: 10px;
-  color: #64748b;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   margin-bottom: 20px;
@@ -812,8 +812,8 @@ onUnmounted(() => {
 .link-card {
   width: 100%;
   aspect-ratio: 4/3;
-  background: #1b1c21;
-  border: 1px solid rgba(74, 225, 118, 0.4);
+  background: #F7F8FB;
+  border: 1px solid rgba(0, 167, 75, 0.3);
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -825,13 +825,13 @@ onUnmounted(() => {
 
 .link-card.selected {
   background: rgba(74, 225, 118, 0.02);
-  box-shadow: 0 0 20px rgba(74, 225, 118, 0.1);
+  box-shadow: 0 0 20px rgba(0, 167, 75, 0.1);
 }
 
 .card-title {
   font-size: 14px;
   font-weight: 600;
-  color: #e4e1e9;
+  color: #4B4C57;
   margin: 0 0 8px 0;
 }
 
@@ -842,7 +842,7 @@ onUnmounted(() => {
 }
 
 .card-status.storage {
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
   letter-spacing: 0.05em;
 }
 
@@ -859,25 +859,25 @@ onUnmounted(() => {
   justify-content: space-between;
   align-items: center;
   padding: 12px;
-  background: #1b1c21;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: #F7F8FB;
+  border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .baseband-item:hover {
-  border-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(0, 0, 0, 0.06);
 }
 
 .baseband-item.selected {
-  background: rgba(74, 225, 118, 0.05);
+  background: rgba(0, 167, 75, 0.05);
   border-color: rgba(74, 225, 118, 0.6);
 }
 
 .baseband-item.occupied {
-  background: rgba(255, 180, 171, 0.05);
-  border-color: rgba(255, 180, 171, 0.4);
+  background: rgba(237, 59, 59, 0.05);
+  border-color: rgba(237, 59, 59, 0.25);
 }
 
 .baseband-item.standby {
@@ -886,7 +886,7 @@ onUnmounted(() => {
 
 .bb-name {
   font-size: 12px;
-  color: #e4e1e9;
+  color: #4B4C57;
 }
 
 .baseband-item.selected .bb-name {
@@ -895,7 +895,7 @@ onUnmounted(() => {
 }
 
 .baseband-item.occupied .bb-name {
-  color: #ffb4ab;
+  color: #ED3B3B;
 }
 
 .bb-status {
@@ -905,17 +905,17 @@ onUnmounted(() => {
 }
 
 .bb-status.selected {
-  background: rgba(74, 225, 118, 0.2);
+  background: rgba(0, 167, 75, 0.2);
   color: #4ae176;
 }
 
 .bb-status.occupied {
-  background: rgba(255, 180, 171, 0.2);
-  color: #ffb4ab;
+  background: rgba(237, 59, 59, 0.15);
+  color: #ED3B3B;
 }
 
 .bb-status.standby {
-  color: #64748b;
+  color: #9C9DA6;
 }
 
 /* 变频器列表 */
@@ -931,16 +931,16 @@ onUnmounted(() => {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background: #1b1c21;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: #F7F8FB;
+  border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .converter-item.active {
-  background: rgba(74, 225, 118, 0.05);
-  border-color: rgba(74, 225, 118, 0.5);
+  background: rgba(0, 167, 75, 0.05);
+  border-color: rgba(0, 167, 75, 0.5);
 }
 
 .converter-item.standby {
@@ -954,17 +954,17 @@ onUnmounted(() => {
 }
 
 .converter-item.active .conv-name {
-  color: #e4e1e9;
+  color: #4B4C57;
 }
 
 .converter-item.standby .conv-name {
-  color: #94a3b8;
+  color: #9C9DA6;
 }
 
 .conv-status {
   font-size: 10px;
   color: #4ae176;
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
   font-weight: 700;
 }
 
@@ -972,8 +972,8 @@ onUnmounted(() => {
 .antenna-card {
   width: 100%;
   aspect-ratio: 4/3;
-  background: #1b1c21;
-  border: 1px solid rgba(74, 225, 118, 0.4);
+  background: #F7F8FB;
+  border: 1px solid rgba(0, 167, 75, 0.3);
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -994,14 +994,14 @@ onUnmounted(() => {
 .antenna-title {
   font-size: 16px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
   margin: 0 0 8px 0;
 }
 
 .antenna-coords {
   font-size: 10px;
-  color: #64748b;
-  font-family: 'Fira Code', monospace;
+  color: #9C9DA6;
+  font-family: 'Microsoft YaHei', monospace;
   text-transform: uppercase;
 }
 
@@ -1015,8 +1015,8 @@ onUnmounted(() => {
 
 .downlink-item {
   padding: 12px;
-  background: #1b1c21;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: #F7F8FB;
+  border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 4px;
   text-align: center;
   font-size: 11px;
@@ -1029,21 +1029,21 @@ onUnmounted(() => {
 }
 
 .downlink-item.selected {
-  background: rgba(74, 225, 118, 0.05);
+  background: rgba(0, 167, 75, 0.05);
   border-color: rgba(74, 225, 118, 0.6);
   color: #4ae176;
   font-weight: 600;
 }
 
 .downlink-item.occupied {
-  background: rgba(255, 180, 171, 0.05);
-  border-color: rgba(255, 180, 171, 0.4);
-  color: #ffb4ab;
+  background: rgba(237, 59, 59, 0.05);
+  border-color: rgba(237, 59, 59, 0.25);
+  color: #ED3B3B;
 }
 
 .downlink-item.standby {
   opacity: 0.4;
-  color: #94a3b8;
+  color: #9C9DA6;
 }
 
 /* 流向指示器 */
@@ -1059,19 +1059,19 @@ onUnmounted(() => {
   position: absolute;
   width: 100%;
   height: 1px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .flow-badge {
   position: relative;
-  background: #131418;
+  background: #EDEFF3;
   padding: 12px 32px;
-  border: 1px solid rgba(74, 225, 118, 0.4);
+  border: 1px solid rgba(0, 167, 75, 0.3);
   border-radius: 9999px;
   display: flex;
   align-items: center;
   gap: 24px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 .flow-text {
@@ -1079,7 +1079,7 @@ onUnmounted(() => {
   font-weight: 700;
   color: #4ae176;
   letter-spacing: 0.3em;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Microsoft YaHei', sans-serif;
 }
 
 .flow-arrow {
@@ -1107,8 +1107,8 @@ onUnmounted(() => {
   left: 288px;
   right: 0;
   height: 40px;
-  background: #1b1b20;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background: #F7F8FB;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1139,7 +1139,7 @@ onUnmounted(() => {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #374151;
+  background: #DFE3EA;
 }
 
 @keyframes pulse {
@@ -1149,26 +1149,26 @@ onUnmounted(() => {
 
 .status-text {
   font-size: 11px;
-  color: #64748b;
-  font-family: 'Fira Code', monospace;
+  color: #9C9DA6;
+  font-family: 'Microsoft YaHei', monospace;
   text-transform: uppercase;
   letter-spacing: 0.02em;
 }
 
 .status-value {
-  color: #94a3b8;
+  color: #9C9DA6;
 }
 
 .footer-right {
   display: flex;
   gap: 8px;
   font-size: 11px;
-  color: #64748b;
-  font-family: 'Fira Code', monospace;
+  color: #9C9DA6;
+  font-family: 'Microsoft YaHei', monospace;
 }
 
 .time-value {
-  color: #94a3b8;
+  color: #9C9DA6;
 }
 
 /* 响应式 */

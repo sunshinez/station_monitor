@@ -486,9 +486,9 @@ onUnmounted(() => {
 <style scoped>
 .task-fault-diagnosis-page {
   min-height: 100vh;
-  background-color: #131318;
-  color: #e4e1e9;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #EDEFF3;
+  color: #4B4C57;
+  font-family: 'Microsoft YaHei', 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
 }
 
 /* 顶部导航栏 */
@@ -498,8 +498,8 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   height: 64px;
-  background: #131318;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: #EDEFF3;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -511,7 +511,7 @@ onUnmounted(() => {
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.15em;
-  color: #60a5fa;
+  color: #1C6AFF;
   text-transform: uppercase;
 }
 
@@ -522,7 +522,7 @@ onUnmounted(() => {
 
 .nav-link {
   font-size: 14px;
-  color: #94a3b8;
+  color: #9C9DA6;
   text-decoration: none;
   transition: color 0.2s;
   padding-bottom: 4px;
@@ -530,12 +530,12 @@ onUnmounted(() => {
 }
 
 .nav-link:hover {
-  color: #e4e1e9;
+  color: #4B4C57;
 }
 
 .nav-link.active {
-  color: #60a5fa;
-  border-bottom-color: #60a5fa;
+  color: #1C6AFF;
+  border-bottom-color: #1C6AFF;
   font-weight: 600;
 }
 
@@ -549,7 +549,7 @@ onUnmounted(() => {
   position: relative;
   background: none;
   border: none;
-  color: #94a3b8;
+  color: #9C9DA6;
   cursor: pointer;
   padding: 8px;
   border-radius: 50%;
@@ -557,8 +557,8 @@ onUnmounted(() => {
 }
 
 .icon-btn:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: #e4e1e9;
+  background: rgba(0, 0, 0, 0.05);
+  color: #4B4C57;
 }
 
 .icon {
@@ -573,7 +573,7 @@ onUnmounted(() => {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #ffb4ab;
+  background: #ED3B3B;
 }
 
 /* 主布局 */
@@ -587,8 +587,8 @@ onUnmounted(() => {
 /* 侧边栏 */
 .side-nav {
   width: 256px;
-  background: #1b1b20;
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  background: #F7F8FB;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   padding: 16px 0;
@@ -609,19 +609,19 @@ onUnmounted(() => {
 .side-header-icon {
   width: 20px;
   height: 20px;
-  color: #60a5fa;
+  color: #1C6AFF;
 }
 
 .side-title {
   font-size: 18px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
   margin: 0;
 }
 
 .side-subtitle {
   font-size: 10px;
-  color: #64748b;
+  color: #9C9DA6;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   margin: 0;
@@ -639,7 +639,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 12px;
   padding: 12px;
-  color: #94a3b8;
+  color: #9C9DA6;
   text-decoration: none;
   font-size: 13px;
   border-radius: 4px;
@@ -649,14 +649,14 @@ onUnmounted(() => {
 }
 
 .side-link:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: #e4e1e9;
+  background: rgba(0, 0, 0, 0.05);
+  color: #4B4C57;
 }
 
 .side-link.active {
-  background: #2a292f;
-  color: #60a5fa;
-  border-left-color: #60a5fa;
+  background: #F7F8FB;
+  color: #1C6AFF;
+  border-left-color: #1C6AFF;
   font-weight: 600;
 }
 
@@ -687,7 +687,7 @@ onUnmounted(() => {
 
 .panel-header-bar.border-bottom {
   padding-bottom: 14px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .panel-title-group {
@@ -704,12 +704,12 @@ onUnmounted(() => {
 .panel-title {
   font-size: 18px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
   margin: 0;
 }
 
 .text-primary {
-  color: #60a5fa;
+  color: #1C6AFF;
 }
 
 .text-tertiary {
@@ -717,19 +717,19 @@ onUnmounted(() => {
 }
 
 .text-error {
-  color: #ffb4ab;
+  color: #ED3B3B;
 }
 
 .text-dim {
-  color: #94a3b8;
+  color: #9C9DA6;
 }
 
 .text-on-surface {
-  color: #e4e1e9;
+  color: #4B4C57;
 }
 
 .mono {
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
 }
 
 .font-medium {
@@ -750,8 +750,8 @@ onUnmounted(() => {
   align-items: center;
   gap: 6px;
   padding: 8px 16px;
-  background: #60a5fa;
-  color: #00315d;
+  background: #1C6AFF;
+  color: #1C6AFF;
   border: none;
   border-radius: 4px;
   font-size: 11px;
@@ -763,7 +763,7 @@ onUnmounted(() => {
 }
 
 .btn-add:hover {
-  box-shadow: 0 0 15px rgba(96, 165, 250, 0.4);
+  box-shadow: 0 0 15px rgba(28, 106, 255, 0.4);
 }
 
 .btn-add-icon {
@@ -773,8 +773,8 @@ onUnmounted(() => {
 
 .btn-text {
   padding: 6px 12px;
-  background: #35343a;
-  color: #94a3b8;
+  background: #F7F8FB;
+  color: #9C9DA6;
   border: none;
   border-radius: 4px;
   font-size: 10px;
@@ -786,7 +786,7 @@ onUnmounted(() => {
 }
 
 .btn-text:hover {
-  color: #ffffff;
+  color: #4B4C57;
 }
 
 .header-actions {
@@ -810,13 +810,13 @@ onUnmounted(() => {
   text-align: left;
   font-size: 11px;
   font-weight: 500;
-  color: #94a3b8;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: #9C9DA6;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .data-table td {
   padding: 14px 16px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.02);
 }
 
 .table-row {
@@ -824,11 +824,11 @@ onUnmounted(() => {
 }
 
 .table-row:hover {
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(0, 0, 0, 0.02);
 }
 
 .log-thead {
-  background: rgba(14, 14, 19, 0.3);
+  background: rgba(247, 248, 251, 0.7);
 }
 
 .log-thead th {
@@ -848,7 +848,7 @@ onUnmounted(() => {
 .action-btn {
   background: none;
   border: none;
-  color: #94a3b8;
+  color: #9C9DA6;
   cursor: pointer;
   padding: 4px;
   border-radius: 4px;
@@ -859,12 +859,12 @@ onUnmounted(() => {
 }
 
 .action-btn:hover {
-  color: #60a5fa;
-  background: rgba(255, 255, 255, 0.05);
+  color: #1C6AFF;
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .action-btn.danger:hover {
-  color: #ffb4ab;
+  color: #ED3B3B;
 }
 
 .action-icon {
@@ -889,17 +889,17 @@ onUnmounted(() => {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #ffb4ab;
+  background: #ED3B3B;
 }
 
 .dot-success-glow {
   background: #4ae176;
-  box-shadow: 0 0 2px #4ae176, 0 0 8px rgba(74, 225, 118, 0.4);
+  box-shadow: 0 0 2px #4ae176, 0 0 8px rgba(0, 167, 75, 0.3);
 }
 
 .dot-error-glow {
-  background: #ffb4ab;
-  box-shadow: 0 0 2px #ffb4ab, 0 0 8px rgba(255, 180, 171, 0.4);
+  background: #ED3B3B;
+  box-shadow: 0 0 2px #ED3B3B, 0 0 8px rgba(237, 59, 59, 0.25);
 }
 
 .pulse {
@@ -913,10 +913,10 @@ onUnmounted(() => {
 
 /* 故障参数定制面板 */
 .param-panel {
-  background: #1b1b20;
+  background: #F7F8FB;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-left: 4px solid #60a5fa;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-left: 4px solid #1C6AFF;
   padding: 20px;
   flex-shrink: 0;
 }
@@ -941,7 +941,7 @@ onUnmounted(() => {
 .section-title {
   font-size: 18px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
   margin: 0;
 }
 
@@ -952,7 +952,7 @@ onUnmounted(() => {
 }
 
 .monitor-card {
-  background: #1b1b20;
+  background: #F7F8FB;
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 20px;
@@ -960,17 +960,17 @@ onUnmounted(() => {
 }
 
 .monitor-card:hover {
-  border-color: rgba(96, 165, 250, 0.3);
+  border-color: rgba(28, 106, 255, 0.3);
 }
 
 .card-error {
-  background: #2a292f;
-  border-color: rgba(255, 180, 171, 0.2);
-  box-shadow: inset 0 0 20px rgba(255, 180, 171, 0.05);
+  background: #F7F8FB;
+  border-color: rgba(237, 59, 59, 0.15);
+  box-shadow: inset 0 0 20px rgba(237, 59, 59, 0.05);
 }
 
 .card-error:hover {
-  border-color: rgba(255, 180, 171, 0.4);
+  border-color: rgba(237, 59, 59, 0.25);
 }
 
 .card-header {
@@ -982,7 +982,7 @@ onUnmounted(() => {
 
 .card-category {
   font-size: 10px;
-  color: #94a3b8;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin: 0 0 4px 0;
@@ -991,7 +991,7 @@ onUnmounted(() => {
 .card-name {
   font-size: 14px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
   margin: 0;
 }
 
@@ -1011,12 +1011,12 @@ onUnmounted(() => {
 .card-value {
   font-size: 28px;
   font-weight: 500;
-  color: #ffffff;
+  color: #4B4C57;
 }
 
 .card-unit {
   font-size: 12px;
-  color: #94a3b8;
+  color: #9C9DA6;
 }
 
 .card-footer {
@@ -1027,7 +1027,7 @@ onUnmounted(() => {
 }
 
 .card-range {
-  color: #64748b;
+  color: #9C9DA6;
 }
 
 .card-status {
@@ -1038,9 +1038,9 @@ onUnmounted(() => {
 .log-panel {
   flex: 1;
   min-height: 0;
-  background: #1b1b20;
+  background: #F7F8FB;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
@@ -1057,14 +1057,14 @@ onUnmounted(() => {
 }
 
 .level-critical {
-  background: rgba(147, 0, 10, 0.6);
-  color: #ffdad6;
+  background: rgba(183, 0, 0, 0.6);
+  color: #FFF1F0;
 }
 
 .level-warning {
-  background: rgba(245, 158, 11, 0.15);
-  color: #f59e0b;
-  border: 1px solid rgba(245, 158, 11, 0.2);
+  background: rgba(237, 107, 1, 0.15);
+  color: #ED6B01;
+  border: 1px solid rgba(237, 107, 1, 0.2);
 }
 
 .log-status {
@@ -1080,14 +1080,14 @@ onUnmounted(() => {
   justify-content: space-between;
   align-items: center;
   padding: 14px 20px;
-  background: rgba(14, 14, 19, 0.2);
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(247, 248, 251, 0.5);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .footer-text {
   font-size: 10px;
-  color: #64748b;
-  font-family: 'Fira Code', monospace;
+  color: #9C9DA6;
+  font-family: 'Microsoft YaHei', monospace;
   margin: 0;
 }
 
@@ -1096,13 +1096,13 @@ onUnmounted(() => {
   align-items: center;
   gap: 16px;
   font-size: 10px;
-  color: #64748b;
+  color: #9C9DA6;
 }
 
 .page-btn {
   background: none;
   border: none;
-  color: #64748b;
+  color: #9C9DA6;
   cursor: pointer;
   font-size: 10px;
   font-weight: 700;
@@ -1111,11 +1111,11 @@ onUnmounted(() => {
 }
 
 .page-btn:hover {
-  color: #60a5fa;
+  color: #1C6AFF;
 }
 
 .page-current {
-  color: #60a5fa;
+  color: #1C6AFF;
   font-weight: 700;
 }
 
@@ -1126,8 +1126,8 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   height: 32px;
-  background: #0e0e13;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background: #F2F4F7;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   align-items: center;
   padding: 0 24px;
@@ -1140,7 +1140,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 8px;
   font-size: 12px;
-  color: #94a3b8;
+  color: #9C9DA6;
 }
 
 .status-dot-green {
@@ -1158,7 +1158,7 @@ onUnmounted(() => {
   display: flex;
   gap: 24px;
   font-size: 12px;
-  color: #64748b;
-  font-family: 'Fira Code', monospace;
+  color: #9C9DA6;
+  font-family: 'Microsoft YaHei', monospace;
 }
 </style>

@@ -439,25 +439,25 @@ onUnmounted(() => {
 <style scoped>
 /* CSS Variables */
 :root {
-  --primary: #a4c9ff;
-  --error: #ffb4ab;
+  --primary: #1C6AFF;
+  --error: #ED3B3B;
   --success: #4ae176;
-  --surface: #131318;
-  --surface-container: #1f1f24;
-  --surface-container-low: #1b1b20;
-  --surface-container-high: #2a292f;
-  --surface-container-highest: #35343a;
-  --on-surface: #e4e1e9;
-  --on-surface-variant: #c2c6d6;
-  --outline: #8c909f;
-  --outline-variant: #424754;
+  --surface: #EDEFF3;
+  --surface-container: #F7F8FB;
+  --surface-container-low: #F7F8FB;
+  --surface-container-high: #F7F8FB;
+  --surface-container-highest: #F7F8FB;
+  --on-surface: #4B4C57;
+  --on-surface-variant: #7F808F;
+  --outline: #9C9DA6;
+  --outline-variant: #DFE3EA;
 }
 
 .other-devices-page {
   min-height: 100vh;
-  background-color: #131318;
-  color: #e4e1e9;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #EDEFF3;
+  color: #4B4C57;
+  font-family: 'Microsoft YaHei', 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
 }
 
 /* TopNavBar */
@@ -467,7 +467,7 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   height: 64px;
-  background: #131318;
+  background: #EDEFF3;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -479,7 +479,7 @@ onUnmounted(() => {
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.15em;
-  color: #e4e1e9;
+  color: #4B4C57;
   text-transform: uppercase;
 }
 
@@ -490,7 +490,7 @@ onUnmounted(() => {
 
 .nav-link {
   font-size: 14px;
-  color: #94a3b8;
+  color: #9C9DA6;
   text-decoration: none;
   transition: color 0.2s;
   padding-bottom: 4px;
@@ -499,12 +499,12 @@ onUnmounted(() => {
 
 .nav-link:hover,
 .nav-link.active {
-  color: #e4e1e9;
+  color: #4B4C57;
 }
 
 .nav-link.active {
-  color: #e4e1e9;
-  border-bottom-color: #e4e1e9;
+  color: #4B4C57;
+  border-bottom-color: #4B4C57;
   font-weight: 600;
 }
 
@@ -519,14 +519,14 @@ onUnmounted(() => {
   border-radius: 50%;
   background: none;
   border: none;
-  color: #94a3b8;
+  color: #9C9DA6;
   cursor: pointer;
   padding: 8px;
   transition: color 0.2s;
 }
 
 .icon-btn:hover {
-  color: #e4e1e9;
+  color: #4B4C57;
 }
 
 .icon {
@@ -541,7 +541,7 @@ onUnmounted(() => {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #ffb4ab;
+  background: #ED3B3B;
 }
 
 
@@ -552,7 +552,7 @@ onUnmounted(() => {
   top: 64px;
   bottom: 0;
   width: 256px;
-  background: #020617;
+  background: #EDEFF3;
   display: flex;
   flex-direction: column;
   z-index: 40;
@@ -564,7 +564,7 @@ onUnmounted(() => {
 
 .side-title {
   font-size: 12px;
-  color: #e4e1e9;
+  color: #4B4C57;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -573,7 +573,7 @@ onUnmounted(() => {
 
 .side-subtitle {
   font-size: 10px;
-  color: #64748b;
+  color: #9C9DA6;
   letter-spacing: 0.2em;
   margin: 0;
 }
@@ -588,7 +588,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 12px;
   padding: 12px 24px;
-  color: #64748b;
+  color: #9C9DA6;
   text-decoration: none;
   font-size: 12px;
   text-transform: uppercase;
@@ -598,14 +598,14 @@ onUnmounted(() => {
 }
 
 .side-link:hover {
-  color: #93c5fd;
-  background: rgba(255, 255, 255, 0.05);
+  color: #1C6AFF;
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .side-link.active {
-  color: #e4e1e9;
-  background: rgba(59, 130, 246, 0.1);
-  border-right-color: #e4e1e9;
+  color: #4B4C57;
+  background: rgba(28, 106, 255, 0.1);
+  border-right-color: #4B4C57;
   font-weight: 600;
 }
 
@@ -636,7 +636,7 @@ onUnmounted(() => {
 
 /* Sub Menu */
 .sub-menu {
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.1);
   padding: 4px 0;
 }
 
@@ -645,19 +645,19 @@ onUnmounted(() => {
   align-items: center;
   gap: 8px;
   padding: 8px 24px 8px 48px;
-  color: #64748b;
+  color: #9C9DA6;
   text-decoration: none;
   font-size: 11px;
   transition: all 0.2s;
 }
 
 .sub-link:hover {
-  color: #93c5fd;
-  background: rgba(255, 255, 255, 0.03);
+  color: #1C6AFF;
+  background: rgba(0, 0, 0, 0.03);
 }
 
 .sub-link.active {
-  color: #e4e1e9;
+  color: #4B4C57;
   background: rgba(59, 130, 246, 0.08);
 }
 
@@ -665,12 +665,12 @@ onUnmounted(() => {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #64748b;
+  background: #9C9DA6;
 }
 
 .sub-link.active .sub-link-dot {
-  background: #60a5fa;
-  box-shadow: 0 0 6px rgba(96, 165, 250, 0.5);
+  background: #1C6AFF;
+  box-shadow: 0 0 6px rgba(28, 106, 255, 0.5);
 }
 
 .side-footer {
@@ -679,10 +679,10 @@ onUnmounted(() => {
 }
 
 .health-card {
-  background: #1b1b20;
+  background: #F7F8FB;
   padding: 16px;
   border-radius: 8px;
-  border: 1px solid rgba(66, 71, 84, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .health-header {
@@ -694,21 +694,21 @@ onUnmounted(() => {
 
 .health-label {
   font-size: 10px;
-  color: #64748b;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
 .health-bar {
   height: 4px;
-  background: #1f2937;
+  background: #DFE3EA;
   border-radius: 2px;
   overflow: hidden;
 }
 
 .health-fill {
   height: 100%;
-  background: #60a5fa;
+  background: #1C6AFF;
   border-radius: 2px;
   transition: width 0.3s;
 }
@@ -738,7 +738,7 @@ onUnmounted(() => {
   top: -256px;
   width: 800px;
   height: 800px;
-  background: rgba(164, 201, 255, 0.05);
+  background: rgba(28, 106, 255, 0.05);
 }
 
 .bg-glow.bottom-right {
@@ -746,7 +746,7 @@ onUnmounted(() => {
   bottom: 0;
   width: 400px;
   height: 400px;
-  background: rgba(74, 225, 118, 0.05);
+  background: rgba(0, 167, 75, 0.05);
 }
 
 /* Page Header */
@@ -760,25 +760,25 @@ onUnmounted(() => {
 .page-title {
   font-size: 28px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
   margin: 0 0 8px 0;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
 .page-subtitle {
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
   font-size: 14px;
-  color: rgba(164, 201, 255, 0.8);
+  color: rgba(28, 106, 255, 0.7);
   margin: 0;
 }
 
 /* Device Panel */
 .device-panel {
-  background: rgba(27, 27, 32, 0.8);
+  background: rgba(247, 248, 251, 0.95);
   backdrop-filter: blur(12px);
   border-radius: 12px;
-  border: 1px solid rgba(66, 71, 84, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.06);
   overflow: hidden;
 }
 
@@ -789,7 +789,7 @@ onUnmounted(() => {
   align-items: center;
   padding: 20px 24px;
   background: rgba(42, 41, 47, 0.8);
-  border-bottom: 1px solid rgba(66, 71, 84, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .panel-header-left {
@@ -801,13 +801,13 @@ onUnmounted(() => {
 .panel-icon {
   width: 20px;
   height: 20px;
-  color: #a4c9ff;
+  color: #1C6AFF;
 }
 
 .panel-title {
   font-size: 18px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
   margin: 0;
   letter-spacing: 0.02em;
 }
@@ -822,17 +822,17 @@ onUnmounted(() => {
   align-items: center;
   gap: 8px;
   padding: 8px 16px;
-  background: rgba(59, 130, 246, 0.1);
-  border: 1px solid rgba(59, 130, 246, 0.2);
+  background: rgba(28, 106, 255, 0.1);
+  border: 1px solid rgba(28, 106, 250, 0.2);
   border-radius: 4px;
-  color: #e4e1e9;
+  color: #4B4C57;
   font-size: 12px;
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .refresh-btn:hover {
-  background: rgba(59, 130, 246, 0.2);
+  background: rgba(28, 106, 250, 0.2);
 }
 
 .refresh-icon {
@@ -868,7 +868,7 @@ onUnmounted(() => {
 }
 
 .section-marker.primary {
-  background: #a4c9ff;
+  background: #1C6AFF;
 }
 
 .section-title {
@@ -883,14 +883,14 @@ onUnmounted(() => {
 }
 
 .section-title.primary {
-  color: #a4c9ff;
+  color: #1C6AFF;
 }
 
 .status-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 8px;
-  background: rgba(14, 14, 19, 0.5);
+  background: rgba(247, 248, 251, 0.9);
   padding: 20px;
   border-radius: 8px;
 }
@@ -903,25 +903,25 @@ onUnmounted(() => {
 
 .status-label {
   font-size: 10px;
-  color: #64748b;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
 .status-value {
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
   font-size: 20px;
-  color: #ffffff;
+  color: #4B4C57;
   font-weight: 500;
 }
 
 .status-value.highlight {
-  color: #a4c9ff;
+  color: #1C6AFF;
 }
 
 .unit {
   font-size: 12px;
-  color: #64748b;
+  color: #9C9DA6;
 }
 
 .status-indicator {
@@ -938,7 +938,7 @@ onUnmounted(() => {
 
 .status-dot.success {
   background: #4ae176;
-  box-shadow: 0 0 8px rgba(74, 225, 118, 0.5);
+  box-shadow: 0 0 8px rgba(0, 167, 75, 0.5);
 }
 
 .status-text.success {
@@ -962,13 +962,13 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   padding: 16px;
-  background: rgba(14, 14, 19, 0.3);
+  background: rgba(247, 248, 251, 0.7);
   border-radius: 8px;
   transition: background 0.2s;
 }
 
 .control-row:hover {
-  background: rgba(14, 14, 19, 0.5);
+  background: rgba(247, 248, 251, 0.9);
 }
 
 .control-info {
@@ -981,12 +981,12 @@ onUnmounted(() => {
 .control-name {
   font-size: 14px;
   font-weight: 500;
-  color: #e4e1e9;
+  color: #4B4C57;
 }
 
 .control-desc {
   font-size: 10px;
-  color: #64748b;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -998,10 +998,10 @@ onUnmounted(() => {
 
 .control-input {
   width: 100%;
-  background: #0e0e13;
+  background: #F2F4F7;
   border: 1px solid transparent;
-  color: #ffffff;
-  font-family: 'Fira Code', monospace;
+  color: #4B4C57;
+  font-family: 'Microsoft YaHei', monospace;
   font-size: 14px;
   padding: 10px 16px;
   border-radius: 4px;
@@ -1011,12 +1011,12 @@ onUnmounted(() => {
 }
 
 .control-input:not([readonly]) {
-  border-color: rgba(164, 201, 255, 0.3);
+  border-color: rgba(28, 106, 255, 0.3);
 }
 
 .control-input:not([readonly]):focus {
-  border-color: rgba(164, 201, 255, 0.6);
-  box-shadow: 0 0 0 2px rgba(164, 201, 255, 0.1);
+  border-color: rgba(28, 106, 255, 0.5);
+  box-shadow: 0 0 0 2px rgba(28, 106, 255, 0.1);
 }
 
 .toggle-group {
@@ -1033,13 +1033,13 @@ onUnmounted(() => {
   border: none;
   cursor: pointer;
   transition: all 0.2s;
-  background: #1f2937;
-  color: #64748b;
+  background: #DFE3EA;
+  color: #9C9DA6;
 }
 
 .toggle-btn.active {
-  background: rgba(255, 180, 171, 0.2);
-  color: #ffb4ab;
+  background: rgba(237, 59, 59, 0.15);
+  color: #ED3B3B;
 }
 
 .control-actions {
@@ -1055,21 +1055,21 @@ onUnmounted(() => {
   gap: 4px;
   padding: 8px 12px;
   background: transparent;
-  border: 1px solid rgba(164, 201, 255, 0.2);
+  border: 1px solid rgba(28, 106, 255, 0.2);
   border-radius: 4px;
-  color: #a4c9ff;
+  color: #1C6AFF;
   font-size: 11px;
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .btn-unlock:hover {
-  background: rgba(164, 201, 255, 0.1);
+  background: rgba(28, 106, 255, 0.1);
 }
 
 .btn-unlock.unlocked {
-  background: rgba(74, 225, 118, 0.1);
-  border-color: rgba(74, 225, 118, 0.3);
+  background: rgba(0, 167, 75, 0.1);
+  border-color: rgba(0, 167, 75, 0.3);
   color: #4ae176;
 }
 
@@ -1078,10 +1078,10 @@ onUnmounted(() => {
   align-items: center;
   gap: 4px;
   padding: 8px 12px;
-  background: #a4c9ff;
+  background: #1C6AFF;
   border: none;
   border-radius: 4px;
-  color: #00315d;
+  color: #1C6AFF;
   font-size: 11px;
   font-weight: 600;
   cursor: pointer;
@@ -1089,7 +1089,7 @@ onUnmounted(() => {
 }
 
 .btn-set:hover {
-  box-shadow: 0 0 15px rgba(164, 201, 255, 0.4);
+  box-shadow: 0 0 15px rgba(28, 106, 255, 0.4);
 }
 
 .btn-icon {
@@ -1103,8 +1103,8 @@ onUnmounted(() => {
   justify-content: flex-end;
   gap: 12px;
   padding: 16px 24px;
-  background: rgba(14, 14, 19, 0.5);
-  border-top: 1px solid rgba(66, 71, 84, 0.1);
+  background: rgba(247, 248, 251, 0.9);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .btn-reset {
@@ -1115,23 +1115,23 @@ onUnmounted(() => {
   background: transparent;
   border: 1px solid rgba(140, 144, 159, 0.3);
   border-radius: 4px;
-  color: #8c909f;
+  color: #9C9DA6;
   font-size: 12px;
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .btn-reset:hover {
-  color: #ffffff;
+  color: #4B4C57;
   border-color: rgba(255, 255, 255, 0.3);
 }
 
 .btn-close {
   padding: 10px 24px;
-  background: #e4e1e9;
+  background: #4B4C57;
   border: none;
   border-radius: 4px;
-  color: #131318;
+  color: #EDEFF3;
   font-size: 12px;
   font-weight: 600;
   cursor: pointer;
@@ -1139,7 +1139,7 @@ onUnmounted(() => {
 }
 
 .btn-close:hover {
-  background: #ffffff;
+  background: #4B4C57;
 }
 
 /* Responsive */

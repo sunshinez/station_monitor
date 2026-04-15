@@ -515,9 +515,9 @@ onUnmounted(() => {
 <style scoped>
 .task-mission-param-page {
   min-height: 100vh;
-  background-color: #131318;
-  color: #e4e1e9;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #EDEFF3;
+  color: #4B4C57;
+  font-family: 'Microsoft YaHei', 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
 }
 
 /* 顶部导航栏 */
@@ -527,8 +527,8 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   height: 64px;
-  background: #131318;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: #EDEFF3;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -540,7 +540,7 @@ onUnmounted(() => {
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.15em;
-  color: #60a5fa;
+  color: #1C6AFF;
   text-transform: uppercase;
 }
 
@@ -551,7 +551,7 @@ onUnmounted(() => {
 
 .nav-link {
   font-size: 14px;
-  color: #94a3b8;
+  color: #9C9DA6;
   text-decoration: none;
   transition: color 0.2s;
   padding-bottom: 4px;
@@ -559,12 +559,12 @@ onUnmounted(() => {
 }
 
 .nav-link:hover {
-  color: #e4e1e9;
+  color: #4B4C57;
 }
 
 .nav-link.active {
-  color: #60a5fa;
-  border-bottom-color: #60a5fa;
+  color: #1C6AFF;
+  border-bottom-color: #1C6AFF;
   font-weight: 600;
 }
 
@@ -578,7 +578,7 @@ onUnmounted(() => {
   position: relative;
   background: none;
   border: none;
-  color: #94a3b8;
+  color: #9C9DA6;
   cursor: pointer;
   padding: 8px;
   border-radius: 50%;
@@ -586,8 +586,8 @@ onUnmounted(() => {
 }
 
 .icon-btn:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: #e4e1e9;
+  background: rgba(0, 0, 0, 0.05);
+  color: #4B4C57;
 }
 
 .icon {
@@ -602,7 +602,7 @@ onUnmounted(() => {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #ffb4ab;
+  background: #ED3B3B;
 }
 
 /* 主布局 */
@@ -616,8 +616,8 @@ onUnmounted(() => {
 /* 侧边栏 */
 .side-nav {
   width: 256px;
-  background: #1b1b20;
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  background: #F7F8FB;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   padding: 16px 0;
@@ -638,19 +638,19 @@ onUnmounted(() => {
 .side-header-icon {
   width: 20px;
   height: 20px;
-  color: #60a5fa;
+  color: #1C6AFF;
 }
 
 .side-title {
   font-size: 18px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
   margin: 0;
 }
 
 .side-subtitle {
   font-size: 10px;
-  color: #64748b;
+  color: #9C9DA6;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   margin: 0;
@@ -668,7 +668,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 12px;
   padding: 12px;
-  color: #94a3b8;
+  color: #9C9DA6;
   text-decoration: none;
   font-size: 13px;
   border-radius: 4px;
@@ -678,14 +678,14 @@ onUnmounted(() => {
 }
 
 .side-link:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: #e4e1e9;
+  background: rgba(0, 0, 0, 0.05);
+  color: #4B4C57;
 }
 
 .side-link.active {
-  background: #2a292f;
-  color: #60a5fa;
-  border-left-color: #60a5fa;
+  background: #F7F8FB;
+  color: #1C6AFF;
+  border-left-color: #1C6AFF;
   font-weight: 600;
 }
 
@@ -722,14 +722,14 @@ onUnmounted(() => {
 .page-title {
   font-size: 24px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
   margin: 0;
 }
 
 .page-subtitle {
   font-size: 11px;
-  color: #64748b;
-  font-family: 'Fira Code', monospace;
+  color: #9C9DA6;
+  font-family: 'Microsoft YaHei', monospace;
   letter-spacing: 0.05em;
   margin: 0;
 }
@@ -755,19 +755,19 @@ onUnmounted(() => {
 }
 
 .btn-secondary {
-  background: #2a292f;
-  color: #e4e1e9;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #F7F8FB;
+  color: #4B4C57;
+  border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .btn-accent-sm {
-  background: rgba(173, 198, 255, 0.1);
-  color: #adc6ff;
-  border: 1px solid rgba(173, 198, 255, 0.2);
+  background: rgba(28, 106, 255, 0.1);
+  color: #1C6AFF;
+  border: 1px solid rgba(28, 106, 255, 0.2);
   padding: 6px 12px;
   font-size: 10px;
   font-weight: 700;
@@ -776,13 +776,13 @@ onUnmounted(() => {
 }
 
 .btn-accent-sm:hover {
-  background: rgba(173, 198, 255, 0.2);
+  background: rgba(28, 106, 255, 0.2);
 }
 
 .btn-accent {
-  background: rgba(96, 165, 250, 0.1);
-  color: #60a5fa;
-  border: 1px solid rgba(96, 165, 250, 0.2);
+  background: rgba(28, 106, 255, 0.1);
+  color: #1C6AFF;
+  border: 1px solid rgba(28, 106, 255, 0.2);
   padding: 8px 16px;
   font-size: 10px;
   font-weight: 700;
@@ -791,7 +791,7 @@ onUnmounted(() => {
 }
 
 .btn-accent:hover {
-  background: rgba(96, 165, 250, 0.2);
+  background: rgba(28, 106, 255, 0.2);
 }
 
 .btn-icon {
@@ -806,18 +806,18 @@ onUnmounted(() => {
 
 /* 数据区块 */
 .data-section {
-  background: #1b1b20;
+  background: #F7F8FB;
   border-radius: 8px;
   padding: 20px;
   flex-shrink: 0;
 }
 
 .section-primary {
-  border-left: 4px solid #60a5fa;
+  border-left: 4px solid #1C6AFF;
 }
 
 .section-secondary {
-  border-left: 4px solid #adc6ff;
+  border-left: 4px solid #1C6AFF;
 }
 
 .section-header-bar {
@@ -839,11 +839,11 @@ onUnmounted(() => {
 }
 
 .section-primary .section-title {
-  color: #60a5fa;
+  color: #1C6AFF;
 }
 
 .section-secondary .section-title {
-  color: #adc6ff;
+  color: #1C6AFF;
 }
 
 .section-icon {
@@ -869,26 +869,26 @@ onUnmounted(() => {
   transform: translateY(-50%);
   width: 14px;
   height: 14px;
-  color: #64748b;
+  color: #9C9DA6;
 }
 
 .search-input {
-  background: #131318;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #EDEFF3;
+  border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 4px;
   padding: 6px 10px 6px 30px;
-  color: #e4e1e9;
+  color: #4B4C57;
   font-size: 12px;
   width: 180px;
   outline: none;
 }
 
 .search-input::placeholder {
-  color: #64748b;
+  color: #9C9DA6;
 }
 
 .search-input:focus {
-  border-color: rgba(96, 165, 250, 0.5);
+  border-color: rgba(28, 106, 255, 0.5);
 }
 
 /* 表格 */
@@ -903,8 +903,8 @@ onUnmounted(() => {
 }
 
 .data-table thead tr {
-  color: #94a3b8;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: #9C9DA6;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .data-table th {
@@ -915,7 +915,7 @@ onUnmounted(() => {
 
 .data-table td {
   padding: 12px 16px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.03);
 }
 
 .table-row {
@@ -924,19 +924,19 @@ onUnmounted(() => {
 }
 
 .table-row:hover {
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(0, 0, 0, 0.02);
 }
 
 .table-row.active {
-  background: rgba(96, 165, 250, 0.08);
+  background: rgba(28, 106, 255, 0.08);
 }
 
 .text-primary {
-  color: #60a5fa;
+  color: #1C6AFF;
 }
 
 .text-secondary {
-  color: #adc6ff;
+  color: #1C6AFF;
 }
 
 .text-tertiary {
@@ -944,7 +944,7 @@ onUnmounted(() => {
 }
 
 .text-muted {
-  color: #64748b;
+  color: #9C9DA6;
 }
 
 .text-right {
@@ -952,7 +952,7 @@ onUnmounted(() => {
 }
 
 .font-mono {
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
 }
 
 .status-success {
@@ -968,20 +968,20 @@ onUnmounted(() => {
   height: 6px;
   border-radius: 50%;
   background: #4ae176;
-  box-shadow: 0 0 8px rgba(74, 225, 118, 0.5);
+  box-shadow: 0 0 8px rgba(0, 167, 75, 0.5);
 }
 
 .action-btn {
   background: none;
   border: none;
-  color: #64748b;
+  color: #9C9DA6;
   cursor: pointer;
   padding: 4px;
   transition: color 0.2s;
 }
 
 .action-btn:hover {
-  color: #60a5fa;
+  color: #1C6AFF;
 }
 
 .action-icon {
@@ -992,10 +992,10 @@ onUnmounted(() => {
 /* 参数解析详情 */
 .param-detail-section {
   flex: 1;
-  background: #1b1b20;
+  background: #F7F8FB;
   border-radius: 8px;
   padding: 20px;
-  border-top: 2px solid rgba(96, 165, 250, 0.2);
+  border-top: 2px solid rgba(28, 106, 255, 0.2);
   display: flex;
   flex-direction: column;
   min-height: 260px;
@@ -1012,7 +1012,7 @@ onUnmounted(() => {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #60a5fa;
+  background: #1C6AFF;
   animation: pulse 1.5s infinite;
 }
 
@@ -1024,15 +1024,15 @@ onUnmounted(() => {
 .detail-title {
   font-size: 13px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   margin: 0;
 }
 
 .detail-mono {
-  color: #60a5fa;
-  font-family: 'Fira Code', monospace;
+  color: #1C6AFF;
+  font-family: 'Microsoft YaHei', monospace;
   margin-left: 8px;
 }
 
@@ -1058,21 +1058,21 @@ onUnmounted(() => {
   align-items: center;
   gap: 8px;
   padding: 8px 12px;
-  background: #2a292f;
+  background: #F7F8FB;
   font-size: 11px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   border-left: 2px solid transparent;
 }
 
 .header-primary {
-  border-left-color: #60a5fa;
+  border-left-color: #1C6AFF;
 }
 
 .header-secondary {
-  border-left-color: #adc6ff;
+  border-left-color: #1C6AFF;
 }
 
 .header-tertiary {
@@ -1085,11 +1085,11 @@ onUnmounted(() => {
 }
 
 .header-primary .column-icon {
-  color: #60a5fa;
+  color: #1C6AFF;
 }
 
 .header-secondary .column-icon {
-  color: #adc6ff;
+  color: #1C6AFF;
 }
 
 .header-tertiary .column-icon {
@@ -1107,20 +1107,20 @@ onUnmounted(() => {
   justify-content: space-between;
   align-items: center;
   padding: 12px 14px;
-  background: #131318;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: #EDEFF3;
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .param-label {
   font-size: 10px;
-  color: #64748b;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.03em;
 }
 
 .param-value {
   font-size: 12px;
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
   font-weight: 500;
 }
 
@@ -1129,7 +1129,7 @@ onUnmounted(() => {
   justify-content: flex-end;
   gap: 12px;
   padding-top: 16px;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
   margin-top: auto;
 }
 
@@ -1140,8 +1140,8 @@ onUnmounted(() => {
   left: 256px;
   right: 0;
   height: 40px;
-  background: #131318;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background: #EDEFF3;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   align-items: center;
   padding: 0 24px;
@@ -1164,7 +1164,7 @@ onUnmounted(() => {
 
 .status-text {
   font-size: 12px;
-  color: #94a3b8;
+  color: #9C9DA6;
 }
 
 .spacer {
@@ -1175,6 +1175,6 @@ onUnmounted(() => {
   display: flex;
   gap: 24px;
   font-size: 12px;
-  color: #94a3b8;
+  color: #9C9DA6;
 }
 </style>

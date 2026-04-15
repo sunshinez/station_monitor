@@ -305,9 +305,9 @@ onUnmounted(() => {
 <style scoped>
 .baseband-page {
   min-height: 100vh;
-  background-color: #131318;
-  color: #e4e1e9;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #EDEFF3;
+  color: #4B4C57;
+  font-family: 'Microsoft YaHei', 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
 }
 
 /* TopNavBar */
@@ -317,7 +317,7 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   height: 64px;
-  background: #131318;
+  background: #EDEFF3;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -329,7 +329,7 @@ onUnmounted(() => {
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.15em;
-  color: #e4e1e9;
+  color: #4B4C57;
   text-transform: uppercase;
 }
 
@@ -340,7 +340,7 @@ onUnmounted(() => {
 
 .nav-link {
   font-size: 14px;
-  color: #94a3b8;
+  color: #9C9DA6;
   text-decoration: none;
   transition: color 0.2s;
   padding-bottom: 4px;
@@ -349,12 +349,12 @@ onUnmounted(() => {
 
 .nav-link:hover,
 .nav-link.active {
-  color: #e4e1e9;
+  color: #4B4C57;
 }
 
 .nav-link.active {
-  color: #e4e1e9;
-  border-bottom-color: #e4e1e9;
+  color: #4B4C57;
+  border-bottom-color: #4B4C57;
   font-weight: 600;
 }
 
@@ -369,14 +369,14 @@ onUnmounted(() => {
   border-radius: 50%;
   background: none;
   border: none;
-  color: #94a3b8;
+  color: #9C9DA6;
   cursor: pointer;
   padding: 8px;
   transition: color 0.2s;
 }
 
 .icon-btn:hover {
-  color: #e4e1e9;
+  color: #4B4C57;
 }
 
 .icon {
@@ -391,7 +391,7 @@ onUnmounted(() => {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #ffb4ab;
+  background: #ED3B3B;
 }
 
 
@@ -402,7 +402,7 @@ onUnmounted(() => {
   top: 64px;
   bottom: 0;
   width: 256px;
-  background: #020617;
+  background: #EDEFF3;
   display: flex;
   flex-direction: column;
   z-index: 40;
@@ -414,7 +414,7 @@ onUnmounted(() => {
 
 .side-title {
   font-size: 12px;
-  color: #e4e1e9;
+  color: #4B4C57;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -423,7 +423,7 @@ onUnmounted(() => {
 
 .side-subtitle {
   font-size: 10px;
-  color: #64748b;
+  color: #9C9DA6;
   letter-spacing: 0.2em;
   margin: 0;
 }
@@ -438,7 +438,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 12px;
   padding: 12px 24px;
-  color: #64748b;
+  color: #9C9DA6;
   text-decoration: none;
   font-size: 12px;
   text-transform: uppercase;
@@ -448,14 +448,14 @@ onUnmounted(() => {
 }
 
 .side-link:hover {
-  color: #93c5fd;
-  background: rgba(255, 255, 255, 0.05);
+  color: #1C6AFF;
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .side-link.active {
-  color: #e4e1e9;
-  background: rgba(59, 130, 246, 0.1);
-  border-right-color: #e4e1e9;
+  color: #4B4C57;
+  background: rgba(28, 106, 255, 0.1);
+  border-right-color: #4B4C57;
   font-weight: 600;
 }
 
@@ -470,10 +470,10 @@ onUnmounted(() => {
 }
 
 .health-card {
-  background: #1b1b20;
+  background: #F7F8FB;
   padding: 16px;
   border-radius: 8px;
-  border: 1px solid rgba(66, 71, 84, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .health-header {
@@ -485,21 +485,21 @@ onUnmounted(() => {
 
 .health-label {
   font-size: 10px;
-  color: #64748b;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
 .health-bar {
   height: 4px;
-  background: #1f2937;
+  background: #DFE3EA;
   border-radius: 2px;
   overflow: hidden;
 }
 
 .health-fill {
   height: 100%;
-  background: #60a5fa;
+  background: #1C6AFF;
   border-radius: 2px;
   transition: width 0.3s;
 }
@@ -507,8 +507,8 @@ onUnmounted(() => {
 /* Main Content */
 .main-content {
   background-image:
-    linear-gradient(to right, rgba(59, 130, 246, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+    linear-gradient(to right, rgba(28, 106, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(28, 106, 255, 0.05) 1px, transparent 1px);
   background-size: 40px 40px;
 }
 
@@ -529,13 +529,13 @@ onUnmounted(() => {
 .page-title {
   font-size: 36px;
   font-weight: 700;
-  color: #e4e1e9;
+  color: #4B4C57;
   margin: 0 0 8px 0;
   letter-spacing: -0.02em;
 }
 
 .page-subtitle {
-  color: #c2c6d6;
+  color: #7F808F;
   margin: 0;
   font-size: 12px;
   text-transform: uppercase;
@@ -548,7 +548,7 @@ onUnmounted(() => {
 }
 
 .stat-box {
-  background: #1f1f24;
+  background: #F7F8FB;
   padding: 8px 16px;
   display: flex;
   align-items: center;
@@ -557,12 +557,12 @@ onUnmounted(() => {
 
 .stat-label {
   font-size: 11px;
-  color: #c2c6d6;
+  color: #7F808F;
   text-transform: uppercase;
 }
 
 .stat-value {
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
   font-size: 13px;
   font-weight: 500;
 }
@@ -572,7 +572,7 @@ onUnmounted(() => {
 }
 
 .stat-value.primary {
-  color: #a4c9ff;
+  color: #1C6AFF;
 }
 
 /* Matrix Grid */
@@ -596,7 +596,7 @@ onUnmounted(() => {
 
 .circle {
   position: absolute;
-  border: 1px solid rgba(164, 201, 255, 0.2);
+  border: 1px solid rgba(28, 106, 255, 0.2);
   border-radius: 50%;
 }
 
@@ -609,7 +609,7 @@ onUnmounted(() => {
 .circle-inner {
   width: 400px;
   height: 400px;
-  border-color: rgba(164, 201, 255, 0.4);
+  border-color: rgba(28, 106, 255, 0.4);
 }
 
 @keyframes pulse {
@@ -625,7 +625,7 @@ onUnmounted(() => {
 
 .column-title {
   font-size: 11px;
-  color: #c2c6d6;
+  color: #7F808F;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 16px;
@@ -637,15 +637,15 @@ onUnmounted(() => {
 .title-line {
   width: 2px;
   height: 16px;
-  background: #a4c9ff;
+  background: #1C6AFF;
 }
 
 .title-line.secondary {
-  background: #adc6ff;
+  background: #1C6AFF;
 }
 
 .title-line.accent {
-  background: #0566d9;
+  background: #1C6AFF;
 }
 
 /* Status Dot */
@@ -657,16 +657,16 @@ onUnmounted(() => {
 
 .status-dot.success {
   background: #4ae176;
-  box-shadow: 0 0 2px #4ae176, 0 0 12px rgba(74, 225, 118, 0.3);
+  box-shadow: 0 0 2px #4ae176, 0 0 12px rgba(0, 167, 75, 0.3);
 }
 
 .status-dot.error {
-  background: #ffb4ab;
-  box-shadow: 0 0 2px #ffb4ab, 0 0 12px rgba(255, 180, 171, 0.3);
+  background: #ED3B3B;
+  box-shadow: 0 0 2px #ED3B3B, 0 0 12px rgba(237, 59, 59, 0.2);
 }
 
 .status-dot.warning {
-  background: #f59e0b;
+  background: #ED6B01;
   box-shadow: 0 0 12px rgba(245, 158, 11, 0.3);
 }
 
@@ -681,20 +681,20 @@ onUnmounted(() => {
 
 /* Cards */
 .card {
-  background: #1b1b20;
+  background: #F7F8FB;
   padding: 24px;
   border-radius: 8px;
-  border-left: 4px solid rgba(164, 201, 255, 0.3);
+  border-left: 4px solid rgba(28, 106, 255, 0.3);
   transition: all 0.3s;
   margin-bottom: 16px;
 }
 
 .card:hover {
-  border-left-color: #a4c9ff;
+  border-left-color: #1C6AFF;
 }
 
 .card-control {
-  border-left-color: rgba(74, 225, 118, 0.3);
+  border-left-color: rgba(0, 167, 75, 0.3);
 }
 
 .card-control:hover {
@@ -710,27 +710,27 @@ onUnmounted(() => {
 
 .card-id {
   font-size: 11px;
-  color: #c2c6d6;
-  font-family: 'Fira Code', monospace;
+  color: #7F808F;
+  font-family: 'Microsoft YaHei', monospace;
 }
 
 .card-name {
   font-size: 18px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
   margin: 0 0 4px 0;
 }
 
 .card-metrics {
   font-size: 11px;
-  color: #c2c6d6;
-  font-family: 'Fira Code', monospace;
+  color: #7F808F;
+  font-family: 'Microsoft YaHei', monospace;
   margin: 0;
 }
 
 .progress-bar {
   height: 4px;
-  background: #0e0e13;
+  background: #F2F4F7;
   border-radius: 2px;
   overflow: hidden;
   margin-top: 12px;
@@ -751,19 +751,19 @@ onUnmounted(() => {
 }
 
 .uplink-card {
-  background: #2a292f;
+  background: #F7F8FB;
   padding: 20px;
   border-radius: 4px;
-  border: 1px solid rgba(66, 71, 84, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.06);
   transition: all 0.2s;
 }
 
 .uplink-card:hover {
-  background: #35343a;
+  background: #F7F8FB;
 }
 
 .uplink-card.error {
-  border-color: rgba(255, 180, 171, 0.3);
+  border-color: rgba(237, 59, 59, 0.2);
 }
 
 .uplink-header {
@@ -776,32 +776,32 @@ onUnmounted(() => {
 .uplink-icon {
   width: 16px;
   height: 16px;
-  color: #a4c9ff;
+  color: #1C6AFF;
 }
 
 .uplink-icon.error {
-  color: #ffb4ab;
+  color: #ED3B3B;
 }
 
 .uplink-name {
   font-size: 14px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
   margin-bottom: 4px;
 }
 
 .uplink-name.error {
-  color: #ffb4ab;
+  color: #ED3B3B;
 }
 
 .uplink-band {
   font-size: 10px;
-  color: #c2c6d6;
-  font-family: 'Fira Code', monospace;
+  color: #7F808F;
+  font-family: 'Microsoft YaHei', monospace;
 }
 
 .uplink-band.error {
-  color: rgba(255, 180, 171, 0.7);
+  color: rgba(237, 59, 59, 0.7);
 }
 
 :deep(.uplink-icon-svg) {
@@ -812,10 +812,10 @@ onUnmounted(() => {
 /* Telemetry Stream */
 .telemetry-stream {
   margin-top: 32px;
-  background: #0e0e13;
+  background: #F2F4F7;
   padding: 24px;
   border-radius: 8px;
-  border: 1px solid rgba(66, 71, 84, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 .stream-header {
@@ -826,14 +826,14 @@ onUnmounted(() => {
 }
 
 .stream-title {
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
   font-size: 11px;
-  color: #a4c9ff;
+  color: #1C6AFF;
 }
 
 .stream-time {
   font-size: 10px;
-  color: #c2c6d6;
+  color: #7F808F;
 }
 
 .stream-list {
@@ -846,11 +846,11 @@ onUnmounted(() => {
   display: flex;
   justify-content: space-between;
   font-size: 10px;
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
 }
 
 .stream-item span:first-child {
-  color: #94a3b8;
+  color: #9C9DA6;
 }
 
 .stream-status.success {
@@ -858,7 +858,7 @@ onUnmounted(() => {
 }
 
 .stream-status.error {
-  color: #ffb4ab;
+  color: #ED3B3B;
 }
 
 /* Downlink Grid */
@@ -869,10 +869,10 @@ onUnmounted(() => {
 }
 
 .downlink-cell {
-  background: #1f1f24;
+  background: #F7F8FB;
   padding: 16px 8px;
   border-radius: 2px;
-  border: 1px solid rgba(66, 71, 84, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.04);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -883,27 +883,27 @@ onUnmounted(() => {
 }
 
 .downlink-cell:hover {
-  background: rgba(5, 102, 217, 0.2);
+  background: rgba(28, 106, 255, 0.1);
 }
 
 .downlink-cell.warning .downlink-id {
-  color: #f59e0b;
+  color: #ED6B01;
 }
 
 .downlink-id {
   font-size: 10px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
 }
 
 /* Signal Map */
 .signal-map {
   position: relative;
   height: 256px;
-  background: #1b1b20;
+  background: #F7F8FB;
   border-radius: 8px;
   overflow: hidden;
-  border: 1px solid rgba(66, 71, 84, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.06);
   margin-top: 24px;
 }
 
@@ -916,8 +916,8 @@ onUnmounted(() => {
 .earth-visual {
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 30% 50%, rgba(59, 130, 246, 0.3), transparent 60%),
-              radial-gradient(circle at 70% 50%, rgba(16, 185, 129, 0.2), transparent 50%);
+  background: radial-gradient(circle at 30% 50%, rgba(28, 106, 255, 0.3), transparent 60%),
+              radial-gradient(circle at 70% 50%, rgba(0, 167, 75, 0.2), transparent 50%);
   filter: blur(20px);
 }
 
@@ -939,13 +939,13 @@ onUnmounted(() => {
 .map-title {
   font-size: 12px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
 }
 
 .map-icon {
   width: 20px;
   height: 20px;
-  color: #a4c9ff;
+  color: #1C6AFF;
 }
 
 .map-sync {
@@ -957,13 +957,13 @@ onUnmounted(() => {
 .sync-line {
   flex: 1;
   height: 2px;
-  background: linear-gradient(to right, transparent, #a4c9ff, transparent);
+  background: linear-gradient(to right, transparent, #1C6AFF, transparent);
 }
 
 .sync-text {
   font-size: 11px;
-  color: #a4c9ff;
-  font-family: 'Fira Code', monospace;
+  color: #1C6AFF;
+  font-family: 'Microsoft YaHei', monospace;
 }
 
 /* Stats Bar */
@@ -975,10 +975,10 @@ onUnmounted(() => {
 }
 
 .stat-card {
-  background: #1b1b20;
+  background: #F7F8FB;
   padding: 20px;
   border-radius: 4px;
-  border-top: 2px solid #a4c9ff;
+  border-top: 2px solid #1C6AFF;
 }
 
 .stat-card.success {
@@ -986,12 +986,12 @@ onUnmounted(() => {
 }
 
 .stat-card.error {
-  border-top-color: #ffb4ab;
+  border-top-color: #ED3B3B;
 }
 
 .stat-card-label {
   font-size: 10px;
-  color: #c2c6d6;
+  color: #7F808F;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 4px;
@@ -999,12 +999,12 @@ onUnmounted(() => {
 
 .stat-card-value {
   font-size: 24px;
-  font-family: 'Fira Code', monospace;
-  color: #ffffff;
+  font-family: 'Microsoft YaHei', monospace;
+  color: #4B4C57;
 }
 
 .stat-card-value.error {
-  color: #ffb4ab;
+  color: #ED3B3B;
 }
 
 /* Background Glow */
@@ -1021,7 +1021,7 @@ onUnmounted(() => {
   right: -200px;
   width: 800px;
   height: 800px;
-  background: rgba(164, 201, 255, 0.05);
+  background: rgba(28, 106, 255, 0.05);
 }
 
 .bg-glow.bottom-left {

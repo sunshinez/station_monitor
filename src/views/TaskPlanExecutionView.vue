@@ -522,9 +522,9 @@ onUnmounted(() => {
 <style scoped>
 .task-plan-execution-page {
   min-height: 100vh;
-  background-color: #131318;
-  color: #e4e1e9;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #EDEFF3;
+  color: #4B4C57;
+  font-family: 'Microsoft YaHei', 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
 }
 
 /* 顶部导航栏 */
@@ -534,8 +534,8 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   height: 64px;
-  background: #131318;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: #EDEFF3;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -547,7 +547,7 @@ onUnmounted(() => {
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.15em;
-  color: #60a5fa;
+  color: #1C6AFF;
   text-transform: uppercase;
 }
 
@@ -558,7 +558,7 @@ onUnmounted(() => {
 
 .nav-link {
   font-size: 14px;
-  color: #94a3b8;
+  color: #9C9DA6;
   text-decoration: none;
   transition: color 0.2s;
   padding-bottom: 4px;
@@ -566,12 +566,12 @@ onUnmounted(() => {
 }
 
 .nav-link:hover {
-  color: #e4e1e9;
+  color: #4B4C57;
 }
 
 .nav-link.active {
-  color: #60a5fa;
-  border-bottom-color: #60a5fa;
+  color: #1C6AFF;
+  border-bottom-color: #1C6AFF;
   font-weight: 600;
 }
 
@@ -585,7 +585,7 @@ onUnmounted(() => {
   position: relative;
   background: none;
   border: none;
-  color: #94a3b8;
+  color: #9C9DA6;
   cursor: pointer;
   padding: 8px;
   border-radius: 50%;
@@ -593,8 +593,8 @@ onUnmounted(() => {
 }
 
 .icon-btn:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: #e4e1e9;
+  background: rgba(0, 0, 0, 0.05);
+  color: #4B4C57;
 }
 
 .icon {
@@ -609,7 +609,7 @@ onUnmounted(() => {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #ffb4ab;
+  background: #ED3B3B;
 }
 
 /* 主布局 */
@@ -623,8 +623,8 @@ onUnmounted(() => {
 /* 侧边栏 */
 .side-nav {
   width: 256px;
-  background: #1b1b20;
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  background: #F7F8FB;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   padding: 16px 0;
@@ -645,19 +645,19 @@ onUnmounted(() => {
 .side-header-icon {
   width: 20px;
   height: 20px;
-  color: #60a5fa;
+  color: #1C6AFF;
 }
 
 .side-title {
   font-size: 18px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
   margin: 0;
 }
 
 .side-subtitle {
   font-size: 10px;
-  color: #64748b;
+  color: #9C9DA6;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   margin: 0;
@@ -675,7 +675,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 12px;
   padding: 12px;
-  color: #94a3b8;
+  color: #9C9DA6;
   text-decoration: none;
   font-size: 13px;
   border-radius: 4px;
@@ -685,14 +685,14 @@ onUnmounted(() => {
 }
 
 .side-link:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: #e4e1e9;
+  background: rgba(0, 0, 0, 0.05);
+  color: #4B4C57;
 }
 
 .side-link.active {
-  background: #2a292f;
-  color: #60a5fa;
-  border-left-color: #60a5fa;
+  background: #F7F8FB;
+  color: #1C6AFF;
+  border-left-color: #1C6AFF;
   font-weight: 600;
 }
 
@@ -730,14 +730,14 @@ onUnmounted(() => {
 .page-title {
   font-size: 24px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
   margin: 0;
 }
 
 .page-subtitle {
   font-size: 11px;
-  color: #64748b;
-  font-family: 'Fira Code', monospace;
+  color: #9C9DA6;
+  font-family: 'Microsoft YaHei', monospace;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   margin: 0;
@@ -752,7 +752,7 @@ onUnmounted(() => {
 
 .time-label {
   font-size: 10px;
-  color: #64748b;
+  color: #9C9DA6;
   text-transform: uppercase;
 }
 
@@ -772,10 +772,10 @@ onUnmounted(() => {
 }
 
 .device-card {
-  background: #1b1b20;
+  background: #F7F8FB;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-left: 4px solid #60a5fa;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-left: 4px solid #1C6AFF;
   padding: 20px;
 }
 
@@ -789,13 +789,13 @@ onUnmounted(() => {
 .device-icon {
   width: 20px;
   height: 20px;
-  color: #60a5fa;
+  color: #1C6AFF;
 }
 
 .device-title {
   font-size: 13px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
   margin: 0;
 }
 
@@ -812,11 +812,11 @@ onUnmounted(() => {
 }
 
 .param-label {
-  color: #64748b;
+  color: #9C9DA6;
 }
 
 .param-value {
-  color: #e4e1e9;
+  color: #4B4C57;
 }
 
 .status-success {
@@ -844,31 +844,31 @@ onUnmounted(() => {
 }
 
 .text-secondary {
-  color: #adc6ff;
+  color: #1C6AFF;
 }
 
 .text-white {
-  color: #ffffff;
+  color: #4B4C57;
 }
 
 .text-muted {
-  color: #64748b;
+  color: #9C9DA6;
 }
 
 .text-dim {
-  color: #94a3b8;
+  color: #9C9DA6;
 }
 
 .text-primary {
-  color: #60a5fa;
+  color: #1C6AFF;
 }
 
 .text-error {
-  color: #ffb4ab;
+  color: #ED3B3B;
 }
 
 .mono {
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
 }
 
 /* 中部控制行 */
@@ -881,16 +881,16 @@ onUnmounted(() => {
 }
 
 .control-panel {
-  background: #1b1b20;
+  background: #F7F8FB;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   padding: 20px;
 }
 
 .script-panel {
-  background: #1b1b20;
+  background: #F7F8FB;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -904,14 +904,14 @@ onUnmounted(() => {
 
 .panel-header-bar.border-bottom {
   padding: 16px 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  background: rgba(14, 14, 19, 0.4);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  background: rgba(247, 248, 251, 0.8);
 }
 
 .panel-title {
   font-size: 13px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -925,8 +925,8 @@ onUnmounted(() => {
 
 .panel-badge {
   font-size: 10px;
-  color: #64748b;
-  font-family: 'Fira Code', monospace;
+  color: #9C9DA6;
+  font-family: 'Microsoft YaHei', monospace;
   text-transform: uppercase;
 }
 
@@ -962,49 +962,49 @@ onUnmounted(() => {
 }
 
 .btn-abort {
-  background: rgba(255, 180, 171, 0.1);
-  border-color: rgba(255, 180, 171, 0.2);
-  color: #ffb4ab;
+  background: rgba(237, 59, 59, 0.08);
+  border-color: rgba(237, 59, 59, 0.15);
+  color: #ED3B3B;
 }
 
 .btn-abort:hover {
-  background: rgba(255, 180, 171, 0.2);
+  background: rgba(237, 59, 59, 0.15);
 }
 
 .btn-pause {
-  background: rgba(173, 198, 255, 0.1);
-  border-color: rgba(173, 198, 255, 0.2);
-  color: #adc6ff;
+  background: rgba(28, 106, 255, 0.1);
+  border-color: rgba(28, 106, 255, 0.2);
+  color: #1C6AFF;
 }
 
 .btn-pause:hover {
-  background: rgba(173, 198, 255, 0.2);
+  background: rgba(28, 106, 255, 0.2);
 }
 
 .btn-resume {
-  background: rgba(74, 225, 118, 0.1);
-  border-color: rgba(74, 225, 118, 0.2);
+  background: rgba(0, 167, 75, 0.1);
+  border-color: rgba(0, 167, 75, 0.2);
   color: #4ae176;
 }
 
 .btn-resume:hover {
-  background: rgba(74, 225, 118, 0.2);
+  background: rgba(0, 167, 75, 0.2);
 }
 
 .btn-skip {
-  background: rgba(96, 165, 250, 0.1);
-  border-color: rgba(96, 165, 250, 0.2);
-  color: #60a5fa;
+  background: rgba(28, 106, 255, 0.1);
+  border-color: rgba(28, 106, 255, 0.2);
+  color: #1C6AFF;
 }
 
 .btn-skip:hover {
-  background: rgba(96, 165, 250, 0.2);
+  background: rgba(28, 106, 255, 0.2);
 }
 
 .script-log {
   flex: 1;
   padding: 16px 20px;
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
   font-size: 11px;
   background: rgba(0, 0, 0, 0.2);
   overflow-y: auto;
@@ -1020,7 +1020,7 @@ onUnmounted(() => {
 }
 
 .log-time {
-  color: #475569;
+  color: #DFE3EA;
   white-space: nowrap;
   flex-shrink: 0;
 }
@@ -1035,15 +1035,15 @@ onUnmounted(() => {
 }
 
 .tag-primary {
-  color: #60a5fa;
+  color: #1C6AFF;
 }
 
 .tag-secondary {
-  color: #adc6ff;
+  color: #1C6AFF;
 }
 
 .log-message {
-  color: #cbd5e1;
+  color: #9C9DA6;
   flex: 1;
 }
 
@@ -1051,9 +1051,9 @@ onUnmounted(() => {
 .plan-table-panel {
   flex: 1;
   min-height: 0;
-  background: #1b1b20;
+  background: #F7F8FB;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -1070,7 +1070,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 6px;
   font-size: 11px;
-  color: #64748b;
+  color: #9C9DA6;
 }
 
 .legend-dot {
@@ -1084,11 +1084,11 @@ onUnmounted(() => {
 }
 
 .dot-primary {
-  background: #60a5fa;
+  background: #1C6AFF;
 }
 
 .dot-muted {
-  background: #475569;
+  background: #DFE3EA;
 }
 
 .table-wrapper {
@@ -1103,20 +1103,20 @@ onUnmounted(() => {
 }
 
 .data-table th {
-  background: rgba(14, 14, 19, 0.4);
+  background: rgba(247, 248, 251, 0.8);
   padding: 14px 20px;
   text-align: left;
   font-size: 10px;
   font-weight: 600;
-  color: #94a3b8;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .data-table td {
   padding: 14px 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.02);
 }
 
 .table-row {
@@ -1124,19 +1124,19 @@ onUnmounted(() => {
 }
 
 .table-row:hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(0, 0, 0, 0.03);
 }
 
 .active-row {
-  background: rgba(96, 165, 250, 0.1);
-  border-top: 1px solid rgba(96, 165, 250, 0.2);
-  border-bottom: 1px solid rgba(96, 165, 250, 0.2);
+  background: rgba(28, 106, 255, 0.1);
+  border-top: 1px solid rgba(28, 106, 255, 0.2);
+  border-bottom: 1px solid rgba(28, 106, 255, 0.2);
 }
 
 .plan-name {
   font-size: 13px;
   font-weight: 600;
-  color: #ffffff;
+  color: #4B4C57;
 }
 
 .status-tag {
@@ -1150,29 +1150,29 @@ onUnmounted(() => {
 }
 
 .tag-success {
-  background: rgba(74, 225, 118, 0.1);
+  background: rgba(0, 167, 75, 0.1);
   color: #4ae176;
-  border: 1px solid rgba(74, 225, 118, 0.2);
+  border: 1px solid rgba(0, 167, 75, 0.2);
 }
 
 .tag-active {
-  background: #60a5fa;
-  color: #00315d;
-  border: 1px solid rgba(96, 165, 250, 0.4);
+  background: #1C6AFF;
+  color: #1C6AFF;
+  border: 1px solid rgba(28, 106, 255, 0.4);
   font-weight: 600;
 }
 
 .tag-ready {
-  background: rgba(173, 198, 255, 0.15);
-  color: #adc6ff;
-  border: 1px solid rgba(173, 198, 255, 0.3);
+  background: rgba(28, 106, 255, 0.15);
+  color: #1C6AFF;
+  border: 1px solid rgba(28, 106, 255, 0.3);
 }
 
 .ping-dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #ffffff;
+  background: #4B4C57;
   animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
@@ -1190,8 +1190,8 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   height: 32px;
-  background: #0e0e13;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background: #F2F4F7;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   align-items: center;
   padding: 0 24px;
@@ -1204,7 +1204,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 8px;
   font-size: 12px;
-  color: #94a3b8;
+  color: #9C9DA6;
 }
 
 .status-dot-green {
@@ -1222,7 +1222,7 @@ onUnmounted(() => {
   display: flex;
   gap: 24px;
   font-size: 12px;
-  color: #64748b;
-  font-family: 'Fira Code', monospace;
+  color: #9C9DA6;
+  font-family: 'Microsoft YaHei', monospace;
 }
 </style>

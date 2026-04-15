@@ -284,9 +284,9 @@ const transfers = ref([
 <style scoped>
 .file-transfer-page {
   min-height: 100vh;
-  background-color: #131318;
-  color: #e4e1e9;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #EDEFF3;
+  color: #4B4C57;
+  font-family: 'Microsoft YaHei', 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
   display: flex;
   flex-direction: column;
 }
@@ -306,8 +306,8 @@ const transfers = ref([
   left: 0;
   right: 0;
   height: 64px;
-  background: #131318;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: #EDEFF3;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -319,7 +319,7 @@ const transfers = ref([
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.15em;
-  color: #60a5fa;
+  color: #1C6AFF;
   text-transform: uppercase;
 }
 
@@ -330,7 +330,7 @@ const transfers = ref([
 
 .nav-link {
   font-size: 14px;
-  color: #94a3b8;
+  color: #9C9DA6;
   text-decoration: none;
   transition: color 0.2s;
   padding-bottom: 4px;
@@ -338,12 +338,12 @@ const transfers = ref([
 }
 
 .nav-link:hover {
-  color: #e4e1e9;
+  color: #4B4C57;
 }
 
 .nav-link.active {
-  color: #60a5fa;
-  border-bottom-color: #60a5fa;
+  color: #1C6AFF;
+  border-bottom-color: #1C6AFF;
   font-weight: 600;
 }
 
@@ -357,7 +357,7 @@ const transfers = ref([
   position: relative;
   background: none;
   border: none;
-  color: #94a3b8;
+  color: #9C9DA6;
   cursor: pointer;
   padding: 8px;
   border-radius: 50%;
@@ -365,8 +365,8 @@ const transfers = ref([
 }
 
 .icon-btn:hover {
-  background: #1b1b20;
-  color: #e4e1e9;
+  background: #F7F8FB;
+  color: #4B4C57;
 }
 
 .icon {
@@ -381,14 +381,14 @@ const transfers = ref([
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #ffb4ab;
+  background: #ED3B3B;
 }
 
 /* Side Navigation */
 .side-nav {
   width: 260px;
-  background: #1b1b20;
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  background: #F7F8FB;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   z-index: 40;
@@ -403,14 +403,14 @@ const transfers = ref([
 .side-title {
   font-size: 18px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
   margin: 0;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Microsoft YaHei', sans-serif;
 }
 
 .side-subtitle {
   font-size: 10px;
-  color: #60a5fa;
+  color: #1C6AFF;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   margin: 4px 0 0 0;
@@ -429,7 +429,7 @@ const transfers = ref([
   align-items: center;
   gap: 12px;
   padding: 12px 16px;
-  color: #64748b;
+  color: #9C9DA6;
   text-decoration: none;
   font-size: 14px;
   transition: all 0.2s;
@@ -438,14 +438,14 @@ const transfers = ref([
 }
 
 .side-link:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: #e4e1e9;
+  background: rgba(0, 0, 0, 0.05);
+  color: #4B4C57;
 }
 
 .side-link.active {
-  background: rgba(96, 165, 250, 0.1);
-  border-left-color: #60a5fa;
-  color: #60a5fa;
+  background: rgba(28, 106, 255, 0.1);
+  border-left-color: #1C6AFF;
+  color: #1C6AFF;
   font-weight: 600;
 }
 
@@ -464,7 +464,7 @@ const transfers = ref([
   align-items: center;
   gap: 10px;
   padding: 12px;
-  background: #0e0e13;
+  background: #F2F4F7;
   border-radius: 8px;
 }
 
@@ -474,7 +474,7 @@ const transfers = ref([
   border-radius: 50%;
   background: #4ae176;
   animation: pulse 2s infinite;
-  box-shadow: 0 0 8px rgba(74, 225, 118, 0.3);
+  box-shadow: 0 0 8px rgba(0, 167, 75, 0.3);
 }
 
 @keyframes pulse {
@@ -484,8 +484,8 @@ const transfers = ref([
 
 .status-text {
   font-size: 10px;
-  font-family: 'Fira Code', monospace;
-  color: #94a3b8;
+  font-family: 'Microsoft YaHei', monospace;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -494,7 +494,7 @@ const transfers = ref([
 .main-content {
   flex: 1;
   overflow-y: auto;
-  background: #131318;
+  background: #EDEFF3;
   padding: 32px;
 }
 
@@ -514,8 +514,8 @@ const transfers = ref([
 }
 
 .stat-card {
-  background: #1b1b20;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: #F7F8FB;
+  border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 8px;
   padding: 24px;
   display: flex;
@@ -525,13 +525,13 @@ const transfers = ref([
 }
 
 .stat-card:hover {
-  background: #2a292f;
+  background: #F7F8FB;
 }
 
 .stat-label {
   font-size: 11px;
   font-weight: 600;
-  color: #94a3b8;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin: 0 0 8px 0;
@@ -539,13 +539,13 @@ const transfers = ref([
 
 .stat-value {
   font-size: 28px;
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
   font-weight: 700;
   margin: 0;
 }
 
 .stat-value.primary {
-  color: #60a5fa;
+  color: #1C6AFF;
 }
 
 .stat-value.tertiary {
@@ -553,7 +553,7 @@ const transfers = ref([
 }
 
 .stat-value.secondary {
-  color: #a4c9ff;
+  color: #1C6AFF;
 }
 
 .stat-icon {
@@ -567,21 +567,21 @@ const transfers = ref([
 }
 
 .stat-icon.primary {
-  color: rgba(96, 165, 250, 0.2);
+  color: rgba(28, 106, 255, 0.2);
 }
 
 .stat-icon.tertiary {
-  color: rgba(74, 225, 118, 0.2);
+  color: rgba(0, 167, 75, 0.2);
 }
 
 .stat-icon.secondary {
-  color: rgba(164, 201, 255, 0.2);
+  color: rgba(28, 106, 255, 0.2);
 }
 
 /* Panels */
 .panel {
-  background: #1b1b20;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: #F7F8FB;
+  border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 8px;
   overflow: hidden;
 }
@@ -591,8 +591,8 @@ const transfers = ref([
   justify-content: space-between;
   align-items: center;
   padding: 16px 24px;
-  background: #2a292f;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: #F7F8FB;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .panel-title-group {
@@ -604,7 +604,7 @@ const transfers = ref([
 .panel-icon {
   width: 18px;
   height: 18px;
-  color: #60a5fa;
+  color: #1C6AFF;
 }
 
 .panel-icon.tertiary {
@@ -614,9 +614,9 @@ const transfers = ref([
 .panel-title {
   font-size: 15px;
   font-weight: 600;
-  color: #ffffff;
+  color: #4B4C57;
   margin: 0;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Microsoft YaHei', sans-serif;
 }
 
 .panel-actions {
@@ -628,26 +628,26 @@ const transfers = ref([
 .search-input {
   width: 240px;
   padding: 8px 14px;
-  background: #0e0e13;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: #F2F4F7;
+  border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 4px;
-  color: #e4e1e9;
+  color: #4B4C57;
   font-size: 12px;
   outline: none;
   transition: all 0.2s;
 }
 
 .search-input:focus {
-  border-color: #60a5fa;
-  box-shadow: 0 0 0 1px rgba(96, 165, 250, 0.2);
+  border-color: #1C6AFF;
+  box-shadow: 0 0 0 1px rgba(28, 106, 255, 0.2);
 }
 
 .btn-primary {
   padding: 8px 16px;
-  background: #60a5fa;
+  background: #1C6AFF;
   border: none;
   border-radius: 4px;
-  color: #0f172a;
+  color: #F7F8FB;
   font-size: 12px;
   font-weight: 600;
   cursor: pointer;
@@ -655,7 +655,7 @@ const transfers = ref([
 }
 
 .btn-primary:hover {
-  box-shadow: 0 0 15px rgba(96, 165, 250, 0.3);
+  box-shadow: 0 0 15px rgba(28, 106, 255, 0.3);
 }
 
 /* Table */
@@ -673,17 +673,17 @@ const transfers = ref([
 .data-table th {
   font-size: 10px;
   font-weight: 500;
-  color: #94a3b8;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   padding: 14px 24px;
-  background: rgba(14, 14, 19, 0.5);
+  background: rgba(247, 248, 251, 0.9);
   white-space: nowrap;
 }
 
 .data-table td {
   padding: 16px 24px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .data-table tbody tr {
@@ -691,7 +691,7 @@ const transfers = ref([
 }
 
 .data-table tbody tr:hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(0, 0, 0, 0.03);
 }
 
 .file-name-cell {
@@ -706,36 +706,36 @@ const transfers = ref([
 }
 
 .file-icon.blue {
-  color: #60a5fa;
+  color: #1C6AFF;
 }
 
 .file-icon.amber {
-  color: #f59e0b;
+  color: #ED6B01;
 }
 
 .file-icon.purple {
-  color: #a78bfa;
+  color: #1C6AFF;
 }
 
 .file-name {
   font-size: 13px;
   font-weight: 500;
-  color: #e4e1e9;
+  color: #4B4C57;
 }
 
 .mono-cell {
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
   font-size: 11px;
 }
 
 .mono-cell.dim {
-  color: #94a3b8;
+  color: #9C9DA6;
 }
 
 .link-btn {
   background: none;
   border: none;
-  color: #60a5fa;
+  color: #1C6AFF;
   font-size: 12px;
   cursor: pointer;
   padding: 0;
@@ -743,7 +743,7 @@ const transfers = ref([
 }
 
 .link-btn:hover {
-  color: #a4c9ff;
+  color: #1C6AFF;
 }
 
 /* Monitor Panel */
@@ -758,8 +758,8 @@ const transfers = ref([
   align-items: center;
   gap: 6px;
   font-size: 10px;
-  font-family: 'Fira Code', monospace;
-  color: #94a3b8;
+  font-family: 'Microsoft YaHei', monospace;
+  color: #9C9DA6;
 }
 
 .meta-dot {
@@ -773,7 +773,7 @@ const transfers = ref([
 }
 
 .meta-dot.neutral {
-  background: #64748b;
+  background: #9C9DA6;
 }
 
 .monitor-body {
@@ -804,21 +804,21 @@ const transfers = ref([
 .transfer-icon {
   width: 20px;
   height: 20px;
-  color: #60a5fa;
+  color: #1C6AFF;
 }
 
 .transfer-name {
   font-size: 12px;
   font-weight: 500;
-  color: #e4e1e9;
+  color: #4B4C57;
   margin: 0 0 2px 0;
 }
 
 .transfer-target {
   font-size: 10px;
-  color: #94a3b8;
+  color: #9C9DA6;
   margin: 0;
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
 }
 
 .transfer-stats {
@@ -827,15 +827,15 @@ const transfers = ref([
 
 .transfer-speed {
   font-size: 12px;
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
   color: #4ae176;
 }
 
 .transfer-progress-text {
   font-size: 10px;
-  color: #94a3b8;
+  color: #9C9DA6;
   margin: 2px 0 0 0;
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
 }
 
 .progress-bar {
@@ -844,7 +844,7 @@ const transfers = ref([
 
 .progress-track {
   height: 4px;
-  background: #35343a;
+  background: #F7F8FB;
   border-radius: 2px;
   overflow: hidden;
 }
@@ -853,6 +853,6 @@ const transfers = ref([
   height: 100%;
   background: #4ae176;
   border-radius: 2px;
-  box-shadow: 0 0 8px rgba(74, 225, 118, 0.4);
+  box-shadow: 0 0 8px rgba(0, 167, 75, 0.3);
 }
 </style>

@@ -284,7 +284,7 @@ function getIcon(name?: string) {
   padding: 10px 12px;
   border-radius: 6px;
   font-size: 14px;
-  color: #94a3b8;
+  color: #9C9DA6;
   text-decoration: none;
   background: transparent;
   border: none;
@@ -295,13 +295,13 @@ function getIcon(name?: string) {
 
 .menu-link:hover,
 .menu-group-toggle:hover {
-  background: rgba(255, 255, 255, 0.03);
-  color: #e4e1e9;
+  background: rgba(0, 0, 0, 0.03);
+  color: #4B4C57;
 }
 
 .menu-link.active,
 .menu-group-toggle.active {
-  color: #60a5fa;
+  color: #1C6AFF;
   font-weight: 500;
 }
 
@@ -320,7 +320,7 @@ function getIcon(name?: string) {
 
 .expand-icon {
   font-size: 10px;
-  color: #64748b;
+  color: #9C9DA6;
   transition: transform 0.2s;
   flex-shrink: 0;
 }
@@ -333,27 +333,27 @@ function getIcon(name?: string) {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #64748b;
+  background: #9C9DA6;
   flex-shrink: 0;
   margin-left: 4px;
 }
 
 .menu-link.active .leaf-dot {
-  background: #60a5fa;
+  background: #1C6AFF;
 }
 
 .level-dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #64748b;
+  background: #9C9DA6;
   flex-shrink: 0;
   margin-left: 4px;
   transition: background 0.2s;
 }
 
 .level-dot.active {
-  background: #60a5fa;
+  background: #1C6AFF;
 }
 
 .menu-children {

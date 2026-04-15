@@ -201,8 +201,8 @@ onUnmounted(() => {
   position: fixed;
   inset: 0;
   background-image:
-    linear-gradient(rgba(30, 41, 59, 0.2) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(30, 41, 59, 0.2) 1px, transparent 1px);
+    linear-gradient(rgba(223, 227, 234, 0.6) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(223, 227, 234, 0.6) 1px, transparent 1px);
   background-size: 40px 40px;
   pointer-events: none;
   z-index: 0;
@@ -320,7 +320,7 @@ onUnmounted(() => {
   border: 1px solid var(--border-card);
   padding: 2rem;
   position: relative;
-  box-shadow: 0 0 40px -10px rgba(96, 165, 250, 0.1);
+  box-shadow: 0 0 40px -10px rgba(28, 106, 255, 0.1);
 }
 
 /* Decorative Corners */
@@ -367,7 +367,7 @@ onUnmounted(() => {
   justify-content: space-between;
   margin-bottom: 2.5rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid rgba(30, 41, 59, 0.5);
+  border-bottom: 1px solid rgba(223, 227, 234, 1);
 }
 
 .status-left {
@@ -382,7 +382,7 @@ onUnmounted(() => {
   background-color: var(--color-success);
   border-radius: 50%;
   animation: breathe 2s ease-in-out infinite;
-  box-shadow: 0 0 8px rgba(74, 225, 118, 0.5);
+  box-shadow: 0 0 8px rgba(0, 167, 75, 0.5);
 }
 
 @keyframes breathe {
@@ -448,12 +448,12 @@ onUnmounted(() => {
 
 .form-input {
   width: 100%;
-  background-color: rgba(11, 11, 16, 0.5);
-  border: 1px solid var(--border-card);
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-input);
   padding: 0.875rem 1rem 0.875rem 2.75rem;
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 14px;
-  color: var(--text-white);
+  color: var(--text-title);
   transition: all 0.2s;
   outline: none;
 }
@@ -463,8 +463,8 @@ onUnmounted(() => {
 }
 
 .form-input:focus {
-  border-color: rgba(96, 165, 250, 0.5);
-  box-shadow: 0 0 0 1px rgba(96, 165, 250, 0.2);
+  border-color: rgba(28, 106, 255, 0.5);
+  box-shadow: 0 0 0 1px rgba(28, 106, 255, 0.2);
 }
 
 /* Action Bar */
@@ -535,8 +535,8 @@ onUnmounted(() => {
 }
 
 .submit-btn:hover:not(:disabled) {
-  background-color: rgba(96, 165, 250, 0.9);
-  box-shadow: 0 0 25px rgba(96, 165, 250, 0.3);
+  background-color: rgba(28, 106, 255, 0.9);
+  box-shadow: 0 0 25px rgba(28, 106, 255, 0.3);
 }
 
 .submit-btn:active:not(:disabled) {
@@ -588,12 +588,12 @@ onUnmounted(() => {
 .glow-top-left {
   top: -10%;
   left: -10%;
-  background-color: rgba(96, 165, 250, 0.05);
+  background-color: rgba(28, 106, 255, 0.05);
 }
 
 .glow-bottom-right {
   bottom: -10%;
   right: -10%;
-  background-color: rgba(30, 58, 138, 0.1);
+  background-color: rgba(28, 106, 255, 0.08);
 }
 </style>

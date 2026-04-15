@@ -406,9 +406,9 @@ onUnmounted(() => {
 <style scoped>
 .data-transmission-page {
   min-height: 100vh;
-  background-color: #131318;
-  color: #e4e1e9;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #EDEFF3;
+  color: #4B4C57;
+  font-family: 'Microsoft YaHei', 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
   display: flex;
   flex-direction: column;
 }
@@ -427,8 +427,8 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   height: 64px;
-  background: #131318;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: #EDEFF3;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -440,7 +440,7 @@ onUnmounted(() => {
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.15em;
-  color: #60a5fa;
+  color: #1C6AFF;
   text-transform: uppercase;
 }
 
@@ -451,7 +451,7 @@ onUnmounted(() => {
 
 .nav-link {
   font-size: 14px;
-  color: #94a3b8;
+  color: #9C9DA6;
   text-decoration: none;
   transition: color 0.2s;
   padding-bottom: 4px;
@@ -459,12 +459,12 @@ onUnmounted(() => {
 }
 
 .nav-link:hover {
-  color: #e4e1e9;
+  color: #4B4C57;
 }
 
 .nav-link.active {
-  color: #60a5fa;
-  border-bottom-color: #60a5fa;
+  color: #1C6AFF;
+  border-bottom-color: #1C6AFF;
   font-weight: 600;
 }
 
@@ -478,7 +478,7 @@ onUnmounted(() => {
   position: relative;
   background: none;
   border: none;
-  color: #94a3b8;
+  color: #9C9DA6;
   cursor: pointer;
   padding: 8px;
   border-radius: 50%;
@@ -486,8 +486,8 @@ onUnmounted(() => {
 }
 
 .icon-btn:hover {
-  background: #1b1b20;
-  color: #e4e1e9;
+  background: #F7F8FB;
+  color: #4B4C57;
 }
 
 .icon {
@@ -502,14 +502,14 @@ onUnmounted(() => {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #ffb4ab;
+  background: #ED3B3B;
 }
 
 /* Side Navigation */
 .side-nav {
   width: 256px;
-  background: #1b1b20;
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  background: #F7F8FB;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   z-index: 40;
@@ -524,13 +524,13 @@ onUnmounted(() => {
 .side-title {
   font-size: 18px;
   font-weight: 700;
-  color: #60a5fa;
+  color: #1C6AFF;
   margin: 0 0 4px 0;
 }
 
 .side-subtitle {
   font-size: 10px;
-  color: #64748b;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   margin: 0;
@@ -546,7 +546,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 12px;
   padding: 16px 24px;
-  color: #64748b;
+  color: #9C9DA6;
   text-decoration: none;
   font-size: 13px;
   transition: all 0.2s;
@@ -554,14 +554,14 @@ onUnmounted(() => {
 }
 
 .side-link:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: #e4e1e9;
+  background: rgba(0, 0, 0, 0.05);
+  color: #4B4C57;
 }
 
 .side-link.active {
-  background: rgba(59, 130, 246, 0.1);
-  border-right-color: #60a5fa;
-  color: #60a5fa;
+  background: rgba(28, 106, 255, 0.1);
+  border-right-color: #1C6AFF;
+  color: #1C6AFF;
 }
 
 .side-icon {
@@ -575,15 +575,15 @@ onUnmounted(() => {
 }
 
 .health-card {
-  background: #0e0e13;
+  background: #F2F4F7;
   padding: 16px;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .health-label {
   font-size: 10px;
-  color: #64748b;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 8px;
@@ -600,20 +600,20 @@ onUnmounted(() => {
   height: 8px;
   border-radius: 50%;
   background: #4ae176;
-  box-shadow: 0 0 8px rgba(74, 225, 118, 0.5);
+  box-shadow: 0 0 8px rgba(0, 167, 75, 0.5);
 }
 
 .health-text {
   font-size: 12px;
-  font-family: 'Fira Code', monospace;
-  color: #e4e1e9;
+  font-family: 'Microsoft YaHei', monospace;
+  color: #4B4C57;
 }
 
 /* Main Content */
 .main-content {
   flex: 1;
   overflow-y: auto;
-  background: #131318;
+  background: #EDEFF3;
   padding: 32px;
 }
 
@@ -634,9 +634,9 @@ onUnmounted(() => {
   align-items: center;
   gap: 8px;
   margin-bottom: 8px;
-  color: #60a5fa;
+  color: #1C6AFF;
   font-size: 10px;
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
   letter-spacing: 0.05em;
 }
 
@@ -652,12 +652,12 @@ onUnmounted(() => {
 .page-title {
   font-size: 28px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
   margin: 0;
 }
 
 .page-title .highlight {
-  color: #a4c9ff;
+  color: #1C6AFF;
 }
 
 .header-right {
@@ -666,19 +666,19 @@ onUnmounted(() => {
 }
 
 .status-card {
-  background: #1b1b20;
+  background: #F7F8FB;
   padding: 16px 20px;
   border-radius: 4px;
   border-left: 2px solid #4ae176;
 }
 
 .status-card:last-child {
-  border-left-color: #60a5fa;
+  border-left-color: #1C6AFF;
 }
 
 .status-label {
   font-size: 10px;
-  color: #64748b;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 4px;
@@ -686,8 +686,8 @@ onUnmounted(() => {
 
 .status-value {
   font-size: 18px;
-  font-family: 'Fira Code', monospace;
-  color: #ffffff;
+  font-family: 'Microsoft YaHei', monospace;
+  color: #4B4C57;
 }
 
 .status-indicator {
@@ -701,13 +701,13 @@ onUnmounted(() => {
   height: 8px;
   border-radius: 50%;
   background: #4ae176;
-  box-shadow: 0 0 8px rgba(74, 225, 118, 0.5);
+  box-shadow: 0 0 8px rgba(0, 167, 75, 0.5);
 }
 
 .status-text-green {
   font-size: 18px;
-  font-family: 'Fira Code', monospace;
-  color: #ffffff;
+  font-family: 'Microsoft YaHei', monospace;
+  color: #4B4C57;
 }
 
 /* Content Grid */
@@ -736,7 +736,7 @@ onUnmounted(() => {
 }
 
 .metric-card {
-  background: #1b1b20;
+  background: #F7F8FB;
   padding: 24px;
   border-radius: 8px;
   position: relative;
@@ -752,7 +752,7 @@ onUnmounted(() => {
 
 .metric-label {
   font-size: 10px;
-  color: #94a3b8;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
@@ -760,7 +760,7 @@ onUnmounted(() => {
 .metric-icon-bg {
   width: 40px;
   height: 40px;
-  color: rgba(255, 255, 255, 0.1);
+  color: rgba(0, 0, 0, 0.06);
   position: absolute;
   top: 8px;
   right: 8px;
@@ -775,13 +775,13 @@ onUnmounted(() => {
 
 .metric-value {
   font-size: 32px;
-  font-family: 'Fira Code', monospace;
-  color: #ffffff;
+  font-family: 'Microsoft YaHei', monospace;
+  color: #4B4C57;
 }
 
 .metric-unit {
   font-size: 11px;
-  color: #64748b;
+  color: #9C9DA6;
 }
 
 .channel-indicators {
@@ -792,7 +792,7 @@ onUnmounted(() => {
 .channel-bar {
   height: 4px;
   flex: 1;
-  background: #2a292f;
+  background: #F7F8FB;
   border-radius: 2px;
 }
 
@@ -801,7 +801,7 @@ onUnmounted(() => {
 }
 
 .channel-bar.error {
-  background: #ffb4ab;
+  background: #ED3B3B;
 }
 
 .trend-indicator {
@@ -810,7 +810,7 @@ onUnmounted(() => {
   gap: 4px;
   font-size: 10px;
   color: #4ae176;
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
 }
 
 .trend-icon {
@@ -820,13 +820,13 @@ onUnmounted(() => {
 
 .status-text {
   font-size: 10px;
-  color: #64748b;
-  font-family: 'Fira Code', monospace;
+  color: #9C9DA6;
+  font-family: 'Microsoft YaHei', monospace;
 }
 
 /* Storage Section */
 .storage-section {
-  background: #1b1b20;
+  background: #F7F8FB;
   padding: 24px;
   border-radius: 8px;
 }
@@ -841,13 +841,13 @@ onUnmounted(() => {
 .header-bar {
   width: 4px;
   height: 24px;
-  background: #60a5fa;
+  background: #1C6AFF;
 }
 
 .section-title {
   font-size: 16px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
   margin: 0;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -856,10 +856,10 @@ onUnmounted(() => {
 
 .drive-id {
   font-size: 10px;
-  color: #64748b;
-  font-family: 'Fira Code', monospace;
+  color: #9C9DA6;
+  font-family: 'Microsoft YaHei', monospace;
   padding: 4px 8px;
-  background: #2a292f;
+  background: #F7F8FB;
   border-radius: 4px;
 }
 
@@ -889,13 +889,13 @@ onUnmounted(() => {
 
 .circle-bg {
   fill: none;
-  stroke: #2a292f;
+  stroke: #F7F8FB;
   stroke-width: 8;
 }
 
 .circle-progress {
   fill: none;
-  stroke: #60a5fa;
+  stroke: #1C6AFF;
   stroke-width: 8;
   stroke-linecap: round;
   transition: stroke-dashoffset 0.3s;
@@ -912,13 +912,13 @@ onUnmounted(() => {
 .percentage {
   display: block;
   font-size: 28px;
-  font-family: 'Fira Code', monospace;
-  color: #ffffff;
+  font-family: 'Microsoft YaHei', monospace;
+  color: #4B4C57;
 }
 
 .label {
   font-size: 10px;
-  color: #64748b;
+  color: #9C9DA6;
   text-transform: uppercase;
 }
 
@@ -929,10 +929,10 @@ onUnmounted(() => {
 }
 
 .stat-item {
-  background: #131318;
+  background: #EDEFF3;
   padding: 16px;
   border-radius: 4px;
-  border-bottom: 2px solid #60a5fa;
+  border-bottom: 2px solid #1C6AFF;
 }
 
 .stat-item.highlight-green {
@@ -940,25 +940,25 @@ onUnmounted(() => {
 }
 
 .stat-item.highlight-red {
-  border-bottom-color: #ffb4ab;
+  border-bottom-color: #ED3B3B;
 }
 
 .stat-label {
   font-size: 10px;
-  color: #94a3b8;
+  color: #9C9DA6;
   text-transform: uppercase;
   margin-bottom: 8px;
 }
 
 .stat-value {
   font-size: 24px;
-  font-family: 'Fira Code', monospace;
-  color: #ffffff;
+  font-family: 'Microsoft YaHei', monospace;
+  color: #4B4C57;
 }
 
 .stat-value .unit {
   font-size: 14px;
-  color: #64748b;
+  color: #9C9DA6;
 }
 
 .text-green {
@@ -966,7 +966,7 @@ onUnmounted(() => {
 }
 
 .text-red {
-  color: #ffb4ab;
+  color: #ED3B3B;
 }
 
 /* Lane Distribution */
@@ -978,8 +978,8 @@ onUnmounted(() => {
   display: flex;
   justify-content: space-between;
   font-size: 10px;
-  color: #64748b;
-  font-family: 'Fira Code', monospace;
+  color: #9C9DA6;
+  font-family: 'Microsoft YaHei', monospace;
   text-transform: uppercase;
   margin-bottom: 8px;
 }
@@ -989,21 +989,21 @@ onUnmounted(() => {
   gap: 2px;
   height: 48px;
   align-items: flex-end;
-  background: #0e0e13;
+  background: #F2F4F7;
   padding: 4px;
   border-radius: 4px;
 }
 
 .lane-bar {
   flex: 1;
-  background: rgba(164, 201, 255, 0.4);
+  background: rgba(28, 106, 255, 0.4);
   border-radius: 1px;
   transition: height 0.3s;
 }
 
 /* Command Panel */
 .command-panel {
-  background: #1b1b20;
+  background: #F7F8FB;
   border-radius: 8px;
   height: 100%;
   display: flex;
@@ -1012,7 +1012,7 @@ onUnmounted(() => {
 
 .panel-header {
   padding: 20px 24px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   align-items: center;
   gap: 12px;
@@ -1021,13 +1021,13 @@ onUnmounted(() => {
 .panel-icon {
   width: 20px;
   height: 20px;
-  color: #60a5fa;
+  color: #1C6AFF;
 }
 
 .panel-title {
   font-size: 14px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
   margin: 0;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -1043,11 +1043,11 @@ onUnmounted(() => {
 }
 
 .command-item {
-  background: #131318;
+  background: #EDEFF3;
   padding: 12px;
   border-radius: 4px;
-  border-left: 2px solid #60a5fa;
-  font-family: 'Fira Code', monospace;
+  border-left: 2px solid #1C6AFF;
+  font-family: 'Microsoft YaHei', monospace;
   font-size: 11px;
 }
 
@@ -1056,11 +1056,11 @@ onUnmounted(() => {
 }
 
 .command-item.executing {
-  border-left-color: #60a5fa;
+  border-left-color: #1C6AFF;
 }
 
 .command-item.rejected {
-  border-left-color: #ffb4ab;
+  border-left-color: #ED3B3B;
   opacity: 0.8;
 }
 
@@ -1072,7 +1072,7 @@ onUnmounted(() => {
 }
 
 .command-time {
-  color: #64748b;
+  color: #9C9DA6;
 }
 
 .command-status {
@@ -1083,27 +1083,27 @@ onUnmounted(() => {
 
 .command-status.success {
   color: #4ae176;
-  border-color: rgba(74, 225, 118, 0.3);
+  border-color: rgba(0, 167, 75, 0.3);
 }
 
 .command-status.executing {
-  color: #60a5fa;
-  border-color: rgba(96, 165, 250, 0.3);
+  color: #1C6AFF;
+  border-color: rgba(28, 106, 255, 0.3);
 }
 
 .command-status.rejected {
-  color: #ffb4ab;
-  border-color: rgba(255, 180, 171, 0.3);
+  color: #ED3B3B;
+  border-color: rgba(237, 59, 59, 0.2);
   animation: pulse 2s infinite;
 }
 
 .command-name {
-  color: #ffffff;
+  color: #4B4C57;
   margin-bottom: 4px;
 }
 
 .command-params {
-  color: #64748b;
+  color: #9C9DA6;
   font-size: 9px;
 }
 
@@ -1113,27 +1113,27 @@ onUnmounted(() => {
 
 .progress-bar {
   height: 4px;
-  background: #2a292f;
+  background: #F7F8FB;
   border-radius: 2px;
   overflow: hidden;
 }
 
 .progress-fill {
   height: 100%;
-  background: #60a5fa;
+  background: #1C6AFF;
   border-radius: 2px;
   transition: width 0.3s;
 }
 
 .command-error {
-  color: rgba(255, 180, 171, 0.7);
+  color: rgba(237, 59, 59, 0.7);
   font-size: 9px;
   margin-top: 4px;
 }
 
 .panel-footer {
   padding: 16px;
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(0, 0, 0, 0.02);
   display: flex;
   align-items: center;
   gap: 8px;
@@ -1142,19 +1142,19 @@ onUnmounted(() => {
 .footer-icon {
   width: 14px;
   height: 14px;
-  color: #60a5fa;
+  color: #1C6AFF;
 }
 
 .footer-text {
   font-size: 10px;
-  color: #60a5fa;
-  font-family: 'Fira Code', monospace;
+  color: #1C6AFF;
+  font-family: 'Microsoft YaHei', monospace;
   animation: pulse 2s infinite;
 }
 
 /* Network Flow Section */
 .network-flow-section {
-  background: #1b1b20;
+  background: #F7F8FB;
   border-radius: 8px;
   padding: 24px;
   height: 200px;
@@ -1177,19 +1177,19 @@ onUnmounted(() => {
 
 .line-1 {
   top: 50%;
-  background: linear-gradient(90deg, transparent, #60a5fa, transparent);
+  background: linear-gradient(90deg, transparent, #1C6AFF, transparent);
 }
 
 .line-2 {
   top: 25%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(74, 225, 118, 0.4), transparent);
+  background: linear-gradient(90deg, transparent, rgba(0, 167, 75, 0.3), transparent);
 }
 
 .line-3 {
   top: 75%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.4), transparent);
+  background: linear-gradient(90deg, transparent, rgba(28, 106, 255, 0.3), transparent);
 }
 
 .flow-content {
@@ -1210,15 +1210,15 @@ onUnmounted(() => {
 .flow-title {
   font-size: 13px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
   margin: 0 0 4px 0;
   text-transform: uppercase;
 }
 
 .flow-subtitle {
   font-size: 10px;
-  color: #64748b;
-  font-family: 'Fira Code', monospace;
+  color: #9C9DA6;
+  font-family: 'Microsoft YaHei', monospace;
   margin: 0;
 }
 
@@ -1233,15 +1233,15 @@ onUnmounted(() => {
 
 .flow-stat .stat-label {
   font-size: 9px;
-  color: #64748b;
+  color: #9C9DA6;
   text-transform: uppercase;
   margin-bottom: 4px;
 }
 
 .flow-stat .stat-value {
   font-size: 20px;
-  font-family: 'Fira Code', monospace;
-  color: #60a5fa;
+  font-family: 'Microsoft YaHei', monospace;
+  color: #1C6AFF;
 }
 
 .flow-stat .stat-value.green {
@@ -1259,14 +1259,14 @@ onUnmounted(() => {
 .flow-icon {
   width: 32px;
   height: 32px;
-  color: #60a5fa;
+  color: #1C6AFF;
 }
 
 .flow-track {
   flex: 1;
   max-width: 400px;
   height: 2px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.06);
   position: relative;
 }
 
@@ -1276,8 +1276,8 @@ onUnmounted(() => {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #60a5fa;
-  box-shadow: 0 0 8px rgba(96, 165, 250, 0.5);
+  background: #1C6AFF;
+  box-shadow: 0 0 8px rgba(28, 106, 255, 0.5);
 }
 
 .flow-dot.dot-1 {
@@ -1287,7 +1287,7 @@ onUnmounted(() => {
 .flow-dot.dot-2 {
   left: 50%;
   background: #4ae176;
-  box-shadow: 0 0 8px rgba(74, 225, 118, 0.5);
+  box-shadow: 0 0 8px rgba(0, 167, 75, 0.5);
 }
 
 .flow-dot.dot-3 {

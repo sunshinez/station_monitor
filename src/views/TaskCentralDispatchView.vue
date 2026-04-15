@@ -381,9 +381,9 @@ onUnmounted(() => {
 <style scoped>
 .task-central-dispatch-page {
   min-height: 100vh;
-  background-color: #131318;
-  color: #e4e1e9;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #EDEFF3;
+  color: #4B4C57;
+  font-family: 'Microsoft YaHei', 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
 }
 
 /* 顶部导航栏 */
@@ -393,8 +393,8 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   height: 64px;
-  background: #131318;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: #EDEFF3;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -406,7 +406,7 @@ onUnmounted(() => {
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.15em;
-  color: #60a5fa;
+  color: #1C6AFF;
   text-transform: uppercase;
 }
 
@@ -417,7 +417,7 @@ onUnmounted(() => {
 
 .nav-link {
   font-size: 14px;
-  color: #94a3b8;
+  color: #9C9DA6;
   text-decoration: none;
   transition: color 0.2s;
   padding-bottom: 4px;
@@ -425,12 +425,12 @@ onUnmounted(() => {
 }
 
 .nav-link:hover {
-  color: #e4e1e9;
+  color: #4B4C57;
 }
 
 .nav-link.active {
-  color: #60a5fa;
-  border-bottom-color: #60a5fa;
+  color: #1C6AFF;
+  border-bottom-color: #1C6AFF;
   font-weight: 600;
 }
 
@@ -444,7 +444,7 @@ onUnmounted(() => {
   position: relative;
   background: none;
   border: none;
-  color: #94a3b8;
+  color: #9C9DA6;
   cursor: pointer;
   padding: 8px;
   border-radius: 50%;
@@ -452,8 +452,8 @@ onUnmounted(() => {
 }
 
 .icon-btn:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: #e4e1e9;
+  background: rgba(0, 0, 0, 0.05);
+  color: #4B4C57;
 }
 
 .icon {
@@ -468,7 +468,7 @@ onUnmounted(() => {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #ffb4ab;
+  background: #ED3B3B;
 }
 
 /* 主布局 */
@@ -482,8 +482,8 @@ onUnmounted(() => {
 /* 侧边栏 */
 .side-nav {
   width: 256px;
-  background: #1b1b20;
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  background: #F7F8FB;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   padding: 16px 0;
@@ -504,19 +504,19 @@ onUnmounted(() => {
 .side-header-icon {
   width: 20px;
   height: 20px;
-  color: #60a5fa;
+  color: #1C6AFF;
 }
 
 .side-title {
   font-size: 18px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
   margin: 0;
 }
 
 .side-subtitle {
   font-size: 10px;
-  color: #64748b;
+  color: #9C9DA6;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   margin: 0;
@@ -534,7 +534,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 12px;
   padding: 12px;
-  color: #94a3b8;
+  color: #9C9DA6;
   text-decoration: none;
   font-size: 13px;
   border-radius: 4px;
@@ -544,14 +544,14 @@ onUnmounted(() => {
 }
 
 .side-link:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: #e4e1e9;
+  background: rgba(0, 0, 0, 0.05);
+  color: #4B4C57;
 }
 
 .side-link.active {
-  background: #2a292f;
-  color: #60a5fa;
-  border-left-color: #60a5fa;
+  background: #F7F8FB;
+  color: #1C6AFF;
+  border-left-color: #1C6AFF;
   font-weight: 600;
 }
 
@@ -583,13 +583,13 @@ onUnmounted(() => {
 .page-title {
   font-size: 24px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
   margin: 0;
 }
 
 .page-subtitle {
   font-size: 12px;
-  color: #94a3b8;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin: 6px 0 0 0;
@@ -605,11 +605,11 @@ onUnmounted(() => {
   align-items: center;
   gap: 10px;
   padding: 8px 16px;
-  background: #1b1b20;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: #F7F8FB;
+  border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 4px;
   font-size: 12px;
-  color: #94a3b8;
+  color: #9C9DA6;
 }
 
 .status-dot {
@@ -617,7 +617,7 @@ onUnmounted(() => {
   height: 8px;
   border-radius: 50%;
   background: #4ae176;
-  box-shadow: 0 0 2px #4ae176, 0 0 10px rgba(74, 225, 118, 0.4);
+  box-shadow: 0 0 2px #4ae176, 0 0 10px rgba(0, 167, 75, 0.3);
 }
 
 .pulse {
@@ -630,24 +630,24 @@ onUnmounted(() => {
 }
 
 .mono {
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
 }
 
 /* 区域通用 */
 .command-stream-section {
-  background: #1b1b20;
+  background: #F7F8FB;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-left: 4px solid #60a5fa;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-left: 4px solid #1C6AFF;
   padding: 24px;
   flex-shrink: 0;
 }
 
 .execution-log-section {
-  background: #1b1b20;
+  background: #F7F8FB;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-left: 4px solid #ffb4ab;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-left: 4px solid #ED3B3B;
   padding: 24px;
   flex: 1;
   min-height: 0;
@@ -671,13 +671,13 @@ onUnmounted(() => {
 .section-icon {
   width: 20px;
   height: 20px;
-  color: #60a5fa;
+  color: #1C6AFF;
 }
 
 .section-title {
   font-size: 13px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin: 0;
@@ -685,9 +685,9 @@ onUnmounted(() => {
 
 .stream-badge {
   padding: 4px 10px;
-  background: rgba(96, 165, 250, 0.1);
-  color: #60a5fa;
-  border: 1px solid rgba(96, 165, 250, 0.2);
+  background: rgba(28, 106, 255, 0.1);
+  color: #1C6AFF;
+  border: 1px solid rgba(28, 106, 255, 0.2);
   border-radius: 4px;
   font-size: 10px;
   font-weight: 700;
@@ -695,19 +695,19 @@ onUnmounted(() => {
 }
 
 .text-error {
-  color: #ffb4ab;
+  color: #ED3B3B;
 }
 
 .text-primary {
-  color: #60a5fa;
+  color: #1C6AFF;
 }
 
 .text-dim {
-  color: #94a3b8;
+  color: #9C9DA6;
 }
 
 .font-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Microsoft YaHei', 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .font-bold {
@@ -738,15 +738,15 @@ onUnmounted(() => {
   text-align: left;
   font-size: 10px;
   font-weight: 600;
-  color: #94a3b8;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .data-table td {
   padding: 14px 16px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.02);
 }
 
 .table-row {
@@ -754,7 +754,7 @@ onUnmounted(() => {
 }
 
 .table-row:hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(0, 0, 0, 0.03);
 }
 
 /* 优先级标签 */
@@ -767,21 +767,21 @@ onUnmounted(() => {
 }
 
 .priority-high {
-  background: rgba(255, 180, 171, 0.1);
-  color: #ffb4ab;
-  border: 1px solid rgba(255, 180, 171, 0.2);
+  background: rgba(237, 59, 59, 0.08);
+  color: #ED3B3B;
+  border: 1px solid rgba(237, 59, 59, 0.15);
 }
 
 .priority-medium {
-  background: rgba(96, 165, 250, 0.1);
-  color: #60a5fa;
-  border: 1px solid rgba(96, 165, 250, 0.2);
+  background: rgba(28, 106, 255, 0.1);
+  color: #1C6AFF;
+  border: 1px solid rgba(28, 106, 255, 0.2);
 }
 
 .priority-low {
-  background: rgba(100, 116, 139, 0.15);
-  color: #94a3b8;
-  border: 1px solid rgba(100, 116, 139, 0.2);
+  background: rgba(156, 157, 166, 0.15);
+  color: #9C9DA6;
+  border: 1px solid rgba(156, 157, 166, 0.2);
 }
 
 /* 执行状态 */
@@ -798,11 +798,11 @@ onUnmounted(() => {
 }
 
 .status-parsing {
-  color: #60a5fa;
+  color: #1C6AFF;
 }
 
 .status-sent {
-  color: #64748b;
+  color: #9C9DA6;
 }
 
 .status-icon {
@@ -829,15 +829,15 @@ onUnmounted(() => {
 }
 
 .result-success {
-  background: rgba(74, 225, 118, 0.1);
+  background: rgba(0, 167, 75, 0.1);
   color: #4ae176;
-  border: 1px solid rgba(74, 225, 118, 0.2);
+  border: 1px solid rgba(0, 167, 75, 0.2);
 }
 
 .result-failed {
-  background: rgba(255, 180, 171, 0.1);
-  color: #ffb4ab;
-  border: 1px solid rgba(255, 180, 171, 0.2);
+  background: rgba(237, 59, 59, 0.08);
+  color: #ED3B3B;
+  border: 1px solid rgba(237, 59, 59, 0.15);
 }
 
 /* 底部状态栏 */
@@ -847,8 +847,8 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   height: 32px;
-  background: #0e0e13;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background: #F2F4F7;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   align-items: center;
   padding: 0 24px;
@@ -861,7 +861,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 8px;
   font-size: 12px;
-  color: #94a3b8;
+  color: #9C9DA6;
 }
 
 .status-dot-green {
@@ -879,7 +879,7 @@ onUnmounted(() => {
   display: flex;
   gap: 24px;
   font-size: 12px;
-  color: #64748b;
-  font-family: 'Fira Code', monospace;
+  color: #9C9DA6;
+  font-family: 'Microsoft YaHei', monospace;
 }
 </style>

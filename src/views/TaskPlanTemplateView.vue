@@ -621,9 +621,9 @@ onUnmounted(() => {
 <style scoped>
 .task-plan-template-page {
   min-height: 100vh;
-  background-color: #131318;
-  color: #e4e1e9;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #EDEFF3;
+  color: #4B4C57;
+  font-family: 'Microsoft YaHei', 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
 }
 
 /* 顶部导航栏 */
@@ -633,8 +633,8 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   height: 64px;
-  background: #131318;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: #EDEFF3;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -646,7 +646,7 @@ onUnmounted(() => {
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.15em;
-  color: #60a5fa;
+  color: #1C6AFF;
   text-transform: uppercase;
 }
 
@@ -657,7 +657,7 @@ onUnmounted(() => {
 
 .nav-link {
   font-size: 14px;
-  color: #94a3b8;
+  color: #9C9DA6;
   text-decoration: none;
   transition: color 0.2s;
   padding-bottom: 4px;
@@ -665,12 +665,12 @@ onUnmounted(() => {
 }
 
 .nav-link:hover {
-  color: #e4e1e9;
+  color: #4B4C57;
 }
 
 .nav-link.active {
-  color: #60a5fa;
-  border-bottom-color: #60a5fa;
+  color: #1C6AFF;
+  border-bottom-color: #1C6AFF;
   font-weight: 600;
 }
 
@@ -684,7 +684,7 @@ onUnmounted(() => {
   position: relative;
   background: none;
   border: none;
-  color: #94a3b8;
+  color: #9C9DA6;
   cursor: pointer;
   padding: 8px;
   border-radius: 50%;
@@ -692,8 +692,8 @@ onUnmounted(() => {
 }
 
 .icon-btn:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: #e4e1e9;
+  background: rgba(0, 0, 0, 0.05);
+  color: #4B4C57;
 }
 
 .icon {
@@ -708,7 +708,7 @@ onUnmounted(() => {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #ffb4ab;
+  background: #ED3B3B;
 }
 
 /* 主布局 */
@@ -722,8 +722,8 @@ onUnmounted(() => {
 /* 侧边栏 */
 .side-nav {
   width: 256px;
-  background: #1b1b20;
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  background: #F7F8FB;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   padding: 16px 0;
@@ -744,19 +744,19 @@ onUnmounted(() => {
 .side-header-icon {
   width: 20px;
   height: 20px;
-  color: #60a5fa;
+  color: #1C6AFF;
 }
 
 .side-title {
   font-size: 18px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
   margin: 0;
 }
 
 .side-subtitle {
   font-size: 10px;
-  color: #64748b;
+  color: #9C9DA6;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   margin: 0;
@@ -774,7 +774,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 12px;
   padding: 12px;
-  color: #94a3b8;
+  color: #9C9DA6;
   text-decoration: none;
   font-size: 13px;
   border-radius: 4px;
@@ -784,14 +784,14 @@ onUnmounted(() => {
 }
 
 .side-link:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: #e4e1e9;
+  background: rgba(0, 0, 0, 0.05);
+  color: #4B4C57;
 }
 
 .side-link.active {
-  background: #2a292f;
-  color: #60a5fa;
-  border-left-color: #60a5fa;
+  background: #F7F8FB;
+  color: #1C6AFF;
+  border-left-color: #1C6AFF;
   font-weight: 600;
 }
 
@@ -828,14 +828,14 @@ onUnmounted(() => {
 .page-title {
   font-size: 24px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
   margin: 0;
 }
 
 .page-subtitle {
   font-size: 11px;
-  color: #64748b;
-  font-family: 'Fira Code', monospace;
+  color: #9C9DA6;
+  font-family: 'Microsoft YaHei', monospace;
   letter-spacing: 0.05em;
   margin: 0;
 }
@@ -861,28 +861,28 @@ onUnmounted(() => {
 }
 
 .btn-primary {
-  background: #a4c9ff;
-  color: #00315d;
+  background: #1C6AFF;
+  color: #1C6AFF;
 }
 
 .btn-primary:hover {
-  box-shadow: 0 0 15px rgba(164, 201, 255, 0.4);
+  box-shadow: 0 0 15px rgba(28, 106, 255, 0.4);
 }
 
 .btn-secondary {
-  background: #2a292f;
-  color: #e4e1e9;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #F7F8FB;
+  color: #4B4C57;
+  border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .btn-accent {
-  background: rgba(164, 201, 255, 0.1);
-  color: #a4c9ff;
-  border: 1px solid rgba(164, 201, 255, 0.2);
+  background: rgba(28, 106, 255, 0.1);
+  color: #1C6AFF;
+  border: 1px solid rgba(28, 106, 255, 0.2);
   padding: 6px 12px;
   font-size: 10px;
   font-weight: 700;
@@ -891,13 +891,13 @@ onUnmounted(() => {
 }
 
 .btn-accent:hover {
-  background: rgba(164, 201, 255, 0.2);
+  background: rgba(28, 106, 255, 0.2);
 }
 
 .btn-danger-sm {
-  background: rgba(255, 180, 171, 0.1);
-  color: #ffb4ab;
-  border: 1px solid rgba(255, 180, 171, 0.2);
+  background: rgba(237, 59, 59, 0.08);
+  color: #ED3B3B;
+  border: 1px solid rgba(237, 59, 59, 0.15);
   padding: 6px 12px;
   font-size: 10px;
   font-weight: 700;
@@ -906,7 +906,7 @@ onUnmounted(() => {
 }
 
 .btn-danger-sm:hover {
-  background: rgba(255, 180, 171, 0.2);
+  background: rgba(237, 59, 59, 0.15);
 }
 
 .btn-icon {
@@ -921,9 +921,9 @@ onUnmounted(() => {
 
 /* 模板管理库 */
 .template-library {
-  background: #1b1b20;
+  background: #F7F8FB;
   border-radius: 8px;
-  border-left: 4px solid #60a5fa;
+  border-left: 4px solid #1C6AFF;
   padding: 20px;
   flex-shrink: 0;
 }
@@ -944,7 +944,7 @@ onUnmounted(() => {
 .library-title {
   font-size: 13px;
   font-weight: 700;
-  color: #60a5fa;
+  color: #1C6AFF;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin: 0;
@@ -961,26 +961,26 @@ onUnmounted(() => {
   transform: translateY(-50%);
   width: 14px;
   height: 14px;
-  color: #64748b;
+  color: #9C9DA6;
 }
 
 .search-input {
-  background: #131318;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #EDEFF3;
+  border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 4px;
   padding: 6px 10px 6px 30px;
-  color: #e4e1e9;
+  color: #4B4C57;
   font-size: 12px;
   width: 200px;
   outline: none;
 }
 
 .search-input::placeholder {
-  color: #64748b;
+  color: #9C9DA6;
 }
 
 .search-input:focus {
-  border-color: rgba(96, 165, 250, 0.5);
+  border-color: rgba(28, 106, 255, 0.5);
 }
 
 .library-actions {
@@ -1001,8 +1001,8 @@ onUnmounted(() => {
 }
 
 .data-table thead tr {
-  color: #94a3b8;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: #9C9DA6;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .data-table th {
@@ -1013,7 +1013,7 @@ onUnmounted(() => {
 
 .data-table td {
   padding: 12px 16px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.03);
 }
 
 .table-row {
@@ -1022,20 +1022,20 @@ onUnmounted(() => {
 }
 
 .table-row:hover {
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(0, 0, 0, 0.02);
 }
 
 .table-row.active {
-  background: rgba(96, 165, 250, 0.08);
+  background: rgba(28, 106, 255, 0.08);
 }
 
 .col-id {
   width: 50px;
-  color: #64748b;
+  color: #9C9DA6;
 }
 
 .text-primary {
-  color: #60a5fa;
+  color: #1C6AFF;
 }
 
 .text-right {
@@ -1043,7 +1043,7 @@ onUnmounted(() => {
 }
 
 .font-mono {
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
 }
 
 .status-badge {
@@ -1056,26 +1056,26 @@ onUnmounted(() => {
 }
 
 .status-badge.published {
-  background: rgba(74, 225, 118, 0.1);
+  background: rgba(0, 167, 75, 0.1);
   color: #4ae176;
 }
 
 .status-badge.draft {
-  background: rgba(173, 198, 255, 0.1);
-  color: #adc6ff;
+  background: rgba(28, 106, 255, 0.1);
+  color: #1C6AFF;
 }
 
 .action-btn {
   background: none;
   border: none;
-  color: #64748b;
+  color: #9C9DA6;
   cursor: pointer;
   padding: 4px;
   transition: color 0.2s;
 }
 
 .action-btn:hover {
-  color: #60a5fa;
+  color: #1C6AFF;
 }
 
 .action-icon {
@@ -1086,7 +1086,7 @@ onUnmounted(() => {
 /* 可视化流程编辑器 */
 .flow-editor {
   flex: 1;
-  background: #1b1b20;
+  background: #F7F8FB;
   border-radius: 8px;
   padding: 20px;
   display: flex;
@@ -1107,7 +1107,7 @@ onUnmounted(() => {
   gap: 8px;
   font-size: 13px;
   font-weight: 700;
-  color: #60a5fa;
+  color: #1C6AFF;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin: 0;
@@ -1127,7 +1127,7 @@ onUnmounted(() => {
 .tool-btn {
   background: none;
   border: none;
-  color: #64748b;
+  color: #9C9DA6;
   cursor: pointer;
   padding: 6px;
   border-radius: 4px;
@@ -1135,8 +1135,8 @@ onUnmounted(() => {
 }
 
 .tool-btn:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: #e4e1e9;
+  background: rgba(0, 0, 0, 0.05);
+  color: #4B4C57;
 }
 
 .tool-icon {
@@ -1147,7 +1147,7 @@ onUnmounted(() => {
 .tool-divider {
   width: 1px;
   height: 16px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.06);
   margin: 0 4px;
 }
 
@@ -1180,31 +1180,31 @@ onUnmounted(() => {
 }
 
 .node-success {
-  background: #2a292f;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #F7F8FB;
+  border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .node-success:hover {
-  border-color: rgba(74, 225, 118, 0.5);
+  border-color: rgba(0, 167, 75, 0.5);
 }
 
 .node-active {
-  background: #35343a;
-  border: 2px solid #60a5fa;
-  box-shadow: 0 0 30px rgba(96, 165, 250, 0.15);
+  background: #F7F8FB;
+  border: 2px solid #1C6AFF;
+  box-shadow: 0 0 30px rgba(28, 106, 255, 0.15);
   transform: scale(1.03);
   position: relative;
 }
 
 .node-pending {
-  background: #2a292f;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #F7F8FB;
+  border: 1px solid rgba(0, 0, 0, 0.06);
   opacity: 0.8;
 }
 
 .node-pending:hover {
   opacity: 1;
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(0, 0, 0, 0.1);
 }
 
 .node-active-label {
@@ -1212,8 +1212,8 @@ onUnmounted(() => {
   top: -12px;
   left: 50%;
   transform: translateX(-50%);
-  background: #60a5fa;
-  color: #001c39;
+  background: #1C6AFF;
+  color: #1C6AFF;
   padding: 2px 10px;
   font-size: 9px;
   font-weight: 700;
@@ -1231,7 +1231,7 @@ onUnmounted(() => {
 
 .node-tag {
   font-size: 9px;
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
   padding: 2px 6px;
   border-radius: 2px;
   text-transform: uppercase;
@@ -1239,18 +1239,18 @@ onUnmounted(() => {
 }
 
 .tag-success {
-  background: rgba(74, 225, 118, 0.1);
+  background: rgba(0, 167, 75, 0.1);
   color: #4ae176;
 }
 
 .tag-primary {
-  background: rgba(96, 165, 250, 0.1);
-  color: #60a5fa;
+  background: rgba(28, 106, 255, 0.1);
+  color: #1C6AFF;
 }
 
 .tag-default {
-  background: #35343a;
-  color: #94a3b8;
+  background: #F7F8FB;
+  color: #9C9DA6;
 }
 
 .node-status-icon {
@@ -1263,13 +1263,13 @@ onUnmounted(() => {
 }
 
 .node-status-icon.pending {
-  color: #f59e0b;
+  color: #ED6B01;
 }
 
 .node-name {
   font-size: 12px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
   margin: 0 0 4px 0;
   text-transform: uppercase;
   letter-spacing: 0.02em;
@@ -1277,7 +1277,7 @@ onUnmounted(() => {
 
 .node-desc {
   font-size: 10px;
-  color: #64748b;
+  color: #9C9DA6;
   margin: 0;
   line-height: 1.4;
 }
@@ -1292,11 +1292,11 @@ onUnmounted(() => {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.06);
 }
 
 .indicator-dot.active {
-  background: #60a5fa;
+  background: #1C6AFF;
 }
 
 .node-success .indicator-dot.active {
@@ -1312,8 +1312,8 @@ onUnmounted(() => {
 
 .node-time {
   font-size: 9px;
-  font-family: 'Fira Code', monospace;
-  color: #60a5fa;
+  font-family: 'Microsoft YaHei', monospace;
+  color: #1C6AFF;
 }
 
 /* 流程箭头 */
@@ -1332,15 +1332,15 @@ onUnmounted(() => {
 }
 
 .arrow-line.success {
-  background: linear-gradient(to right, #4ae176, #60a5fa);
+  background: linear-gradient(to right, #4ae176, #1C6AFF);
 }
 
 .arrow-line.primary {
-  background: linear-gradient(to right, #60a5fa, #adc6ff);
+  background: linear-gradient(to right, #1C6AFF, #1C6AFF);
 }
 
 .arrow-line.muted {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.06);
 }
 
 .arrow-head {
@@ -1356,22 +1356,22 @@ onUnmounted(() => {
 }
 
 .arrow-head.success {
-  border-left-color: #60a5fa;
+  border-left-color: #1C6AFF;
 }
 
 .arrow-head.primary {
-  border-left-color: #adc6ff;
+  border-left-color: #1C6AFF;
 }
 
 .arrow-head.muted {
-  border-left-color: rgba(255, 255, 255, 0.1);
+  border-left-color: rgba(0, 0, 0, 0.06);
 }
 
 /* 判定节点 */
 .node-decision {
   width: 180px;
-  background: #2a292f;
-  border: 1px dashed rgba(255, 255, 255, 0.2);
+  background: #F7F8FB;
+  border: 1px dashed rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   gap: 12px;
@@ -1382,8 +1382,8 @@ onUnmounted(() => {
 .decision-diamond {
   width: 32px;
   height: 32px;
-  background: #1b1b20;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #F7F8FB;
+  border: 1px solid rgba(0, 0, 0, 0.06);
   transform: rotate(45deg);
   display: flex;
   align-items: center;
@@ -1394,7 +1394,7 @@ onUnmounted(() => {
 .decision-icon {
   width: 16px;
   height: 16px;
-  color: #adc6ff;
+  color: #1C6AFF;
   transform: rotate(-45deg);
 }
 
@@ -1407,9 +1407,9 @@ onUnmounted(() => {
   height: 36px;
   margin-left: 24px;
   border-radius: 50%;
-  border: 1px dashed rgba(255, 255, 255, 0.2);
+  border: 1px dashed rgba(0, 0, 0, 0.1);
   background: none;
-  color: #64748b;
+  color: #9C9DA6;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -1418,8 +1418,8 @@ onUnmounted(() => {
 }
 
 .add-node-btn:hover {
-  border-color: #60a5fa;
-  color: #60a5fa;
+  border-color: #1C6AFF;
+  color: #1C6AFF;
 }
 
 .add-icon {
@@ -1429,10 +1429,10 @@ onUnmounted(() => {
 
 /* 参数配置 */
 .param-config {
-  background: #1b1b20;
+  background: #F7F8FB;
   border-radius: 8px;
   padding: 20px;
-  border-top: 2px solid rgba(96, 165, 250, 0.2);
+  border-top: 2px solid rgba(28, 106, 255, 0.2);
   flex-shrink: 0;
 }
 
@@ -1447,7 +1447,7 @@ onUnmounted(() => {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #60a5fa;
+  background: #1C6AFF;
   animation: pulse 1.5s infinite;
 }
 
@@ -1459,14 +1459,14 @@ onUnmounted(() => {
 .config-title {
   font-size: 13px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   margin: 0;
 }
 
 .config-node-name {
-  color: #60a5fa;
+  color: #1C6AFF;
   margin-left: 8px;
 }
 
@@ -1497,18 +1497,18 @@ onUnmounted(() => {
 .config-label {
   font-size: 10px;
   font-weight: 700;
-  color: #64748b;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
 .config-select,
 .config-input {
-  background: #131318;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #EDEFF3;
+  border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 4px;
   padding: 10px 12px;
-  color: #e4e1e9;
+  color: #4B4C57;
   font-size: 12px;
   outline: none;
   width: 100%;
@@ -1516,7 +1516,7 @@ onUnmounted(() => {
 
 .config-select:focus,
 .config-input:focus {
-  border-color: #60a5fa;
+  border-color: #1C6AFF;
 }
 
 .select-wrapper {
@@ -1530,7 +1530,7 @@ onUnmounted(() => {
   transform: translateY(-50%);
   width: 16px;
   height: 16px;
-  color: #64748b;
+  color: #9C9DA6;
   pointer-events: none;
 }
 
@@ -1542,16 +1542,16 @@ onUnmounted(() => {
 
 .time-prefix {
   font-size: 12px;
-  font-family: 'Fira Code', monospace;
-  color: #64748b;
+  font-family: 'Microsoft YaHei', monospace;
+  color: #9C9DA6;
 }
 
 .mode-toggle {
   display: flex;
-  background: #131318;
+  background: #EDEFF3;
   padding: 4px;
   border-radius: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .mode-btn {
@@ -1560,7 +1560,7 @@ onUnmounted(() => {
   border: none;
   border-radius: 4px;
   background: transparent;
-  color: #64748b;
+  color: #9C9DA6;
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
@@ -1569,8 +1569,8 @@ onUnmounted(() => {
 }
 
 .mode-btn.active {
-  background: #60a5fa;
-  color: #001c39;
+  background: #1C6AFF;
+  color: #1C6AFF;
 }
 
 .error-strategies {
@@ -1592,37 +1592,37 @@ onUnmounted(() => {
 }
 
 .strategy-item:hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(0, 0, 0, 0.03);
 }
 
 .strategy-item.terminate {
-  border-left-color: #ffb4ab;
+  border-left-color: #ED3B3B;
 }
 
 .strategy-item.terminate.active {
-  background: rgba(255, 180, 171, 0.08);
+  background: rgba(237, 59, 59, 0.08);
 }
 
 .strategy-item.skip {
-  border-left-color: #f59e0b;
+  border-left-color: #ED6B01;
   opacity: 0.8;
 }
 
 .strategy-item.retry {
-  border-left-color: #60a5fa;
+  border-left-color: #1C6AFF;
   opacity: 0.8;
 }
 
 .strategy-item input[type="radio"] {
   width: 16px;
   height: 16px;
-  accent-color: #60a5fa;
+  accent-color: #1C6AFF;
   cursor: pointer;
 }
 
 .strategy-text {
   font-size: 11px;
-  color: #e4e1e9;
+  color: #4B4C57;
 }
 
 .config-footer {
@@ -1630,7 +1630,7 @@ onUnmounted(() => {
   justify-content: flex-end;
   gap: 12px;
   padding-top: 16px;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 /* 底部状态栏 */
@@ -1640,8 +1640,8 @@ onUnmounted(() => {
   left: 256px;
   right: 0;
   height: 40px;
-  background: #131318;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background: #EDEFF3;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   align-items: center;
   padding: 0 24px;
@@ -1664,7 +1664,7 @@ onUnmounted(() => {
 
 .status-text {
   font-size: 12px;
-  color: #94a3b8;
+  color: #9C9DA6;
 }
 
 .spacer {
@@ -1675,6 +1675,6 @@ onUnmounted(() => {
   display: flex;
   gap: 24px;
   font-size: 12px;
-  color: #94a3b8;
+  color: #9C9DA6;
 }
 </style>

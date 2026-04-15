@@ -377,9 +377,9 @@ onUnmounted(() => {
 <style scoped>
 .task-carrier-wave-monitor-page {
   min-height: 100vh;
-  background-color: #131318;
-  color: #e4e1e9;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #EDEFF3;
+  color: #4B4C57;
+  font-family: 'Microsoft YaHei', 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
 }
 
 /* 顶部导航栏 */
@@ -389,8 +389,8 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   height: 64px;
-  background: #131318;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: #EDEFF3;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -402,7 +402,7 @@ onUnmounted(() => {
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.15em;
-  color: #60a5fa;
+  color: #1C6AFF;
   text-transform: uppercase;
 }
 
@@ -413,7 +413,7 @@ onUnmounted(() => {
 
 .nav-link {
   font-size: 14px;
-  color: #94a3b8;
+  color: #9C9DA6;
   text-decoration: none;
   transition: color 0.2s;
   padding-bottom: 4px;
@@ -421,12 +421,12 @@ onUnmounted(() => {
 }
 
 .nav-link:hover {
-  color: #e4e1e9;
+  color: #4B4C57;
 }
 
 .nav-link.active {
-  color: #60a5fa;
-  border-bottom-color: #60a5fa;
+  color: #1C6AFF;
+  border-bottom-color: #1C6AFF;
   font-weight: 600;
 }
 
@@ -440,7 +440,7 @@ onUnmounted(() => {
   position: relative;
   background: none;
   border: none;
-  color: #94a3b8;
+  color: #9C9DA6;
   cursor: pointer;
   padding: 8px;
   border-radius: 50%;
@@ -448,8 +448,8 @@ onUnmounted(() => {
 }
 
 .icon-btn:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: #e4e1e9;
+  background: rgba(0, 0, 0, 0.05);
+  color: #4B4C57;
 }
 
 .icon {
@@ -464,7 +464,7 @@ onUnmounted(() => {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #ffb4ab;
+  background: #ED3B3B;
 }
 
 /* 主布局 */
@@ -478,8 +478,8 @@ onUnmounted(() => {
 /* 侧边栏 */
 .side-nav {
   width: 256px;
-  background: #1b1b20;
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  background: #F7F8FB;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   padding: 16px 0;
@@ -500,19 +500,19 @@ onUnmounted(() => {
 .side-header-icon {
   width: 20px;
   height: 20px;
-  color: #60a5fa;
+  color: #1C6AFF;
 }
 
 .side-title {
   font-size: 18px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
   margin: 0;
 }
 
 .side-subtitle {
   font-size: 10px;
-  color: #64748b;
+  color: #9C9DA6;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   margin: 0;
@@ -530,7 +530,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 12px;
   padding: 12px;
-  color: #94a3b8;
+  color: #9C9DA6;
   text-decoration: none;
   font-size: 13px;
   border-radius: 4px;
@@ -540,14 +540,14 @@ onUnmounted(() => {
 }
 
 .side-link:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: #e4e1e9;
+  background: rgba(0, 0, 0, 0.05);
+  color: #4B4C57;
 }
 
 .side-link.active {
-  background: #2a292f;
-  color: #60a5fa;
-  border-left-color: #60a5fa;
+  background: #F7F8FB;
+  color: #1C6AFF;
+  border-left-color: #1C6AFF;
   font-weight: 600;
 }
 
@@ -580,7 +580,7 @@ onUnmounted(() => {
 .page-title {
   font-size: 24px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
   text-transform: uppercase;
   letter-spacing: -0.02em;
   margin: 0;
@@ -588,7 +588,7 @@ onUnmounted(() => {
 
 .page-subtitle {
   font-size: 13px;
-  color: #94a3b8;
+  color: #9C9DA6;
   margin: 6px 0 0 0;
 }
 
@@ -598,7 +598,7 @@ onUnmounted(() => {
 
 .time-label {
   font-size: 10px;
-  color: #64748b;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin: 0 0 4px 0;
@@ -606,13 +606,13 @@ onUnmounted(() => {
 
 .time-value {
   font-size: 18px;
-  color: #60a5fa;
+  color: #1C6AFF;
   font-weight: 500;
   margin: 0;
 }
 
 .mono {
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
 }
 
 /* 主网格 */
@@ -641,7 +641,7 @@ onUnmounted(() => {
 .title-bar {
   width: 3px;
   height: 14px;
-  background: #60a5fa;
+  background: #1C6AFF;
   border-radius: 2px;
 }
 
@@ -652,7 +652,7 @@ onUnmounted(() => {
 .section-title {
   font-size: 11px;
   font-weight: 700;
-  color: #94a3b8;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin: 0;
@@ -660,7 +660,7 @@ onUnmounted(() => {
 
 .count-badge {
   font-size: 10px;
-  color: #64748b;
+  color: #9C9DA6;
 }
 
 /* 计划列表表格 */
@@ -671,9 +671,9 @@ onUnmounted(() => {
 }
 
 .plan-table-panel {
-  background: #1b1b20;
+  background: #F7F8FB;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   overflow: hidden;
   flex: 1;
   display: flex;
@@ -687,20 +687,20 @@ onUnmounted(() => {
 }
 
 .data-table th {
-  background: rgba(42, 41, 47, 0.5);
+  background: rgba(247, 248, 251, 0.85);
   padding: 14px 20px;
   text-align: left;
   font-size: 10px;
   font-weight: 600;
-  color: #94a3b8;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .data-table td {
   padding: 16px 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.02);
 }
 
 .table-row {
@@ -709,18 +709,18 @@ onUnmounted(() => {
 }
 
 .table-row:hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(0, 0, 0, 0.03);
 }
 
 .selected-row {
-  background: rgba(96, 165, 250, 0.08);
-  border-left: 3px solid #60a5fa;
+  background: rgba(28, 106, 255, 0.08);
+  border-left: 3px solid #1C6AFF;
 }
 
 .plan-name {
   font-size: 13px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
 }
 
 .plan-id {
@@ -729,16 +729,16 @@ onUnmounted(() => {
 }
 
 .text-primary-dim {
-  color: rgba(96, 165, 250, 0.7);
+  color: rgba(28, 106, 255, 0.7);
 }
 
 .text-dim {
-  color: #64748b;
+  color: #9C9DA6;
 }
 
 .plan-time {
   font-size: 12px;
-  color: #94a3b8;
+  color: #9C9DA6;
   line-height: 1.5;
 }
 
@@ -756,16 +756,16 @@ onUnmounted(() => {
 
 .dot-success-glow {
   background: #4ae176;
-  box-shadow: 0 0 2px #4ae176, 0 0 10px rgba(74, 225, 118, 0.4);
+  box-shadow: 0 0 2px #4ae176, 0 0 10px rgba(0, 167, 75, 0.3);
 }
 
 .dot-amber-glow {
-  background: #f59e0b;
-  box-shadow: 0 0 2px #f59e0b, 0 0 10px rgba(245, 158, 11, 0.4);
+  background: #ED6B01;
+  box-shadow: 0 0 2px #ED6B01, 0 0 10px rgba(237, 107, 1, 0.3);
 }
 
 .dot-muted {
-  background: #64748b;
+  background: #9C9DA6;
 }
 
 .status-text {
@@ -777,11 +777,11 @@ onUnmounted(() => {
 }
 
 .text-amber {
-  color: #f59e0b;
+  color: #ED6B01;
 }
 
 .text-muted {
-  color: #64748b;
+  color: #9C9DA6;
 }
 
 .push-tag {
@@ -792,21 +792,21 @@ onUnmounted(() => {
 }
 
 .tag-success {
-  background: rgba(74, 225, 118, 0.1);
+  background: rgba(0, 167, 75, 0.1);
   color: #4ae176;
-  border: 1px solid rgba(74, 225, 118, 0.2);
+  border: 1px solid rgba(0, 167, 75, 0.2);
 }
 
 .tag-primary {
-  background: rgba(96, 165, 250, 0.1);
-  color: #60a5fa;
-  border: 1px solid rgba(96, 165, 250, 0.2);
+  background: rgba(28, 106, 255, 0.1);
+  color: #1C6AFF;
+  border: 1px solid rgba(28, 106, 255, 0.2);
 }
 
 .tag-muted {
-  background: #35343a;
-  color: #94a3b8;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: #F7F8FB;
+  color: #9C9DA6;
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .action-btn {
@@ -819,7 +819,7 @@ onUnmounted(() => {
 }
 
 .action-btn:hover {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .action-icon {
@@ -832,7 +832,7 @@ onUnmounted(() => {
 }
 
 .text-primary {
-  color: #60a5fa;
+  color: #1C6AFF;
 }
 
 /* 右侧面板 */
@@ -852,7 +852,7 @@ onUnmounted(() => {
 .info-btn {
   background: none;
   border: none;
-  color: #64748b;
+  color: #9C9DA6;
   cursor: pointer;
   padding: 4px;
   border-radius: 4px;
@@ -860,7 +860,7 @@ onUnmounted(() => {
 }
 
 .info-btn:hover {
-  color: #e4e1e9;
+  color: #4B4C57;
 }
 
 .info-icon {
@@ -870,10 +870,10 @@ onUnmounted(() => {
 
 .push-detail-card {
   flex: 1;
-  background: rgba(53, 52, 58, 0.4);
+  background: rgba(247, 248, 251, 0.7);
   backdrop-filter: blur(20px);
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   padding: 24px;
   display: flex;
   flex-direction: column;
@@ -886,7 +886,7 @@ onUnmounted(() => {
 
 .target-label {
   font-size: 10px;
-  color: #60a5fa;
+  color: #1C6AFF;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-weight: 700;
@@ -896,18 +896,18 @@ onUnmounted(() => {
 .target-name {
   font-size: 20px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
   margin: 0 0 6px 0;
 }
 
 .target-uuid {
   font-size: 10px;
-  color: #64748b;
+  color: #9C9DA6;
   margin: 0;
 }
 
 .uuid-value {
-  color: #cbd5e1;
+  color: #9C9DA6;
 }
 
 .detail-body {
@@ -925,15 +925,15 @@ onUnmounted(() => {
 }
 
 .detail-item {
-  background: #0e0e13;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: #F2F4F7;
+  border: 1px solid rgba(0, 0, 0, 0.05);
   padding: 12px;
   border-radius: 6px;
 }
 
 .detail-label {
   font-size: 9px;
-  color: #64748b;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-weight: 700;
@@ -943,13 +943,13 @@ onUnmounted(() => {
 .detail-value {
   font-size: 12px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
   margin: 0;
 }
 
 .freq-card {
-  background: #0e0e13;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: #F2F4F7;
+  border: 1px solid rgba(0, 0, 0, 0.05);
   padding: 16px;
   border-radius: 6px;
   position: relative;
@@ -965,13 +965,13 @@ onUnmounted(() => {
 .freq-value {
   font-size: 28px;
   font-weight: 500;
-  color: #60a5fa;
+  color: #1C6AFF;
   line-height: 1;
 }
 
 .freq-unit {
   font-size: 11px;
-  color: #64748b;
+  color: #9C9DA6;
   margin-bottom: 4px;
 }
 
@@ -982,7 +982,7 @@ onUnmounted(() => {
   transform: translateY(-50%);
   width: 40px;
   height: 40px;
-  color: rgba(96, 165, 250, 0.15);
+  color: rgba(28, 106, 255, 0.15);
 }
 
 .monitor-items {
@@ -999,24 +999,24 @@ onUnmounted(() => {
 
 .item-tag {
   padding: 5px 10px;
-  background: rgba(53, 52, 58, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(247, 248, 251, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 4px;
   font-size: 11px;
-  color: #e4e1e9;
+  color: #4B4C57;
 }
 
 .push-time {
   padding-top: 16px;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .push-btn {
   width: 100%;
   margin-top: 20px;
   padding: 14px;
-  background: #3b82f6;
-  color: #ffffff;
+  background: #1C6AFF;
+  color: #4B4C57;
   border: none;
   border-radius: 6px;
   font-size: 12px;
@@ -1032,7 +1032,7 @@ onUnmounted(() => {
 }
 
 .push-btn:hover {
-  box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+  box-shadow: 0 0 15px rgba(28, 106, 255, 0.3);
 }
 
 .push-btn-icon {
@@ -1047,8 +1047,8 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   height: 32px;
-  background: #0e0e13;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background: #F2F4F7;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   align-items: center;
   padding: 0 24px;
@@ -1061,7 +1061,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 8px;
   font-size: 12px;
-  color: #94a3b8;
+  color: #9C9DA6;
 }
 
 .status-dot-green {
@@ -1079,7 +1079,7 @@ onUnmounted(() => {
   display: flex;
   gap: 24px;
   font-size: 12px;
-  color: #64748b;
-  font-family: 'Fira Code', monospace;
+  color: #9C9DA6;
+  font-family: 'Microsoft YaHei', monospace;
 }
 </style>

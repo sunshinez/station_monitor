@@ -19,28 +19,28 @@
           <svg class="connection-lines" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-                <polygon points="0 0, 10 3.5, 0 7" fill="#a4c9ff" />
+                <polygon points="0 0, 10 3.5, 0 7" fill="#1C6AFF" />
               </marker>
               <marker id="arrowhead-back" markerWidth="10" markerHeight="7" refX="1" refY="3.5" orient="auto">
-                <polygon points="10 0, 0 3.5, 10 7" fill="#a4c9ff" />
+                <polygon points="10 0, 0 3.5, 10 7" fill="#1C6AFF" />
               </marker>
             </defs>
             <!-- 天线到LNA -->
             <path d="M 180 300 L 320 300" fill="none" marker-end="url(#arrowhead)" marker-start="url(#arrowhead-back)"
-                  stroke="#a4c9ff" stroke-dasharray="4 4" stroke-width="2" />
+                  stroke="#1C6AFF" stroke-dasharray="4 4" stroke-width="2" />
             <!-- LNA到变频 -->
             <path d="M 460 300 L 580 300" fill="none" marker-end="url(#arrowhead)" marker-start="url(#arrowhead-back)"
-                  stroke="#a4c9ff" stroke-width="2" />
+                  stroke="#1C6AFF" stroke-width="2" />
             <!-- 变频到矩阵 -->
             <path d="M 720 300 L 840 200" fill="none" marker-end="url(#arrowhead)" marker-start="url(#arrowhead-back)"
-                  stroke="#a4c9ff" stroke-width="2" />
+                  stroke="#1C6AFF" stroke-width="2" />
             <path d="M 720 300 L 840 400" fill="none" marker-end="url(#arrowhead)" marker-start="url(#arrowhead-back)"
-                  stroke="#a4c9ff" stroke-width="2" />
+                  stroke="#1C6AFF" stroke-width="2" />
             <!-- 矩阵到解调器/存储 -->
             <path d="M 980 200 L 1100 200" fill="none" marker-end="url(#arrowhead)" marker-start="url(#arrowhead-back)"
-                  stroke="#a4c9ff" stroke-width="2" />
+                  stroke="#1C6AFF" stroke-width="2" />
             <path d="M 980 400 L 1100 400" fill="none" marker-end="url(#arrowhead)" marker-start="url(#arrowhead-back)"
-                  stroke="#a4c9ff" stroke-width="2" />
+                  stroke="#1C6AFF" stroke-width="2" />
           </svg>
           <div class="grid-bg"></div>
 
@@ -447,25 +447,25 @@ onUnmounted(() => {
 <style scoped>
 /* CSS Variables */
 :root {
-  --primary: #a4c9ff;
-  --error: #ffb4ab;
+  --primary: #1C6AFF;
+  --error: #ED3B3B;
   --success: #4ae176;
-  --surface: #131318;
-  --surface-container: #1f1f24;
-  --surface-container-low: #1b1b20;
-  --surface-container-high: #2a292f;
-  --surface-container-highest: #35343a;
-  --on-surface: #e4e1e9;
-  --on-surface-variant: #c2c6d6;
-  --outline: #8c909f;
-  --outline-variant: #424754;
+  --surface: #EDEFF3;
+  --surface-container: #F7F8FB;
+  --surface-container-low: #F7F8FB;
+  --surface-container-high: #F7F8FB;
+  --surface-container-highest: #F7F8FB;
+  --on-surface: #4B4C57;
+  --on-surface-variant: #7F808F;
+  --outline: #9C9DA6;
+  --outline-variant: #DFE3EA;
 }
 
 .topology-page {
   min-height: 100vh;
-  background-color: #131318;
-  color: #e4e1e9;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #EDEFF3;
+  color: #4B4C57;
+  font-family: 'Microsoft YaHei', 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
 }
 
 /* TopNavBar */
@@ -475,7 +475,7 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   height: 64px;
-  background: #131318;
+  background: #EDEFF3;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -487,7 +487,7 @@ onUnmounted(() => {
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.15em;
-  color: #e4e1e9;
+  color: #4B4C57;
   text-transform: uppercase;
 }
 
@@ -498,7 +498,7 @@ onUnmounted(() => {
 
 .nav-link {
   font-size: 14px;
-  color: #94a3b8;
+  color: #9C9DA6;
   text-decoration: none;
   transition: color 0.2s;
   padding-bottom: 4px;
@@ -507,12 +507,12 @@ onUnmounted(() => {
 
 .nav-link:hover,
 .nav-link.active {
-  color: #e4e1e9;
+  color: #4B4C57;
 }
 
 .nav-link.active {
-  color: #e4e1e9;
-  border-bottom-color: #e4e1e9;
+  color: #4B4C57;
+  border-bottom-color: #4B4C57;
   font-weight: 600;
 }
 
@@ -527,14 +527,14 @@ onUnmounted(() => {
   border-radius: 50%;
   background: none;
   border: none;
-  color: #94a3b8;
+  color: #9C9DA6;
   cursor: pointer;
   padding: 8px;
   transition: color 0.2s;
 }
 
 .icon-btn:hover {
-  color: #e4e1e9;
+  color: #4B4C57;
 }
 
 .icon {
@@ -549,7 +549,7 @@ onUnmounted(() => {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #ffb4ab;
+  background: #ED3B3B;
 }
 
 
@@ -560,7 +560,7 @@ onUnmounted(() => {
   top: 64px;
   bottom: 0;
   width: 256px;
-  background: #020617;
+  background: #EDEFF3;
   display: flex;
   flex-direction: column;
   z-index: 40;
@@ -572,7 +572,7 @@ onUnmounted(() => {
 
 .side-title {
   font-size: 12px;
-  color: #e4e1e9;
+  color: #4B4C57;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -581,7 +581,7 @@ onUnmounted(() => {
 
 .side-subtitle {
   font-size: 10px;
-  color: #64748b;
+  color: #9C9DA6;
   letter-spacing: 0.2em;
   margin: 0;
 }
@@ -596,7 +596,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 12px;
   padding: 12px 24px;
-  color: #64748b;
+  color: #9C9DA6;
   text-decoration: none;
   font-size: 12px;
   text-transform: uppercase;
@@ -606,14 +606,14 @@ onUnmounted(() => {
 }
 
 .side-link:hover {
-  color: #93c5fd;
-  background: rgba(255, 255, 255, 0.05);
+  color: #1C6AFF;
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .side-link.active {
-  color: #e4e1e9;
-  background: rgba(59, 130, 246, 0.1);
-  border-right-color: #e4e1e9;
+  color: #4B4C57;
+  background: rgba(28, 106, 255, 0.1);
+  border-right-color: #4B4C57;
   font-weight: 600;
 }
 
@@ -628,10 +628,10 @@ onUnmounted(() => {
 }
 
 .health-card {
-  background: #1b1b20;
+  background: #F7F8FB;
   padding: 16px;
   border-radius: 8px;
-  border: 1px solid rgba(66, 71, 84, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .health-header {
@@ -643,21 +643,21 @@ onUnmounted(() => {
 
 .health-label {
   font-size: 10px;
-  color: #64748b;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
 .health-bar {
   height: 4px;
-  background: #1f2937;
+  background: #DFE3EA;
   border-radius: 2px;
   overflow: hidden;
 }
 
 .health-fill {
   height: 100%;
-  background: #60a5fa;
+  background: #1C6AFF;
   border-radius: 2px;
   transition: width 0.3s;
 }
@@ -687,7 +687,7 @@ onUnmounted(() => {
   top: -256px;
   width: 800px;
   height: 800px;
-  background: rgba(164, 201, 255, 0.05);
+  background: rgba(28, 106, 255, 0.05);
 }
 
 .bg-glow.bottom-right {
@@ -695,7 +695,7 @@ onUnmounted(() => {
   bottom: 0;
   width: 400px;
   height: 400px;
-  background: rgba(74, 225, 118, 0.05);
+  background: rgba(0, 167, 75, 0.05);
 }
 
 /* Page Header */
@@ -709,16 +709,16 @@ onUnmounted(() => {
 .page-title {
   font-size: 32px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
   margin: 0 0 8px 0;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
 .page-subtitle {
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
   font-size: 14px;
-  color: rgba(164, 201, 255, 0.8);
+  color: rgba(28, 106, 255, 0.7);
   margin: 0;
 }
 
@@ -726,9 +726,9 @@ onUnmounted(() => {
 .topology-canvas {
   position: relative;
   height: 700px;
-  background: rgba(14, 14, 19, 0.5);
+  background: rgba(247, 248, 251, 0.9);
   border-radius: 12px;
-  border: 1px solid rgba(66, 71, 84, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.06);
   padding: 48px;
   overflow: hidden;
 }
@@ -745,7 +745,7 @@ onUnmounted(() => {
 .grid-bg {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle at 2px 2px, rgba(59, 130, 246, 0.05) 1px, transparent 0);
+  background-image: radial-gradient(circle at 2px 2px, rgba(28, 106, 255, 0.05) 1px, transparent 0);
   background-size: 40px 40px;
   opacity: 0.3;
   pointer-events: none;
@@ -757,10 +757,10 @@ onUnmounted(() => {
 }
 
 .node-card {
-  background: #2a292f;
+  background: #F7F8FB;
   padding: 16px;
   border-radius: 8px;
-  border: 1px solid rgba(164, 201, 255, 0.2);
+  border: 1px solid rgba(28, 106, 255, 0.2);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -770,16 +770,16 @@ onUnmounted(() => {
 }
 
 .node-card:hover {
-  border-color: rgba(164, 201, 255, 0.6);
+  border-color: rgba(28, 106, 255, 0.5);
   transform: translateY(-4px);
 }
 
 .node-card.error {
-  border-color: rgba(255, 180, 171, 0.4);
+  border-color: rgba(237, 59, 59, 0.25);
 }
 
 .node-card.error:hover {
-  border-color: rgba(255, 180, 171, 0.8);
+  border-color: rgba(237, 59, 59, 0.5);
 }
 
 .node-tags {
@@ -802,38 +802,38 @@ onUnmounted(() => {
 }
 
 .tag-control {
-  background: rgba(59, 130, 246, 0.2);
-  color: #e4e1e9;
-  border: 1px solid rgba(59, 130, 246, 0.4);
+  background: rgba(28, 106, 250, 0.2);
+  color: #4B4C57;
+  border: 1px solid rgba(28, 106, 255, 0.3);
 }
 
 .tag-local {
-  background: rgba(100, 116, 139, 0.2);
-  color: #94a3b8;
-  border: 1px solid rgba(100, 116, 139, 0.4);
+  background: rgba(156, 157, 166, 0.2);
+  color: #9C9DA6;
+  border: 1px solid rgba(156, 157, 166, 0.3);
 }
 
 .tag-primary {
-  background: rgba(164, 201, 255, 0.2);
-  color: #a4c9ff;
-  border: 1px solid rgba(164, 201, 255, 0.4);
+  background: rgba(28, 106, 255, 0.2);
+  color: #1C6AFF;
+  border: 1px solid rgba(28, 106, 255, 0.4);
 }
 
 .tag-standby {
-  background: rgba(100, 116, 139, 0.2);
-  color: #94a3b8;
-  border: 1px solid rgba(100, 116, 139, 0.4);
+  background: rgba(156, 157, 166, 0.2);
+  color: #9C9DA6;
+  border: 1px solid rgba(156, 157, 166, 0.3);
 }
 
 .node-icon {
   width: 40px;
   height: 40px;
-  color: #a4c9ff;
+  color: #1C6AFF;
   margin-top: 8px;
 }
 
 .node-icon.pulse {
-  color: #ffb4ab;
+  color: #ED3B3B;
   animation: pulse 2s ease-in-out infinite;
 }
 
@@ -848,7 +848,7 @@ onUnmounted(() => {
 
 .node-type {
   font-size: 10px;
-  color: #c2c6d6;
+  color: #7F808F;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin: 0 0 4px 0;
@@ -857,7 +857,7 @@ onUnmounted(() => {
 .node-name {
   font-size: 12px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
   margin: 0;
 }
 
@@ -877,20 +877,20 @@ onUnmounted(() => {
 
 .status-dot.success {
   background: #4ae176;
-  box-shadow: 0 0 2px #4ae176, 0 0 12px rgba(74, 225, 118, 0.3);
+  box-shadow: 0 0 2px #4ae176, 0 0 12px rgba(0, 167, 75, 0.3);
 }
 
 .status-dot.error {
-  background: #ffb4ab;
-  box-shadow: 0 0 2px #ffb4ab, 0 0 12px rgba(255, 180, 171, 0.3);
+  background: #ED3B3B;
+  box-shadow: 0 0 2px #ED3B3B, 0 0 12px rgba(237, 59, 59, 0.2);
 }
 
 .status-dot.maintenance {
-  background: rgba(164, 201, 255, 0.4);
+  background: rgba(28, 106, 255, 0.4);
 }
 
 .status-text {
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
   font-size: 10px;
 }
 
@@ -899,12 +899,12 @@ onUnmounted(() => {
 }
 
 .status-text.error {
-  color: #ffb4ab;
+  color: #ED3B3B;
 }
 
 .node-metrics {
   margin-top: 16px;
-  background: rgba(14, 14, 19, 0.8);
+  background: rgba(247, 248, 251, 0.95);
   padding: 8px;
   border-radius: 6px;
 }
@@ -912,9 +912,9 @@ onUnmounted(() => {
 .metric {
   display: flex;
   justify-content: space-between;
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
   font-size: 10px;
-  color: #64748b;
+  color: #9C9DA6;
   margin-bottom: 4px;
 }
 
@@ -923,11 +923,11 @@ onUnmounted(() => {
 }
 
 .metric-value {
-  color: #e4e1e9;
+  color: #4B4C57;
 }
 
 .metric-value.error {
-  color: #ffb4ab;
+  color: #ED3B3B;
   font-weight: 700;
 }
 
@@ -938,9 +938,9 @@ onUnmounted(() => {
   flex-wrap: wrap;
   gap: 24px;
   padding: 12px 16px;
-  background: rgba(14, 14, 19, 0.3);
+  background: rgba(247, 248, 251, 0.7);
   border-radius: 8px;
-  border: 1px solid rgba(66, 71, 84, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.06);
   width: fit-content;
 }
 
@@ -952,7 +952,7 @@ onUnmounted(() => {
 
 .legend-label {
   font-size: 10px;
-  color: #94a3b8;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -960,7 +960,7 @@ onUnmounted(() => {
 .legend-divider {
   width: 1px;
   height: 12px;
-  background: rgba(66, 71, 84, 0.3);
+  background: rgba(0, 0, 0, 0.08);
 }
 
 .tag-mini {
@@ -979,11 +979,11 @@ onUnmounted(() => {
 }
 
 .panel {
-  background: rgba(27, 27, 32, 0.8);
+  background: rgba(247, 248, 251, 0.95);
   backdrop-filter: blur(12px);
   padding: 24px;
   border-radius: 8px;
-  border: 1px solid rgba(66, 71, 84, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .panel-header {
@@ -996,7 +996,7 @@ onUnmounted(() => {
 .panel-title {
   font-size: 14px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
   margin: 0;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -1004,12 +1004,12 @@ onUnmounted(() => {
 
 .live-badge {
   padding: 2px 8px;
-  background: rgba(59, 130, 246, 0.1);
-  color: #e4e1e9;
-  font-family: 'Fira Code', monospace;
+  background: rgba(28, 106, 255, 0.1);
+  color: #4B4C57;
+  font-family: 'Microsoft YaHei', monospace;
   font-size: 10px;
   border-radius: 4px;
-  border: 1px solid rgba(59, 130, 246, 0.2);
+  border: 1px solid rgba(28, 106, 250, 0.2);
 }
 
 /* Telemetry Grid */
@@ -1021,21 +1021,21 @@ onUnmounted(() => {
 
 .telemetry-item {
   padding: 12px;
-  background: #0e0e13;
+  background: #F2F4F7;
   border-radius: 6px;
 }
 
 .telemetry-label {
   font-size: 10px;
-  color: #64748b;
+  color: #9C9DA6;
   text-transform: uppercase;
   margin: 0 0 4px 0;
 }
 
 .telemetry-value {
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
   font-size: 20px;
-  color: #a4c9ff;
+  color: #1C6AFF;
   margin: 0;
 }
 
@@ -1060,7 +1060,7 @@ onUnmounted(() => {
 }
 
 .log-item.error {
-  border-left-color: #ffb4ab;
+  border-left-color: #ED3B3B;
 }
 
 .log-item.success {
@@ -1068,21 +1068,21 @@ onUnmounted(() => {
 }
 
 .log-item.info {
-  border-left-color: #a4c9ff;
+  border-left-color: #1C6AFF;
 }
 
 .log-time {
-  font-family: 'Fira Code', monospace;
-  color: #64748b;
+  font-family: 'Microsoft YaHei', monospace;
+  color: #9C9DA6;
   min-width: 60px;
 }
 
 .log-message {
-  color: #cbd5e1;
+  color: #9C9DA6;
 }
 
 .log-item.error .log-message {
-  color: #ffb4ab;
+  color: #ED3B3B;
   font-weight: 500;
   text-transform: uppercase;
 }

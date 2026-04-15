@@ -314,9 +314,9 @@ onUnmounted(() => {
 <style scoped>
 .log-record-page {
   min-height: 100vh;
-  background-color: #131318;
-  color: #e4e1e9;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #EDEFF3;
+  color: #4B4C57;
+  font-family: 'Microsoft YaHei', 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
   display: flex;
   flex-direction: column;
 }
@@ -335,8 +335,8 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   height: 64px;
-  background: #131318;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: #EDEFF3;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -348,7 +348,7 @@ onUnmounted(() => {
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.15em;
-  color: #60a5fa;
+  color: #1C6AFF;
   text-transform: uppercase;
 }
 
@@ -359,7 +359,7 @@ onUnmounted(() => {
 
 .nav-link {
   font-size: 14px;
-  color: #94a3b8;
+  color: #9C9DA6;
   text-decoration: none;
   transition: color 0.2s;
   padding-bottom: 4px;
@@ -367,12 +367,12 @@ onUnmounted(() => {
 }
 
 .nav-link:hover {
-  color: #e4e1e9;
+  color: #4B4C57;
 }
 
 .nav-link.active {
-  color: #60a5fa;
-  border-bottom-color: #60a5fa;
+  color: #1C6AFF;
+  border-bottom-color: #1C6AFF;
   font-weight: 600;
 }
 
@@ -386,7 +386,7 @@ onUnmounted(() => {
   position: relative;
   background: none;
   border: none;
-  color: #94a3b8;
+  color: #9C9DA6;
   cursor: pointer;
   padding: 8px;
   border-radius: 50%;
@@ -394,8 +394,8 @@ onUnmounted(() => {
 }
 
 .icon-btn:hover {
-  background: #1b1b20;
-  color: #e4e1e9;
+  background: #F7F8FB;
+  color: #4B4C57;
 }
 
 .icon {
@@ -410,13 +410,13 @@ onUnmounted(() => {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #ffb4ab;
+  background: #ED3B3B;
 }
 
 .side-nav {
   width: 260px;
-  background: #131318;
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  background: #EDEFF3;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   z-index: 40;
@@ -431,7 +431,7 @@ onUnmounted(() => {
 .side-title {
   font-size: 12px;
   font-weight: 500;
-  color: #64748b;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin: 0;
@@ -449,7 +449,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 12px;
   padding: 12px 16px;
-  color: #64748b;
+  color: #9C9DA6;
   text-decoration: none;
   font-size: 14px;
   transition: all 0.2s;
@@ -458,14 +458,14 @@ onUnmounted(() => {
 }
 
 .side-link:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: #e4e1e9;
+  background: rgba(0, 0, 0, 0.05);
+  color: #4B4C57;
 }
 
 .side-link.active {
-  background: rgba(255, 255, 255, 0.05);
-  border-left-color: #60a5fa;
-  color: #e4e1e9;
+  background: rgba(0, 0, 0, 0.05);
+  border-left-color: #1C6AFF;
+  color: #4B4C57;
 }
 
 .side-icon {
@@ -476,7 +476,7 @@ onUnmounted(() => {
 .main-content {
   flex: 1;
   overflow-y: auto;
-  background: #131318;
+  background: #EDEFF3;
   padding: 32px;
 }
 
@@ -508,12 +508,12 @@ onUnmounted(() => {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #60a5fa;
+  background: #1C6AFF;
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 .pulse-dot.error {
-  background: #ffb4ab;
+  background: #ED3B3B;
 }
 
 @keyframes pulse {
@@ -524,18 +524,18 @@ onUnmounted(() => {
 .page-title {
   font-size: 24px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
   margin: 0;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Microsoft YaHei', sans-serif;
 }
 
 .page-subtitle {
   font-size: 12px;
-  color: #94a3b8;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin: 0;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Microsoft YaHei', sans-serif;
 }
 
 .header-right {
@@ -549,34 +549,34 @@ onUnmounted(() => {
   align-items: center;
   gap: 12px;
   padding: 10px 16px;
-  background: #2a292f;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #F7F8FB;
+  border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 4px;
   font-size: 11px;
 }
 
 .storage-label {
-  color: #94a3b8;
-  font-family: 'Fira Code', monospace;
+  color: #9C9DA6;
+  font-family: 'Microsoft YaHei', monospace;
 }
 
 .storage-bar {
   width: 96px;
   height: 6px;
-  background: #0e0e13;
+  background: #F2F4F7;
   border-radius: 3px;
   overflow: hidden;
 }
 
 .storage-progress {
   height: 100%;
-  background: #60a5fa;
+  background: #1C6AFF;
   border-radius: 3px;
 }
 
 .storage-value {
-  color: #60a5fa;
-  font-family: 'Fira Code', monospace;
+  color: #1C6AFF;
+  font-family: 'Microsoft YaHei', monospace;
 }
 
 .btn-secondary {
@@ -584,10 +584,10 @@ onUnmounted(() => {
   align-items: center;
   gap: 8px;
   padding: 10px 16px;
-  background: #2a292f;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #F7F8FB;
+  border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 4px;
-  color: #e4e1e9;
+  color: #4B4C57;
   font-size: 12px;
   font-weight: 500;
   cursor: pointer;
@@ -595,7 +595,7 @@ onUnmounted(() => {
 }
 
 .btn-secondary:hover {
-  background: #35343a;
+  background: #F7F8FB;
 }
 
 .btn-primary {
@@ -603,10 +603,10 @@ onUnmounted(() => {
   align-items: center;
   gap: 8px;
   padding: 10px 16px;
-  background: #60a5fa;
+  background: #1C6AFF;
   border: none;
   border-radius: 4px;
-  color: #0f172a;
+  color: #F7F8FB;
   font-size: 12px;
   font-weight: 600;
   cursor: pointer;
@@ -614,7 +614,7 @@ onUnmounted(() => {
 }
 
 .btn-primary:hover {
-  box-shadow: 0 0 15px rgba(96, 165, 250, 0.4);
+  box-shadow: 0 0 15px rgba(28, 106, 255, 0.4);
 }
 
 .btn-icon {
@@ -642,8 +642,8 @@ onUnmounted(() => {
 }
 
 .panel {
-  background: #1b1b20;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: #F7F8FB;
+  border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 8px;
   overflow: hidden;
 }
@@ -653,8 +653,8 @@ onUnmounted(() => {
   justify-content: space-between;
   align-items: center;
   padding: 16px 24px;
-  background: #2a292f;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: #F7F8FB;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .panel-title-group {
@@ -666,7 +666,7 @@ onUnmounted(() => {
 .panel-icon {
   width: 20px;
   height: 20px;
-  color: #60a5fa;
+  color: #1C6AFF;
 }
 
 .panel-icon.tertiary {
@@ -676,18 +676,18 @@ onUnmounted(() => {
 .panel-title {
   font-size: 14px;
   font-weight: 600;
-  color: #ffffff;
+  color: #4B4C57;
   margin: 0;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Microsoft YaHei', sans-serif;
   letter-spacing: 0.05em;
 }
 
 .status-badge {
   padding: 4px 8px;
-  background: rgba(96, 165, 250, 0.1);
-  border: 1px solid rgba(96, 165, 250, 0.2);
+  background: rgba(28, 106, 255, 0.1);
+  border: 1px solid rgba(28, 106, 255, 0.2);
   border-radius: 4px;
-  color: #60a5fa;
+  color: #1C6AFF;
   font-size: 10px;
   font-weight: 600;
 }
@@ -700,8 +700,8 @@ onUnmounted(() => {
 
 .meta-item {
   font-size: 11px;
-  font-family: 'Fira Code', monospace;
-  color: #94a3b8;
+  font-family: 'Microsoft YaHei', monospace;
+  color: #9C9DA6;
 }
 
 .meta-item.success {
@@ -728,19 +728,19 @@ onUnmounted(() => {
 .data-table th {
   font-size: 10px;
   font-weight: 600;
-  color: #94a3b8;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   padding: 14px 24px;
-  background: #0e0e13;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: #F2F4F7;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   white-space: nowrap;
 }
 
 .data-table td {
   padding: 14px 24px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  font-family: 'Fira Code', monospace;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  font-family: 'Microsoft YaHei', monospace;
   font-size: 12px;
 }
 
@@ -749,7 +749,7 @@ onUnmounted(() => {
 }
 
 .data-table tbody tr:hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(0, 0, 0, 0.03);
 }
 
 .data-table tbody tr.highlight {
@@ -761,11 +761,11 @@ onUnmounted(() => {
 }
 
 .time-cell {
-  color: #60a5fa;
+  color: #1C6AFF;
 }
 
 .device-cell {
-  color: #94a3b8;
+  color: #9C9DA6;
 }
 
 .event-type {
@@ -773,11 +773,11 @@ onUnmounted(() => {
 }
 
 .event-type.primary {
-  color: #60a5fa;
+  color: #1C6AFF;
 }
 
 .event-type.secondary {
-  color: #a4c9ff;
+  color: #1C6AFF;
 }
 
 .tertiary {
@@ -810,7 +810,7 @@ onUnmounted(() => {
 .config-section-title {
   font-size: 10px;
   font-weight: 600;
-  color: #94a3b8;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin: 0 0 16px 0;
@@ -830,27 +830,27 @@ onUnmounted(() => {
 
 .config-name {
   font-size: 12px;
-  color: #e4e1e9;
+  color: #4B4C57;
 }
 
 .config-select {
   padding: 6px 10px;
-  background: #0e0e13;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #F2F4F7;
+  border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 4px;
-  color: #e4e1e9;
+  color: #4B4C57;
   font-size: 11px;
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
   cursor: pointer;
 }
 
 .btn-outline {
   width: 100%;
   padding: 12px;
-  background: rgba(96, 165, 250, 0.1);
-  border: 1px solid rgba(96, 165, 250, 0.3);
+  background: rgba(28, 106, 255, 0.1);
+  border: 1px solid rgba(28, 106, 255, 0.3);
   border-radius: 4px;
-  color: #60a5fa;
+  color: #1C6AFF;
   font-size: 11px;
   font-weight: 600;
   text-transform: uppercase;
@@ -860,20 +860,20 @@ onUnmounted(() => {
 }
 
 .btn-outline:hover {
-  background: rgba(96, 165, 250, 0.2);
+  background: rgba(28, 106, 255, 0.2);
 }
 
 .info-card {
   padding: 16px;
-  background: rgba(96, 165, 250, 0.05);
-  border: 1px solid rgba(96, 165, 250, 0.15);
+  background: rgba(28, 106, 255, 0.05);
+  border: 1px solid rgba(28, 106, 255, 0.15);
   border-radius: 8px;
 }
 
 .info-text {
   font-size: 11px;
-  color: rgba(96, 165, 250, 0.7);
-  font-family: 'Fira Code', monospace;
+  color: rgba(28, 106, 255, 0.7);
+  font-family: 'Microsoft YaHei', monospace;
   line-height: 1.6;
   margin: 0;
 }

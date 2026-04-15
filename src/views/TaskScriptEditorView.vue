@@ -571,9 +571,9 @@ onUnmounted(() => {
 <style scoped>
 .task-script-editor-page {
   min-height: 100vh;
-  background-color: #0b0b10;
-  color: #e4e1e9;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #EDEFF3;
+  color: #4B4C57;
+  font-family: 'Microsoft YaHei', 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
 }
 
 /* 顶部导航栏 */
@@ -583,8 +583,8 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   height: 64px;
-  background: #131318;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: #EDEFF3;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -596,7 +596,7 @@ onUnmounted(() => {
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.15em;
-  color: #60a5fa;
+  color: #1C6AFF;
   text-transform: uppercase;
 }
 
@@ -607,7 +607,7 @@ onUnmounted(() => {
 
 .nav-link {
   font-size: 14px;
-  color: #94a3b8;
+  color: #9C9DA6;
   text-decoration: none;
   transition: color 0.2s;
   padding-bottom: 4px;
@@ -615,12 +615,12 @@ onUnmounted(() => {
 }
 
 .nav-link:hover {
-  color: #e4e1e9;
+  color: #4B4C57;
 }
 
 .nav-link.active {
-  color: #60a5fa;
-  border-bottom-color: #60a5fa;
+  color: #1C6AFF;
+  border-bottom-color: #1C6AFF;
   font-weight: 600;
 }
 
@@ -634,7 +634,7 @@ onUnmounted(() => {
   position: relative;
   background: none;
   border: none;
-  color: #94a3b8;
+  color: #9C9DA6;
   cursor: pointer;
   padding: 8px;
   border-radius: 50%;
@@ -642,8 +642,8 @@ onUnmounted(() => {
 }
 
 .icon-btn:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: #e4e1e9;
+  background: rgba(0, 0, 0, 0.05);
+  color: #4B4C57;
 }
 
 .icon {
@@ -658,7 +658,7 @@ onUnmounted(() => {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #ffb4ab;
+  background: #ED3B3B;
 }
 
 /* 主布局 */
@@ -672,8 +672,8 @@ onUnmounted(() => {
 /* 侧边栏 */
 .side-nav {
   width: 256px;
-  background: #1b1b20;
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  background: #F7F8FB;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   padding: 16px 0;
@@ -694,19 +694,19 @@ onUnmounted(() => {
 .side-header-icon {
   width: 20px;
   height: 20px;
-  color: #60a5fa;
+  color: #1C6AFF;
 }
 
 .side-title {
   font-size: 18px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
   margin: 0;
 }
 
 .side-subtitle {
   font-size: 10px;
-  color: #64748b;
+  color: #9C9DA6;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   margin: 0;
@@ -724,7 +724,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 12px;
   padding: 12px;
-  color: #94a3b8;
+  color: #9C9DA6;
   text-decoration: none;
   font-size: 13px;
   border-radius: 4px;
@@ -734,14 +734,14 @@ onUnmounted(() => {
 }
 
 .side-link:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: #e4e1e9;
+  background: rgba(0, 0, 0, 0.05);
+  color: #4B4C57;
 }
 
 .side-link.active {
-  background: #2a292f;
-  color: #60a5fa;
-  border-left-color: #60a5fa;
+  background: #F7F8FB;
+  color: #1C6AFF;
+  border-left-color: #1C6AFF;
   font-weight: 600;
 }
 
@@ -763,8 +763,8 @@ onUnmounted(() => {
 /* 脚本管理库 */
 .script-library {
   height: 28%;
-  background: #0e0e13;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: #F2F4F7;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -773,7 +773,7 @@ onUnmounted(() => {
 
 .library-header {
   padding: 12px 24px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -788,7 +788,7 @@ onUnmounted(() => {
 .library-title {
   font-size: 11px;
   font-weight: 700;
-  color: #94a3b8;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin: 0;
@@ -805,22 +805,22 @@ onUnmounted(() => {
   transform: translateY(-50%);
   width: 14px;
   height: 14px;
-  color: #64748b;
+  color: #9C9DA6;
 }
 
 .search-input {
-  background: #131318;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #EDEFF3;
+  border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 4px;
   padding: 6px 10px 6px 30px;
-  color: #e4e1e9;
+  color: #4B4C57;
   font-size: 11px;
   width: 220px;
   outline: none;
 }
 
 .search-input::placeholder {
-  color: #64748b;
+  color: #9C9DA6;
 }
 
 .library-actions {
@@ -832,7 +832,7 @@ onUnmounted(() => {
 .action-btn-icon {
   background: none;
   border: none;
-  color: #94a3b8;
+  color: #9C9DA6;
   cursor: pointer;
   padding: 4px;
   transition: color 0.2s;
@@ -842,11 +842,11 @@ onUnmounted(() => {
 }
 
 .action-btn-icon:hover {
-  color: #a4c9ff;
+  color: #1C6AFF;
 }
 
 .action-btn-icon.danger:hover {
-  color: #ffb4ab;
+  color: #ED3B3B;
 }
 
 .action-icon {
@@ -868,7 +868,7 @@ onUnmounted(() => {
 .data-table thead {
   position: sticky;
   top: 0;
-  background: #0e0e13;
+  background: #F2F4F7;
 }
 
 .data-table th {
@@ -876,15 +876,15 @@ onUnmounted(() => {
   text-align: left;
   font-size: 9px;
   font-weight: 700;
-  color: #94a3b8;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .data-table td {
   padding: 12px 24px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.03);
 }
 
 .table-row {
@@ -893,27 +893,27 @@ onUnmounted(() => {
 }
 
 .table-row:hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(0, 0, 0, 0.03);
 }
 
 .table-row.active {
-  background: rgba(96, 165, 250, 0.1);
+  background: rgba(28, 106, 255, 0.1);
 }
 
 .table-row.active .script-name {
-  color: #a4c9ff;
+  color: #1C6AFF;
 }
 
 .script-name {
   font-weight: 500;
-  color: #e4e1e9;
-  font-family: 'Fira Code', monospace;
+  color: #4B4C57;
+  font-family: 'Microsoft YaHei', monospace;
   text-transform: uppercase;
   font-size: 11px;
 }
 
 .text-muted {
-  color: #64748b;
+  color: #9C9DA6;
 }
 
 .text-right {
@@ -921,7 +921,7 @@ onUnmounted(() => {
 }
 
 .font-mono {
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
 }
 
 .status-badge {
@@ -938,11 +938,11 @@ onUnmounted(() => {
 }
 
 .status-dot.primary {
-  background: #a4c9ff;
+  background: #1C6AFF;
 }
 
 .status-text.primary {
-  color: #a4c9ff;
+  color: #1C6AFF;
   font-size: 10px;
 }
 
@@ -950,7 +950,7 @@ onUnmounted(() => {
 .flow-editor {
   flex: 1;
   position: relative;
-  background-image: radial-gradient(circle, rgba(164, 201, 255, 0.05) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(28, 106, 255, 0.05) 1px, transparent 1px);
   background-size: 32px 32px;
   overflow: auto;
   min-height: 0;
@@ -967,17 +967,17 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   gap: 4px;
-  background: rgba(30, 41, 59, 0.9);
+  background: rgba(247, 248, 251, 0.95);
   backdrop-filter: blur(10px);
   padding: 4px;
   border-radius: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .tool-btn {
   background: none;
   border: none;
-  color: #94a3b8;
+  color: #9C9DA6;
   cursor: pointer;
   padding: 6px;
   border-radius: 4px;
@@ -988,8 +988,8 @@ onUnmounted(() => {
 }
 
 .tool-btn:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: #e4e1e9;
+  background: rgba(0, 0, 0, 0.06);
+  color: #4B4C57;
 }
 
 .tool-icon {
@@ -1000,7 +1000,7 @@ onUnmounted(() => {
 .toolbar-divider {
   width: 1px;
   height: 20px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.06);
   margin: 0 2px;
 }
 
@@ -1026,8 +1026,8 @@ onUnmounted(() => {
 }
 
 .flow-node {
-  background: #1e293b;
-  border: 1px solid #334155;
+  background: #DFE3EA;
+  border: 1px solid #DFE3EA;
   border-radius: 12px;
   padding: 14px;
   min-width: 190px;
@@ -1040,12 +1040,12 @@ onUnmounted(() => {
 }
 
 .flow-node-blue {
-  border-color: #3b82f6;
+  border-color: #1C6AFF;
   border-width: 1.5px;
 }
 
 .flow-node-blue.active-ring {
-  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3), 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 0 2px rgba(28, 106, 255, 0.3), 0 4px 6px -1px rgba(0, 0, 0, 0.2);
 }
 
 .node-header {
@@ -1071,7 +1071,7 @@ onUnmounted(() => {
 }
 
 .node-icon-bg.blue {
-  background: rgba(59, 130, 246, 0.2);
+  background: rgba(28, 106, 250, 0.2);
 }
 
 .node-icon-sm {
@@ -1085,13 +1085,13 @@ onUnmounted(() => {
 }
 
 .node-icon-sm.blue {
-  color: #3b82f6;
+  color: #1C6AFF;
 }
 
 .node-title {
   font-size: 11px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -1106,7 +1106,7 @@ onUnmounted(() => {
 }
 
 .node-status-icon.blue {
-  color: #3b82f6;
+  color: #1C6AFF;
 }
 
 .node-body {
@@ -1120,24 +1120,24 @@ onUnmounted(() => {
   padding: 10px;
   border-radius: 6px;
   font-size: 10px;
-  color: #94a3b8;
+  color: #9C9DA6;
   line-height: 1.5;
 }
 
 .node-body.compact.blue-bg {
-  background: rgba(59, 130, 246, 0.1);
-  border: 1px solid rgba(59, 130, 246, 0.2);
-  color: #cbd5e1;
+  background: rgba(28, 106, 255, 0.1);
+  border: 1px solid rgba(28, 106, 250, 0.2);
+  color: #9C9DA6;
 }
 
 .node-code {
   color: rgba(164, 201, 255, 0.7);
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
   margin-top: 4px;
 }
 
 .node-code.bright {
-  color: #60a5fa;
+  color: #1C6AFF;
 }
 
 .node-param {
@@ -1148,12 +1148,12 @@ onUnmounted(() => {
   padding: 5px 8px;
   border-radius: 4px;
   font-size: 10px;
-  color: #94a3b8;
+  color: #9C9DA6;
 }
 
 .node-param-tag {
-  color: #475569;
-  font-family: 'Fira Code', monospace;
+  color: #DFE3EA;
+  font-family: 'Microsoft YaHei', monospace;
   font-size: 9px;
 }
 
@@ -1172,14 +1172,14 @@ onUnmounted(() => {
 .connector-line {
   flex: 1;
   height: 2px;
-  background: #334155;
+  background: #DFE3EA;
   border-radius: 1px;
 }
 
 .connector-arrow {
   position: absolute;
   right: -2px;
-  color: #334155;
+  color: #DFE3EA;
 }
 
 .connector-arrow-icon {
@@ -1199,14 +1199,14 @@ onUnmounted(() => {
 .connector-line-v {
   flex: 1;
   width: 2px;
-  background: #334155;
+  background: #DFE3EA;
   border-radius: 1px;
 }
 
 .connector-arrow-v {
   position: absolute;
   bottom: -2px;
-  color: #334155;
+  color: #DFE3EA;
 }
 
 /* Decision Diamond */
@@ -1220,8 +1220,8 @@ onUnmounted(() => {
 .diamond {
   width: 90px;
   height: 90px;
-  background: #1e293b;
-  border: 2px solid #f59e0b;
+  background: #DFE3EA;
+  border: 2px solid #ED6B01;
   transform: rotate(45deg);
   display: flex;
   align-items: center;
@@ -1240,27 +1240,27 @@ onUnmounted(() => {
 .diamond-icon {
   width: 16px;
   height: 16px;
-  color: #f59e0b;
+  color: #ED6B01;
 }
 
 .diamond-text {
   font-size: 10px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
 }
 
 .diamond-label {
   font-size: 9px;
-  color: #64748b;
-  font-family: 'Fira Code', monospace;
+  color: #9C9DA6;
+  font-family: 'Microsoft YaHei', monospace;
 }
 
 /* Hexagon */
 .hexagon {
   width: 130px;
   height: 72px;
-  background: #1e293b;
-  border: 2px solid #a855f7;
+  background: #DFE3EA;
+  border: 2px solid #1C6AFF;
   clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
   display: flex;
   align-items: center;
@@ -1277,26 +1277,26 @@ onUnmounted(() => {
 .hexagon-icon {
   width: 16px;
   height: 16px;
-  color: #a855f7;
+  color: #1C6AFF;
 }
 
 .hexagon-text {
   font-size: 10px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
 }
 
 .hexagon-sub {
   font-size: 8px;
   color: rgba(168, 85, 247, 0.7);
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
 }
 
 /* 节点参数配置 */
 .param-config {
   height: 32%;
-  background: #0f172a;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: #F7F8FB;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -1305,7 +1305,7 @@ onUnmounted(() => {
 
 .config-header {
   padding: 12px 24px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1320,7 +1320,7 @@ onUnmounted(() => {
 .config-title {
   font-size: 11px;
   font-weight: 700;
-  color: #94a3b8;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin: 0;
@@ -1333,7 +1333,7 @@ onUnmounted(() => {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #a4c9ff;
+  background: #1C6AFF;
   animation: pulse 2s infinite;
 }
 
@@ -1344,10 +1344,10 @@ onUnmounted(() => {
 
 .config-subtitle {
   font-size: 9px;
-  color: #64748b;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
   margin: 0;
   padding-left: 16px;
 }
@@ -1392,7 +1392,7 @@ onUnmounted(() => {
 
 .config-label {
   font-size: 10px;
-  color: #64748b;
+  color: #9C9DA6;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -1400,11 +1400,11 @@ onUnmounted(() => {
 
 .config-select {
   width: 100%;
-  background: #1e293b;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #DFE3EA;
+  border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 6px;
   padding: 10px 12px;
-  color: #e4e1e9;
+  color: #4B4C57;
   font-size: 12px;
   outline: none;
   appearance: none;
@@ -1414,19 +1414,19 @@ onUnmounted(() => {
 }
 
 .config-select:focus {
-  border-color: rgba(96, 165, 250, 0.4);
+  border-color: rgba(28, 106, 255, 0.4);
 }
 
 .config-select.dark {
-  background-color: #0f172a;
+  background-color: #F7F8FB;
 }
 
 .config-readonly {
-  background: #1e293b;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #DFE3EA;
+  border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 6px;
   padding: 10px 12px;
-  color: #a4c9ff;
+  color: #1C6AFF;
   font-size: 12px;
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
 }
@@ -1441,8 +1441,8 @@ onUnmounted(() => {
 
 .param-card {
   width: 240px;
-  background: #1e293b;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: #DFE3EA;
+  border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 8px;
   padding: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -1451,7 +1451,7 @@ onUnmounted(() => {
 }
 
 .param-card:hover {
-  border-color: rgba(96, 165, 250, 0.2);
+  border-color: rgba(28, 106, 255, 0.2);
 }
 
 .param-card-header {
@@ -1464,13 +1464,13 @@ onUnmounted(() => {
 .param-card-title {
   font-size: 12px;
   font-weight: 600;
-  color: #cbd5e1;
+  color: #9C9DA6;
 }
 
 .param-card-tag {
   font-size: 9px;
-  color: #64748b;
-  font-family: 'Fira Code', monospace;
+  color: #9C9DA6;
+  font-family: 'Microsoft YaHei', monospace;
   letter-spacing: 0.02em;
 }
 
@@ -1484,27 +1484,27 @@ onUnmounted(() => {
   flex: 1;
   background: transparent;
   border: none;
-  border-bottom: 1px solid rgba(164, 201, 255, 0.4);
+  border-bottom: 1px solid rgba(28, 106, 255, 0.4);
   padding: 6px 2px;
-  color: #a4c9ff;
+  color: #1C6AFF;
   font-size: 14px;
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
   outline: none;
   transition: border-color 0.2s;
 }
 
 .param-input-underline:focus {
-  border-bottom-color: #a4c9ff;
+  border-bottom-color: #1C6AFF;
 }
 
 .param-type-tag {
   font-size: 9px;
-  color: #94a3b8;
+  color: #9C9DA6;
   padding: 2px 8px;
-  border: 1px solid #334155;
+  border: 1px solid #DFE3EA;
   border-radius: 4px;
-  background: #0f172a;
-  font-family: 'Fira Code', monospace;
+  background: #F7F8FB;
+  font-family: 'Microsoft YaHei', monospace;
 }
 
 /* 底部状态栏 */
@@ -1514,8 +1514,8 @@ onUnmounted(() => {
   left: 288px;
   right: 0;
   height: 32px;
-  background: #0e0e13;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background: #F2F4F7;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   align-items: center;
   padding: 0 24px;
@@ -1534,13 +1534,13 @@ onUnmounted(() => {
   height: 6px;
   border-radius: 50%;
   background: #4ae176;
-  box-shadow: 0 0 6px rgba(74, 225, 118, 0.5);
+  box-shadow: 0 0 6px rgba(0, 167, 75, 0.5);
 }
 
 .status-text {
   font-size: 10px;
   color: #4ae176;
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -1556,8 +1556,8 @@ onUnmounted(() => {
 
 .footer-info span {
   font-size: 10px;
-  color: #64748b;
-  font-family: 'Fira Code', monospace;
+  color: #9C9DA6;
+  font-family: 'Microsoft YaHei', monospace;
 }
 
 /* 滚动条 */
@@ -1567,16 +1567,16 @@ onUnmounted(() => {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0b0b10;
+  background: #EDEFF3;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: #DFE3EA;
   border-radius: 2px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
+  background: #DFE3EA;
 }
 
 /* 响应式 */

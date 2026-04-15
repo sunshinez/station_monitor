@@ -338,9 +338,9 @@ onUnmounted(() => {
 <style scoped>
 .task-status-page {
   min-height: 100vh;
-  background-color: #131318;
-  color: #e4e1e9;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #EDEFF3;
+  color: #4B4C57;
+  font-family: 'Microsoft YaHei', 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
   display: flex;
   flex-direction: column;
 }
@@ -359,8 +359,8 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   height: 64px;
-  background: #131318;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: #EDEFF3;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -372,7 +372,7 @@ onUnmounted(() => {
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.15em;
-  color: #60a5fa;
+  color: #1C6AFF;
   text-transform: uppercase;
 }
 
@@ -383,7 +383,7 @@ onUnmounted(() => {
 
 .nav-link {
   font-size: 14px;
-  color: #94a3b8;
+  color: #9C9DA6;
   text-decoration: none;
   transition: color 0.2s;
   padding-bottom: 4px;
@@ -391,12 +391,12 @@ onUnmounted(() => {
 }
 
 .nav-link:hover {
-  color: #e4e1e9;
+  color: #4B4C57;
 }
 
 .nav-link.active {
-  color: #60a5fa;
-  border-bottom-color: #60a5fa;
+  color: #1C6AFF;
+  border-bottom-color: #1C6AFF;
   font-weight: 600;
 }
 
@@ -410,7 +410,7 @@ onUnmounted(() => {
   position: relative;
   background: none;
   border: none;
-  color: #94a3b8;
+  color: #9C9DA6;
   cursor: pointer;
   padding: 8px;
   border-radius: 50%;
@@ -418,8 +418,8 @@ onUnmounted(() => {
 }
 
 .icon-btn:hover {
-  background: #1b1b20;
-  color: #e4e1e9;
+  background: #F7F8FB;
+  color: #4B4C57;
 }
 
 .icon {
@@ -434,14 +434,14 @@ onUnmounted(() => {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #ffb4ab;
+  background: #ED3B3B;
 }
 
 /* Side Navigation */
 .side-nav {
   width: 256px;
-  background: #1b1b20;
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  background: #F7F8FB;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   z-index: 40;
@@ -456,13 +456,13 @@ onUnmounted(() => {
 .side-title {
   font-size: 18px;
   font-weight: 700;
-  color: #60a5fa;
+  color: #1C6AFF;
   margin: 0 0 4px 0;
 }
 
 .side-subtitle {
   font-size: 10px;
-  color: #64748b;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   margin: 0;
@@ -478,7 +478,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 12px;
   padding: 16px 24px;
-  color: #64748b;
+  color: #9C9DA6;
   text-decoration: none;
   font-size: 13px;
   transition: all 0.2s;
@@ -486,14 +486,14 @@ onUnmounted(() => {
 }
 
 .side-link:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: #e4e1e9;
+  background: rgba(0, 0, 0, 0.05);
+  color: #4B4C57;
 }
 
 .side-link.active {
-  background: rgba(59, 130, 246, 0.1);
-  border-right-color: #60a5fa;
-  color: #60a5fa;
+  background: rgba(28, 106, 255, 0.1);
+  border-right-color: #1C6AFF;
+  color: #1C6AFF;
 }
 
 .side-icon {
@@ -507,15 +507,15 @@ onUnmounted(() => {
 }
 
 .health-card {
-  background: #0e0e13;
+  background: #F2F4F7;
   padding: 16px;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .health-label {
   font-size: 10px;
-  color: #64748b;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 8px;
@@ -532,20 +532,20 @@ onUnmounted(() => {
   height: 8px;
   border-radius: 50%;
   background: #4ae176;
-  box-shadow: 0 0 8px rgba(74, 225, 118, 0.5);
+  box-shadow: 0 0 8px rgba(0, 167, 75, 0.5);
 }
 
 .health-text {
   font-size: 12px;
-  font-family: 'Fira Code', monospace;
-  color: #e4e1e9;
+  font-family: 'Microsoft YaHei', monospace;
+  color: #4B4C57;
 }
 
 /* Main Content */
 .main-content {
   flex: 1;
   overflow-y: auto;
-  background: #131318;
+  background: #EDEFF3;
   padding: 32px;
 }
 
@@ -572,7 +572,7 @@ onUnmounted(() => {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #60a5fa;
+  background: #1C6AFF;
   animation: pulse 2s infinite;
 }
 
@@ -584,7 +584,7 @@ onUnmounted(() => {
 .tag-text {
   font-size: 11px;
   font-weight: 700;
-  color: #60a5fa;
+  color: #1C6AFF;
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
@@ -592,13 +592,13 @@ onUnmounted(() => {
 .page-title {
   font-size: 24px;
   font-weight: 700;
-  color: #ffffff;
+  color: #4B4C57;
   margin: 0;
 }
 
 .resource-card {
-  background: #0f172a;
-  border: 1px solid #1e293b;
+  background: #F7F8FB;
+  border: 1px solid #DFE3EA;
   padding: 16px 24px;
   border-radius: 8px;
   display: flex;
@@ -608,15 +608,15 @@ onUnmounted(() => {
 
 .resource-label {
   font-size: 10px;
-  color: #64748b;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
 
 .resource-value {
   font-size: 13px;
-  font-family: 'Fira Code', monospace;
-  color: #a4c9ff;
+  font-family: 'Microsoft YaHei', monospace;
+  color: #1C6AFF;
 }
 
 /* Links Grid */
@@ -638,23 +638,23 @@ onUnmounted(() => {
   align-items: center;
   gap: 12px;
   padding-bottom: 12px;
-  border-bottom: 1px solid #1e293b;
+  border-bottom: 1px solid #DFE3EA;
 }
 
 .section-icon {
   width: 20px;
   height: 20px;
-  color: #60a5fa;
+  color: #1C6AFF;
 }
 
 .section-icon.secondary {
-  color: #a4c9ff;
+  color: #1C6AFF;
 }
 
 .section-title {
   font-size: 18px;
   font-weight: 600;
-  color: #ffffff;
+  color: #4B4C57;
   margin: 0;
 }
 
@@ -666,15 +666,15 @@ onUnmounted(() => {
 
 /* Metric Cards */
 .metric-card {
-  background: #0f172a;
-  border: 1px solid #1e293b;
+  background: #F7F8FB;
+  border: 1px solid #DFE3EA;
   padding: 20px;
   border-radius: 12px;
   transition: all 0.3s;
 }
 
 .metric-card:hover {
-  border-color: rgba(96, 165, 250, 0.3);
+  border-color: rgba(28, 106, 255, 0.3);
 }
 
 .metric-card.large {
@@ -690,7 +690,7 @@ onUnmounted(() => {
 
 .metric-label {
   font-size: 12px;
-  color: #64748b;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -698,11 +698,11 @@ onUnmounted(() => {
 .metric-icon {
   width: 16px;
   height: 16px;
-  color: #60a5fa;
+  color: #1C6AFF;
 }
 
 .metric-icon.secondary {
-  color: #a4c9ff;
+  color: #1C6AFF;
 }
 
 .metric-value-row {
@@ -713,18 +713,18 @@ onUnmounted(() => {
 
 .metric-value {
   font-size: 28px;
-  font-family: 'Fira Code', monospace;
-  color: #ffffff;
+  font-family: 'Microsoft YaHei', monospace;
+  color: #4B4C57;
 }
 
 .metric-unit {
   font-size: 12px;
-  color: #64748b;
+  color: #9C9DA6;
 }
 
 .metric-label-small {
   font-size: 10px;
-  color: #64748b;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-bottom: 12px;
@@ -742,8 +742,8 @@ onUnmounted(() => {
 
 /* Status Table */
 .status-table {
-  background: #0f172a;
-  border: 1px solid #1e293b;
+  background: #F7F8FB;
+  border: 1px solid #DFE3EA;
   border-radius: 12px;
   overflow: hidden;
 }
@@ -753,7 +753,7 @@ onUnmounted(() => {
   justify-content: space-between;
   align-items: center;
   padding: 16px 24px;
-  border-bottom: 1px solid #1e293b;
+  border-bottom: 1px solid #DFE3EA;
 }
 
 .status-row:last-child {
@@ -762,7 +762,7 @@ onUnmounted(() => {
 
 .status-label {
   font-size: 13px;
-  color: #94a3b8;
+  color: #9C9DA6;
 }
 
 .status-value {
@@ -773,7 +773,7 @@ onUnmounted(() => {
 
 .status-text {
   font-size: 11px;
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
 }
 
 .status-text.success {
@@ -781,7 +781,7 @@ onUnmounted(() => {
 }
 
 .status-text.error {
-  color: #ffb4ab;
+  color: #ED3B3B;
 }
 
 .status-dot {
@@ -792,12 +792,12 @@ onUnmounted(() => {
 
 .status-dot.success {
   background: #4ae176;
-  box-shadow: 0 0 8px rgba(74, 225, 118, 0.5);
+  box-shadow: 0 0 8px rgba(0, 167, 75, 0.5);
 }
 
 .status-dot.error {
-  background: #ffb4ab;
-  box-shadow: 0 0 8px rgba(255, 180, 171, 0.5);
+  background: #ED3B3B;
+  box-shadow: 0 0 8px rgba(237, 59, 59, 0.3);
 }
 
 /* Task List Section */
@@ -806,8 +806,8 @@ onUnmounted(() => {
 }
 
 .task-table-wrapper {
-  background: #0f172a;
-  border: 1px solid #1e293b;
+  background: #F7F8FB;
+  border: 1px solid #DFE3EA;
   border-radius: 12px;
   overflow: hidden;
 }
@@ -821,17 +821,17 @@ onUnmounted(() => {
 .task-table th {
   font-size: 10px;
   font-weight: 700;
-  color: #64748b;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   padding: 16px 24px;
-  background: #1b1b20;
-  border-bottom: 1px solid #1e293b;
+  background: #F7F8FB;
+  border-bottom: 1px solid #DFE3EA;
 }
 
 .task-table td {
   padding: 20px 24px;
-  border-bottom: 1px solid #1e293b;
+  border-bottom: 1px solid #DFE3EA;
   font-size: 13px;
 }
 
@@ -841,33 +841,33 @@ onUnmounted(() => {
 }
 
 .task-table tr:hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(0, 0, 0, 0.03);
 }
 
 .task-table tr.active {
-  background: rgba(59, 130, 246, 0.1);
-  border-left: 4px solid #60a5fa;
+  background: rgba(28, 106, 255, 0.1);
+  border-left: 4px solid #1C6AFF;
 }
 
 .task-name {
   font-weight: 600;
-  color: #ffffff;
+  color: #4B4C57;
 }
 
 .task-time {
-  font-family: 'Fira Code', monospace;
-  color: #e4e1e9;
+  font-family: 'Microsoft YaHei', monospace;
+  color: #4B4C57;
 }
 
 .task-resources {
   font-size: 11px;
-  color: #94a3b8;
+  color: #9C9DA6;
 }
 
 .task-macro {
-  font-family: 'Fira Code', monospace;
+  font-family: 'Microsoft YaHei', monospace;
   font-size: 11px;
-  color: #a4c9ff;
+  color: #1C6AFF;
 }
 
 .status-cell {
@@ -895,7 +895,7 @@ onUnmounted(() => {
 }
 
 .status-badge.pending {
-  color: #94a3b8;
+  color: #9C9DA6;
 }
 
 /* System Footer */
@@ -903,7 +903,7 @@ onUnmounted(() => {
   display: flex;
   gap: 48px;
   padding-top: 32px;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .footer-item {
@@ -919,7 +919,7 @@ onUnmounted(() => {
 }
 
 .footer-bar.primary {
-  background: #60a5fa;
+  background: #1C6AFF;
 }
 
 .footer-bar.tertiary {
@@ -927,12 +927,12 @@ onUnmounted(() => {
 }
 
 .footer-bar.secondary {
-  background: #a4c9ff;
+  background: #1C6AFF;
 }
 
 .footer-label {
   font-size: 10px;
-  color: #64748b;
+  color: #9C9DA6;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 4px;
@@ -940,8 +940,8 @@ onUnmounted(() => {
 
 .footer-value {
   font-size: 18px;
-  font-family: 'Fira Code', monospace;
-  color: #ffffff;
+  font-family: 'Microsoft YaHei', monospace;
+  color: #4B4C57;
 }
 
 /* Responsive */
