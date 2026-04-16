@@ -212,7 +212,7 @@ const outputLabels = ['UC-01', 'UC-02', 'UC-03', 'UC-04', 'UC-05', 'UC-06', 'UC-
 
 // Matrix cells (8x8 = 64 cells)
 const matrixCells = ref(Array(64).fill(null).map((_, i) => ({
-  active: [1, 13, 24, 27, 36, 52].includes(i) // Pre-defined active connections
+  active: [1, 13, 24, 36, 52].includes(i) // Pre-defined active connections (one input per output)
 })))
 
 // System health
@@ -231,25 +231,55 @@ const switchLogs = ref([
   { time: '14:08:33', type: 'sys', typeText: '系统', message: '矩阵自检完成', status: 'success', statusText: '正常' }
 ])
 
-// Toggle matrix cell
+// Toggle matrix cell (one input per output)
 function toggleCell(index: number) {
-  matrixCells.value[index].active = !matrixCells.value[index].active
-
-  // Add log entry
   const row = Math.floor(index / 8)
   const col = index % 8
   const isActive = matrixCells.value[index].active
 
-  const newLog = {
-    time: new Date().toTimeString().slice(0, 8),
-    type: 'cmd',
-    typeText: '指令',
-    message: `${isActive ? '切换连接' : '断开连接'}: ${inputLabels[col]} -> ${outputLabels[row]}`,
-    status: 'success',
-    statusText: '成功'
+  if (isActive) {
+    // 断开当前连接
+    matrixCells.value[index].active = false
+    const newLog = {
+      time: new Date().toTimeString().slice(0, 8),
+      type: 'cmd',
+      typeText: '指令',
+      message: `断开连接: ${inputLabels[col]} -> ${outputLabels[row]}`,
+      status: 'success',
+      statusText: '成功'
+    }
+    switchLogs.value.unshift(newLog)
+  } else {
+    // 连接前，先断开同一行的其他连接（一个输出只能对应一个输入）
+    const rowStart = row * 8
+    for (let c = 0; c < 8; c++) {
+      const otherIndex = rowStart + c
+      if (matrixCells.value[otherIndex].active) {
+        matrixCells.value[otherIndex].active = false
+        const disconnectLog = {
+          time: new Date().toTimeString().slice(0, 8),
+          type: 'cmd',
+          typeText: '指令',
+          message: `断开连接: ${inputLabels[c]} -> ${outputLabels[row]}`,
+          status: 'success',
+          statusText: '成功'
+        }
+        switchLogs.value.unshift(disconnectLog)
+      }
+    }
+
+    matrixCells.value[index].active = true
+    const connectLog = {
+      time: new Date().toTimeString().slice(0, 8),
+      type: 'cmd',
+      typeText: '指令',
+      message: `切换连接: ${inputLabels[col]} -> ${outputLabels[row]}`,
+      status: 'success',
+      statusText: '成功'
+    }
+    switchLogs.value.unshift(connectLog)
   }
 
-  switchLogs.value.unshift(newLog)
   if (switchLogs.value.length > 10) {
     switchLogs.value.pop()
   }
