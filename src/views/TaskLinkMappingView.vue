@@ -1,318 +1,234 @@
 <template>
   <main class="main-content">
-        <!-- 任务选择栏 -->
-        <div class="mission-bar">
-          <div class="mission-select-group">
-            <label class="select-label">任务选择</label>
-            <div class="select-wrapper">
-              <select class="mission-select" v-model="selectedMission">
-                <option v-for="mission in missions" :key="mission.id" :value="mission.id">
-                  {{ mission.name }}
-                </option>
-              </select>
-              <ExpandMoreIcon class="select-icon" />
-            </div>
-          </div>
-          <button class="btn-save" @click="saveChanges">保存更改</button>
+    <!-- 任务选择栏 -->
+    <div class="mission-bar">
+      <div class="mission-select-group">
+        <label class="select-label">任务选择</label>
+        <div class="select-wrapper">
+          <select class="mission-select" v-model="selectedMission">
+            <option v-for="mission in missions" :key="mission.id" :value="mission.id">
+              {{ mission.name }}
+            </option>
+          </select>
+          <ExpandMoreIcon class="select-icon" />
         </div>
+      </div>
+      <button class="btn-save" @click="saveChanges">保存更改</button>
+    </div>
 
-        <!-- 前向链路面板 -->
-        <div class="link-panel uplink-panel">
-          <div class="panel-header">
-            <h2 class="panel-title">
-              <ArrowUpwardIcon class="panel-icon" />
-              前向链路 (Uplink)
-            </h2>
-            <div class="status-badges">
-              <span class="badge badge-success">载波锁定: NOMINAL</span>
-              <span class="badge badge-default">频率: 2.1 GHz</span>
-            </div>
-          </div>
-
-          <div class="link-grid">
-            <!-- 数据/分发系统 -->
-            <div class="link-column">
-              <p class="column-label">数据/分发系统</p>
-              <div class="link-card selected">
-                <p class="card-title">中心业务分发单元</p>
-                <p class="card-status">已选择</p>
-              </div>
-            </div>
-
-            <!-- 基带单元 -->
-            <div class="link-column">
-              <p class="column-label">基带单元</p>
-              <div class="baseband-list">
-                <div v-for="(bb, index) in uplinkBasebands" :key="index"
-                     :class="['baseband-item', bb.status]"
-                     @click="selectUplinkBaseband(index)">
-                  <span class="bb-name">{{ bb.name }}</span>
-                  <span :class="['bb-status', bb.status]">{{ bb.statusText }}</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- 信道链路/变频器 -->
-            <div class="link-column">
-              <p class="column-label">信道链路/变频器</p>
-              <div class="converter-list">
-                <div v-for="(conv, index) in uplinkConverters" :key="index"
-                     :class="['converter-item', conv.status]"
-                     @click="selectUplinkConverter(index)">
-                  <span class="conv-name">{{ conv.name }}</span>
-                  <span v-if="conv.status === 'active'" class="conv-status">ACTIVE</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- 天线系统 -->
-            <div class="link-column">
-              <p class="column-label">天线系统</p>
-              <div class="antenna-card">
-                <SatelliteAltIcon class="antenna-icon" />
-                <p class="antenna-title">7.3m 高增益发射口</p>
-                <p class="antenna-coords">AZ: {{ antennaAzimuth }}° EL: {{ antennaElevation }}°</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- 流向指示器 -->
-          <div class="flow-indicator">
-            <div class="flow-line"></div>
-            <div class="flow-badge">
-              <span class="flow-text">数 据 流 向 D A T A F L O W</span>
-              <div class="flow-arrow">
-                <div class="arrow-line"></div>
-                <ChevronRightIcon class="arrow-icon" />
-              </div>
-            </div>
-          </div>
+    <!-- 前向链路 -->
+    <div class="link-panel uplink-panel">
+      <div class="panel-header">
+        <h2 class="panel-title">
+          <ArrowUpwardIcon class="panel-icon" />
+          前向链路 (Uplink)
+        </h2>
+        <div class="status-badges">
+          <span class="badge badge-success">4 条链路</span>
+          <span class="badge badge-default">数据流向: 基带 → 变频器 → 功放 → 天线</span>
         </div>
+      </div>
 
-        <!-- 返向链路面板 -->
-        <div class="link-panel downlink-panel">
-          <div class="panel-header">
-            <div class="status-badges">
-              <span class="badge badge-primary">解调锁定: STABLE</span>
-              <span class="badge badge-default">频率: 8.4 GHz</span>
-            </div>
-            <h2 class="panel-title">
-              返向链路 (Downlink)
-              <ArrowDownwardIcon class="panel-icon" />
-            </h2>
+      <div class="links-table">
+        <div class="links-table-header">
+          <div class="th-link">链路编号</div>
+          <div class="th-device">基带设备</div>
+          <div class="th-device">变频器</div>
+          <div class="th-device">功放设备</div>
+          <div class="th-flow">流向</div>
+        </div>
+        <div
+          v-for="(link, index) in forwardLinks"
+          :key="`fw-${index}`"
+          class="link-row"
+        >
+          <div class="td-link">
+            <span class="link-index">链路 {{ index + 1 }}</span>
           </div>
-
-          <div class="link-grid">
-            <!-- 天线系统 -->
-            <div class="link-column">
-              <p class="column-label">天线系统</p>
-              <div class="antenna-card">
-                <WifiTetheringIcon class="antenna-icon" />
-                <p class="antenna-title">7.3m 高增益接收口</p>
-                <p class="antenna-coords">RX GAIN: 54.2 dB</p>
-              </div>
-            </div>
-
-            <!-- 信道链路/变频器 -->
-            <div class="link-column">
-              <p class="column-label">信道链路/变频器</p>
-              <div class="converter-list">
-                <div v-for="(conv, index) in downlinkConverters" :key="index"
-                     :class="['converter-item', conv.status]"
-                     @click="selectDownlinkConverter(index)">
-                  <span class="conv-name">{{ conv.name }}</span>
-                  <span v-if="conv.status === 'active'" class="conv-status">ACTIVE</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- 基带单元 -->
-            <div class="link-column">
-              <p class="column-label">基带单元</p>
-              <div class="downlink-grid">
-                <div v-for="(bb, index) in downlinkBasebands" :key="index"
-                     :class="['downlink-item', bb.status]"
-                     @click="selectDownlinkBaseband(index)">
-                  {{ bb.name }}
-                </div>
-              </div>
-            </div>
-
-            <!-- 数据/分发系统 -->
-            <div class="link-column">
-              <p class="column-label">数据/分发系统</p>
-              <div class="link-card selected">
-                <p class="card-title">集群数据存储系统</p>
-                <p class="card-status storage">NOMINAL • 82% CAP</p>
-              </div>
-            </div>
+          <div class="td-device">
+            <select
+              class="device-select"
+              :value="link.baseband || ''"
+              @change="handleSelect('forward', index, 'baseband', ($event.target as HTMLSelectElement).value)"
+            >
+              <option value="" disabled>请选择基带</option>
+              <option
+                v-for="dev in forwardDevices.baseband"
+                :key="dev.id"
+                :value="dev.id"
+                :disabled="isDeviceDisabled('forward', 'baseband', dev.id, index)"
+              >
+                {{ dev.name }}{{ dev.isBackup ? ' (备用)' : '' }}
+                {{ getDeviceDisabledReason('forward', 'baseband', dev.id, index) }}
+              </option>
+            </select>
           </div>
-
-          <!-- 流向指示器 -->
-          <div class="flow-indicator">
-            <div class="flow-line"></div>
-            <div class="flow-badge">
-              <span class="flow-text">数 据 流 向 D A T A F L O W</span>
-              <div class="flow-arrow">
-                <div class="arrow-line"></div>
-                <ChevronRightIcon class="arrow-icon" />
-              </div>
+          <div class="td-device">
+            <select
+              class="device-select"
+              :value="link.converter || ''"
+              @change="handleSelect('forward', index, 'converter', ($event.target as HTMLSelectElement).value)"
+            >
+              <option value="" disabled>请选择变频器</option>
+              <option
+                v-for="dev in forwardDevices.converter"
+                :key="dev.id"
+                :value="dev.id"
+                :disabled="isDeviceDisabled('forward', 'converter', dev.id, index)"
+              >
+                {{ dev.name }}{{ dev.isBackup ? ' (备用)' : '' }}
+                {{ getDeviceDisabledReason('forward', 'converter', dev.id, index) }}
+              </option>
+            </select>
+          </div>
+          <div class="td-device">
+            <select
+              class="device-select"
+              :value="link.pa || ''"
+              @change="handleSelect('forward', index, 'pa', ($event.target as HTMLSelectElement).value)"
+            >
+              <option value="" disabled>请选择功放</option>
+              <option
+                v-for="dev in forwardDevices.pa"
+                :key="dev.id"
+                :value="dev.id"
+                :disabled="isDeviceDisabled('forward', 'pa', dev.id, index)"
+              >
+                {{ dev.name }}{{ dev.isBackup ? ' (备用)' : '' }}
+                {{ getDeviceDisabledReason('forward', 'pa', dev.id, index) }}
+              </option>
+            </select>
+          </div>
+          <div class="td-flow">
+            <div class="mini-flow forward">
+              <span class="mini-node">BB</span>
+              <span class="mini-arrow">→</span>
+              <span class="mini-node">UC</span>
+              <span class="mini-arrow">→</span>
+              <span class="mini-node">PA</span>
             </div>
           </div>
         </div>
-      </main>
+      </div>
+    </div>
+
+    <!-- 反向链路 -->
+    <div class="link-panel downlink-panel">
+      <div class="panel-header">
+        <h2 class="panel-title">
+          <ArrowDownwardIcon class="panel-icon" />
+          反向链路 (Downlink)
+        </h2>
+        <div class="status-badges">
+          <span class="badge badge-primary">8 条链路</span>
+          <span class="badge badge-default">数据流向: 天线 → 功放 → 变频器 → 基带</span>
+        </div>
+      </div>
+
+      <div class="links-table">
+        <div class="links-table-header">
+          <div class="th-link">链路编号</div>
+          <div class="th-device">功放设备</div>
+          <div class="th-device">变频器</div>
+          <div class="th-device">基带设备</div>
+          <div class="th-flow">流向</div>
+        </div>
+        <div
+          v-for="(link, index) in reverseLinks"
+          :key="`rv-${index}`"
+          class="link-row"
+        >
+          <div class="td-link">
+            <span class="link-index">链路 {{ index + 1 }}</span>
+          </div>
+          <div class="td-device">
+            <select
+              class="device-select"
+              :value="link.pa || ''"
+              @change="handleSelect('reverse', index, 'pa', ($event.target as HTMLSelectElement).value)"
+            >
+              <option value="" disabled>请选择功放</option>
+              <option
+                v-for="dev in reverseDevices.pa"
+                :key="dev.id"
+                :value="dev.id"
+                :disabled="isDeviceDisabled('reverse', 'pa', dev.id, index)"
+              >
+                {{ dev.name }}{{ dev.isBackup ? ' (备用)' : '' }}
+                {{ getDeviceDisabledReason('reverse', 'pa', dev.id, index) }}
+              </option>
+            </select>
+          </div>
+          <div class="td-device">
+            <select
+              class="device-select"
+              :value="link.converter || ''"
+              @change="handleSelect('reverse', index, 'converter', ($event.target as HTMLSelectElement).value)"
+            >
+              <option value="" disabled>请选择变频器</option>
+              <option
+                v-for="dev in reverseDevices.converter"
+                :key="dev.id"
+                :value="dev.id"
+                :disabled="isDeviceDisabled('reverse', 'converter', dev.id, index)"
+              >
+                {{ dev.name }}{{ dev.isBackup ? ' (备用)' : '' }}
+                {{ getDeviceDisabledReason('reverse', 'converter', dev.id, index) }}
+              </option>
+            </select>
+          </div>
+          <div class="td-device">
+            <select
+              class="device-select"
+              :value="link.baseband || ''"
+              @change="handleSelect('reverse', index, 'baseband', ($event.target as HTMLSelectElement).value)"
+            >
+              <option value="" disabled>请选择基带</option>
+              <option
+                v-for="dev in reverseDevices.baseband"
+                :key="dev.id"
+                :value="dev.id"
+                :disabled="isDeviceDisabled('reverse', 'baseband', dev.id, index)"
+              >
+                {{ dev.name }}{{ dev.isBackup ? ' (备用)' : '' }}
+                {{ getDeviceDisabledReason('reverse', 'baseband', dev.id, index) }}
+              </option>
+            </select>
+          </div>
+          <div class="td-flow">
+            <div class="mini-flow reverse">
+              <span class="mini-node">PA</span>
+              <span class="mini-arrow">→</span>
+              <span class="mini-node">UC</span>
+              <span class="mini-arrow">→</span>
+              <span class="mini-node">BB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, h } from 'vue'
-import UserIcon from '@/components/icons/UserIcon.vue'
+import { ref, h } from 'vue'
 
-// 顶部导航图标
-const SettingsIcon = {
-  render() {
-    return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
-      h('circle', { cx: '12', cy: '12', r: '3' }),
-      h('path', { d: 'M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z' })
-    ])
-  }
+type DeviceType = 'baseband' | 'converter' | 'pa'
+
+interface Device {
+  id: string
+  name: string
+  status: 'normal' | 'fault'
+  isBackup: boolean
 }
 
-const NotificationIcon = {
-  render() {
-    return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
-      h('path', { d: 'M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9' }),
-      h('path', { d: 'M13.73 21a2 2 0 0 1-3.46 0' })
-    ])
-  }
+interface LinkConfig {
+  baseband: string | null
+  converter: string | null
+  pa: string | null
 }
 
-// 侧边栏图标
-const BiotechIcon = {
-  render() {
-    return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
-      h('path', { d: 'M18 12v6a2 2 0 0 0 2 2H4a2 2 0 0 0 2-2v-6' }),
-      h('path', { d: 'M12 2v13' }),
-      h('path', { d: 'M7 7l5-5 5 5' })
-    ])
-  }
-}
-
-const SettingsInputIcon = {
-  render() {
-    return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
-      h('rect', { x: '3', y: '3', width: '18', height: '18', rx: '2' }),
-      h('path', { d: 'M9 12h6' }),
-      h('path', { d: 'M12 9v6' })
-    ])
-  }
-}
-
-const TerminalIcon = {
-  render() {
-    return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
-      h('polyline', { points: '4 17 10 11 4 5' }),
-      h('line', { x1: '12', y1: '19', x2: '20', y2: '19' })
-    ])
-  }
-}
-
-const DescriptionIcon = {
-  render() {
-    return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
-      h('path', { d: 'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z' }),
-      h('polyline', { points: '14 2 14 8 20 8' })
-    ])
-  }
-}
-
-const SatelliteAltIcon = {
-  render() {
-    return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
-      h('path', { d: 'M12 2v20M6 8a6 6 0 0 1 12 0c0 3-2 5-6 10-4-5-6-7-6-10z' })
-    ])
-  }
-}
-
-const InputIcon = {
-  render() {
-    return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
-      h('path', { d: 'M12 5v14M5 12h14' })
-    ])
-  }
-}
-
-const DownloadIcon = {
-  render() {
-    return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
-      h('path', { d: 'M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4' }),
-      h('polyline', { points: '7 10 12 15 17 10' }),
-      h('line', { x1: '12', y1: '15', x2: '12', y2: '3' })
-    ])
-  }
-}
-
-const EditCalendarIcon = {
-  render() {
-    return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
-      h('rect', { x: '3', y: '4', width: '18', height: '18', rx: '2', ry: '2' }),
-      h('line', { x1: '16', y1: '2', x2: '16', y2: '6' }),
-      h('line', { x1: '8', y1: '2', x2: '8', y2: '6' }),
-      h('line', { x1: '3', y1: '10', x2: '21', y2: '10' })
-    ])
-  }
-}
-
-const SendIcon = {
-  render() {
-    return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
-      h('line', { x1: '22', y1: '2', x2: '11', y2: '13' }),
-      h('polygon', { points: '22 2 15 22 11 13 2 9 22 2' })
-    ])
-  }
-}
-
-const AltRouteIcon = {
-  render() {
-    return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
-      h('path', { d: 'M9 18c0 .8.7 1.5 1.5 1.5h4c.8 0 1.5-.7 1.5-1.5' }),
-      h('path', { d: 'M12 3v15' }),
-      h('path', { d: 'M16 7l-4-4-4 4' }),
-      h('path', { d: 'M8 13l4 4 4-4' })
-    ])
-  }
-}
-
-const LanIcon = {
-  render() {
-    return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
-      h('rect', { x: '4', y: '3', width: '16', height: '2', rx: '1' }),
-      h('rect', { x: '4', y: '19', width: '16', height: '2', rx: '1' }),
-      h('rect', { x: '11', y: '5', width: '2', height: '14' }),
-      h('rect', { x: '6', y: '8', width: '2', height: '8', rx: '1' }),
-      h('rect', { x: '16', y: '8', width: '2', height: '8', rx: '1' })
-    ])
-  }
-}
-
-const PlayCircleIcon = {
-  render() {
-    return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
-      h('circle', { cx: '12', cy: '12', r: '10' }),
-      h('polygon', { points: '10 8 16 12 10 16 10 8' })
-    ])
-  }
-}
-
-const HubIcon = {
-  render() {
-    return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
-      h('circle', { cx: '12', cy: '12', r: '3' }),
-      h('path', { d: 'M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83' })
-    ])
-  }
-}
-
-// 内容区图标
+// Icons
 const ExpandMoreIcon = {
   render() {
     return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
@@ -339,23 +255,7 @@ const ArrowDownwardIcon = {
   }
 }
 
-const ChevronRightIcon = {
-  render() {
-    return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
-      h('polyline', { points: '9 18 15 12 9 6' })
-    ])
-  }
-}
-
-const WifiTetheringIcon = {
-  render() {
-    return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
-      h('path', { d: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z' })
-    ])
-  }
-}
-
-// 数据
+// 任务数据
 const selectedMission = ref('alpha7')
 const missions = ref([
   { id: 'alpha7', name: 'Alpha-7 综合测控任务' },
@@ -363,95 +263,141 @@ const missions = ref([
   { id: 'gamma9', name: 'Gamma-9 数据接收任务' }
 ])
 
-const antennaAzimuth = ref(182.4)
-const antennaElevation = ref(42.1)
-const syncDelay = ref(0.12)
-const utcTime = ref('2023-11-24 08:42:12')
-const lstTime = ref('14:12:05')
+// 创建设备池辅助函数
+function createDevices(prefix: string, count: number, faultIndices: number[] = []): Device[] {
+  const devices: Device[] = []
+  for (let i = 1; i <= count; i++) {
+    devices.push({
+      id: `${prefix}-${i}`,
+      name: `${prefix}-${String(i).padStart(2, '0')}`,
+      status: faultIndices.includes(i) ? 'fault' : 'normal',
+      isBackup: false
+    })
+  }
+  devices.push({
+    id: `${prefix}-BK`,
+    name: `${prefix}-备用`,
+    status: 'normal',
+    isBackup: true
+  })
+  return devices
+}
 
-const uplinkBasebands = ref([
-  { name: '前向基带 01', status: 'standby', statusText: '待命' },
-  { name: '前向基带 02', status: 'selected', statusText: '已选择' },
-  { name: '前向基带 03', status: 'occupied', statusText: '已占用' },
-  { name: '前向基带 04', status: 'standby', statusText: '待命' }
+// 前向设备池：4个子设备 + 1个备用
+const forwardDevices = ref<Record<DeviceType, Device[]>>({
+  baseband: createDevices('前向基带', 4, [3]),
+  converter: createDevices('上变频器', 4, []),
+  pa: createDevices('前向功放', 4, [2])
+})
+
+// 反向设备池：8个子设备 + 1个备用
+const reverseDevices = ref<Record<DeviceType, Device[]>>({
+  baseband: createDevices('反向基带', 8, [5]),
+  converter: createDevices('下变频器', 8, []),
+  pa: createDevices('反向功放', 8, [4, 7])
+})
+
+// 链路配置
+const forwardLinks = ref<LinkConfig[]>([
+  { baseband: null, converter: null, pa: null },
+  { baseband: null, converter: null, pa: null },
+  { baseband: null, converter: null, pa: null },
+  { baseband: null, converter: null, pa: null }
 ])
 
-const uplinkConverters = ref([
-  { name: '上变频器 #1', status: 'active' },
-  { name: '上变频器 #2', status: 'standby' }
-])
+const reverseLinks = ref<LinkConfig[]>(Array.from({ length: 8 }, () => ({
+  baseband: null,
+  converter: null,
+  pa: null
+})))
 
-const downlinkConverters = ref([
-  { name: '下变频器 #1', status: 'standby' },
-  { name: '下变频器 #2', status: 'active' }
-])
+function getLinks(direction: 'forward' | 'reverse'): LinkConfig[] {
+  return direction === 'forward' ? forwardLinks.value : reverseLinks.value
+}
 
-const downlinkBasebands = ref([
-  { name: '返向 A (选)', status: 'selected' },
-  { name: '返向 B', status: 'standby' },
-  { name: '返向 C (占)', status: 'occupied' },
-  { name: '返向 D', status: 'standby' },
-  { name: '返向 E', status: 'standby' },
-  { name: '返向 F', status: 'standby' },
-  { name: '返向 G', status: 'standby' },
-  { name: '返向 H', status: 'standby' }
-])
+function getDevices(direction: 'forward' | 'reverse', type: DeviceType): Device[] {
+  return direction === 'forward' ? forwardDevices.value[type] : reverseDevices.value[type]
+}
 
-// 选择方法
-const selectUplinkBaseband = (index: number) => {
-  uplinkBasebands.value.forEach((bb, i) => {
-    if (i === index && bb.status !== 'occupied') {
-      bb.status = bb.status === 'selected' ? 'standby' : 'selected'
-      bb.statusText = bb.status === 'selected' ? '已选择' : '待命'
-    } else if (bb.status !== 'occupied') {
-      bb.status = 'standby'
-      bb.statusText = '待命'
+// 判断设备是否被禁用
+function isDeviceDisabled(
+  direction: 'forward' | 'reverse',
+  type: DeviceType,
+  deviceId: string,
+  currentLinkIndex: number
+): boolean {
+  const devices = getDevices(direction, type)
+  const device = devices.find(d => d.id === deviceId)
+  if (!device) return true
+  if (device.status === 'fault') return true
+
+  const links = getLinks(direction)
+  const usedInOther = links.some((link, idx) => {
+    return idx !== currentLinkIndex && link[type] === deviceId
+  })
+  return usedInOther
+}
+
+// 获取禁用原因文字
+function getDeviceDisabledReason(
+  direction: 'forward' | 'reverse',
+  type: DeviceType,
+  deviceId: string,
+  currentLinkIndex: number
+): string {
+  const devices = getDevices(direction, type)
+  const device = devices.find(d => d.id === deviceId)
+  if (!device) return ''
+  if (device.status === 'fault') return ' [故障]'
+
+  const links = getLinks(direction)
+  const usedInOtherIndex = links.findIndex((link, idx) => {
+    return idx !== currentLinkIndex && link[type] === deviceId
+  })
+  if (usedInOtherIndex !== -1) {
+    return ` [已被链路${usedInOtherIndex + 1}使用]`
+  }
+  return ''
+}
+
+// 处理选择
+function handleSelect(
+  direction: 'forward' | 'reverse',
+  linkIndex: number,
+  type: DeviceType,
+  value: string
+) {
+  const links = direction === 'forward' ? forwardLinks : reverseLinks
+  links.value[linkIndex][type] = value || null
+}
+
+// 保存
+function saveChanges() {
+  // 校验前向链路
+  for (let i = 0; i < forwardLinks.value.length; i++) {
+    const link = forwardLinks.value[i]
+    if (!link.baseband || !link.converter || !link.pa) {
+      alert(`前向链路 ${i + 1} 存在未选择的设备，请完善后再保存`)
+      return
     }
-  })
-}
-
-const selectUplinkConverter = (index: number) => {
-  uplinkConverters.value.forEach((conv, i) => {
-    conv.status = i === index ? 'active' : 'standby'
-  })
-}
-
-const selectDownlinkConverter = (index: number) => {
-  downlinkConverters.value.forEach((conv, i) => {
-    conv.status = i === index ? 'active' : 'standby'
-  })
-}
-
-const selectDownlinkBaseband = (index: number) => {
-  downlinkBasebands.value.forEach((bb, i) => {
-    if (i === index && bb.status !== 'occupied') {
-      bb.status = bb.status === 'selected' ? 'standby' : 'selected'
-    } else if (bb.status !== 'occupied') {
-      bb.status = 'standby'
+  }
+  // 校验反向链路
+  for (let i = 0; i < reverseLinks.value.length; i++) {
+    const link = reverseLinks.value[i]
+    if (!link.baseband || !link.converter || !link.pa) {
+      alert(`反向链路 ${i + 1} 存在未选择的设备，请完善后再保存`)
+      return
     }
-  })
-}
+  }
 
-const saveChanges = () => {
+  const payload = {
+    mission: selectedMission.value,
+    forward: forwardLinks.value,
+    reverse: reverseLinks.value
+  }
+  console.log('保存链路映射:', payload)
   alert('链路映射配置已保存')
 }
-
-// 更新时间
-let timeInterval: number | null = null
-
-onMounted(() => {
-  timeInterval = window.setInterval(() => {
-    const now = new Date()
-    utcTime.value = now.toISOString().replace('T', ' ').slice(0, 19)
-
-    // 模拟同步延迟变化
-    syncDelay.value = Number((0.10 + Math.random() * 0.05).toFixed(2))
-  }, 1000)
-})
-
-onUnmounted(() => {
-  if (timeInterval) clearInterval(timeInterval)
-})
 </script>
 
 <style scoped>
@@ -460,179 +406,6 @@ onUnmounted(() => {
   background-color: #0b0b10;
   color: #e4e1e9;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-}
-
-/* 顶部导航栏 */
-.top-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 64px;
-  background: #1b1b20;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 24px;
-  z-index: 50;
-}
-
-.logo {
-  font-size: 20px;
-  font-weight: 700;
-  color: #3b82f6;
-  letter-spacing: -0.02em;
-}
-
-.main-nav {
-  display: flex;
-  gap: 32px;
-}
-
-.nav-link {
-  font-size: 13px;
-  color: #94a3b8;
-  text-decoration: none;
-  transition: color 0.2s;
-  padding-bottom: 4px;
-  border-bottom: 2px solid transparent;
-  font-weight: 500;
-}
-
-.nav-link:hover {
-  color: #ffffff;
-}
-
-.nav-link.active {
-  color: #ffffff;
-  border-bottom-color: #4c93e7;
-}
-
-.user-actions {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.icon-btn {
-  position: relative;
-  background: none;
-  border: none;
-  color: #94a3b8;
-  cursor: pointer;
-  padding: 8px;
-  border-radius: 4px;
-  transition: all 0.2s;
-}
-
-.icon-btn:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: #ffffff;
-}
-
-.icon {
-  width: 20px;
-  height: 20px;
-}
-
-.notification-dot {
-  position: absolute;
-  top: 6px;
-  right: 6px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #ffb4ab;
-}
-
-/* 主布局 */
-.main-layout {
-  display: flex;
-  padding-top: 64px;
-  height: 100vh;
-  overflow: hidden;
-}
-
-/* 侧边栏 */
-.side-nav {
-  width: 256px;
-  background: #1b1b20;
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
-  display: flex;
-  flex-direction: column;
-  padding: 16px 0;
-  flex-shrink: 0;
-}
-
-.side-header {
-  padding: 0 24px 24px;
-}
-
-.side-title-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 4px;
-}
-
-.side-header-icon {
-  width: 20px;
-  height: 20px;
-  color: #60a5fa;
-}
-
-.side-title {
-  font-size: 18px;
-  font-weight: 700;
-  color: #ffffff;
-  margin: 0;
-}
-
-.side-subtitle {
-  font-size: 10px;
-  color: #64748b;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  margin: 0;
-  padding-left: 32px;
-}
-
-.side-menu {
-  flex: 1;
-  overflow-y: auto;
-  padding: 0 12px;
-}
-
-.side-link {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px;
-  color: #94a3b8;
-  text-decoration: none;
-  font-size: 13px;
-  border-radius: 4px;
-  transition: all 0.2s;
-  border-left: 4px solid transparent;
-  margin-bottom: 2px;
-}
-
-.side-link:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: #e4e1e9;
-}
-
-.side-link.active {
-  background: #2a292f;
-  color: #60a5fa;
-  border-left-color: #60a5fa;
-  font-weight: 600;
-}
-
-.side-icon {
-  width: 18px;
-  height: 18px;
 }
 
 /* 主内容区 */
@@ -753,6 +526,10 @@ onUnmounted(() => {
   color: #4c93e7;
 }
 
+.downlink-panel .panel-title {
+  color: #a4c9ff;
+}
+
 .panel-icon {
   width: 24px;
   height: 24px;
@@ -777,9 +554,9 @@ onUnmounted(() => {
 }
 
 .badge-primary {
-  background: rgba(76, 147, 231, 0.1);
-  color: #4c93e7;
-  border: 1px solid rgba(76, 147, 231, 0.2);
+  background: rgba(164, 201, 255, 0.1);
+  color: #a4c9ff;
+  border: 1px solid rgba(164, 201, 255, 0.2);
 }
 
 .badge-default {
@@ -787,409 +564,155 @@ onUnmounted(() => {
   color: #64748b;
 }
 
-/* 链路网格 */
-.link-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-}
-
-.link-column {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.column-label {
-  font-size: 10px;
-  color: #64748b;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  margin-bottom: 20px;
-}
-
-/* 链路卡片 */
-.link-card {
-  width: 100%;
-  aspect-ratio: 4/3;
-  background: #1b1c21;
-  border: 1px solid rgba(74, 225, 118, 0.4);
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  text-align: center;
-}
-
-.link-card.selected {
-  background: rgba(74, 225, 118, 0.02);
-  box-shadow: 0 0 20px rgba(74, 225, 118, 0.1);
-}
-
-.card-title {
-  font-size: 14px;
-  font-weight: 600;
-  color: #e4e1e9;
-  margin: 0 0 8px 0;
-}
-
-.card-status {
-  font-size: 10px;
-  color: #4ae176;
-  font-weight: 600;
-}
-
-.card-status.storage {
-  font-family: 'Fira Code', monospace;
-  letter-spacing: 0.05em;
-}
-
-/* 基带列表 */
-.baseband-list {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.baseband-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px;
-  background: #1b1c21;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.baseband-item:hover {
-  border-color: rgba(255, 255, 255, 0.1);
-}
-
-.baseband-item.selected {
-  background: rgba(74, 225, 118, 0.05);
-  border-color: rgba(74, 225, 118, 0.6);
-}
-
-.baseband-item.occupied {
-  background: rgba(255, 180, 171, 0.05);
-  border-color: rgba(255, 180, 171, 0.4);
-}
-
-.baseband-item.standby {
-  opacity: 0.5;
-}
-
-.bb-name {
-  font-size: 12px;
-  color: #e4e1e9;
-}
-
-.baseband-item.selected .bb-name {
-  color: #4ae176;
-  font-weight: 600;
-}
-
-.baseband-item.occupied .bb-name {
-  color: #ffb4ab;
-}
-
-.bb-status {
-  font-size: 10px;
-  padding: 2px 8px;
-  border-radius: 4px;
-}
-
-.bb-status.selected {
-  background: rgba(74, 225, 118, 0.2);
-  color: #4ae176;
-}
-
-.bb-status.occupied {
-  background: rgba(255, 180, 171, 0.2);
-  color: #ffb4ab;
-}
-
-.bb-status.standby {
-  color: #64748b;
-}
-
-/* 变频器列表 */
-.converter-list {
-  width: 100%;
+/* 链路表格 */
+.links-table {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.converter-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  background: #1b1c21;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.converter-item.active {
-  background: rgba(74, 225, 118, 0.05);
-  border-color: rgba(74, 225, 118, 0.5);
-}
-
-.converter-item.standby {
-  opacity: 0.3;
-  justify-content: center;
-}
-
-.conv-name {
-  font-size: 12px;
+.links-table-header {
+  display: grid;
+  grid-template-columns: 100px 1fr 1fr 1fr 140px;
+  gap: 16px;
+  padding: 0 16px;
+  font-size: 11px;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
   font-weight: 600;
 }
 
-.converter-item.active .conv-name {
-  color: #e4e1e9;
+.th-link,
+.th-device,
+.th-flow {
+  display: flex;
+  align-items: center;
 }
 
-.converter-item.standby .conv-name {
-  color: #94a3b8;
-}
-
-.conv-status {
-  font-size: 10px;
-  color: #4ae176;
-  font-family: 'Fira Code', monospace;
-  font-weight: 700;
-}
-
-/* 天线卡片 */
-.antenna-card {
-  width: 100%;
-  aspect-ratio: 4/3;
+.link-row {
+  display: grid;
+  grid-template-columns: 100px 1fr 1fr 1fr 140px;
+  gap: 16px;
+  align-items: center;
   background: #1b1c21;
-  border: 1px solid rgba(74, 225, 118, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 8px;
+  padding: 16px;
+  transition: all 0.2s;
+}
+
+.link-row:hover {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.td-link {
+  display: flex;
+  align-items: center;
+}
+
+.link-index {
+  font-size: 13px;
+  font-weight: 600;
+  color: #e4e1e9;
+  font-family: 'Fira Code', monospace;
+}
+
+.td-device {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  text-align: center;
-  background: rgba(74, 225, 118, 0.02);
+  gap: 4px;
 }
 
-.antenna-icon {
-  width: 48px;
-  height: 48px;
-  color: #4ae176;
-  margin-bottom: 12px;
-}
-
-.antenna-title {
-  font-size: 16px;
-  font-weight: 700;
-  color: #ffffff;
-  margin: 0 0 8px 0;
-}
-
-.antenna-coords {
-  font-size: 10px;
-  color: #64748b;
-  font-family: 'Fira Code', monospace;
-  text-transform: uppercase;
-}
-
-/* 返向基带网格 */
-.downlink-grid {
+.device-select {
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 8px;
-}
-
-.downlink-item {
-  padding: 12px;
-  background: #1b1c21;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 4px;
-  text-align: center;
-  font-size: 11px;
+  background: #131418;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  padding: 10px 12px;
+  color: #e4e1e9;
+  font-size: 13px;
+  outline: none;
   cursor: pointer;
   transition: all 0.2s;
 }
 
-.downlink-item:hover {
-  background: rgba(5, 102, 217, 0.1);
+.device-select:focus {
+  border-color: #4c93e7;
 }
 
-.downlink-item.selected {
-  background: rgba(74, 225, 118, 0.05);
-  border-color: rgba(74, 225, 118, 0.6);
-  color: #4ae176;
-  font-weight: 600;
+.device-select option:disabled {
+  color: #64748b;
+  background: #1b1c21;
 }
 
-.downlink-item.occupied {
-  background: rgba(255, 180, 171, 0.05);
-  border-color: rgba(255, 180, 171, 0.4);
-  color: #ffb4ab;
+.device-select option {
+  background: #1b1c21;
+  color: #e4e1e9;
+  padding: 8px;
 }
 
-.downlink-item.standby {
-  opacity: 0.4;
-  color: #94a3b8;
-}
-
-/* 流向指示器 */
-.flow-indicator {
-  margin-top: 40px;
-  position: relative;
+.td-flow {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.flow-line {
-  position: absolute;
-  width: 100%;
-  height: 1px;
+.mini-flow {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  font-family: 'Fira Code', monospace;
+  padding: 6px 10px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.mini-flow.forward {
+  color: #4ae176;
+}
+
+.mini-flow.reverse {
+  color: #a4c9ff;
+}
+
+.mini-node {
+  padding: 2px 6px;
+  border-radius: 3px;
   background: rgba(255, 255, 255, 0.05);
 }
 
-.flow-badge {
-  position: relative;
-  background: #131418;
-  padding: 12px 32px;
-  border: 1px solid rgba(74, 225, 118, 0.4);
-  border-radius: 9999px;
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-}
-
-.flow-text {
-  font-size: 11px;
-  font-weight: 700;
-  color: #4ae176;
-  letter-spacing: 0.3em;
-  font-family: 'Space Grotesk', sans-serif;
-}
-
-.flow-arrow {
-  display: flex;
-  align-items: center;
-}
-
-.arrow-line {
-  width: 48px;
-  height: 2px;
-  background: #4ae176;
-}
-
-.arrow-icon {
-  width: 16px;
-  height: 16px;
-  color: #4ae176;
-  margin-left: -4px;
-}
-
-/* 底部状态栏 */
-.status-footer {
-  position: fixed;
-  bottom: 0;
-  left: 288px;
-  right: 0;
-  height: 40px;
-  background: #1b1b20;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 24px;
-  z-index: 40;
-}
-
-.footer-left {
-  display: flex;
-  gap: 24px;
-}
-
-.status-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.status-dot-pulse {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #4ae176;
-  animation: pulse 2s infinite;
-}
-
-.status-dot-default {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #374151;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
-}
-
-.status-text {
-  font-size: 11px;
-  color: #64748b;
-  font-family: 'Fira Code', monospace;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-}
-
-.status-value {
-  color: #94a3b8;
-}
-
-.footer-right {
-  display: flex;
-  gap: 8px;
-  font-size: 11px;
-  color: #64748b;
-  font-family: 'Fira Code', monospace;
-}
-
-.time-value {
-  color: #94a3b8;
+.mini-arrow {
+  opacity: 0.7;
 }
 
 /* 响应式 */
-@media (max-width: 1400px) {
-  .link-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
+@media (max-width: 1200px) {
+  .links-table-header,
+  .link-row {
+    grid-template-columns: 80px 1fr 1fr 1fr 120px;
+    gap: 12px;
   }
 }
 
 @media (max-width: 1024px) {
-  .side-nav {
+  .links-table-header,
+  .link-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .links-table-header {
     display: none;
   }
 
-  .status-footer {
-    left: 0;
+  .link-row {
+    padding: 12px;
   }
 
-  .main-nav {
-    display: none;
+  .td-flow {
+    justify-content: flex-start;
   }
 }
 </style>
