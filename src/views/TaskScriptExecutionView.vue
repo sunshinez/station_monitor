@@ -553,8 +553,8 @@ onUnmounted(() => {
 <style scoped>
 .task-script-execution-page {
   min-height: 100vh;
-  background-color: #131318;
-  color: #e4e1e9;
+  background-color: var(--gs-bg-default);
+  color: var(--gs-text-primary);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
@@ -565,8 +565,8 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   height: 64px;
-  background: #131318;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--gs-bg-default);
+  border-bottom: 1px solid var(--gs-overlay-light);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -578,7 +578,7 @@ onUnmounted(() => {
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.15em;
-  color: #60a5fa;
+  color: var(--gs-primary-main);
   text-transform: uppercase;
 }
 
@@ -589,7 +589,7 @@ onUnmounted(() => {
 
 .nav-link {
   font-size: 14px;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
   text-decoration: none;
   transition: color 0.2s;
   padding-bottom: 4px;
@@ -597,12 +597,12 @@ onUnmounted(() => {
 }
 
 .nav-link:hover {
-  color: #e4e1e9;
+  color: var(--gs-text-primary);
 }
 
 .nav-link.active {
-  color: #60a5fa;
-  border-bottom-color: #60a5fa;
+  color: var(--gs-primary-main);
+  border-bottom-color: var(--gs-primary-main);
   font-weight: 600;
 }
 
@@ -616,7 +616,7 @@ onUnmounted(() => {
   position: relative;
   background: none;
   border: none;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
   cursor: pointer;
   padding: 8px;
   border-radius: 50%;
@@ -624,8 +624,8 @@ onUnmounted(() => {
 }
 
 .icon-btn:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: #e4e1e9;
+  background: var(--gs-overlay-light);
+  color: var(--gs-text-primary);
 }
 
 .icon {
@@ -640,7 +640,7 @@ onUnmounted(() => {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #ffb4ab;
+  background: var(--gs-error-main);
 }
 
 /* 主布局 */
@@ -654,8 +654,8 @@ onUnmounted(() => {
 /* 侧边栏 */
 .side-nav {
   width: 256px;
-  background: #1b1b20;
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--gs-bg-paper);
+  border-right: 1px solid var(--gs-overlay-light);
   display: flex;
   flex-direction: column;
   padding: 16px 0;
@@ -676,19 +676,19 @@ onUnmounted(() => {
 .side-header-icon {
   width: 20px;
   height: 20px;
-  color: #60a5fa;
+  color: var(--gs-primary-main);
 }
 
 .side-title {
   font-size: 18px;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--gs-text-primary);
   margin: 0;
 }
 
 .side-subtitle {
   font-size: 10px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   letter-spacing: 0.2em;
   text-transform: uppercase;
   margin: 0;
@@ -706,7 +706,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 12px;
   padding: 12px;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
   text-decoration: none;
   font-size: 13px;
   border-radius: 4px;
@@ -716,14 +716,14 @@ onUnmounted(() => {
 }
 
 .side-link:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: #e4e1e9;
+  background: var(--gs-overlay-light);
+  color: var(--gs-text-primary);
 }
 
 .side-link.active {
-  background: #2a292f;
-  color: #60a5fa;
-  border-left-color: #60a5fa;
+  background: var(--gs-bg-paper);
+  color: var(--gs-primary-main);
+  border-left-color: var(--gs-primary-main);
   font-weight: 600;
 }
 
@@ -750,9 +750,9 @@ onUnmounted(() => {
 }
 
 .script-list-panel {
-  background: #1b1b20;
+  background: var(--gs-bg-paper);
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--gs-overlay-light);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -767,8 +767,8 @@ onUnmounted(() => {
 }
 
 .panel-header-bar.border-bottom {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid var(--gs-overlay-light);
+  background: color-mix(in srgb, var(--gs-overlay-light), transparent 60%);
 }
 
 .panel-title-group {
@@ -780,7 +780,7 @@ onUnmounted(() => {
 .panel-title {
   font-size: 13px;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--gs-text-primary);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin: 0;
@@ -792,7 +792,7 @@ onUnmounted(() => {
 }
 
 .text-primary {
-  color: #60a5fa;
+  color: var(--gs-primary-main);
 }
 
 .search-box {
@@ -806,22 +806,22 @@ onUnmounted(() => {
   transform: translateY(-50%);
   width: 14px;
   height: 14px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
 }
 
 .search-input-sm {
-  background: #35343a;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--gs-bg-elevated);
+  border: 1px solid var(--gs-overlay-light);
   border-radius: 4px;
   padding: 6px 10px 6px 28px;
-  color: #e4e1e9;
+  color: var(--gs-text-primary);
   font-size: 12px;
   width: 180px;
   outline: none;
 }
 
 .search-input-sm::placeholder {
-  color: #64748b;
+  color: var(--gs-text-disabled);
 }
 
 .table-wrapper-sm {
@@ -846,18 +846,18 @@ onUnmounted(() => {
 }
 
 .data-table th {
-  background: rgba(14, 14, 19, 0.5);
+  background: color-mix(in srgb, var(--gs-bg-paper), transparent 50%);
   text-align: left;
   font-size: 10px;
   font-weight: 600;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--gs-overlay-light);
 }
 
 .data-table td {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid color-mix(in srgb, var(--gs-overlay-light), transparent 60%);
 }
 
 .table-row {
@@ -866,12 +866,12 @@ onUnmounted(() => {
 }
 
 .table-row:hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--gs-overlay-light);
 }
 
 .selected-row {
-  background: rgba(96, 165, 250, 0.08);
-  border-left: 3px solid #60a5fa;
+  background: color-mix(in srgb, var(--gs-primary-main), transparent 92%);
+  border-left: 3px solid var(--gs-primary-main);
 }
 
 .col-checkbox {
@@ -879,11 +879,11 @@ onUnmounted(() => {
 }
 
 .text-dim {
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
 }
 
 .text-muted {
-  color: #64748b;
+  color: var(--gs-text-disabled);
 }
 
 .mono {
@@ -925,21 +925,21 @@ onUnmounted(() => {
 }
 
 .tag-primary {
-  background: rgba(96, 165, 250, 0.1);
-  color: #60a5fa;
-  border: 1px solid rgba(96, 165, 250, 0.2);
+  background: var(--gs-overlay-light);
+  color: var(--gs-primary-main);
+  border: 1px solid var(--gs-overlay-medium);
 }
 
 .tag-muted {
-  background: #35343a;
-  color: #94a3b8;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--gs-bg-elevated);
+  color: var(--gs-text-secondary);
+  border: 1px solid var(--gs-overlay-light);
 }
 
 .tag-error {
-  background: rgba(255, 180, 171, 0.1);
-  color: #ffb4ab;
-  border: 1px solid rgba(255, 180, 171, 0.2);
+  background: color-mix(in srgb, var(--gs-error-main), transparent 90%);
+  color: var(--gs-error-main);
+  border: 1px solid var(--gs-glow-error);
 }
 
 /* 脚本概览 */
@@ -948,9 +948,9 @@ onUnmounted(() => {
 }
 
 .overview-card {
-  background: #1b1b20;
+  background: var(--gs-bg-paper);
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--gs-overlay-light);
   padding: 18px 24px;
   display: flex;
   align-items: center;
@@ -965,14 +965,14 @@ onUnmounted(() => {
 
 .overview-icon-box {
   padding: 12px;
-  background: rgba(96, 165, 250, 0.1);
+  background: var(--gs-overlay-light);
   border-radius: 8px;
 }
 
 .overview-icon {
   width: 28px;
   height: 28px;
-  color: #60a5fa;
+  color: var(--gs-primary-main);
 }
 
 .overview-name-row {
@@ -984,24 +984,24 @@ onUnmounted(() => {
 .overview-name {
   font-size: 20px;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--gs-text-primary);
   text-transform: uppercase;
   margin: 0;
 }
 
 .overview-badge {
   font-size: 10px;
-  background: rgba(96, 165, 250, 0.15);
-  color: #60a5fa;
+  background: color-mix(in srgb, var(--gs-primary-main), transparent 85%);
+  color: var(--gs-primary-main);
   padding: 2px 6px;
   border-radius: 4px;
-  border: 1px solid rgba(96, 165, 250, 0.2);
+  border: 1px solid var(--gs-overlay-medium);
 }
 
 .overview-stats {
   display: flex;
   gap: 40px;
-  border-left: 1px solid rgba(255, 255, 255, 0.05);
+  border-left: 1px solid var(--gs-overlay-light);
   padding-left: 40px;
 }
 
@@ -1013,7 +1013,7 @@ onUnmounted(() => {
 
 .stat-label {
   font-size: 10px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-weight: 600;
@@ -1023,13 +1023,13 @@ onUnmounted(() => {
 .stat-value {
   font-size: 24px;
   font-weight: 700;
-  color: #60a5fa;
+  color: var(--gs-primary-main);
   font-family: 'Fira Code', monospace;
 }
 
 .stat-unit {
   font-size: 12px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   font-weight: 500;
 }
 
@@ -1044,14 +1044,14 @@ onUnmounted(() => {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #4ae176;
-  box-shadow: 0 0 2px #4ae176, 0 0 10px rgba(74, 225, 118, 0.4);
+  background: var(--gs-success-main);
+  box-shadow: 0 0 2px var(--gs-success-main), 0 0 10px var(--gs-glow-success);
 }
 
 .status-text-success {
   font-size: 18px;
   font-weight: 700;
-  color: #4ae176;
+  color: var(--gs-success-main);
 }
 
 /* 主执行区 */
@@ -1065,9 +1065,9 @@ onUnmounted(() => {
 }
 
 .instruction-stream {
-  background: #1b1b20;
+  background: var(--gs-bg-paper);
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--gs-overlay-light);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -1083,14 +1083,14 @@ onUnmounted(() => {
   border-radius: 4px;
   font-size: 10px;
   font-weight: 600;
-  background: #35343a;
-  color: #94a3b8;
+  background: var(--gs-bg-elevated);
+  color: var(--gs-text-secondary);
 }
 
 .badge-primary {
-  background: rgba(96, 165, 250, 0.15);
-  color: #60a5fa;
-  border: 1px solid rgba(96, 165, 250, 0.2);
+  background: color-mix(in srgb, var(--gs-primary-main), transparent 85%);
+  color: var(--gs-primary-main);
+  border: 1px solid var(--gs-overlay-medium);
 }
 
 .instruction-row {
@@ -1098,13 +1098,13 @@ onUnmounted(() => {
 }
 
 .instruction-row.completed {
-  background: rgba(74, 225, 118, 0.05);
+  background: color-mix(in srgb, var(--gs-success-main), transparent 95%);
 }
 
 .instruction-row.executing {
-  background: rgba(96, 165, 250, 0.12);
-  border-top: 1px solid rgba(96, 165, 250, 0.2);
-  border-bottom: 1px solid rgba(96, 165, 250, 0.2);
+  background: color-mix(in srgb, var(--gs-primary-main), transparent 88%);
+  border-top: 1px solid var(--gs-overlay-medium);
+  border-bottom: 1px solid var(--gs-overlay-medium);
 }
 
 .instruction-row.waiting {
@@ -1124,15 +1124,15 @@ onUnmounted(() => {
 }
 
 .status-success {
-  color: #4ae176;
+  color: var(--gs-success-main);
 }
 
 .status-executing {
-  color: #60a5fa;
+  color: var(--gs-primary-main);
 }
 
 .status-waiting {
-  color: #64748b;
+  color: var(--gs-text-disabled);
 }
 
 .step-status-icon {
@@ -1144,7 +1144,7 @@ onUnmounted(() => {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #60a5fa;
+  background: var(--gs-primary-main);
   animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
@@ -1154,7 +1154,7 @@ onUnmounted(() => {
 }
 
 .text-secondary {
-  color: #adc6ff;
+  color: var(--gs-primary-main);
 }
 
 /* 右侧面板 */
@@ -1166,11 +1166,11 @@ onUnmounted(() => {
 }
 
 .progress-card {
-  background: #1b1b20;
+  background: var(--gs-bg-paper);
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--gs-overlay-light);
   padding: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 20px color-mix(in srgb, var(--gs-overlay-dark), transparent 67%);
 }
 
 .progress-header {
@@ -1183,7 +1183,7 @@ onUnmounted(() => {
 .progress-title {
   font-size: 13px;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--gs-text-primary);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin: 0;
@@ -1192,19 +1192,19 @@ onUnmounted(() => {
 .progress-percent {
   font-size: 28px;
   font-weight: 700;
-  color: #60a5fa;
+  color: var(--gs-primary-main);
   font-family: 'Fira Code', monospace;
 }
 
 .percent-unit {
   font-size: 18px;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
 }
 
 .progress-bar {
   width: 100%;
   height: 10px;
-  background: #0e0e13;
+  background: var(--gs-bg-paper);
   border-radius: 5px;
   overflow: hidden;
   margin-bottom: 16px;
@@ -1212,8 +1212,8 @@ onUnmounted(() => {
 
 .progress-fill {
   height: 100%;
-  background: #60a5fa;
-  box-shadow: 0 0 10px rgba(96, 165, 250, 0.5);
+  background: var(--gs-primary-main);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--gs-primary-main), transparent 50%);
 }
 
 .progress-stats {
@@ -1223,7 +1223,7 @@ onUnmounted(() => {
 }
 
 .mini-stat {
-  background: rgba(14, 14, 19, 0.4);
+  background: color-mix(in srgb, var(--gs-bg-paper), transparent 60%);
   padding: 10px;
   border-radius: 4px;
   text-align: center;
@@ -1231,20 +1231,20 @@ onUnmounted(() => {
 }
 
 .border-success {
-  border-bottom-color: rgba(74, 225, 118, 0.4);
+  border-bottom-color: var(--gs-glow-success);
 }
 
 .border-error {
-  border-bottom-color: rgba(255, 180, 171, 0.4);
+  border-bottom-color: var(--gs-glow-error);
 }
 
 .border-muted {
-  border-bottom-color: rgba(255, 255, 255, 0.1);
+  border-bottom-color: var(--gs-overlay-medium);
 }
 
 .mini-label {
   font-size: 9px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   text-transform: uppercase;
   font-weight: 700;
   margin: 0 0 4px 0;
@@ -1258,19 +1258,19 @@ onUnmounted(() => {
 }
 
 .text-success {
-  color: #4ae176;
+  color: var(--gs-success-main);
 }
 
 .text-error {
-  color: #ffb4ab;
+  color: var(--gs-error-main);
 }
 
 .step-detail-card {
   flex: 1;
   min-height: 0;
-  background: #1b1b20;
+  background: var(--gs-bg-paper);
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--gs-overlay-light);
   padding: 16px;
   display: flex;
   flex-direction: column;
@@ -1280,7 +1280,7 @@ onUnmounted(() => {
 .detail-title {
   font-size: 13px;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--gs-text-primary);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin: 0 0 12px 0;
@@ -1295,15 +1295,15 @@ onUnmounted(() => {
 }
 
 .detail-block {
-  background: rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: color-mix(in srgb, var(--gs-overlay-dark), transparent 67%);
+  border: 1px solid var(--gs-overlay-light);
   border-radius: 6px;
   padding: 12px;
 }
 
 .detail-block-title {
   font-size: 10px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   text-transform: uppercase;
   font-weight: 700;
   margin: 0 0 8px 0;
@@ -1312,7 +1312,7 @@ onUnmounted(() => {
 .detail-pre {
   font-family: 'Fira Code', monospace;
   font-size: 11px;
-  color: #adc6ff;
+  color: var(--gs-primary-main);
   line-height: 1.6;
   margin: 0;
   white-space: pre-wrap;
@@ -1321,7 +1321,7 @@ onUnmounted(() => {
 .detail-log {
   font-family: 'Fira Code', monospace;
   font-size: 11px;
-  color: #e4e1e9;
+  color: var(--gs-text-primary);
   line-height: 1.8;
 }
 
@@ -1330,23 +1330,23 @@ onUnmounted(() => {
 }
 
 .log-dim {
-  color: #475569;
+  color: var(--gs-text-disabled);
 }
 
 .log-primary {
-  color: #60a5fa;
+  color: var(--gs-primary-main);
 }
 
 .log-secondary {
-  color: #adc6ff;
+  color: var(--gs-primary-main);
 }
 
 .log-success {
-  color: #4ae176;
+  color: var(--gs-success-main);
 }
 
 .log-pulse {
-  color: #60a5fa;
+  color: var(--gs-primary-main);
   font-weight: 700;
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
@@ -1354,9 +1354,9 @@ onUnmounted(() => {
 /* 控制控制台 */
 .control-console {
   flex-shrink: 0;
-  background: #2a292f;
+  background: var(--gs-bg-paper);
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--gs-overlay-medium);
   padding: 14px 18px;
   display: flex;
   align-items: center;
@@ -1391,9 +1391,9 @@ onUnmounted(() => {
 }
 
 .btn-play {
-  background: #60a5fa;
-  color: #00315d;
-  box-shadow: 0 0 20px rgba(96, 165, 250, 0.3);
+  background: var(--gs-primary-main);
+  color: var(--gs-text-inverse);
+  box-shadow: 0 0 20px var(--gs-glow-primary);
 }
 
 .btn-play:hover {
@@ -1402,28 +1402,28 @@ onUnmounted(() => {
 
 .btn-pause-border {
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #e4e1e9;
+  border: 1px solid color-mix(in srgb, var(--gs-text-primary), transparent 80%);
+  color: var(--gs-text-primary);
 }
 
 .btn-pause-border:hover {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--gs-overlay-light);
 }
 
 .btn-stop {
   background: transparent;
-  border: 1px solid rgba(255, 180, 171, 0.3);
-  color: #ffb4ab;
+  border: 1px solid var(--gs-glow-error);
+  color: var(--gs-error-main);
 }
 
 .btn-stop:hover {
-  background: rgba(255, 180, 171, 0.1);
+  background: color-mix(in srgb, var(--gs-error-main), transparent 90%);
 }
 
 .divider-v {
   width: 1px;
   height: 40px;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--gs-overlay-medium);
 }
 
 .control-sub {
@@ -1434,7 +1434,7 @@ onUnmounted(() => {
 
 .intervention-label {
   font-size: 10px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 0.05em;
@@ -1451,23 +1451,23 @@ onUnmounted(() => {
   font-weight: 700;
   cursor: pointer;
   transition: all 0.2s;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  color: #e4e1e9;
+  background: var(--gs-overlay-light);
+  border: 1px solid var(--gs-overlay-light);
+  color: var(--gs-text-primary);
 }
 
 .btn-sub:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--gs-overlay-medium);
 }
 
 .btn-edit {
-  background: rgba(173, 198, 255, 0.1);
-  border-color: rgba(173, 198, 255, 0.2);
-  color: #adc6ff;
+  background: color-mix(in srgb, var(--gs-primary-main), transparent 90%);
+  border-color: color-mix(in srgb, var(--gs-primary-main), transparent 80%);
+  color: var(--gs-primary-main);
 }
 
 .btn-edit:hover {
-  background: rgba(173, 198, 255, 0.2);
+  background: color-mix(in srgb, var(--gs-primary-main), transparent 80%);
 }
 
 .btn-sub-icon {
@@ -1482,8 +1482,8 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   height: 32px;
-  background: #0e0e13;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--gs-bg-paper);
+  border-top: 1px solid var(--gs-overlay-light);
   display: flex;
   align-items: center;
   padding: 0 24px;
@@ -1496,14 +1496,14 @@ onUnmounted(() => {
   align-items: center;
   gap: 8px;
   font-size: 12px;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
 }
 
 .status-dot-green {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #4ae176;
+  background: var(--gs-success-main);
 }
 
 .spacer {
@@ -1514,7 +1514,7 @@ onUnmounted(() => {
   display: flex;
   gap: 24px;
   font-size: 12px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   font-family: 'Fira Code', monospace;
 }
 </style>

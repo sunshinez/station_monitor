@@ -314,8 +314,8 @@ onUnmounted(() => {
 <style scoped>
 .log-record-page {
   min-height: 100vh;
-  background-color: #131318;
-  color: #e4e1e9;
+  background-color: var(--gs-bg-default);
+  color: var(--gs-text-primary);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   display: flex;
   flex-direction: column;
@@ -335,8 +335,8 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   height: 64px;
-  background: #131318;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--gs-bg-default);
+  border-bottom: 1px solid var(--gs-overlay-light);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -348,7 +348,7 @@ onUnmounted(() => {
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.15em;
-  color: #60a5fa;
+  color: var(--gs-primary-main);
   text-transform: uppercase;
 }
 
@@ -359,7 +359,7 @@ onUnmounted(() => {
 
 .nav-link {
   font-size: 14px;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
   text-decoration: none;
   transition: color 0.2s;
   padding-bottom: 4px;
@@ -367,12 +367,12 @@ onUnmounted(() => {
 }
 
 .nav-link:hover {
-  color: #e4e1e9;
+  color: var(--gs-text-primary);
 }
 
 .nav-link.active {
-  color: #60a5fa;
-  border-bottom-color: #60a5fa;
+  color: var(--gs-primary-main);
+  border-bottom-color: var(--gs-primary-main);
   font-weight: 600;
 }
 
@@ -386,7 +386,7 @@ onUnmounted(() => {
   position: relative;
   background: none;
   border: none;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
   cursor: pointer;
   padding: 8px;
   border-radius: 50%;
@@ -394,8 +394,8 @@ onUnmounted(() => {
 }
 
 .icon-btn:hover {
-  background: #1b1b20;
-  color: #e4e1e9;
+  background: var(--gs-bg-paper);
+  color: var(--gs-text-primary);
 }
 
 .icon {
@@ -410,13 +410,13 @@ onUnmounted(() => {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #ffb4ab;
+  background: var(--gs-error-main);
 }
 
 .side-nav {
   width: 260px;
-  background: #131318;
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--gs-bg-default);
+  border-right: 1px solid var(--gs-overlay-light);
   display: flex;
   flex-direction: column;
   z-index: 40;
@@ -431,7 +431,7 @@ onUnmounted(() => {
 .side-title {
   font-size: 12px;
   font-weight: 500;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin: 0;
@@ -449,7 +449,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 12px;
   padding: 12px 16px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   text-decoration: none;
   font-size: 14px;
   transition: all 0.2s;
@@ -458,14 +458,14 @@ onUnmounted(() => {
 }
 
 .side-link:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: #e4e1e9;
+  background: var(--gs-overlay-light);
+  color: var(--gs-text-primary);
 }
 
 .side-link.active {
-  background: rgba(255, 255, 255, 0.05);
-  border-left-color: #60a5fa;
-  color: #e4e1e9;
+  background: var(--gs-overlay-light);
+  border-left-color: var(--gs-primary-main);
+  color: var(--gs-text-primary);
 }
 
 .side-icon {
@@ -476,7 +476,7 @@ onUnmounted(() => {
 .main-content {
   flex: 1;
   overflow-y: auto;
-  background: #131318;
+  background: var(--gs-bg-default);
   padding: 32px;
 }
 
@@ -508,12 +508,12 @@ onUnmounted(() => {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #60a5fa;
+  background: var(--gs-primary-main);
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 .pulse-dot.error {
-  background: #ffb4ab;
+  background: var(--gs-error-main);
 }
 
 @keyframes pulse {
@@ -524,14 +524,14 @@ onUnmounted(() => {
 .page-title {
   font-size: 24px;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--gs-text-primary);
   margin: 0;
   font-family: 'Space Grotesk', sans-serif;
 }
 
 .page-subtitle {
   font-size: 12px;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin: 0;
@@ -549,33 +549,33 @@ onUnmounted(() => {
   align-items: center;
   gap: 12px;
   padding: 10px 16px;
-  background: #2a292f;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--gs-bg-paper);
+  border: 1px solid var(--gs-overlay-medium);
   border-radius: 4px;
   font-size: 11px;
 }
 
 .storage-label {
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
   font-family: 'Fira Code', monospace;
 }
 
 .storage-bar {
   width: 96px;
   height: 6px;
-  background: #0e0e13;
+  background: var(--gs-bg-paper);
   border-radius: 3px;
   overflow: hidden;
 }
 
 .storage-progress {
   height: 100%;
-  background: #60a5fa;
+  background: var(--gs-primary-main);
   border-radius: 3px;
 }
 
 .storage-value {
-  color: #60a5fa;
+  color: var(--gs-primary-main);
   font-family: 'Fira Code', monospace;
 }
 
@@ -584,10 +584,10 @@ onUnmounted(() => {
   align-items: center;
   gap: 8px;
   padding: 10px 16px;
-  background: #2a292f;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--gs-bg-paper);
+  border: 1px solid var(--gs-overlay-medium);
   border-radius: 4px;
-  color: #e4e1e9;
+  color: var(--gs-text-primary);
   font-size: 12px;
   font-weight: 500;
   cursor: pointer;
@@ -595,7 +595,7 @@ onUnmounted(() => {
 }
 
 .btn-secondary:hover {
-  background: #35343a;
+  background: var(--gs-bg-paper);
 }
 
 .btn-primary {
@@ -603,10 +603,10 @@ onUnmounted(() => {
   align-items: center;
   gap: 8px;
   padding: 10px 16px;
-  background: #60a5fa;
+  background: var(--gs-primary-main);
   border: none;
   border-radius: 4px;
-  color: #0f172a;
+  color: var(--gs-bg-paper);
   font-size: 12px;
   font-weight: 600;
   cursor: pointer;
@@ -614,7 +614,7 @@ onUnmounted(() => {
 }
 
 .btn-primary:hover {
-  box-shadow: 0 0 15px rgba(96, 165, 250, 0.4);
+  box-shadow: 0 0 15px var(--gs-glow-primary);
 }
 
 .btn-icon {
@@ -642,8 +642,8 @@ onUnmounted(() => {
 }
 
 .panel {
-  background: #1b1b20;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--gs-bg-paper);
+  border: 1px solid var(--gs-overlay-light);
   border-radius: 8px;
   overflow: hidden;
 }
@@ -653,8 +653,8 @@ onUnmounted(() => {
   justify-content: space-between;
   align-items: center;
   padding: 16px 24px;
-  background: #2a292f;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--gs-bg-paper);
+  border-bottom: 1px solid var(--gs-overlay-light);
 }
 
 .panel-title-group {
@@ -666,17 +666,17 @@ onUnmounted(() => {
 .panel-icon {
   width: 20px;
   height: 20px;
-  color: #60a5fa;
+  color: var(--gs-primary-main);
 }
 
 .panel-icon.tertiary {
-  color: #4ae176;
+  color: var(--gs-success-main);
 }
 
 .panel-title {
   font-size: 14px;
   font-weight: 600;
-  color: #ffffff;
+  color: var(--gs-text-primary);
   margin: 0;
   font-family: 'Space Grotesk', sans-serif;
   letter-spacing: 0.05em;
@@ -684,10 +684,10 @@ onUnmounted(() => {
 
 .status-badge {
   padding: 4px 8px;
-  background: rgba(96, 165, 250, 0.1);
-  border: 1px solid rgba(96, 165, 250, 0.2);
+  background: var(--gs-overlay-light);
+  border: 1px solid var(--gs-overlay-medium);
   border-radius: 4px;
-  color: #60a5fa;
+  color: var(--gs-primary-main);
   font-size: 10px;
   font-weight: 600;
 }
@@ -701,11 +701,11 @@ onUnmounted(() => {
 .meta-item {
   font-size: 11px;
   font-family: 'Fira Code', monospace;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
 }
 
 .meta-item.success {
-  color: #4ae176;
+  color: var(--gs-success-main);
 }
 
 .panel-body {
@@ -728,18 +728,18 @@ onUnmounted(() => {
 .data-table th {
   font-size: 10px;
   font-weight: 600;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   padding: 14px 24px;
-  background: #0e0e13;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--gs-bg-paper);
+  border-bottom: 1px solid var(--gs-overlay-light);
   white-space: nowrap;
 }
 
 .data-table td {
   padding: 14px 24px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--gs-overlay-light);
   font-family: 'Fira Code', monospace;
   font-size: 12px;
 }
@@ -749,11 +749,11 @@ onUnmounted(() => {
 }
 
 .data-table tbody tr:hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--gs-overlay-light);
 }
 
 .data-table tbody tr.highlight {
-  background: rgba(255, 255, 255, 0.015);
+  background: var(--gs-overlay-light);
 }
 
 .text-right {
@@ -761,11 +761,11 @@ onUnmounted(() => {
 }
 
 .time-cell {
-  color: #60a5fa;
+  color: var(--gs-primary-main);
 }
 
 .device-cell {
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
 }
 
 .event-type {
@@ -773,29 +773,29 @@ onUnmounted(() => {
 }
 
 .event-type.primary {
-  color: #60a5fa;
+  color: var(--gs-primary-main);
 }
 
 .event-type.secondary {
-  color: #a4c9ff;
+  color: var(--gs-primary-main);
 }
 
 .tertiary {
-  color: #4ae176;
+  color: var(--gs-success-main);
 }
 
 .status-running {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: #4ae176;
+  color: var(--gs-success-main);
 }
 
 .status-dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #4ae176;
+  background: var(--gs-success-main);
 }
 
 .config-panel {
@@ -810,7 +810,7 @@ onUnmounted(() => {
 .config-section-title {
   font-size: 10px;
   font-weight: 600;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin: 0 0 16px 0;
@@ -830,15 +830,15 @@ onUnmounted(() => {
 
 .config-name {
   font-size: 12px;
-  color: #e4e1e9;
+  color: var(--gs-text-primary);
 }
 
 .config-select {
   padding: 6px 10px;
-  background: #0e0e13;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--gs-bg-paper);
+  border: 1px solid var(--gs-overlay-medium);
   border-radius: 4px;
-  color: #e4e1e9;
+  color: var(--gs-text-primary);
   font-size: 11px;
   font-family: 'Fira Code', monospace;
   cursor: pointer;
@@ -847,10 +847,10 @@ onUnmounted(() => {
 .btn-outline {
   width: 100%;
   padding: 12px;
-  background: rgba(96, 165, 250, 0.1);
-  border: 1px solid rgba(96, 165, 250, 0.3);
+  background: var(--gs-overlay-light);
+  border: 1px solid var(--gs-glow-primary);
   border-radius: 4px;
-  color: #60a5fa;
+  color: var(--gs-primary-main);
   font-size: 11px;
   font-weight: 600;
   text-transform: uppercase;
@@ -860,19 +860,19 @@ onUnmounted(() => {
 }
 
 .btn-outline:hover {
-  background: rgba(96, 165, 250, 0.2);
+  background: var(--gs-overlay-medium);
 }
 
 .info-card {
   padding: 16px;
-  background: rgba(96, 165, 250, 0.05);
-  border: 1px solid rgba(96, 165, 250, 0.15);
+  background: var(--gs-overlay-light);
+  border: 1px solid var(--gs-overlay-light);
   border-radius: 8px;
 }
 
 .info-text {
   font-size: 11px;
-  color: rgba(96, 165, 250, 0.7);
+  color: color-mix(in srgb, var(--gs-primary-main), transparent 30%);
   font-family: 'Fira Code', monospace;
   line-height: 1.6;
   margin: 0;

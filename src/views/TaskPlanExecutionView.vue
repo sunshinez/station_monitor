@@ -522,8 +522,8 @@ onUnmounted(() => {
 <style scoped>
 .task-plan-execution-page {
   min-height: 100vh;
-  background-color: #131318;
-  color: #e4e1e9;
+  background-color: var(--gs-bg-default);
+  color: var(--gs-text-primary);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
@@ -534,8 +534,8 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   height: 64px;
-  background: #131318;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--gs-bg-default);
+  border-bottom: 1px solid var(--gs-overlay-light);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -547,7 +547,7 @@ onUnmounted(() => {
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.15em;
-  color: #60a5fa;
+  color: var(--gs-primary-main);
   text-transform: uppercase;
 }
 
@@ -558,7 +558,7 @@ onUnmounted(() => {
 
 .nav-link {
   font-size: 14px;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
   text-decoration: none;
   transition: color 0.2s;
   padding-bottom: 4px;
@@ -566,12 +566,12 @@ onUnmounted(() => {
 }
 
 .nav-link:hover {
-  color: #e4e1e9;
+  color: var(--gs-text-primary);
 }
 
 .nav-link.active {
-  color: #60a5fa;
-  border-bottom-color: #60a5fa;
+  color: var(--gs-primary-main);
+  border-bottom-color: var(--gs-primary-main);
   font-weight: 600;
 }
 
@@ -585,7 +585,7 @@ onUnmounted(() => {
   position: relative;
   background: none;
   border: none;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
   cursor: pointer;
   padding: 8px;
   border-radius: 50%;
@@ -593,8 +593,8 @@ onUnmounted(() => {
 }
 
 .icon-btn:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: #e4e1e9;
+  background: var(--gs-overlay-light);
+  color: var(--gs-text-primary);
 }
 
 .icon {
@@ -609,7 +609,7 @@ onUnmounted(() => {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #ffb4ab;
+  background: var(--gs-error-main);
 }
 
 /* 主布局 */
@@ -623,8 +623,8 @@ onUnmounted(() => {
 /* 侧边栏 */
 .side-nav {
   width: 256px;
-  background: #1b1b20;
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--gs-bg-paper);
+  border-right: 1px solid var(--gs-overlay-light);
   display: flex;
   flex-direction: column;
   padding: 16px 0;
@@ -645,19 +645,19 @@ onUnmounted(() => {
 .side-header-icon {
   width: 20px;
   height: 20px;
-  color: #60a5fa;
+  color: var(--gs-primary-main);
 }
 
 .side-title {
   font-size: 18px;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--gs-text-primary);
   margin: 0;
 }
 
 .side-subtitle {
   font-size: 10px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   letter-spacing: 0.2em;
   text-transform: uppercase;
   margin: 0;
@@ -675,7 +675,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 12px;
   padding: 12px;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
   text-decoration: none;
   font-size: 13px;
   border-radius: 4px;
@@ -685,14 +685,14 @@ onUnmounted(() => {
 }
 
 .side-link:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: #e4e1e9;
+  background: var(--gs-overlay-light);
+  color: var(--gs-text-primary);
 }
 
 .side-link.active {
-  background: #2a292f;
-  color: #60a5fa;
-  border-left-color: #60a5fa;
+  background: var(--gs-bg-paper);
+  color: var(--gs-primary-main);
+  border-left-color: var(--gs-primary-main);
   font-weight: 600;
 }
 
@@ -730,13 +730,13 @@ onUnmounted(() => {
 .page-title {
   font-size: 24px;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--gs-text-primary);
   margin: 0;
 }
 
 .page-subtitle {
   font-size: 11px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   font-family: 'Fira Code', monospace;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -752,13 +752,13 @@ onUnmounted(() => {
 
 .time-label {
   font-size: 10px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   text-transform: uppercase;
 }
 
 .time-value {
   font-size: 20px;
-  color: #4ae176;
+  color: var(--gs-success-main);
   font-weight: 500;
 }
 
@@ -772,10 +772,10 @@ onUnmounted(() => {
 }
 
 .device-card {
-  background: #1b1b20;
+  background: var(--gs-bg-paper);
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-left: 4px solid #60a5fa;
+  border: 1px solid var(--gs-overlay-light);
+  border-left: 4px solid var(--gs-primary-main);
   padding: 20px;
 }
 
@@ -789,13 +789,13 @@ onUnmounted(() => {
 .device-icon {
   width: 20px;
   height: 20px;
-  color: #60a5fa;
+  color: var(--gs-primary-main);
 }
 
 .device-title {
   font-size: 13px;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--gs-text-primary);
   margin: 0;
 }
 
@@ -812,15 +812,15 @@ onUnmounted(() => {
 }
 
 .param-label {
-  color: #64748b;
+  color: var(--gs-text-disabled);
 }
 
 .param-value {
-  color: #e4e1e9;
+  color: var(--gs-text-primary);
 }
 
 .status-success {
-  color: #4ae176;
+  color: var(--gs-success-main);
   font-weight: 700;
   display: flex;
   align-items: center;
@@ -831,7 +831,7 @@ onUnmounted(() => {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #4ae176;
+  background: var(--gs-success-main);
 }
 
 .pulse {
@@ -844,27 +844,27 @@ onUnmounted(() => {
 }
 
 .text-secondary {
-  color: #adc6ff;
+  color: var(--gs-primary-main);
 }
 
 .text-white {
-  color: #ffffff;
+  color: var(--gs-text-primary);
 }
 
 .text-muted {
-  color: #64748b;
+  color: var(--gs-text-disabled);
 }
 
 .text-dim {
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
 }
 
 .text-primary {
-  color: #60a5fa;
+  color: var(--gs-primary-main);
 }
 
 .text-error {
-  color: #ffb4ab;
+  color: var(--gs-error-main);
 }
 
 .mono {
@@ -881,16 +881,16 @@ onUnmounted(() => {
 }
 
 .control-panel {
-  background: #1b1b20;
+  background: var(--gs-bg-paper);
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--gs-overlay-light);
   padding: 20px;
 }
 
 .script-panel {
-  background: #1b1b20;
+  background: var(--gs-bg-paper);
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--gs-overlay-light);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -904,14 +904,14 @@ onUnmounted(() => {
 
 .panel-header-bar.border-bottom {
   padding: 16px 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  background: rgba(14, 14, 19, 0.4);
+  border-bottom: 1px solid var(--gs-overlay-light);
+  background: color-mix(in srgb, var(--gs-bg-paper), transparent 60%);
 }
 
 .panel-title {
   font-size: 13px;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--gs-text-primary);
   display: flex;
   align-items: center;
   gap: 8px;
@@ -925,7 +925,7 @@ onUnmounted(() => {
 
 .panel-badge {
   font-size: 10px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   font-family: 'Fira Code', monospace;
   text-transform: uppercase;
 }
@@ -962,43 +962,43 @@ onUnmounted(() => {
 }
 
 .btn-abort {
-  background: rgba(255, 180, 171, 0.1);
-  border-color: rgba(255, 180, 171, 0.2);
-  color: #ffb4ab;
+  background: color-mix(in srgb, var(--gs-error-main), transparent 90%);
+  border-color: var(--gs-glow-error);
+  color: var(--gs-error-main);
 }
 
 .btn-abort:hover {
-  background: rgba(255, 180, 171, 0.2);
+  background: var(--gs-glow-error);
 }
 
 .btn-pause {
-  background: rgba(173, 198, 255, 0.1);
-  border-color: rgba(173, 198, 255, 0.2);
-  color: #adc6ff;
+  background: color-mix(in srgb, var(--gs-primary-main), transparent 90%);
+  border-color: color-mix(in srgb, var(--gs-primary-main), transparent 80%);
+  color: var(--gs-primary-main);
 }
 
 .btn-pause:hover {
-  background: rgba(173, 198, 255, 0.2);
+  background: color-mix(in srgb, var(--gs-primary-main), transparent 80%);
 }
 
 .btn-resume {
-  background: rgba(74, 225, 118, 0.1);
-  border-color: rgba(74, 225, 118, 0.2);
-  color: #4ae176;
+  background: color-mix(in srgb, var(--gs-success-main), transparent 90%);
+  border-color: color-mix(in srgb, var(--gs-success-main), transparent 80%);
+  color: var(--gs-success-main);
 }
 
 .btn-resume:hover {
-  background: rgba(74, 225, 118, 0.2);
+  background: color-mix(in srgb, var(--gs-success-main), transparent 80%);
 }
 
 .btn-skip {
-  background: rgba(96, 165, 250, 0.1);
-  border-color: rgba(96, 165, 250, 0.2);
-  color: #60a5fa;
+  background: var(--gs-overlay-light);
+  border-color: var(--gs-overlay-medium);
+  color: var(--gs-primary-main);
 }
 
 .btn-skip:hover {
-  background: rgba(96, 165, 250, 0.2);
+  background: var(--gs-overlay-medium);
 }
 
 .script-log {
@@ -1006,7 +1006,7 @@ onUnmounted(() => {
   padding: 16px 20px;
   font-family: 'Fira Code', monospace;
   font-size: 11px;
-  background: rgba(0, 0, 0, 0.2);
+  background: color-mix(in srgb, var(--gs-overlay-dark), transparent 67%);
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -1020,7 +1020,7 @@ onUnmounted(() => {
 }
 
 .log-time {
-  color: #475569;
+  color: var(--gs-text-disabled);
   white-space: nowrap;
   flex-shrink: 0;
 }
@@ -1031,19 +1031,19 @@ onUnmounted(() => {
 }
 
 .tag-success {
-  color: #4ae176;
+  color: var(--gs-success-main);
 }
 
 .tag-primary {
-  color: #60a5fa;
+  color: var(--gs-primary-main);
 }
 
 .tag-secondary {
-  color: #adc6ff;
+  color: var(--gs-primary-main);
 }
 
 .log-message {
-  color: #cbd5e1;
+  color: var(--gs-text-secondary);
   flex: 1;
 }
 
@@ -1051,9 +1051,9 @@ onUnmounted(() => {
 .plan-table-panel {
   flex: 1;
   min-height: 0;
-  background: #1b1b20;
+  background: var(--gs-bg-paper);
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--gs-overlay-light);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -1070,7 +1070,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 6px;
   font-size: 11px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
 }
 
 .legend-dot {
@@ -1080,15 +1080,15 @@ onUnmounted(() => {
 }
 
 .dot-success {
-  background: #4ae176;
+  background: var(--gs-success-main);
 }
 
 .dot-primary {
-  background: #60a5fa;
+  background: var(--gs-primary-main);
 }
 
 .dot-muted {
-  background: #475569;
+  background: var(--gs-text-disabled);
 }
 
 .table-wrapper {
@@ -1103,20 +1103,20 @@ onUnmounted(() => {
 }
 
 .data-table th {
-  background: rgba(14, 14, 19, 0.4);
+  background: color-mix(in srgb, var(--gs-bg-paper), transparent 60%);
   padding: 14px 20px;
   text-align: left;
   font-size: 10px;
   font-weight: 600;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--gs-overlay-light);
 }
 
 .data-table td {
   padding: 14px 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid color-mix(in srgb, var(--gs-overlay-light), transparent 60%);
 }
 
 .table-row {
@@ -1124,19 +1124,19 @@ onUnmounted(() => {
 }
 
 .table-row:hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--gs-overlay-light);
 }
 
 .active-row {
-  background: rgba(96, 165, 250, 0.1);
-  border-top: 1px solid rgba(96, 165, 250, 0.2);
-  border-bottom: 1px solid rgba(96, 165, 250, 0.2);
+  background: var(--gs-overlay-light);
+  border-top: 1px solid var(--gs-overlay-medium);
+  border-bottom: 1px solid var(--gs-overlay-medium);
 }
 
 .plan-name {
   font-size: 13px;
   font-weight: 600;
-  color: #ffffff;
+  color: var(--gs-text-primary);
 }
 
 .status-tag {
@@ -1150,29 +1150,29 @@ onUnmounted(() => {
 }
 
 .tag-success {
-  background: rgba(74, 225, 118, 0.1);
-  color: #4ae176;
-  border: 1px solid rgba(74, 225, 118, 0.2);
+  background: color-mix(in srgb, var(--gs-success-main), transparent 90%);
+  color: var(--gs-success-main);
+  border: 1px solid color-mix(in srgb, var(--gs-success-main), transparent 80%);
 }
 
 .tag-active {
-  background: #60a5fa;
-  color: #00315d;
-  border: 1px solid rgba(96, 165, 250, 0.4);
+  background: var(--gs-primary-main);
+  color: var(--gs-text-inverse);
+  border: 1px solid var(--gs-glow-primary);
   font-weight: 600;
 }
 
 .tag-ready {
-  background: rgba(173, 198, 255, 0.15);
-  color: #adc6ff;
-  border: 1px solid rgba(173, 198, 255, 0.3);
+  background: color-mix(in srgb, var(--gs-primary-main), transparent 85%);
+  color: var(--gs-primary-main);
+  border: 1px solid color-mix(in srgb, var(--gs-primary-main), transparent 70%);
 }
 
 .ping-dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #ffffff;
+  background: var(--gs-text-primary);
   animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
@@ -1190,8 +1190,8 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   height: 32px;
-  background: #0e0e13;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--gs-bg-paper);
+  border-top: 1px solid var(--gs-overlay-light);
   display: flex;
   align-items: center;
   padding: 0 24px;
@@ -1204,14 +1204,14 @@ onUnmounted(() => {
   align-items: center;
   gap: 8px;
   font-size: 12px;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
 }
 
 .status-dot-green {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #4ae176;
+  background: var(--gs-success-main);
 }
 
 .spacer {
@@ -1222,7 +1222,7 @@ onUnmounted(() => {
   display: flex;
   gap: 24px;
   font-size: 12px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   font-family: 'Fira Code', monospace;
 }
 </style>

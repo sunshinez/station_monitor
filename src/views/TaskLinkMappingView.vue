@@ -403,8 +403,8 @@ function saveChanges() {
 <style scoped>
 .task-link-mapping-page {
   min-height: 100vh;
-  background-color: #0b0b10;
-  color: #e4e1e9;
+  background-color: var(--gs-bg-default);
+  color: var(--gs-text-primary);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
@@ -423,10 +423,10 @@ function saveChanges() {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(19, 20, 24, 0.4);
+  background: color-mix(in srgb, var(--gs-bg-default), transparent 60%);
   padding: 20px 24px;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--gs-overlay-light);
   margin-bottom: 24px;
 }
 
@@ -438,7 +438,7 @@ function saveChanges() {
 
 .select-label {
   font-size: 13px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
 }
 
 .select-wrapper {
@@ -446,11 +446,11 @@ function saveChanges() {
 }
 
 .mission-select {
-  background: #1b1c21;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--gs-bg-paper);
+  border: 1px solid var(--gs-overlay-medium);
   border-radius: 4px;
   padding: 10px 40px 10px 16px;
-  color: #e4e1e9;
+  color: var(--gs-text-primary);
   font-size: 13px;
   min-width: 280px;
   appearance: none;
@@ -459,7 +459,7 @@ function saveChanges() {
 }
 
 .mission-select:focus {
-  border-color: #4c93e7;
+  border-color: var(--gs-primary-main);
 }
 
 .select-icon {
@@ -469,13 +469,13 @@ function saveChanges() {
   transform: translateY(-50%);
   width: 16px;
   height: 16px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   pointer-events: none;
 }
 
 .btn-save {
-  background: #4c93e7;
-  color: #ffffff;
+  background: var(--gs-primary-main);
+  color: var(--gs-text-primary);
   border: none;
   padding: 10px 32px;
   border-radius: 4px;
@@ -483,11 +483,11 @@ function saveChanges() {
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s;
-  box-shadow: 0 4px 12px rgba(76, 147, 231, 0.2);
+  box-shadow: 0 4px 12px var(--gs-glow-primary);
 }
 
 .btn-save:hover {
-  background: #3b82f6;
+  background: var(--gs-primary-main);
   transform: translateY(-1px);
 }
 
@@ -497,12 +497,12 @@ function saveChanges() {
 
 /* 链路面板 */
 .link-panel {
-  background: rgba(19, 20, 24, 0.6);
+  background: color-mix(in srgb, var(--gs-bg-default), transparent 40%);
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--gs-overlay-light);
   padding: 32px;
   margin-bottom: 24px;
-  box-shadow: 0 4px 24px -2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 24px -2px var(--gs-overlay-dark);
 }
 
 .panel-header {
@@ -518,16 +518,16 @@ function saveChanges() {
   gap: 12px;
   font-size: 18px;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--gs-text-primary);
   margin: 0;
 }
 
 .uplink-panel .panel-title {
-  color: #4c93e7;
+  color: var(--gs-primary-main);
 }
 
 .downlink-panel .panel-title {
-  color: #a4c9ff;
+  color: var(--gs-primary-main);
 }
 
 .panel-icon {
@@ -548,20 +548,20 @@ function saveChanges() {
 }
 
 .badge-success {
-  background: rgba(74, 225, 118, 0.1);
-  color: #4ae176;
-  border: 1px solid rgba(74, 225, 118, 0.2);
+  background: var(--gs-overlay-light);
+  color: var(--gs-success-main);
+  border: 1px solid var(--gs-overlay-medium);
 }
 
 .badge-primary {
-  background: rgba(164, 201, 255, 0.1);
-  color: #a4c9ff;
-  border: 1px solid rgba(164, 201, 255, 0.2);
+  background: var(--gs-overlay-light);
+  color: var(--gs-primary-main);
+  border: 1px solid var(--gs-overlay-medium);
 }
 
 .badge-default {
-  background: #1b1c21;
-  color: #64748b;
+  background: var(--gs-bg-paper);
+  color: var(--gs-text-disabled);
 }
 
 /* 链路表格 */
@@ -577,7 +577,7 @@ function saveChanges() {
   gap: 16px;
   padding: 0 16px;
   font-size: 11px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-weight: 600;
@@ -595,15 +595,15 @@ function saveChanges() {
   grid-template-columns: 100px 1fr 1fr 1fr 140px;
   gap: 16px;
   align-items: center;
-  background: #1b1c21;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--gs-bg-paper);
+  border: 1px solid var(--gs-overlay-light);
   border-radius: 8px;
   padding: 16px;
   transition: all 0.2s;
 }
 
 .link-row:hover {
-  border-color: rgba(255, 255, 255, 0.1);
+  border-color: var(--gs-overlay-medium);
 }
 
 .td-link {
@@ -614,7 +614,7 @@ function saveChanges() {
 .link-index {
   font-size: 13px;
   font-weight: 600;
-  color: #e4e1e9;
+  color: var(--gs-text-primary);
   font-family: 'Fira Code', monospace;
 }
 
@@ -626,11 +626,11 @@ function saveChanges() {
 
 .device-select {
   width: 100%;
-  background: #131418;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--gs-bg-default);
+  border: 1px solid var(--gs-overlay-medium);
   border-radius: 6px;
   padding: 10px 12px;
-  color: #e4e1e9;
+  color: var(--gs-text-primary);
   font-size: 13px;
   outline: none;
   cursor: pointer;
@@ -638,17 +638,17 @@ function saveChanges() {
 }
 
 .device-select:focus {
-  border-color: #4c93e7;
+  border-color: var(--gs-primary-main);
 }
 
 .device-select option:disabled {
-  color: #64748b;
-  background: #1b1c21;
+  color: var(--gs-text-disabled);
+  background: var(--gs-bg-paper);
 }
 
 .device-select option {
-  background: #1b1c21;
-  color: #e4e1e9;
+  background: var(--gs-bg-paper);
+  color: var(--gs-text-primary);
   padding: 8px;
 }
 
@@ -666,21 +666,21 @@ function saveChanges() {
   font-family: 'Fira Code', monospace;
   padding: 6px 10px;
   border-radius: 4px;
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--gs-overlay-light);
 }
 
 .mini-flow.forward {
-  color: #4ae176;
+  color: var(--gs-success-main);
 }
 
 .mini-flow.reverse {
-  color: #a4c9ff;
+  color: var(--gs-primary-main);
 }
 
 .mini-node {
   padding: 2px 6px;
   border-radius: 3px;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--gs-overlay-light);
 }
 
 .mini-arrow {

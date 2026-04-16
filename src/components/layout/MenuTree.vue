@@ -75,10 +75,8 @@ const router = useRouter()
 const expandedKeys = ref<Set<string>>(new Set())
 const activeAction = ref<string | null>(null)
 
-// Default expand groups on control module route
 watch(() => route.path, (path) => {
   if (path === '/device-control') {
-    // Find the "设备控制" group and "天线伺服设备" subgroup
     const deviceControl = props.items.find(i => i.path === '/device-control' && i.children)
     if (deviceControl) {
       expandedKeys.value.add(itemKey(deviceControl))
@@ -86,10 +84,8 @@ watch(() => route.path, (path) => {
       if (antenna) {
         expandedKeys.value.add(itemKey(antenna))
       }
-      // Set default active action to antenna-01 to match original default selection
       activeAction.value = 'device:antenna-01'
     } else {
-      // We may be in the inner MenuTree where props.items are the children of 设备控制
       const antenna = props.items.find(i => i.label === '天线伺服设备')
       if (antenna) {
         expandedKeys.value.add(itemKey(antenna))
@@ -138,7 +134,6 @@ function handleAction(action: string) {
   document.dispatchEvent(new CustomEvent('sidebar-action', { detail: action }))
 }
 
-// Icons
 const icons: Record<string, any> = {
   topology: () => h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
     h('path', { d: 'M12 2L2 7l10 5 10-5-10-5z' }),
@@ -184,7 +179,7 @@ const icons: Record<string, any> = {
   ]),
   settings: () => h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
     h('circle', { cx: '12', cy: '12', r: '3' }),
-    h('path', { d: 'M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z' })
+    h('path', { d: 'M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06-.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z' })
   ]),
   link: () => h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
     h('path', { d: 'M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71' }),
@@ -284,7 +279,7 @@ function getIcon(name?: string) {
   padding: 10px 12px;
   border-radius: 6px;
   font-size: 14px;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
   text-decoration: none;
   background: transparent;
   border: none;
@@ -295,13 +290,13 @@ function getIcon(name?: string) {
 
 .menu-link:hover,
 .menu-group-toggle:hover {
-  background: rgba(255, 255, 255, 0.03);
-  color: #e4e1e9;
+  background: var(--gs-overlay-light);
+  color: var(--gs-text-primary);
 }
 
 .menu-link.active,
 .menu-group-toggle.active {
-  color: #60a5fa;
+  color: var(--gs-primary-main);
   font-weight: 500;
 }
 
@@ -320,7 +315,7 @@ function getIcon(name?: string) {
 
 .expand-icon {
   font-size: 10px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   transition: transform 0.2s;
   flex-shrink: 0;
 }
@@ -333,27 +328,27 @@ function getIcon(name?: string) {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #64748b;
+  background: var(--gs-text-disabled);
   flex-shrink: 0;
   margin-left: 4px;
 }
 
 .menu-link.active .leaf-dot {
-  background: #60a5fa;
+  background: var(--gs-primary-main);
 }
 
 .level-dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #64748b;
+  background: var(--gs-text-disabled);
   flex-shrink: 0;
   margin-left: 4px;
   transition: background 0.2s;
 }
 
 .level-dot.active {
-  background: #60a5fa;
+  background: var(--gs-primary-main);
 }
 
 .menu-children {

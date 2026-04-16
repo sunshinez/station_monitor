@@ -284,8 +284,8 @@ const transfers = ref([
 <style scoped>
 .file-transfer-page {
   min-height: 100vh;
-  background-color: #131318;
-  color: #e4e1e9;
+  background-color: var(--gs-bg-default);
+  color: var(--gs-text-primary);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   display: flex;
   flex-direction: column;
@@ -306,8 +306,8 @@ const transfers = ref([
   left: 0;
   right: 0;
   height: 64px;
-  background: #131318;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--gs-bg-default);
+  border-bottom: 1px solid var(--gs-overlay-light);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -319,7 +319,7 @@ const transfers = ref([
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.15em;
-  color: #60a5fa;
+  color: var(--gs-primary-main);
   text-transform: uppercase;
 }
 
@@ -330,7 +330,7 @@ const transfers = ref([
 
 .nav-link {
   font-size: 14px;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
   text-decoration: none;
   transition: color 0.2s;
   padding-bottom: 4px;
@@ -338,12 +338,12 @@ const transfers = ref([
 }
 
 .nav-link:hover {
-  color: #e4e1e9;
+  color: var(--gs-text-primary);
 }
 
 .nav-link.active {
-  color: #60a5fa;
-  border-bottom-color: #60a5fa;
+  color: var(--gs-primary-main);
+  border-bottom-color: var(--gs-primary-main);
   font-weight: 600;
 }
 
@@ -357,7 +357,7 @@ const transfers = ref([
   position: relative;
   background: none;
   border: none;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
   cursor: pointer;
   padding: 8px;
   border-radius: 50%;
@@ -365,8 +365,8 @@ const transfers = ref([
 }
 
 .icon-btn:hover {
-  background: #1b1b20;
-  color: #e4e1e9;
+  background: var(--gs-bg-paper);
+  color: var(--gs-text-primary);
 }
 
 .icon {
@@ -381,14 +381,14 @@ const transfers = ref([
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #ffb4ab;
+  background: var(--gs-error-main);
 }
 
 /* Side Navigation */
 .side-nav {
   width: 260px;
-  background: #1b1b20;
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--gs-bg-paper);
+  border-right: 1px solid var(--gs-overlay-light);
   display: flex;
   flex-direction: column;
   z-index: 40;
@@ -403,14 +403,14 @@ const transfers = ref([
 .side-title {
   font-size: 18px;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--gs-text-primary);
   margin: 0;
   font-family: 'Space Grotesk', sans-serif;
 }
 
 .side-subtitle {
   font-size: 10px;
-  color: #60a5fa;
+  color: var(--gs-primary-main);
   text-transform: uppercase;
   letter-spacing: 0.15em;
   margin: 4px 0 0 0;
@@ -429,7 +429,7 @@ const transfers = ref([
   align-items: center;
   gap: 12px;
   padding: 12px 16px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   text-decoration: none;
   font-size: 14px;
   transition: all 0.2s;
@@ -438,14 +438,14 @@ const transfers = ref([
 }
 
 .side-link:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: #e4e1e9;
+  background: var(--gs-overlay-light);
+  color: var(--gs-text-primary);
 }
 
 .side-link.active {
-  background: rgba(96, 165, 250, 0.1);
-  border-left-color: #60a5fa;
-  color: #60a5fa;
+  background: var(--gs-overlay-light);
+  border-left-color: var(--gs-primary-main);
+  color: var(--gs-primary-main);
   font-weight: 600;
 }
 
@@ -464,7 +464,7 @@ const transfers = ref([
   align-items: center;
   gap: 10px;
   padding: 12px;
-  background: #0e0e13;
+  background: var(--gs-bg-paper);
   border-radius: 8px;
 }
 
@@ -472,9 +472,9 @@ const transfers = ref([
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #4ae176;
+  background: var(--gs-success-main);
   animation: pulse 2s infinite;
-  box-shadow: 0 0 8px rgba(74, 225, 118, 0.3);
+  box-shadow: 0 0 8px var(--gs-glow-success);
 }
 
 @keyframes pulse {
@@ -485,7 +485,7 @@ const transfers = ref([
 .status-text {
   font-size: 10px;
   font-family: 'Fira Code', monospace;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -494,7 +494,7 @@ const transfers = ref([
 .main-content {
   flex: 1;
   overflow-y: auto;
-  background: #131318;
+  background: var(--gs-bg-default);
   padding: 32px;
 }
 
@@ -514,8 +514,8 @@ const transfers = ref([
 }
 
 .stat-card {
-  background: #1b1b20;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--gs-bg-paper);
+  border: 1px solid var(--gs-overlay-light);
   border-radius: 8px;
   padding: 24px;
   display: flex;
@@ -525,13 +525,13 @@ const transfers = ref([
 }
 
 .stat-card:hover {
-  background: #2a292f;
+  background: var(--gs-bg-paper);
 }
 
 .stat-label {
   font-size: 11px;
   font-weight: 600;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin: 0 0 8px 0;
@@ -545,15 +545,15 @@ const transfers = ref([
 }
 
 .stat-value.primary {
-  color: #60a5fa;
+  color: var(--gs-primary-main);
 }
 
 .stat-value.tertiary {
-  color: #4ae176;
+  color: var(--gs-success-main);
 }
 
 .stat-value.secondary {
-  color: #a4c9ff;
+  color: var(--gs-primary-main);
 }
 
 .stat-icon {
@@ -567,21 +567,21 @@ const transfers = ref([
 }
 
 .stat-icon.primary {
-  color: rgba(96, 165, 250, 0.2);
+  color: var(--gs-overlay-medium);
 }
 
 .stat-icon.tertiary {
-  color: rgba(74, 225, 118, 0.2);
+  color: var(--gs-overlay-medium);
 }
 
 .stat-icon.secondary {
-  color: rgba(164, 201, 255, 0.2);
+  color: var(--gs-overlay-medium);
 }
 
 /* Panels */
 .panel {
-  background: #1b1b20;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--gs-bg-paper);
+  border: 1px solid var(--gs-overlay-light);
   border-radius: 8px;
   overflow: hidden;
 }
@@ -591,8 +591,8 @@ const transfers = ref([
   justify-content: space-between;
   align-items: center;
   padding: 16px 24px;
-  background: #2a292f;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--gs-bg-paper);
+  border-bottom: 1px solid var(--gs-overlay-light);
 }
 
 .panel-title-group {
@@ -604,17 +604,17 @@ const transfers = ref([
 .panel-icon {
   width: 18px;
   height: 18px;
-  color: #60a5fa;
+  color: var(--gs-primary-main);
 }
 
 .panel-icon.tertiary {
-  color: #4ae176;
+  color: var(--gs-success-main);
 }
 
 .panel-title {
   font-size: 15px;
   font-weight: 600;
-  color: #ffffff;
+  color: var(--gs-text-primary);
   margin: 0;
   font-family: 'Space Grotesk', sans-serif;
 }
@@ -628,26 +628,26 @@ const transfers = ref([
 .search-input {
   width: 240px;
   padding: 8px 14px;
-  background: #0e0e13;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--gs-bg-paper);
+  border: 1px solid var(--gs-overlay-light);
   border-radius: 4px;
-  color: #e4e1e9;
+  color: var(--gs-text-primary);
   font-size: 12px;
   outline: none;
   transition: all 0.2s;
 }
 
 .search-input:focus {
-  border-color: #60a5fa;
-  box-shadow: 0 0 0 1px rgba(96, 165, 250, 0.2);
+  border-color: var(--gs-primary-main);
+  box-shadow: 0 0 0 1px var(--gs-overlay-medium);
 }
 
 .btn-primary {
   padding: 8px 16px;
-  background: #60a5fa;
+  background: var(--gs-primary-main);
   border: none;
   border-radius: 4px;
-  color: #0f172a;
+  color: var(--gs-bg-paper);
   font-size: 12px;
   font-weight: 600;
   cursor: pointer;
@@ -655,7 +655,7 @@ const transfers = ref([
 }
 
 .btn-primary:hover {
-  box-shadow: 0 0 15px rgba(96, 165, 250, 0.3);
+  box-shadow: 0 0 15px var(--gs-glow-primary);
 }
 
 /* Table */
@@ -673,17 +673,17 @@ const transfers = ref([
 .data-table th {
   font-size: 10px;
   font-weight: 500;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   padding: 14px 24px;
-  background: rgba(14, 14, 19, 0.5);
+  background: color-mix(in srgb, var(--gs-bg-paper), transparent 50%);
   white-space: nowrap;
 }
 
 .data-table td {
   padding: 16px 24px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--gs-overlay-light);
 }
 
 .data-table tbody tr {
@@ -691,7 +691,7 @@ const transfers = ref([
 }
 
 .data-table tbody tr:hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--gs-overlay-light);
 }
 
 .file-name-cell {
@@ -706,21 +706,21 @@ const transfers = ref([
 }
 
 .file-icon.blue {
-  color: #60a5fa;
+  color: var(--gs-primary-main);
 }
 
 .file-icon.amber {
-  color: #f59e0b;
+  color: var(--gs-warning-main);
 }
 
 .file-icon.purple {
-  color: #a78bfa;
+  color: var(--gs-primary-main);
 }
 
 .file-name {
   font-size: 13px;
   font-weight: 500;
-  color: #e4e1e9;
+  color: var(--gs-text-primary);
 }
 
 .mono-cell {
@@ -729,13 +729,13 @@ const transfers = ref([
 }
 
 .mono-cell.dim {
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
 }
 
 .link-btn {
   background: none;
   border: none;
-  color: #60a5fa;
+  color: var(--gs-primary-main);
   font-size: 12px;
   cursor: pointer;
   padding: 0;
@@ -743,7 +743,7 @@ const transfers = ref([
 }
 
 .link-btn:hover {
-  color: #a4c9ff;
+  color: var(--gs-primary-main);
 }
 
 /* Monitor Panel */
@@ -759,7 +759,7 @@ const transfers = ref([
   gap: 6px;
   font-size: 10px;
   font-family: 'Fira Code', monospace;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
 }
 
 .meta-dot {
@@ -769,11 +769,11 @@ const transfers = ref([
 }
 
 .meta-dot.tertiary {
-  background: #4ae176;
+  background: var(--gs-success-main);
 }
 
 .meta-dot.neutral {
-  background: #64748b;
+  background: var(--gs-text-disabled);
 }
 
 .monitor-body {
@@ -804,19 +804,19 @@ const transfers = ref([
 .transfer-icon {
   width: 20px;
   height: 20px;
-  color: #60a5fa;
+  color: var(--gs-primary-main);
 }
 
 .transfer-name {
   font-size: 12px;
   font-weight: 500;
-  color: #e4e1e9;
+  color: var(--gs-text-primary);
   margin: 0 0 2px 0;
 }
 
 .transfer-target {
   font-size: 10px;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
   margin: 0;
   font-family: 'Fira Code', monospace;
 }
@@ -828,12 +828,12 @@ const transfers = ref([
 .transfer-speed {
   font-size: 12px;
   font-family: 'Fira Code', monospace;
-  color: #4ae176;
+  color: var(--gs-success-main);
 }
 
 .transfer-progress-text {
   font-size: 10px;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
   margin: 2px 0 0 0;
   font-family: 'Fira Code', monospace;
 }
@@ -844,15 +844,15 @@ const transfers = ref([
 
 .progress-track {
   height: 4px;
-  background: #35343a;
+  background: var(--gs-bg-paper);
   border-radius: 2px;
   overflow: hidden;
 }
 
 .progress-fill {
   height: 100%;
-  background: #4ae176;
+  background: var(--gs-success-main);
   border-radius: 2px;
-  box-shadow: 0 0 8px rgba(74, 225, 118, 0.4);
+  box-shadow: 0 0 8px var(--gs-glow-success);
 }
 </style>

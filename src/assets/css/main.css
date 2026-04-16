@@ -1,16 +1,60 @@
-/* CSS Variables */
+/* ========================================
+   Ground Station Design System - CSS Variables
+   Based on design.md specifications
+   ======================================== */
+
+/* Default theme (injected by theme store on load) */
 :root {
-  --color-primary: #60A5FA;
-  --color-success: #4ae176;
-  --bg-primary: #0B0B10;
-  --bg-card: #0F172A;
-  --border-card: #1E293B;
-  --text-primary: #e2e8f0;
-  --text-white: #ffffff;
-  --text-dim: #94A3B8;
-  --text-muted: #64748b;
-  --font-headline: 'Space Grotesk', system-ui, -apple-system, sans-serif;
-  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  /* Primary palette */
+  --gs-primary-main: #8fa8c4;
+  --gs-secondary-main: #d6926b;
+  --gs-success-main: #59d98b;
+  --gs-warning-main: #ffcc66;
+  --gs-error-main: #ff5d6c;
+  --gs-info-main: #8f969e;
+
+  /* Background layers */
+  --gs-bg-default: #111213;
+  --gs-bg-paper: #1a1c1e;
+  --gs-bg-elevated: #23262a;
+  --gs-bg-titlebar: #171a1d;
+
+  /* Borders */
+  --gs-border-main: #383c42;
+  --gs-border-light: #454a51;
+  --gs-border-dark: #2b2f35;
+
+  /* Overlays */
+  --gs-overlay-light: rgba(154, 159, 166, 0.06);
+  --gs-overlay-medium: rgba(154, 159, 166, 0.12);
+  --gs-overlay-dark: rgba(0, 0, 0, 0.6);
+
+  /* Text */
+  --gs-text-primary: #e4e1e9;
+  --gs-text-secondary: #94a3b8;
+  --gs-text-disabled: #64748b;
+  --gs-text-inverse: #111213;
+
+  /* Glows */
+  --gs-glow-success: rgba(89, 217, 139, 0.4);
+  --gs-glow-warning: rgba(255, 204, 102, 0.4);
+  --gs-glow-error: rgba(255, 93, 108, 0.4);
+  --gs-glow-primary: rgba(143, 168, 196, 0.4);
+
+  /* Legacy aliases for backward compatibility during migration */
+  --color-primary: var(--gs-primary-main);
+  --color-success: var(--gs-success-main);
+  --bg-primary: var(--gs-bg-default);
+  --bg-card: var(--gs-bg-paper);
+  --border-card: var(--gs-border-main);
+  --text-primary: var(--gs-text-primary);
+  --text-white: var(--gs-text-primary);
+  --text-dim: var(--gs-text-secondary);
+  --text-muted: var(--gs-text-disabled);
+
+  /* Typography (unchanged) */
+  --font-headline: 'Space Grotesk', 'Roboto', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter', 'Roboto', system-ui, -apple-system, sans-serif;
   --font-mono: 'Fira Code', 'Courier New', monospace;
 }
 
@@ -54,10 +98,14 @@ html.dark {
   color-scheme: dark;
 }
 
+html:not(.dark) {
+  color-scheme: light;
+}
+
 body {
   font-family: var(--font-body);
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
+  background-color: var(--gs-bg-default);
+  color: var(--gs-text-primary);
   line-height: 1.5;
   min-height: 100vh;
 }
@@ -68,6 +116,75 @@ body {
 
 /* Selection */
 ::selection {
-  background-color: rgba(96, 165, 250, 0.3);
-  color: var(--text-white);
+  background-color: var(--gs-overlay-medium);
+  color: var(--gs-text-primary);
+}
+
+/* Utility classes for theme-aware colors */
+.gs-text-primary { color: var(--gs-text-primary); }
+.gs-text-secondary { color: var(--gs-text-secondary); }
+.gs-text-disabled { color: var(--gs-text-disabled); }
+.gs-text-success { color: var(--gs-success-main); }
+.gs-text-warning { color: var(--gs-warning-main); }
+.gs-text-error { color: var(--gs-error-main); }
+.gs-text-info { color: var(--gs-info-main); }
+
+.gs-bg-default { background-color: var(--gs-bg-default); }
+.gs-bg-paper { background-color: var(--gs-bg-paper); }
+.gs-bg-elevated { background-color: var(--gs-bg-elevated); }
+
+.gs-border-main { border-color: var(--gs-border-main); }
+.gs-border-light { border-color: var(--gs-border-light); }
+.gs-border-dark { border-color: var(--gs-border-dark); }
+
+/* Status dot glow utility */
+.gs-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.gs-status-dot-success {
+  background: var(--gs-success-main);
+  box-shadow: 0 0 6px var(--gs-glow-success);
+}
+
+.gs-status-dot-warning {
+  background: var(--gs-warning-main);
+  box-shadow: 0 0 6px var(--gs-glow-warning);
+}
+
+.gs-status-dot-error {
+  background: var(--gs-error-main);
+  box-shadow: 0 0 6px var(--gs-glow-error);
+}
+
+.gs-status-dot-info {
+  background: var(--gs-info-main);
+  box-shadow: 0 0 6px rgba(143, 150, 158, 0.4);
+}
+
+.gs-status-dot-polling {
+  background: #ff8f5a;
+  box-shadow: 0 0 6px rgba(255, 143, 90, 0.4);
+}
+
+/* Scrollbar theming */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gs-bg-default);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gs-border-main);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gs-border-light);
 }

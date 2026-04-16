@@ -16,12 +16,12 @@ import AppSidebar from '@/components/layout/AppSidebar.vue'
 <style scoped>
 .app-layout {
   min-height: 100vh;
-  background-color: var(--bg-primary, #0B0B10);
+  background-color: var(--gs-bg-default);
 }
 
 .app-main {
-  margin-left: 256px;
-  padding-top: 64px;
+  margin-left: 240px;
+  padding-top: 52px;
   min-height: 100vh;
   position: relative;
   overflow: hidden;

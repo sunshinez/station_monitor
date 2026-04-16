@@ -406,8 +406,8 @@ onUnmounted(() => {
 <style scoped>
 .data-transmission-page {
   min-height: 100vh;
-  background-color: #131318;
-  color: #e4e1e9;
+  background-color: var(--gs-bg-default);
+  color: var(--gs-text-primary);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   display: flex;
   flex-direction: column;
@@ -427,8 +427,8 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   height: 64px;
-  background: #131318;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--gs-bg-default);
+  border-bottom: 1px solid var(--gs-overlay-light);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -440,7 +440,7 @@ onUnmounted(() => {
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.15em;
-  color: #60a5fa;
+  color: var(--gs-primary-main);
   text-transform: uppercase;
 }
 
@@ -451,7 +451,7 @@ onUnmounted(() => {
 
 .nav-link {
   font-size: 14px;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
   text-decoration: none;
   transition: color 0.2s;
   padding-bottom: 4px;
@@ -459,12 +459,12 @@ onUnmounted(() => {
 }
 
 .nav-link:hover {
-  color: #e4e1e9;
+  color: var(--gs-text-primary);
 }
 
 .nav-link.active {
-  color: #60a5fa;
-  border-bottom-color: #60a5fa;
+  color: var(--gs-primary-main);
+  border-bottom-color: var(--gs-primary-main);
   font-weight: 600;
 }
 
@@ -478,7 +478,7 @@ onUnmounted(() => {
   position: relative;
   background: none;
   border: none;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
   cursor: pointer;
   padding: 8px;
   border-radius: 50%;
@@ -486,8 +486,8 @@ onUnmounted(() => {
 }
 
 .icon-btn:hover {
-  background: #1b1b20;
-  color: #e4e1e9;
+  background: var(--gs-bg-paper);
+  color: var(--gs-text-primary);
 }
 
 .icon {
@@ -502,14 +502,14 @@ onUnmounted(() => {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #ffb4ab;
+  background: var(--gs-error-main);
 }
 
 /* Side Navigation */
 .side-nav {
   width: 256px;
-  background: #1b1b20;
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--gs-bg-paper);
+  border-right: 1px solid var(--gs-overlay-light);
   display: flex;
   flex-direction: column;
   z-index: 40;
@@ -524,13 +524,13 @@ onUnmounted(() => {
 .side-title {
   font-size: 18px;
   font-weight: 700;
-  color: #60a5fa;
+  color: var(--gs-primary-main);
   margin: 0 0 4px 0;
 }
 
 .side-subtitle {
   font-size: 10px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   text-transform: uppercase;
   letter-spacing: 0.2em;
   margin: 0;
@@ -546,7 +546,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 12px;
   padding: 16px 24px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   text-decoration: none;
   font-size: 13px;
   transition: all 0.2s;
@@ -554,14 +554,14 @@ onUnmounted(() => {
 }
 
 .side-link:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: #e4e1e9;
+  background: var(--gs-overlay-light);
+  color: var(--gs-text-primary);
 }
 
 .side-link.active {
-  background: rgba(59, 130, 246, 0.1);
-  border-right-color: #60a5fa;
-  color: #60a5fa;
+  background: var(--gs-overlay-light);
+  border-right-color: var(--gs-primary-main);
+  color: var(--gs-primary-main);
 }
 
 .side-icon {
@@ -575,15 +575,15 @@ onUnmounted(() => {
 }
 
 .health-card {
-  background: #0e0e13;
+  background: var(--gs-bg-paper);
   padding: 16px;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--gs-overlay-light);
 }
 
 .health-label {
   font-size: 10px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 8px;
@@ -599,21 +599,21 @@ onUnmounted(() => {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #4ae176;
-  box-shadow: 0 0 8px rgba(74, 225, 118, 0.5);
+  background: var(--gs-success-main);
+  box-shadow: 0 0 8px var(--gs-glow-success);
 }
 
 .health-text {
   font-size: 12px;
   font-family: 'Fira Code', monospace;
-  color: #e4e1e9;
+  color: var(--gs-text-primary);
 }
 
 /* Main Content */
 .main-content {
   flex: 1;
   overflow-y: auto;
-  background: #131318;
+  background: var(--gs-bg-default);
   padding: 32px;
 }
 
@@ -634,7 +634,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 8px;
   margin-bottom: 8px;
-  color: #60a5fa;
+  color: var(--gs-primary-main);
   font-size: 10px;
   font-family: 'Fira Code', monospace;
   letter-spacing: 0.05em;
@@ -652,12 +652,12 @@ onUnmounted(() => {
 .page-title {
   font-size: 28px;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--gs-text-primary);
   margin: 0;
 }
 
 .page-title .highlight {
-  color: #a4c9ff;
+  color: var(--gs-primary-main);
 }
 
 .header-right {
@@ -666,19 +666,19 @@ onUnmounted(() => {
 }
 
 .status-card {
-  background: #1b1b20;
+  background: var(--gs-bg-paper);
   padding: 16px 20px;
   border-radius: 4px;
-  border-left: 2px solid #4ae176;
+  border-left: 2px solid var(--gs-success-main);
 }
 
 .status-card:last-child {
-  border-left-color: #60a5fa;
+  border-left-color: var(--gs-primary-main);
 }
 
 .status-label {
   font-size: 10px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 4px;
@@ -687,7 +687,7 @@ onUnmounted(() => {
 .status-value {
   font-size: 18px;
   font-family: 'Fira Code', monospace;
-  color: #ffffff;
+  color: var(--gs-text-primary);
 }
 
 .status-indicator {
@@ -700,14 +700,14 @@ onUnmounted(() => {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #4ae176;
-  box-shadow: 0 0 8px rgba(74, 225, 118, 0.5);
+  background: var(--gs-success-main);
+  box-shadow: 0 0 8px var(--gs-glow-success);
 }
 
 .status-text-green {
   font-size: 18px;
   font-family: 'Fira Code', monospace;
-  color: #ffffff;
+  color: var(--gs-text-primary);
 }
 
 /* Content Grid */
@@ -736,7 +736,7 @@ onUnmounted(() => {
 }
 
 .metric-card {
-  background: #1b1b20;
+  background: var(--gs-bg-paper);
   padding: 24px;
   border-radius: 8px;
   position: relative;
@@ -752,7 +752,7 @@ onUnmounted(() => {
 
 .metric-label {
   font-size: 10px;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
@@ -760,7 +760,7 @@ onUnmounted(() => {
 .metric-icon-bg {
   width: 40px;
   height: 40px;
-  color: rgba(255, 255, 255, 0.1);
+  color: var(--gs-overlay-medium);
   position: absolute;
   top: 8px;
   right: 8px;
@@ -776,12 +776,12 @@ onUnmounted(() => {
 .metric-value {
   font-size: 32px;
   font-family: 'Fira Code', monospace;
-  color: #ffffff;
+  color: var(--gs-text-primary);
 }
 
 .metric-unit {
   font-size: 11px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
 }
 
 .channel-indicators {
@@ -792,16 +792,16 @@ onUnmounted(() => {
 .channel-bar {
   height: 4px;
   flex: 1;
-  background: #2a292f;
+  background: var(--gs-bg-paper);
   border-radius: 2px;
 }
 
 .channel-bar.active {
-  background: #4ae176;
+  background: var(--gs-success-main);
 }
 
 .channel-bar.error {
-  background: #ffb4ab;
+  background: var(--gs-error-main);
 }
 
 .trend-indicator {
@@ -809,7 +809,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 4px;
   font-size: 10px;
-  color: #4ae176;
+  color: var(--gs-success-main);
   font-family: 'Fira Code', monospace;
 }
 
@@ -820,13 +820,13 @@ onUnmounted(() => {
 
 .status-text {
   font-size: 10px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   font-family: 'Fira Code', monospace;
 }
 
 /* Storage Section */
 .storage-section {
-  background: #1b1b20;
+  background: var(--gs-bg-paper);
   padding: 24px;
   border-radius: 8px;
 }
@@ -841,13 +841,13 @@ onUnmounted(() => {
 .header-bar {
   width: 4px;
   height: 24px;
-  background: #60a5fa;
+  background: var(--gs-primary-main);
 }
 
 .section-title {
   font-size: 16px;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--gs-text-primary);
   margin: 0;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -856,10 +856,10 @@ onUnmounted(() => {
 
 .drive-id {
   font-size: 10px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   font-family: 'Fira Code', monospace;
   padding: 4px 8px;
-  background: #2a292f;
+  background: var(--gs-bg-paper);
   border-radius: 4px;
 }
 
@@ -889,13 +889,13 @@ onUnmounted(() => {
 
 .circle-bg {
   fill: none;
-  stroke: #2a292f;
+  stroke: var(--gs-bg-paper);
   stroke-width: 8;
 }
 
 .circle-progress {
   fill: none;
-  stroke: #60a5fa;
+  stroke: var(--gs-primary-main);
   stroke-width: 8;
   stroke-linecap: round;
   transition: stroke-dashoffset 0.3s;
@@ -913,12 +913,12 @@ onUnmounted(() => {
   display: block;
   font-size: 28px;
   font-family: 'Fira Code', monospace;
-  color: #ffffff;
+  color: var(--gs-text-primary);
 }
 
 .label {
   font-size: 10px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   text-transform: uppercase;
 }
 
@@ -929,23 +929,23 @@ onUnmounted(() => {
 }
 
 .stat-item {
-  background: #131318;
+  background: var(--gs-bg-default);
   padding: 16px;
   border-radius: 4px;
-  border-bottom: 2px solid #60a5fa;
+  border-bottom: 2px solid var(--gs-primary-main);
 }
 
 .stat-item.highlight-green {
-  border-bottom-color: #4ae176;
+  border-bottom-color: var(--gs-success-main);
 }
 
 .stat-item.highlight-red {
-  border-bottom-color: #ffb4ab;
+  border-bottom-color: var(--gs-error-main);
 }
 
 .stat-label {
   font-size: 10px;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
   text-transform: uppercase;
   margin-bottom: 8px;
 }
@@ -953,20 +953,20 @@ onUnmounted(() => {
 .stat-value {
   font-size: 24px;
   font-family: 'Fira Code', monospace;
-  color: #ffffff;
+  color: var(--gs-text-primary);
 }
 
 .stat-value .unit {
   font-size: 14px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
 }
 
 .text-green {
-  color: #4ae176;
+  color: var(--gs-success-main);
 }
 
 .text-red {
-  color: #ffb4ab;
+  color: var(--gs-error-main);
 }
 
 /* Lane Distribution */
@@ -978,7 +978,7 @@ onUnmounted(() => {
   display: flex;
   justify-content: space-between;
   font-size: 10px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   font-family: 'Fira Code', monospace;
   text-transform: uppercase;
   margin-bottom: 8px;
@@ -989,21 +989,21 @@ onUnmounted(() => {
   gap: 2px;
   height: 48px;
   align-items: flex-end;
-  background: #0e0e13;
+  background: var(--gs-bg-paper);
   padding: 4px;
   border-radius: 4px;
 }
 
 .lane-bar {
   flex: 1;
-  background: rgba(164, 201, 255, 0.4);
+  background: var(--gs-glow-primary);
   border-radius: 1px;
   transition: height 0.3s;
 }
 
 /* Command Panel */
 .command-panel {
-  background: #1b1b20;
+  background: var(--gs-bg-paper);
   border-radius: 8px;
   height: 100%;
   display: flex;
@@ -1012,7 +1012,7 @@ onUnmounted(() => {
 
 .panel-header {
   padding: 20px 24px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--gs-overlay-light);
   display: flex;
   align-items: center;
   gap: 12px;
@@ -1021,13 +1021,13 @@ onUnmounted(() => {
 .panel-icon {
   width: 20px;
   height: 20px;
-  color: #60a5fa;
+  color: var(--gs-primary-main);
 }
 
 .panel-title {
   font-size: 14px;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--gs-text-primary);
   margin: 0;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -1043,24 +1043,24 @@ onUnmounted(() => {
 }
 
 .command-item {
-  background: #131318;
+  background: var(--gs-bg-default);
   padding: 12px;
   border-radius: 4px;
-  border-left: 2px solid #60a5fa;
+  border-left: 2px solid var(--gs-primary-main);
   font-family: 'Fira Code', monospace;
   font-size: 11px;
 }
 
 .command-item.success {
-  border-left-color: #4ae176;
+  border-left-color: var(--gs-success-main);
 }
 
 .command-item.executing {
-  border-left-color: #60a5fa;
+  border-left-color: var(--gs-primary-main);
 }
 
 .command-item.rejected {
-  border-left-color: #ffb4ab;
+  border-left-color: var(--gs-error-main);
   opacity: 0.8;
 }
 
@@ -1072,7 +1072,7 @@ onUnmounted(() => {
 }
 
 .command-time {
-  color: #64748b;
+  color: var(--gs-text-disabled);
 }
 
 .command-status {
@@ -1082,28 +1082,28 @@ onUnmounted(() => {
 }
 
 .command-status.success {
-  color: #4ae176;
-  border-color: rgba(74, 225, 118, 0.3);
+  color: var(--gs-success-main);
+  border-color: var(--gs-glow-success);
 }
 
 .command-status.executing {
-  color: #60a5fa;
-  border-color: rgba(96, 165, 250, 0.3);
+  color: var(--gs-primary-main);
+  border-color: var(--gs-glow-primary);
 }
 
 .command-status.rejected {
-  color: #ffb4ab;
-  border-color: rgba(255, 180, 171, 0.3);
+  color: var(--gs-error-main);
+  border-color: var(--gs-glow-error);
   animation: pulse 2s infinite;
 }
 
 .command-name {
-  color: #ffffff;
+  color: var(--gs-text-primary);
   margin-bottom: 4px;
 }
 
 .command-params {
-  color: #64748b;
+  color: var(--gs-text-disabled);
   font-size: 9px;
 }
 
@@ -1113,27 +1113,27 @@ onUnmounted(() => {
 
 .progress-bar {
   height: 4px;
-  background: #2a292f;
+  background: var(--gs-bg-paper);
   border-radius: 2px;
   overflow: hidden;
 }
 
 .progress-fill {
   height: 100%;
-  background: #60a5fa;
+  background: var(--gs-primary-main);
   border-radius: 2px;
   transition: width 0.3s;
 }
 
 .command-error {
-  color: rgba(255, 180, 171, 0.7);
+  color: color-mix(in srgb, var(--gs-error-main), transparent 30%);
   font-size: 9px;
   margin-top: 4px;
 }
 
 .panel-footer {
   padding: 16px;
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--gs-overlay-light);
   display: flex;
   align-items: center;
   gap: 8px;
@@ -1142,19 +1142,19 @@ onUnmounted(() => {
 .footer-icon {
   width: 14px;
   height: 14px;
-  color: #60a5fa;
+  color: var(--gs-primary-main);
 }
 
 .footer-text {
   font-size: 10px;
-  color: #60a5fa;
+  color: var(--gs-primary-main);
   font-family: 'Fira Code', monospace;
   animation: pulse 2s infinite;
 }
 
 /* Network Flow Section */
 .network-flow-section {
-  background: #1b1b20;
+  background: var(--gs-bg-paper);
   border-radius: 8px;
   padding: 24px;
   height: 200px;
@@ -1177,19 +1177,19 @@ onUnmounted(() => {
 
 .line-1 {
   top: 50%;
-  background: linear-gradient(90deg, transparent, #60a5fa, transparent);
+  background: linear-gradient(90deg, transparent, var(--gs-primary-main), transparent);
 }
 
 .line-2 {
   top: 25%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(74, 225, 118, 0.4), transparent);
+  background: linear-gradient(90deg, transparent, var(--gs-glow-success), transparent);
 }
 
 .line-3 {
   top: 75%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.4), transparent);
+  background: linear-gradient(90deg, transparent, var(--gs-glow-primary), transparent);
 }
 
 .flow-content {
@@ -1210,14 +1210,14 @@ onUnmounted(() => {
 .flow-title {
   font-size: 13px;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--gs-text-primary);
   margin: 0 0 4px 0;
   text-transform: uppercase;
 }
 
 .flow-subtitle {
   font-size: 10px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   font-family: 'Fira Code', monospace;
   margin: 0;
 }
@@ -1233,7 +1233,7 @@ onUnmounted(() => {
 
 .flow-stat .stat-label {
   font-size: 9px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   text-transform: uppercase;
   margin-bottom: 4px;
 }
@@ -1241,11 +1241,11 @@ onUnmounted(() => {
 .flow-stat .stat-value {
   font-size: 20px;
   font-family: 'Fira Code', monospace;
-  color: #60a5fa;
+  color: var(--gs-primary-main);
 }
 
 .flow-stat .stat-value.green {
-  color: #4ae176;
+  color: var(--gs-success-main);
 }
 
 .flow-visual {
@@ -1259,14 +1259,14 @@ onUnmounted(() => {
 .flow-icon {
   width: 32px;
   height: 32px;
-  color: #60a5fa;
+  color: var(--gs-primary-main);
 }
 
 .flow-track {
   flex: 1;
   max-width: 400px;
   height: 2px;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--gs-overlay-medium);
   position: relative;
 }
 
@@ -1276,8 +1276,8 @@ onUnmounted(() => {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #60a5fa;
-  box-shadow: 0 0 8px rgba(96, 165, 250, 0.5);
+  background: var(--gs-primary-main);
+  box-shadow: 0 0 8px var(--gs-glow-primary);
 }
 
 .flow-dot.dot-1 {
@@ -1286,8 +1286,8 @@ onUnmounted(() => {
 
 .flow-dot.dot-2 {
   left: 50%;
-  background: #4ae176;
-  box-shadow: 0 0 8px rgba(74, 225, 118, 0.5);
+  background: var(--gs-success-main);
+  box-shadow: 0 0 8px var(--gs-glow-success);
 }
 
 .flow-dot.dot-3 {

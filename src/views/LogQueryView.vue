@@ -359,8 +359,8 @@ const visiblePages = computed(() => {
 <style scoped>
 .log-query-page {
   min-height: 100vh;
-  background-color: #131318;
-  color: #e4e1e9;
+  background-color: var(--gs-bg-default);
+  color: var(--gs-text-primary);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   display: flex;
   flex-direction: column;
@@ -381,8 +381,8 @@ const visiblePages = computed(() => {
   left: 0;
   right: 0;
   height: 64px;
-  background: #131318;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--gs-bg-default);
+  border-bottom: 1px solid var(--gs-overlay-light);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -394,7 +394,7 @@ const visiblePages = computed(() => {
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.15em;
-  color: #60a5fa;
+  color: var(--gs-primary-main);
   text-transform: uppercase;
 }
 
@@ -405,7 +405,7 @@ const visiblePages = computed(() => {
 
 .nav-link {
   font-size: 14px;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
   text-decoration: none;
   transition: color 0.2s;
   padding-bottom: 4px;
@@ -413,12 +413,12 @@ const visiblePages = computed(() => {
 }
 
 .nav-link:hover {
-  color: #e4e1e9;
+  color: var(--gs-text-primary);
 }
 
 .nav-link.active {
-  color: #60a5fa;
-  border-bottom-color: #60a5fa;
+  color: var(--gs-primary-main);
+  border-bottom-color: var(--gs-primary-main);
   font-weight: 600;
 }
 
@@ -432,7 +432,7 @@ const visiblePages = computed(() => {
   position: relative;
   background: none;
   border: none;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
   cursor: pointer;
   padding: 8px;
   border-radius: 50%;
@@ -440,8 +440,8 @@ const visiblePages = computed(() => {
 }
 
 .icon-btn:hover {
-  background: #1b1b20;
-  color: #e4e1e9;
+  background: var(--gs-bg-paper);
+  color: var(--gs-text-primary);
 }
 
 .icon {
@@ -456,14 +456,14 @@ const visiblePages = computed(() => {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #ffb4ab;
+  background: var(--gs-error-main);
 }
 
 /* Side Navigation */
 .side-nav {
   width: 260px;
-  background: #131318;
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--gs-bg-default);
+  border-right: 1px solid var(--gs-overlay-light);
   display: flex;
   flex-direction: column;
   z-index: 40;
@@ -478,7 +478,7 @@ const visiblePages = computed(() => {
 .side-title {
   font-size: 12px;
   font-weight: 500;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin: 0;
@@ -496,7 +496,7 @@ const visiblePages = computed(() => {
   align-items: center;
   gap: 12px;
   padding: 12px 16px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   text-decoration: none;
   font-size: 14px;
   transition: all 0.2s;
@@ -505,14 +505,14 @@ const visiblePages = computed(() => {
 }
 
 .side-link:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: #e4e1e9;
+  background: var(--gs-overlay-light);
+  color: var(--gs-text-primary);
 }
 
 .side-link.active {
-  background: rgba(255, 255, 255, 0.05);
-  border-left-color: #60a5fa;
-  color: #e4e1e9;
+  background: var(--gs-overlay-light);
+  border-left-color: var(--gs-primary-main);
+  color: var(--gs-text-primary);
 }
 
 .side-icon {
@@ -524,7 +524,7 @@ const visiblePages = computed(() => {
 .main-content {
   flex: 1;
   overflow-y: auto;
-  background: #131318;
+  background: var(--gs-bg-default);
   padding: 32px;
 }
 
@@ -551,14 +551,14 @@ const visiblePages = computed(() => {
 .page-title {
   font-size: 24px;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--gs-text-primary);
   margin: 0;
   font-family: 'Space Grotesk', sans-serif;
 }
 
 .page-subtitle {
   font-size: 12px;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.2em;
   margin: 0;
@@ -576,10 +576,10 @@ const visiblePages = computed(() => {
   align-items: center;
   gap: 8px;
   padding: 10px 16px;
-  background: #2a292f;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--gs-bg-paper);
+  border: 1px solid var(--gs-overlay-medium);
   border-radius: 4px;
-  color: #e4e1e9;
+  color: var(--gs-text-primary);
   font-size: 12px;
   font-weight: 500;
   cursor: pointer;
@@ -587,7 +587,7 @@ const visiblePages = computed(() => {
 }
 
 .btn-secondary:hover {
-  background: #35343a;
+  background: var(--gs-bg-paper);
 }
 
 .btn-primary {
@@ -595,10 +595,10 @@ const visiblePages = computed(() => {
   align-items: center;
   gap: 8px;
   padding: 10px 16px;
-  background: #60a5fa;
+  background: var(--gs-primary-main);
   border: none;
   border-radius: 4px;
-  color: #0f172a;
+  color: var(--gs-bg-paper);
   font-size: 12px;
   font-weight: 600;
   cursor: pointer;
@@ -606,7 +606,7 @@ const visiblePages = computed(() => {
 }
 
 .btn-primary:hover {
-  box-shadow: 0 0 15px rgba(96, 165, 250, 0.4);
+  box-shadow: 0 0 15px var(--gs-glow-primary);
 }
 
 .btn-icon {
@@ -616,8 +616,8 @@ const visiblePages = computed(() => {
 
 /* Search Panel */
 .search-panel {
-  background: #1b1b20;
-  border-left: 4px solid #60a5fa;
+  background: var(--gs-bg-paper);
+  border-left: 4px solid var(--gs-primary-main);
   border-radius: 8px;
   padding: 24px;
   position: relative;
@@ -643,7 +643,7 @@ const visiblePages = computed(() => {
 .field-label {
   font-size: 10px;
   font-weight: 600;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
@@ -651,27 +651,27 @@ const visiblePages = computed(() => {
 .field-input {
   width: 100%;
   padding: 10px 12px;
-  background: #0e0e13;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--gs-bg-paper);
+  border: 1px solid var(--gs-overlay-medium);
   border-radius: 4px;
-  color: #e4e1e9;
+  color: var(--gs-text-primary);
   font-size: 13px;
   outline: none;
   transition: all 0.2s;
 }
 
 .field-input:focus {
-  border-color: #60a5fa;
-  box-shadow: 0 0 0 1px rgba(96, 165, 250, 0.3);
+  border-color: var(--gs-primary-main);
+  box-shadow: 0 0 0 1px var(--gs-glow-primary);
 }
 
 .btn-query {
   width: 100%;
   height: 40px;
-  background: rgba(96, 165, 250, 0.1);
-  border: 1px solid rgba(96, 165, 250, 0.4);
+  background: var(--gs-overlay-light);
+  border: 1px solid var(--gs-glow-primary);
   border-radius: 4px;
-  color: #60a5fa;
+  color: var(--gs-primary-main);
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -681,7 +681,7 @@ const visiblePages = computed(() => {
 }
 
 .btn-query:hover {
-  background: rgba(96, 165, 250, 0.2);
+  background: var(--gs-overlay-medium);
 }
 
 /* Analytics Grid */
@@ -692,8 +692,8 @@ const visiblePages = computed(() => {
 }
 
 .panel {
-  background: #1b1b20;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--gs-bg-paper);
+  border: 1px solid var(--gs-overlay-light);
   border-radius: 8px;
   overflow: hidden;
 }
@@ -714,7 +714,7 @@ const visiblePages = computed(() => {
 .panel-subtitle {
   font-size: 10px;
   font-weight: 600;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
@@ -722,7 +722,7 @@ const visiblePages = computed(() => {
 .panel-title {
   font-size: 15px;
   font-weight: 600;
-  color: #ffffff;
+  color: var(--gs-text-primary);
   margin: 4px 0 0 0;
   font-family: 'Space Grotesk', sans-serif;
 }
@@ -745,17 +745,17 @@ const visiblePages = computed(() => {
 }
 
 .legend-dot.primary {
-  background: #60a5fa;
+  background: var(--gs-primary-main);
 }
 
 .legend-dot.error {
-  background: #ffb4ab;
+  background: var(--gs-error-main);
 }
 
 .legend-text {
   font-size: 10px;
   font-family: 'Fira Code', monospace;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
   text-transform: uppercase;
 }
 
@@ -764,7 +764,7 @@ const visiblePages = computed(() => {
   display: flex;
   align-items: flex-end;
   padding: 0 8px 8px 8px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--gs-overlay-light);
   min-height: 160px;
 }
 
@@ -784,19 +784,19 @@ const visiblePages = computed(() => {
 }
 
 .chart-bar.normal {
-  background: rgba(96, 165, 250, 0.2);
+  background: var(--gs-overlay-medium);
 }
 
 .chart-bar.normal:hover {
-  background: rgba(96, 165, 250, 0.4);
+  background: var(--gs-glow-primary);
 }
 
 .chart-bar.alarm {
-  background: rgba(255, 180, 171, 0.4);
+  background: var(--gs-glow-error);
 }
 
 .chart-bar.alarm:hover {
-  background: rgba(255, 180, 171, 0.6);
+  background: color-mix(in srgb, var(--gs-glow-error), transparent 40%);
 }
 
 .chart-footer {
@@ -809,7 +809,7 @@ const visiblePages = computed(() => {
 .chart-label {
   font-size: 9px;
   font-family: 'Fira Code', monospace;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
 }
 
 /* Stats Panel */
@@ -842,7 +842,7 @@ const visiblePages = computed(() => {
 }
 
 .stat-name {
-  color: #e4e1e9;
+  color: var(--gs-text-primary);
 }
 
 .stat-value {
@@ -850,24 +850,24 @@ const visiblePages = computed(() => {
 }
 
 .stat-value.primary {
-  color: #60a5fa;
+  color: var(--gs-primary-main);
 }
 
 .stat-value.tertiary {
-  color: #4ae176;
+  color: var(--gs-success-main);
 }
 
 .stat-value.secondary {
-  color: #a4c9ff;
+  color: var(--gs-primary-main);
 }
 
 .stat-value.error {
-  color: #ffb4ab;
+  color: var(--gs-error-main);
 }
 
 .stat-bar {
   height: 4px;
-  background: #0e0e13;
+  background: var(--gs-bg-paper);
   border-radius: 2px;
   overflow: hidden;
 }
@@ -878,19 +878,19 @@ const visiblePages = computed(() => {
 }
 
 .stat-progress.primary {
-  background: #60a5fa;
+  background: var(--gs-primary-main);
 }
 
 .stat-progress.tertiary {
-  background: #4ae176;
+  background: var(--gs-success-main);
 }
 
 .stat-progress.secondary {
-  background: #a4c9ff;
+  background: var(--gs-primary-main);
 }
 
 .stat-progress.error {
-  background: #ffb4ab;
+  background: var(--gs-error-main);
 }
 
 .stats-footer {
@@ -898,26 +898,26 @@ const visiblePages = computed(() => {
   align-items: center;
   gap: 8px;
   padding-top: 16px;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid var(--gs-overlay-light);
 }
 
 .status-icon {
   width: 16px;
   height: 16px;
-  color: #4ae176;
+  color: var(--gs-success-main);
 }
 
 .status-text {
   font-size: 10px;
   font-family: 'Fira Code', monospace;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
   text-transform: uppercase;
 }
 
 /* Result Panel */
 .result-panel {
-  background: #0e0e13;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--gs-bg-paper);
+  border: 1px solid var(--gs-overlay-light);
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -938,18 +938,18 @@ const visiblePages = computed(() => {
 .data-table th {
   font-size: 10px;
   font-weight: 600;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   padding: 16px 24px;
-  background: #1b1b20;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--gs-bg-paper);
+  border-bottom: 1px solid var(--gs-overlay-light);
   white-space: nowrap;
 }
 
 .data-table td {
   padding: 16px 24px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--gs-overlay-light);
 }
 
 .data-table tbody tr {
@@ -957,7 +957,7 @@ const visiblePages = computed(() => {
 }
 
 .data-table tbody tr:hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--gs-overlay-light);
 }
 
 .text-right {
@@ -967,7 +967,7 @@ const visiblePages = computed(() => {
 .time-cell {
   font-family: 'Fira Code', monospace;
   font-size: 11px;
-  color: #60a5fa;
+  color: var(--gs-primary-main);
 }
 
 .type-badge {
@@ -979,33 +979,33 @@ const visiblePages = computed(() => {
 }
 
 .type-badge.primary {
-  background: rgba(96, 165, 250, 0.1);
-  color: #60a5fa;
-  border: 1px solid rgba(96, 165, 250, 0.2);
+  background: var(--gs-overlay-light);
+  color: var(--gs-primary-main);
+  border: 1px solid var(--gs-overlay-medium);
 }
 
 .type-badge.error {
-  background: rgba(255, 180, 171, 0.1);
-  color: #ffb4ab;
-  border: 1px solid rgba(255, 180, 171, 0.2);
+  background: var(--gs-overlay-light);
+  color: var(--gs-error-main);
+  border: 1px solid var(--gs-glow-error);
 }
 
 .type-badge.secondary {
-  background: rgba(164, 201, 255, 0.1);
-  color: #a4c9ff;
-  border: 1px solid rgba(164, 201, 255, 0.2);
+  background: var(--gs-overlay-light);
+  color: var(--gs-primary-main);
+  border: 1px solid var(--gs-overlay-medium);
 }
 
 .type-badge.tertiary {
-  background: rgba(74, 225, 118, 0.1);
-  color: #4ae176;
-  border: 1px solid rgba(74, 225, 118, 0.2);
+  background: var(--gs-overlay-light);
+  color: var(--gs-success-main);
+  border: 1px solid var(--gs-overlay-medium);
 }
 
 .device-cell {
   font-family: 'Fira Code', monospace;
   font-size: 11px;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
 }
 
 .content-cell {
@@ -1013,7 +1013,7 @@ const visiblePages = computed(() => {
 }
 
 .content-cell.error {
-  color: #ffb4ab;
+  color: var(--gs-error-main);
 }
 
 .result-badge {
@@ -1032,30 +1032,30 @@ const visiblePages = computed(() => {
 }
 
 .result-badge.tertiary {
-  color: #4ae176;
+  color: var(--gs-success-main);
 }
 
 .result-badge.tertiary .result-dot {
-  background: #4ae176;
-  box-shadow: 0 0 8px rgba(74, 225, 118, 0.5);
+  background: var(--gs-success-main);
+  box-shadow: 0 0 8px var(--gs-glow-success);
 }
 
 .result-badge.error-pulse {
-  color: #ffb4ab;
+  color: var(--gs-error-main);
   animation: pulse-text 2s infinite;
 }
 
 .result-badge.error-pulse .result-dot {
-  background: #ffb4ab;
-  box-shadow: 0 0 8px rgba(255, 180, 171, 0.5);
+  background: var(--gs-error-main);
+  box-shadow: 0 0 8px var(--gs-glow-error);
 }
 
 .result-badge.neutral {
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
 }
 
 .result-badge.neutral .result-dot {
-  background: #94a3b8;
+  background: var(--gs-text-secondary);
 }
 
 @keyframes pulse-text {
@@ -1069,15 +1069,15 @@ const visiblePages = computed(() => {
   justify-content: space-between;
   align-items: center;
   padding: 16px 24px;
-  background: #1b1b20;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--gs-bg-paper);
+  border-top: 1px solid var(--gs-overlay-light);
   margin-top: auto;
 }
 
 .page-info {
   font-size: 10px;
   font-family: 'Fira Code', monospace;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -1095,16 +1095,16 @@ const visiblePages = computed(() => {
   width: 28px;
   height: 28px;
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--gs-overlay-medium);
   border-radius: 4px;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .page-btn:hover:not(:disabled) {
-  background: rgba(255, 255, 255, 0.05);
-  color: #e4e1e9;
+  background: var(--gs-overlay-light);
+  color: var(--gs-text-primary);
 }
 
 .page-btn:disabled {
@@ -1127,9 +1127,9 @@ const visiblePages = computed(() => {
   height: 28px;
   padding: 0 8px;
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--gs-overlay-medium);
   border-radius: 4px;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
   font-size: 10px;
   font-family: 'Fira Code', monospace;
   cursor: pointer;
@@ -1137,14 +1137,14 @@ const visiblePages = computed(() => {
 }
 
 .page-number:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: #e4e1e9;
+  background: var(--gs-overlay-light);
+  color: var(--gs-text-primary);
 }
 
 .page-number.active {
-  background: #60a5fa;
-  border-color: #60a5fa;
-  color: #0f172a;
+  background: var(--gs-primary-main);
+  border-color: var(--gs-primary-main);
+  color: var(--gs-bg-paper);
   font-weight: 600;
 }
 </style>

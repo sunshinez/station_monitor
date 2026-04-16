@@ -19,28 +19,28 @@
           <svg class="connection-lines" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-                <polygon points="0 0, 10 3.5, 0 7" fill="#a4c9ff" />
+                <polygon points="0 0, 10 3.5, 0 7" fill="var(--gs-primary-main)" />
               </marker>
               <marker id="arrowhead-back" markerWidth="10" markerHeight="7" refX="1" refY="3.5" orient="auto">
-                <polygon points="10 0, 0 3.5, 10 7" fill="#a4c9ff" />
+                <polygon points="10 0, 0 3.5, 10 7" fill="var(--gs-primary-main)" />
               </marker>
             </defs>
             <!-- 天线到LNA -->
             <path d="M 180 300 L 320 300" fill="none" marker-end="url(#arrowhead)" marker-start="url(#arrowhead-back)"
-                  stroke="#a4c9ff" stroke-dasharray="4 4" stroke-width="2" />
+                  stroke="var(--gs-primary-main)" stroke-dasharray="4 4" stroke-width="2" />
             <!-- LNA到变频 -->
             <path d="M 460 300 L 580 300" fill="none" marker-end="url(#arrowhead)" marker-start="url(#arrowhead-back)"
-                  stroke="#a4c9ff" stroke-width="2" />
+                  stroke="var(--gs-primary-main)" stroke-width="2" />
             <!-- 变频到矩阵 -->
             <path d="M 720 300 L 840 200" fill="none" marker-end="url(#arrowhead)" marker-start="url(#arrowhead-back)"
-                  stroke="#a4c9ff" stroke-width="2" />
+                  stroke="var(--gs-primary-main)" stroke-width="2" />
             <path d="M 720 300 L 840 400" fill="none" marker-end="url(#arrowhead)" marker-start="url(#arrowhead-back)"
-                  stroke="#a4c9ff" stroke-width="2" />
+                  stroke="var(--gs-primary-main)" stroke-width="2" />
             <!-- 矩阵到解调器/存储 -->
             <path d="M 980 200 L 1100 200" fill="none" marker-end="url(#arrowhead)" marker-start="url(#arrowhead-back)"
-                  stroke="#a4c9ff" stroke-width="2" />
+                  stroke="var(--gs-primary-main)" stroke-width="2" />
             <path d="M 980 400 L 1100 400" fill="none" marker-end="url(#arrowhead)" marker-start="url(#arrowhead-back)"
-                  stroke="#a4c9ff" stroke-width="2" />
+                  stroke="var(--gs-primary-main)" stroke-width="2" />
           </svg>
           <div class="grid-bg"></div>
 
@@ -447,24 +447,24 @@ onUnmounted(() => {
 <style scoped>
 /* CSS Variables */
 :root {
-  --primary: #a4c9ff;
-  --error: #ffb4ab;
-  --success: #4ae176;
-  --surface: #131318;
-  --surface-container: #1f1f24;
-  --surface-container-low: #1b1b20;
-  --surface-container-high: #2a292f;
-  --surface-container-highest: #35343a;
-  --on-surface: #e4e1e9;
-  --on-surface-variant: #c2c6d6;
-  --outline: #8c909f;
-  --outline-variant: #424754;
+  --primary: var(--gs-primary-main);
+  --error: var(--gs-error-main);
+  --success: var(--gs-success-main);
+  --surface: var(--gs-bg-default);
+  --surface-container: var(--gs-bg-paper);
+  --surface-container-low: var(--gs-bg-paper);
+  --surface-container-high: var(--gs-bg-elevated);
+  --surface-container-highest: var(--gs-bg-elevated);
+  --on-surface: var(--gs-text-primary);
+  --on-surface-variant: var(--gs-text-secondary);
+  --outline: var(--gs-info-main);
+  --outline-variant: var(--gs-border-main);
 }
 
 .topology-page {
   min-height: 100vh;
-  background-color: #131318;
-  color: #e4e1e9;
+  background-color: var(--gs-bg-default);
+  color: var(--gs-text-primary);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
@@ -475,7 +475,7 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   height: 64px;
-  background: #131318;
+  background: var(--gs-bg-default);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -487,7 +487,7 @@ onUnmounted(() => {
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.15em;
-  color: #e4e1e9;
+  color: var(--gs-text-primary);
   text-transform: uppercase;
 }
 
@@ -498,7 +498,7 @@ onUnmounted(() => {
 
 .nav-link {
   font-size: 14px;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
   text-decoration: none;
   transition: color 0.2s;
   padding-bottom: 4px;
@@ -507,12 +507,12 @@ onUnmounted(() => {
 
 .nav-link:hover,
 .nav-link.active {
-  color: #e4e1e9;
+  color: var(--gs-text-primary);
 }
 
 .nav-link.active {
-  color: #e4e1e9;
-  border-bottom-color: #e4e1e9;
+  color: var(--gs-text-primary);
+  border-bottom-color: var(--gs-text-primary);
   font-weight: 600;
 }
 
@@ -527,14 +527,14 @@ onUnmounted(() => {
   border-radius: 50%;
   background: none;
   border: none;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
   cursor: pointer;
   padding: 8px;
   transition: color 0.2s;
 }
 
 .icon-btn:hover {
-  color: #e4e1e9;
+  color: var(--gs-text-primary);
 }
 
 .icon {
@@ -549,7 +549,7 @@ onUnmounted(() => {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #ffb4ab;
+  background: var(--gs-error-main);
 }
 
 
@@ -560,7 +560,7 @@ onUnmounted(() => {
   top: 64px;
   bottom: 0;
   width: 256px;
-  background: #020617;
+  background: var(--gs-bg-default);
   display: flex;
   flex-direction: column;
   z-index: 40;
@@ -572,7 +572,7 @@ onUnmounted(() => {
 
 .side-title {
   font-size: 12px;
-  color: #e4e1e9;
+  color: var(--gs-text-primary);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -581,7 +581,7 @@ onUnmounted(() => {
 
 .side-subtitle {
   font-size: 10px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   letter-spacing: 0.2em;
   margin: 0;
 }
@@ -596,7 +596,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 12px;
   padding: 12px 24px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   text-decoration: none;
   font-size: 12px;
   text-transform: uppercase;
@@ -606,14 +606,14 @@ onUnmounted(() => {
 }
 
 .side-link:hover {
-  color: #93c5fd;
-  background: rgba(255, 255, 255, 0.05);
+  color: var(--gs-primary-main);
+  background: var(--gs-overlay-light);
 }
 
 .side-link.active {
-  color: #e4e1e9;
-  background: rgba(59, 130, 246, 0.1);
-  border-right-color: #e4e1e9;
+  color: var(--gs-text-primary);
+  background: var(--gs-overlay-light);
+  border-right-color: var(--gs-text-primary);
   font-weight: 600;
 }
 
@@ -628,10 +628,10 @@ onUnmounted(() => {
 }
 
 .health-card {
-  background: #1b1b20;
+  background: var(--gs-bg-paper);
   padding: 16px;
   border-radius: 8px;
-  border: 1px solid rgba(66, 71, 84, 0.1);
+  border: 1px solid color-mix(in srgb, var(--gs-border-main), transparent 90%);
 }
 
 .health-header {
@@ -643,21 +643,21 @@ onUnmounted(() => {
 
 .health-label {
   font-size: 10px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
 .health-bar {
   height: 4px;
-  background: #1f2937;
+  background: var(--gs-bg-elevated);
   border-radius: 2px;
   overflow: hidden;
 }
 
 .health-fill {
   height: 100%;
-  background: #60a5fa;
+  background: var(--gs-primary-main);
   border-radius: 2px;
   transition: width 0.3s;
 }
@@ -687,7 +687,7 @@ onUnmounted(() => {
   top: -256px;
   width: 800px;
   height: 800px;
-  background: rgba(164, 201, 255, 0.05);
+  background: var(--gs-overlay-light);
 }
 
 .bg-glow.bottom-right {
@@ -695,7 +695,7 @@ onUnmounted(() => {
   bottom: 0;
   width: 400px;
   height: 400px;
-  background: rgba(74, 225, 118, 0.05);
+  background: var(--gs-overlay-light);
 }
 
 /* Page Header */
@@ -709,7 +709,7 @@ onUnmounted(() => {
 .page-title {
   font-size: 32px;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--gs-text-primary);
   margin: 0 0 8px 0;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -718,7 +718,7 @@ onUnmounted(() => {
 .page-subtitle {
   font-family: 'Fira Code', monospace;
   font-size: 14px;
-  color: rgba(164, 201, 255, 0.8);
+  color: color-mix(in srgb, var(--gs-primary-main), transparent 20%);
   margin: 0;
 }
 
@@ -726,9 +726,9 @@ onUnmounted(() => {
 .topology-canvas {
   position: relative;
   height: 700px;
-  background: rgba(14, 14, 19, 0.5);
+  background: color-mix(in srgb, var(--gs-bg-paper), transparent 50%);
   border-radius: 12px;
-  border: 1px solid rgba(66, 71, 84, 0.1);
+  border: 1px solid color-mix(in srgb, var(--gs-border-main), transparent 90%);
   padding: 48px;
   overflow: hidden;
 }
@@ -745,7 +745,7 @@ onUnmounted(() => {
 .grid-bg {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle at 2px 2px, rgba(59, 130, 246, 0.05) 1px, transparent 0);
+  background-image: radial-gradient(circle at 2px 2px, var(--gs-overlay-light) 1px, transparent 0);
   background-size: 40px 40px;
   opacity: 0.3;
   pointer-events: none;
@@ -757,10 +757,10 @@ onUnmounted(() => {
 }
 
 .node-card {
-  background: #2a292f;
+  background: var(--gs-bg-elevated);
   padding: 16px;
   border-radius: 8px;
-  border: 1px solid rgba(164, 201, 255, 0.2);
+  border: 1px solid var(--gs-overlay-medium);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -770,16 +770,16 @@ onUnmounted(() => {
 }
 
 .node-card:hover {
-  border-color: rgba(164, 201, 255, 0.6);
+  border-color: color-mix(in srgb, var(--gs-primary-main), transparent 40%);
   transform: translateY(-4px);
 }
 
 .node-card.error {
-  border-color: rgba(255, 180, 171, 0.4);
+  border-color: var(--gs-glow-error);
 }
 
 .node-card.error:hover {
-  border-color: rgba(255, 180, 171, 0.8);
+  border-color: color-mix(in srgb, var(--gs-error-main), transparent 20%);
 }
 
 .node-tags {
@@ -802,38 +802,38 @@ onUnmounted(() => {
 }
 
 .tag-control {
-  background: rgba(59, 130, 246, 0.2);
-  color: #e4e1e9;
-  border: 1px solid rgba(59, 130, 246, 0.4);
+  background: var(--gs-overlay-medium);
+  color: var(--gs-text-primary);
+  border: 1px solid var(--gs-glow-primary);
 }
 
 .tag-local {
-  background: rgba(100, 116, 139, 0.2);
-  color: #94a3b8;
-  border: 1px solid rgba(100, 116, 139, 0.4);
+  background: color-mix(in srgb, var(--gs-text-disabled), transparent 80%);
+  color: var(--gs-text-secondary);
+  border: 1px solid color-mix(in srgb, var(--gs-text-disabled), transparent 60%);
 }
 
 .tag-primary {
-  background: rgba(164, 201, 255, 0.2);
-  color: #a4c9ff;
-  border: 1px solid rgba(164, 201, 255, 0.4);
+  background: var(--gs-overlay-medium);
+  color: var(--gs-primary-main);
+  border: 1px solid var(--gs-glow-primary);
 }
 
 .tag-standby {
-  background: rgba(100, 116, 139, 0.2);
-  color: #94a3b8;
-  border: 1px solid rgba(100, 116, 139, 0.4);
+  background: color-mix(in srgb, var(--gs-text-disabled), transparent 80%);
+  color: var(--gs-text-secondary);
+  border: 1px solid color-mix(in srgb, var(--gs-text-disabled), transparent 60%);
 }
 
 .node-icon {
   width: 40px;
   height: 40px;
-  color: #a4c9ff;
+  color: var(--gs-primary-main);
   margin-top: 8px;
 }
 
 .node-icon.pulse {
-  color: #ffb4ab;
+  color: var(--gs-error-main);
   animation: pulse 2s ease-in-out infinite;
 }
 
@@ -848,7 +848,7 @@ onUnmounted(() => {
 
 .node-type {
   font-size: 10px;
-  color: #c2c6d6;
+  color: var(--gs-text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin: 0 0 4px 0;
@@ -857,7 +857,7 @@ onUnmounted(() => {
 .node-name {
   font-size: 12px;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--gs-text-primary);
   margin: 0;
 }
 
@@ -876,17 +876,17 @@ onUnmounted(() => {
 }
 
 .status-dot.success {
-  background: #4ae176;
-  box-shadow: 0 0 2px #4ae176, 0 0 12px rgba(74, 225, 118, 0.3);
+  background: var(--gs-success-main);
+  box-shadow: 0 0 2px var(--gs-success-main), 0 0 12px var(--gs-glow-success);
 }
 
 .status-dot.error {
-  background: #ffb4ab;
-  box-shadow: 0 0 2px #ffb4ab, 0 0 12px rgba(255, 180, 171, 0.3);
+  background: var(--gs-error-main);
+  box-shadow: 0 0 2px var(--gs-error-main), 0 0 12px var(--gs-glow-error);
 }
 
 .status-dot.maintenance {
-  background: rgba(164, 201, 255, 0.4);
+  background: var(--gs-glow-primary);
 }
 
 .status-text {
@@ -895,16 +895,16 @@ onUnmounted(() => {
 }
 
 .status-text.success {
-  color: #4ae176;
+  color: var(--gs-success-main);
 }
 
 .status-text.error {
-  color: #ffb4ab;
+  color: var(--gs-error-main);
 }
 
 .node-metrics {
   margin-top: 16px;
-  background: rgba(14, 14, 19, 0.8);
+  background: color-mix(in srgb, var(--gs-bg-paper), transparent 20%);
   padding: 8px;
   border-radius: 6px;
 }
@@ -914,7 +914,7 @@ onUnmounted(() => {
   justify-content: space-between;
   font-family: 'Fira Code', monospace;
   font-size: 10px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   margin-bottom: 4px;
 }
 
@@ -923,11 +923,11 @@ onUnmounted(() => {
 }
 
 .metric-value {
-  color: #e4e1e9;
+  color: var(--gs-text-primary);
 }
 
 .metric-value.error {
-  color: #ffb4ab;
+  color: var(--gs-error-main);
   font-weight: 700;
 }
 
@@ -938,9 +938,9 @@ onUnmounted(() => {
   flex-wrap: wrap;
   gap: 24px;
   padding: 12px 16px;
-  background: rgba(14, 14, 19, 0.3);
+  background: color-mix(in srgb, var(--gs-bg-paper), transparent 70%);
   border-radius: 8px;
-  border: 1px solid rgba(66, 71, 84, 0.1);
+  border: 1px solid color-mix(in srgb, var(--gs-border-main), transparent 90%);
   width: fit-content;
 }
 
@@ -952,7 +952,7 @@ onUnmounted(() => {
 
 .legend-label {
   font-size: 10px;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -960,7 +960,7 @@ onUnmounted(() => {
 .legend-divider {
   width: 1px;
   height: 12px;
-  background: rgba(66, 71, 84, 0.3);
+  background: color-mix(in srgb, var(--gs-border-main), transparent 70%);
 }
 
 .tag-mini {
@@ -979,11 +979,11 @@ onUnmounted(() => {
 }
 
 .panel {
-  background: rgba(27, 27, 32, 0.8);
+  background: color-mix(in srgb, var(--gs-bg-paper), transparent 20%);
   backdrop-filter: blur(12px);
   padding: 24px;
   border-radius: 8px;
-  border: 1px solid rgba(66, 71, 84, 0.1);
+  border: 1px solid color-mix(in srgb, var(--gs-border-main), transparent 90%);
 }
 
 .panel-header {
@@ -996,7 +996,7 @@ onUnmounted(() => {
 .panel-title {
   font-size: 14px;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--gs-text-primary);
   margin: 0;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -1004,12 +1004,12 @@ onUnmounted(() => {
 
 .live-badge {
   padding: 2px 8px;
-  background: rgba(59, 130, 246, 0.1);
-  color: #e4e1e9;
+  background: var(--gs-overlay-light);
+  color: var(--gs-text-primary);
   font-family: 'Fira Code', monospace;
   font-size: 10px;
   border-radius: 4px;
-  border: 1px solid rgba(59, 130, 246, 0.2);
+  border: 1px solid var(--gs-overlay-medium);
 }
 
 /* Telemetry Grid */
@@ -1021,13 +1021,13 @@ onUnmounted(() => {
 
 .telemetry-item {
   padding: 12px;
-  background: #0e0e13;
+  background: var(--gs-bg-paper);
   border-radius: 6px;
 }
 
 .telemetry-label {
   font-size: 10px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   text-transform: uppercase;
   margin: 0 0 4px 0;
 }
@@ -1035,12 +1035,12 @@ onUnmounted(() => {
 .telemetry-value {
   font-family: 'Fira Code', monospace;
   font-size: 20px;
-  color: #a4c9ff;
+  color: var(--gs-primary-main);
   margin: 0;
 }
 
 .telemetry-value.success {
-  color: #4ae176;
+  color: var(--gs-success-main);
 }
 
 /* Log Panel */
@@ -1060,29 +1060,29 @@ onUnmounted(() => {
 }
 
 .log-item.error {
-  border-left-color: #ffb4ab;
+  border-left-color: var(--gs-error-main);
 }
 
 .log-item.success {
-  border-left-color: #4ae176;
+  border-left-color: var(--gs-success-main);
 }
 
 .log-item.info {
-  border-left-color: #a4c9ff;
+  border-left-color: var(--gs-primary-main);
 }
 
 .log-time {
   font-family: 'Fira Code', monospace;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   min-width: 60px;
 }
 
 .log-message {
-  color: #cbd5e1;
+  color: var(--gs-text-secondary);
 }
 
 .log-item.error .log-message {
-  color: #ffb4ab;
+  color: var(--gs-error-main);
   font-weight: 500;
   text-transform: uppercase;
 }

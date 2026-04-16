@@ -621,8 +621,8 @@ onUnmounted(() => {
 <style scoped>
 .task-plan-template-page {
   min-height: 100vh;
-  background-color: #131318;
-  color: #e4e1e9;
+  background-color: var(--gs-bg-default);
+  color: var(--gs-text-primary);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
@@ -633,8 +633,8 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   height: 64px;
-  background: #131318;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--gs-bg-default);
+  border-bottom: 1px solid var(--gs-overlay-light);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -646,7 +646,7 @@ onUnmounted(() => {
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.15em;
-  color: #60a5fa;
+  color: var(--gs-primary-main);
   text-transform: uppercase;
 }
 
@@ -657,7 +657,7 @@ onUnmounted(() => {
 
 .nav-link {
   font-size: 14px;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
   text-decoration: none;
   transition: color 0.2s;
   padding-bottom: 4px;
@@ -665,12 +665,12 @@ onUnmounted(() => {
 }
 
 .nav-link:hover {
-  color: #e4e1e9;
+  color: var(--gs-text-primary);
 }
 
 .nav-link.active {
-  color: #60a5fa;
-  border-bottom-color: #60a5fa;
+  color: var(--gs-primary-main);
+  border-bottom-color: var(--gs-primary-main);
   font-weight: 600;
 }
 
@@ -684,7 +684,7 @@ onUnmounted(() => {
   position: relative;
   background: none;
   border: none;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
   cursor: pointer;
   padding: 8px;
   border-radius: 50%;
@@ -692,8 +692,8 @@ onUnmounted(() => {
 }
 
 .icon-btn:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: #e4e1e9;
+  background: var(--gs-overlay-light);
+  color: var(--gs-text-primary);
 }
 
 .icon {
@@ -708,7 +708,7 @@ onUnmounted(() => {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #ffb4ab;
+  background: var(--gs-error-main);
 }
 
 /* 主布局 */
@@ -722,8 +722,8 @@ onUnmounted(() => {
 /* 侧边栏 */
 .side-nav {
   width: 256px;
-  background: #1b1b20;
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--gs-bg-paper);
+  border-right: 1px solid var(--gs-overlay-light);
   display: flex;
   flex-direction: column;
   padding: 16px 0;
@@ -744,19 +744,19 @@ onUnmounted(() => {
 .side-header-icon {
   width: 20px;
   height: 20px;
-  color: #60a5fa;
+  color: var(--gs-primary-main);
 }
 
 .side-title {
   font-size: 18px;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--gs-text-primary);
   margin: 0;
 }
 
 .side-subtitle {
   font-size: 10px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   letter-spacing: 0.2em;
   text-transform: uppercase;
   margin: 0;
@@ -774,7 +774,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 12px;
   padding: 12px;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
   text-decoration: none;
   font-size: 13px;
   border-radius: 4px;
@@ -784,14 +784,14 @@ onUnmounted(() => {
 }
 
 .side-link:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: #e4e1e9;
+  background: var(--gs-overlay-light);
+  color: var(--gs-text-primary);
 }
 
 .side-link.active {
-  background: #2a292f;
-  color: #60a5fa;
-  border-left-color: #60a5fa;
+  background: var(--gs-bg-paper);
+  color: var(--gs-primary-main);
+  border-left-color: var(--gs-primary-main);
   font-weight: 600;
 }
 
@@ -828,13 +828,13 @@ onUnmounted(() => {
 .page-title {
   font-size: 24px;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--gs-text-primary);
   margin: 0;
 }
 
 .page-subtitle {
   font-size: 11px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   font-family: 'Fira Code', monospace;
   letter-spacing: 0.05em;
   margin: 0;
@@ -861,28 +861,28 @@ onUnmounted(() => {
 }
 
 .btn-primary {
-  background: #a4c9ff;
-  color: #00315d;
+  background: var(--gs-primary-main);
+  color: var(--gs-text-inverse);
 }
 
 .btn-primary:hover {
-  box-shadow: 0 0 15px rgba(164, 201, 255, 0.4);
+  box-shadow: 0 0 15px var(--gs-glow-primary);
 }
 
 .btn-secondary {
-  background: #2a292f;
-  color: #e4e1e9;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--gs-bg-paper);
+  color: var(--gs-text-primary);
+  border: 1px solid var(--gs-overlay-medium);
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--gs-overlay-light);
 }
 
 .btn-accent {
-  background: rgba(164, 201, 255, 0.1);
-  color: #a4c9ff;
-  border: 1px solid rgba(164, 201, 255, 0.2);
+  background: color-mix(in srgb, var(--gs-primary-main), transparent 90%);
+  color: var(--gs-primary-main);
+  border: 1px solid var(--gs-overlay-medium);
   padding: 6px 12px;
   font-size: 10px;
   font-weight: 700;
@@ -891,13 +891,13 @@ onUnmounted(() => {
 }
 
 .btn-accent:hover {
-  background: rgba(164, 201, 255, 0.2);
+  background: var(--gs-overlay-medium);
 }
 
 .btn-danger-sm {
-  background: rgba(255, 180, 171, 0.1);
-  color: #ffb4ab;
-  border: 1px solid rgba(255, 180, 171, 0.2);
+  background: color-mix(in srgb, var(--gs-error-main), transparent 90%);
+  color: var(--gs-error-main);
+  border: 1px solid var(--gs-glow-error);
   padding: 6px 12px;
   font-size: 10px;
   font-weight: 700;
@@ -906,7 +906,7 @@ onUnmounted(() => {
 }
 
 .btn-danger-sm:hover {
-  background: rgba(255, 180, 171, 0.2);
+  background: var(--gs-glow-error);
 }
 
 .btn-icon {
@@ -921,9 +921,9 @@ onUnmounted(() => {
 
 /* 模板管理库 */
 .template-library {
-  background: #1b1b20;
+  background: var(--gs-bg-paper);
   border-radius: 8px;
-  border-left: 4px solid #60a5fa;
+  border-left: 4px solid var(--gs-primary-main);
   padding: 20px;
   flex-shrink: 0;
 }
@@ -944,7 +944,7 @@ onUnmounted(() => {
 .library-title {
   font-size: 13px;
   font-weight: 700;
-  color: #60a5fa;
+  color: var(--gs-primary-main);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin: 0;
@@ -961,26 +961,26 @@ onUnmounted(() => {
   transform: translateY(-50%);
   width: 14px;
   height: 14px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
 }
 
 .search-input {
-  background: #131318;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--gs-bg-default);
+  border: 1px solid var(--gs-overlay-medium);
   border-radius: 4px;
   padding: 6px 10px 6px 30px;
-  color: #e4e1e9;
+  color: var(--gs-text-primary);
   font-size: 12px;
   width: 200px;
   outline: none;
 }
 
 .search-input::placeholder {
-  color: #64748b;
+  color: var(--gs-text-disabled);
 }
 
 .search-input:focus {
-  border-color: rgba(96, 165, 250, 0.5);
+  border-color: color-mix(in srgb, var(--gs-primary-main), transparent 50%);
 }
 
 .library-actions {
@@ -1001,8 +1001,8 @@ onUnmounted(() => {
 }
 
 .data-table thead tr {
-  color: #94a3b8;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--gs-text-secondary);
+  border-bottom: 1px solid var(--gs-overlay-light);
 }
 
 .data-table th {
@@ -1013,7 +1013,7 @@ onUnmounted(() => {
 
 .data-table td {
   padding: 12px 16px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid var(--gs-overlay-light);
 }
 
 .table-row {
@@ -1022,20 +1022,20 @@ onUnmounted(() => {
 }
 
 .table-row:hover {
-  background: rgba(255, 255, 255, 0.02);
+  background: color-mix(in srgb, var(--gs-overlay-light), transparent 60%);
 }
 
 .table-row.active {
-  background: rgba(96, 165, 250, 0.08);
+  background: color-mix(in srgb, var(--gs-primary-main), transparent 92%);
 }
 
 .col-id {
   width: 50px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
 }
 
 .text-primary {
-  color: #60a5fa;
+  color: var(--gs-primary-main);
 }
 
 .text-right {
@@ -1056,26 +1056,26 @@ onUnmounted(() => {
 }
 
 .status-badge.published {
-  background: rgba(74, 225, 118, 0.1);
-  color: #4ae176;
+  background: color-mix(in srgb, var(--gs-success-main), transparent 90%);
+  color: var(--gs-success-main);
 }
 
 .status-badge.draft {
-  background: rgba(173, 198, 255, 0.1);
-  color: #adc6ff;
+  background: color-mix(in srgb, var(--gs-primary-main), transparent 90%);
+  color: var(--gs-primary-main);
 }
 
 .action-btn {
   background: none;
   border: none;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   cursor: pointer;
   padding: 4px;
   transition: color 0.2s;
 }
 
 .action-btn:hover {
-  color: #60a5fa;
+  color: var(--gs-primary-main);
 }
 
 .action-icon {
@@ -1086,7 +1086,7 @@ onUnmounted(() => {
 /* 可视化流程编辑器 */
 .flow-editor {
   flex: 1;
-  background: #1b1b20;
+  background: var(--gs-bg-paper);
   border-radius: 8px;
   padding: 20px;
   display: flex;
@@ -1107,7 +1107,7 @@ onUnmounted(() => {
   gap: 8px;
   font-size: 13px;
   font-weight: 700;
-  color: #60a5fa;
+  color: var(--gs-primary-main);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin: 0;
@@ -1127,7 +1127,7 @@ onUnmounted(() => {
 .tool-btn {
   background: none;
   border: none;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   cursor: pointer;
   padding: 6px;
   border-radius: 4px;
@@ -1135,8 +1135,8 @@ onUnmounted(() => {
 }
 
 .tool-btn:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: #e4e1e9;
+  background: var(--gs-overlay-light);
+  color: var(--gs-text-primary);
 }
 
 .tool-icon {
@@ -1147,7 +1147,7 @@ onUnmounted(() => {
 .tool-divider {
   width: 1px;
   height: 16px;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--gs-overlay-medium);
   margin: 0 4px;
 }
 
@@ -1180,31 +1180,31 @@ onUnmounted(() => {
 }
 
 .node-success {
-  background: #2a292f;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--gs-bg-paper);
+  border: 1px solid var(--gs-overlay-medium);
 }
 
 .node-success:hover {
-  border-color: rgba(74, 225, 118, 0.5);
+  border-color: var(--gs-glow-success);
 }
 
 .node-active {
-  background: #35343a;
-  border: 2px solid #60a5fa;
-  box-shadow: 0 0 30px rgba(96, 165, 250, 0.15);
+  background: var(--gs-bg-elevated);
+  border: 2px solid var(--gs-primary-main);
+  box-shadow: 0 0 30px color-mix(in srgb, var(--gs-primary-main), transparent 85%);
   transform: scale(1.03);
   position: relative;
 }
 
 .node-pending {
-  background: #2a292f;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--gs-bg-paper);
+  border: 1px solid var(--gs-overlay-medium);
   opacity: 0.8;
 }
 
 .node-pending:hover {
   opacity: 1;
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: color-mix(in srgb, var(--gs-text-primary), transparent 80%);
 }
 
 .node-active-label {
@@ -1212,8 +1212,8 @@ onUnmounted(() => {
   top: -12px;
   left: 50%;
   transform: translateX(-50%);
-  background: #60a5fa;
-  color: #001c39;
+  background: var(--gs-primary-main);
+  color: var(--gs-text-inverse);
   padding: 2px 10px;
   font-size: 9px;
   font-weight: 700;
@@ -1239,18 +1239,18 @@ onUnmounted(() => {
 }
 
 .tag-success {
-  background: rgba(74, 225, 118, 0.1);
-  color: #4ae176;
+  background: color-mix(in srgb, var(--gs-success-main), transparent 90%);
+  color: var(--gs-success-main);
 }
 
 .tag-primary {
-  background: rgba(96, 165, 250, 0.1);
-  color: #60a5fa;
+  background: var(--gs-overlay-light);
+  color: var(--gs-primary-main);
 }
 
 .tag-default {
-  background: #35343a;
-  color: #94a3b8;
+  background: var(--gs-bg-elevated);
+  color: var(--gs-text-secondary);
 }
 
 .node-status-icon {
@@ -1259,17 +1259,17 @@ onUnmounted(() => {
 }
 
 .node-status-icon.success {
-  color: #4ae176;
+  color: var(--gs-success-main);
 }
 
 .node-status-icon.pending {
-  color: #f59e0b;
+  color: var(--gs-warning-main);
 }
 
 .node-name {
   font-size: 12px;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--gs-text-primary);
   margin: 0 0 4px 0;
   text-transform: uppercase;
   letter-spacing: 0.02em;
@@ -1277,7 +1277,7 @@ onUnmounted(() => {
 
 .node-desc {
   font-size: 10px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   margin: 0;
   line-height: 1.4;
 }
@@ -1292,15 +1292,15 @@ onUnmounted(() => {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--gs-overlay-medium);
 }
 
 .indicator-dot.active {
-  background: #60a5fa;
+  background: var(--gs-primary-main);
 }
 
 .node-success .indicator-dot.active {
-  background: #4ae176;
+  background: var(--gs-success-main);
 }
 
 .node-meta {
@@ -1313,7 +1313,7 @@ onUnmounted(() => {
 .node-time {
   font-size: 9px;
   font-family: 'Fira Code', monospace;
-  color: #60a5fa;
+  color: var(--gs-primary-main);
 }
 
 /* 流程箭头 */
@@ -1332,15 +1332,15 @@ onUnmounted(() => {
 }
 
 .arrow-line.success {
-  background: linear-gradient(to right, #4ae176, #60a5fa);
+  background: linear-gradient(to right, var(--gs-success-main), var(--gs-primary-main));
 }
 
 .arrow-line.primary {
-  background: linear-gradient(to right, #60a5fa, #adc6ff);
+  background: linear-gradient(to right, var(--gs-primary-main), var(--gs-primary-main));
 }
 
 .arrow-line.muted {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--gs-overlay-medium);
 }
 
 .arrow-head {
@@ -1356,22 +1356,22 @@ onUnmounted(() => {
 }
 
 .arrow-head.success {
-  border-left-color: #60a5fa;
+  border-left-color: var(--gs-primary-main);
 }
 
 .arrow-head.primary {
-  border-left-color: #adc6ff;
+  border-left-color: var(--gs-primary-main);
 }
 
 .arrow-head.muted {
-  border-left-color: rgba(255, 255, 255, 0.1);
+  border-left-color: var(--gs-overlay-medium);
 }
 
 /* 判定节点 */
 .node-decision {
   width: 180px;
-  background: #2a292f;
-  border: 1px dashed rgba(255, 255, 255, 0.2);
+  background: var(--gs-bg-paper);
+  border: 1px dashed color-mix(in srgb, var(--gs-text-primary), transparent 80%);
   display: flex;
   align-items: center;
   gap: 12px;
@@ -1382,8 +1382,8 @@ onUnmounted(() => {
 .decision-diamond {
   width: 32px;
   height: 32px;
-  background: #1b1b20;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--gs-bg-paper);
+  border: 1px solid var(--gs-overlay-medium);
   transform: rotate(45deg);
   display: flex;
   align-items: center;
@@ -1394,7 +1394,7 @@ onUnmounted(() => {
 .decision-icon {
   width: 16px;
   height: 16px;
-  color: #adc6ff;
+  color: var(--gs-primary-main);
   transform: rotate(-45deg);
 }
 
@@ -1407,9 +1407,9 @@ onUnmounted(() => {
   height: 36px;
   margin-left: 24px;
   border-radius: 50%;
-  border: 1px dashed rgba(255, 255, 255, 0.2);
+  border: 1px dashed color-mix(in srgb, var(--gs-text-primary), transparent 80%);
   background: none;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -1418,8 +1418,8 @@ onUnmounted(() => {
 }
 
 .add-node-btn:hover {
-  border-color: #60a5fa;
-  color: #60a5fa;
+  border-color: var(--gs-primary-main);
+  color: var(--gs-primary-main);
 }
 
 .add-icon {
@@ -1429,10 +1429,10 @@ onUnmounted(() => {
 
 /* 参数配置 */
 .param-config {
-  background: #1b1b20;
+  background: var(--gs-bg-paper);
   border-radius: 8px;
   padding: 20px;
-  border-top: 2px solid rgba(96, 165, 250, 0.2);
+  border-top: 2px solid var(--gs-overlay-medium);
   flex-shrink: 0;
 }
 
@@ -1447,7 +1447,7 @@ onUnmounted(() => {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #60a5fa;
+  background: var(--gs-primary-main);
   animation: pulse 1.5s infinite;
 }
 
@@ -1459,14 +1459,14 @@ onUnmounted(() => {
 .config-title {
   font-size: 13px;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--gs-text-primary);
   text-transform: uppercase;
   letter-spacing: 0.02em;
   margin: 0;
 }
 
 .config-node-name {
-  color: #60a5fa;
+  color: var(--gs-primary-main);
   margin-left: 8px;
 }
 
@@ -1497,18 +1497,18 @@ onUnmounted(() => {
 .config-label {
   font-size: 10px;
   font-weight: 700;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
 .config-select,
 .config-input {
-  background: #131318;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--gs-bg-default);
+  border: 1px solid var(--gs-overlay-medium);
   border-radius: 4px;
   padding: 10px 12px;
-  color: #e4e1e9;
+  color: var(--gs-text-primary);
   font-size: 12px;
   outline: none;
   width: 100%;
@@ -1516,7 +1516,7 @@ onUnmounted(() => {
 
 .config-select:focus,
 .config-input:focus {
-  border-color: #60a5fa;
+  border-color: var(--gs-primary-main);
 }
 
 .select-wrapper {
@@ -1530,7 +1530,7 @@ onUnmounted(() => {
   transform: translateY(-50%);
   width: 16px;
   height: 16px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   pointer-events: none;
 }
 
@@ -1543,15 +1543,15 @@ onUnmounted(() => {
 .time-prefix {
   font-size: 12px;
   font-family: 'Fira Code', monospace;
-  color: #64748b;
+  color: var(--gs-text-disabled);
 }
 
 .mode-toggle {
   display: flex;
-  background: #131318;
+  background: var(--gs-bg-default);
   padding: 4px;
   border-radius: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--gs-overlay-light);
 }
 
 .mode-btn {
@@ -1560,7 +1560,7 @@ onUnmounted(() => {
   border: none;
   border-radius: 4px;
   background: transparent;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
@@ -1569,8 +1569,8 @@ onUnmounted(() => {
 }
 
 .mode-btn.active {
-  background: #60a5fa;
-  color: #001c39;
+  background: var(--gs-primary-main);
+  color: var(--gs-text-inverse);
 }
 
 .error-strategies {
@@ -1592,37 +1592,37 @@ onUnmounted(() => {
 }
 
 .strategy-item:hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--gs-overlay-light);
 }
 
 .strategy-item.terminate {
-  border-left-color: #ffb4ab;
+  border-left-color: var(--gs-error-main);
 }
 
 .strategy-item.terminate.active {
-  background: rgba(255, 180, 171, 0.08);
+  background: color-mix(in srgb, var(--gs-error-main), transparent 92%);
 }
 
 .strategy-item.skip {
-  border-left-color: #f59e0b;
+  border-left-color: var(--gs-warning-main);
   opacity: 0.8;
 }
 
 .strategy-item.retry {
-  border-left-color: #60a5fa;
+  border-left-color: var(--gs-primary-main);
   opacity: 0.8;
 }
 
 .strategy-item input[type="radio"] {
   width: 16px;
   height: 16px;
-  accent-color: #60a5fa;
+  accent-color: var(--gs-primary-main);
   cursor: pointer;
 }
 
 .strategy-text {
   font-size: 11px;
-  color: #e4e1e9;
+  color: var(--gs-text-primary);
 }
 
 .config-footer {
@@ -1630,7 +1630,7 @@ onUnmounted(() => {
   justify-content: flex-end;
   gap: 12px;
   padding-top: 16px;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid var(--gs-overlay-light);
 }
 
 /* 底部状态栏 */
@@ -1640,8 +1640,8 @@ onUnmounted(() => {
   left: 256px;
   right: 0;
   height: 40px;
-  background: #131318;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--gs-bg-default);
+  border-top: 1px solid var(--gs-overlay-light);
   display: flex;
   align-items: center;
   padding: 0 24px;
@@ -1659,12 +1659,12 @@ onUnmounted(() => {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #4ae176;
+  background: var(--gs-success-main);
 }
 
 .status-text {
   font-size: 12px;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
 }
 
 .spacer {
@@ -1675,6 +1675,6 @@ onUnmounted(() => {
   display: flex;
   gap: 24px;
   font-size: 12px;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
 }
 </style>

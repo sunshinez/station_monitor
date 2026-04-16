@@ -46,11 +46,11 @@ const subtitle = computed(() => {
 .app-sidebar {
   position: fixed;
   left: 0;
-  top: 64px;
+  top: 52px;
   bottom: 0;
-  width: 256px;
-  background: #020617;
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  width: 240px;
+  background: var(--gs-bg-paper);
+  border-right: 1px solid var(--gs-border-main);
   display: flex;
   flex-direction: column;
   z-index: 40;
@@ -58,19 +58,19 @@ const subtitle = computed(() => {
 
 .side-header {
   padding: 24px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--gs-border-main);
 }
 
 .side-title {
   font-size: 18px;
   font-weight: 600;
-  color: #e4e1e9;
+  color: var(--gs-text-primary);
   margin: 0;
 }
 
 .side-subtitle {
   font-size: 11px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   letter-spacing: 0.1em;
   margin-top: 4px;
   text-transform: uppercase;
@@ -84,7 +84,7 @@ const subtitle = computed(() => {
 
 .side-footer {
   padding: 16px;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid var(--gs-border-main);
 }
 
 @media (max-width: 1024px) {

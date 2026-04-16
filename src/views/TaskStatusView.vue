@@ -338,8 +338,8 @@ onUnmounted(() => {
 <style scoped>
 .task-status-page {
   min-height: 100vh;
-  background-color: #131318;
-  color: #e4e1e9;
+  background-color: var(--gs-bg-default);
+  color: var(--gs-text-primary);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   display: flex;
   flex-direction: column;
@@ -359,8 +359,8 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   height: 64px;
-  background: #131318;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--gs-bg-default);
+  border-bottom: 1px solid var(--gs-overlay-light);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -372,7 +372,7 @@ onUnmounted(() => {
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.15em;
-  color: #60a5fa;
+  color: var(--gs-primary-main);
   text-transform: uppercase;
 }
 
@@ -383,7 +383,7 @@ onUnmounted(() => {
 
 .nav-link {
   font-size: 14px;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
   text-decoration: none;
   transition: color 0.2s;
   padding-bottom: 4px;
@@ -391,12 +391,12 @@ onUnmounted(() => {
 }
 
 .nav-link:hover {
-  color: #e4e1e9;
+  color: var(--gs-text-primary);
 }
 
 .nav-link.active {
-  color: #60a5fa;
-  border-bottom-color: #60a5fa;
+  color: var(--gs-primary-main);
+  border-bottom-color: var(--gs-primary-main);
   font-weight: 600;
 }
 
@@ -410,7 +410,7 @@ onUnmounted(() => {
   position: relative;
   background: none;
   border: none;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
   cursor: pointer;
   padding: 8px;
   border-radius: 50%;
@@ -418,8 +418,8 @@ onUnmounted(() => {
 }
 
 .icon-btn:hover {
-  background: #1b1b20;
-  color: #e4e1e9;
+  background: var(--gs-bg-paper);
+  color: var(--gs-text-primary);
 }
 
 .icon {
@@ -434,14 +434,14 @@ onUnmounted(() => {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #ffb4ab;
+  background: var(--gs-error-main);
 }
 
 /* Side Navigation */
 .side-nav {
   width: 256px;
-  background: #1b1b20;
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--gs-bg-paper);
+  border-right: 1px solid var(--gs-overlay-light);
   display: flex;
   flex-direction: column;
   z-index: 40;
@@ -456,13 +456,13 @@ onUnmounted(() => {
 .side-title {
   font-size: 18px;
   font-weight: 700;
-  color: #60a5fa;
+  color: var(--gs-primary-main);
   margin: 0 0 4px 0;
 }
 
 .side-subtitle {
   font-size: 10px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   text-transform: uppercase;
   letter-spacing: 0.2em;
   margin: 0;
@@ -478,7 +478,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 12px;
   padding: 16px 24px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   text-decoration: none;
   font-size: 13px;
   transition: all 0.2s;
@@ -486,14 +486,14 @@ onUnmounted(() => {
 }
 
 .side-link:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: #e4e1e9;
+  background: var(--gs-overlay-light);
+  color: var(--gs-text-primary);
 }
 
 .side-link.active {
-  background: rgba(59, 130, 246, 0.1);
-  border-right-color: #60a5fa;
-  color: #60a5fa;
+  background: var(--gs-overlay-light);
+  border-right-color: var(--gs-primary-main);
+  color: var(--gs-primary-main);
 }
 
 .side-icon {
@@ -507,15 +507,15 @@ onUnmounted(() => {
 }
 
 .health-card {
-  background: #0e0e13;
+  background: var(--gs-bg-paper);
   padding: 16px;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--gs-overlay-light);
 }
 
 .health-label {
   font-size: 10px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 8px;
@@ -531,21 +531,21 @@ onUnmounted(() => {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #4ae176;
-  box-shadow: 0 0 8px rgba(74, 225, 118, 0.5);
+  background: var(--gs-success-main);
+  box-shadow: 0 0 8px var(--gs-glow-success);
 }
 
 .health-text {
   font-size: 12px;
   font-family: 'Fira Code', monospace;
-  color: #e4e1e9;
+  color: var(--gs-text-primary);
 }
 
 /* Main Content */
 .main-content {
   flex: 1;
   overflow-y: auto;
-  background: #131318;
+  background: var(--gs-bg-default);
   padding: 32px;
 }
 
@@ -572,7 +572,7 @@ onUnmounted(() => {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #60a5fa;
+  background: var(--gs-primary-main);
   animation: pulse 2s infinite;
 }
 
@@ -584,7 +584,7 @@ onUnmounted(() => {
 .tag-text {
   font-size: 11px;
   font-weight: 700;
-  color: #60a5fa;
+  color: var(--gs-primary-main);
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
@@ -592,13 +592,13 @@ onUnmounted(() => {
 .page-title {
   font-size: 24px;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--gs-text-primary);
   margin: 0;
 }
 
 .resource-card {
-  background: #0f172a;
-  border: 1px solid #1e293b;
+  background: var(--gs-bg-paper);
+  border: 1px solid var(--gs-border-main);
   padding: 16px 24px;
   border-radius: 8px;
   display: flex;
@@ -608,7 +608,7 @@ onUnmounted(() => {
 
 .resource-label {
   font-size: 10px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
@@ -616,7 +616,7 @@ onUnmounted(() => {
 .resource-value {
   font-size: 13px;
   font-family: 'Fira Code', monospace;
-  color: #a4c9ff;
+  color: var(--gs-primary-main);
 }
 
 /* Links Grid */
@@ -638,23 +638,23 @@ onUnmounted(() => {
   align-items: center;
   gap: 12px;
   padding-bottom: 12px;
-  border-bottom: 1px solid #1e293b;
+  border-bottom: 1px solid var(--gs-border-main);
 }
 
 .section-icon {
   width: 20px;
   height: 20px;
-  color: #60a5fa;
+  color: var(--gs-primary-main);
 }
 
 .section-icon.secondary {
-  color: #a4c9ff;
+  color: var(--gs-primary-main);
 }
 
 .section-title {
   font-size: 18px;
   font-weight: 600;
-  color: #ffffff;
+  color: var(--gs-text-primary);
   margin: 0;
 }
 
@@ -666,15 +666,15 @@ onUnmounted(() => {
 
 /* Metric Cards */
 .metric-card {
-  background: #0f172a;
-  border: 1px solid #1e293b;
+  background: var(--gs-bg-paper);
+  border: 1px solid var(--gs-border-main);
   padding: 20px;
   border-radius: 12px;
   transition: all 0.3s;
 }
 
 .metric-card:hover {
-  border-color: rgba(96, 165, 250, 0.3);
+  border-color: var(--gs-glow-primary);
 }
 
 .metric-card.large {
@@ -690,7 +690,7 @@ onUnmounted(() => {
 
 .metric-label {
   font-size: 12px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -698,11 +698,11 @@ onUnmounted(() => {
 .metric-icon {
   width: 16px;
   height: 16px;
-  color: #60a5fa;
+  color: var(--gs-primary-main);
 }
 
 .metric-icon.secondary {
-  color: #a4c9ff;
+  color: var(--gs-primary-main);
 }
 
 .metric-value-row {
@@ -714,17 +714,17 @@ onUnmounted(() => {
 .metric-value {
   font-size: 28px;
   font-family: 'Fira Code', monospace;
-  color: #ffffff;
+  color: var(--gs-text-primary);
 }
 
 .metric-unit {
   font-size: 12px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
 }
 
 .metric-label-small {
   font-size: 10px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-bottom: 12px;
@@ -742,8 +742,8 @@ onUnmounted(() => {
 
 /* Status Table */
 .status-table {
-  background: #0f172a;
-  border: 1px solid #1e293b;
+  background: var(--gs-bg-paper);
+  border: 1px solid var(--gs-border-main);
   border-radius: 12px;
   overflow: hidden;
 }
@@ -753,7 +753,7 @@ onUnmounted(() => {
   justify-content: space-between;
   align-items: center;
   padding: 16px 24px;
-  border-bottom: 1px solid #1e293b;
+  border-bottom: 1px solid var(--gs-border-main);
 }
 
 .status-row:last-child {
@@ -762,7 +762,7 @@ onUnmounted(() => {
 
 .status-label {
   font-size: 13px;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
 }
 
 .status-value {
@@ -777,11 +777,11 @@ onUnmounted(() => {
 }
 
 .status-text.success {
-  color: #4ae176;
+  color: var(--gs-success-main);
 }
 
 .status-text.error {
-  color: #ffb4ab;
+  color: var(--gs-error-main);
 }
 
 .status-dot {
@@ -791,13 +791,13 @@ onUnmounted(() => {
 }
 
 .status-dot.success {
-  background: #4ae176;
-  box-shadow: 0 0 8px rgba(74, 225, 118, 0.5);
+  background: var(--gs-success-main);
+  box-shadow: 0 0 8px var(--gs-glow-success);
 }
 
 .status-dot.error {
-  background: #ffb4ab;
-  box-shadow: 0 0 8px rgba(255, 180, 171, 0.5);
+  background: var(--gs-error-main);
+  box-shadow: 0 0 8px var(--gs-glow-error);
 }
 
 /* Task List Section */
@@ -806,8 +806,8 @@ onUnmounted(() => {
 }
 
 .task-table-wrapper {
-  background: #0f172a;
-  border: 1px solid #1e293b;
+  background: var(--gs-bg-paper);
+  border: 1px solid var(--gs-border-main);
   border-radius: 12px;
   overflow: hidden;
 }
@@ -821,17 +821,17 @@ onUnmounted(() => {
 .task-table th {
   font-size: 10px;
   font-weight: 700;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   padding: 16px 24px;
-  background: #1b1b20;
-  border-bottom: 1px solid #1e293b;
+  background: var(--gs-bg-paper);
+  border-bottom: 1px solid var(--gs-border-main);
 }
 
 .task-table td {
   padding: 20px 24px;
-  border-bottom: 1px solid #1e293b;
+  border-bottom: 1px solid var(--gs-border-main);
   font-size: 13px;
 }
 
@@ -841,33 +841,33 @@ onUnmounted(() => {
 }
 
 .task-table tr:hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--gs-overlay-light);
 }
 
 .task-table tr.active {
-  background: rgba(59, 130, 246, 0.1);
-  border-left: 4px solid #60a5fa;
+  background: var(--gs-overlay-light);
+  border-left: 4px solid var(--gs-primary-main);
 }
 
 .task-name {
   font-weight: 600;
-  color: #ffffff;
+  color: var(--gs-text-primary);
 }
 
 .task-time {
   font-family: 'Fira Code', monospace;
-  color: #e4e1e9;
+  color: var(--gs-text-primary);
 }
 
 .task-resources {
   font-size: 11px;
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
 }
 
 .task-macro {
   font-family: 'Fira Code', monospace;
   font-size: 11px;
-  color: #a4c9ff;
+  color: var(--gs-primary-main);
 }
 
 .status-cell {
@@ -880,7 +880,7 @@ onUnmounted(() => {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #4ae176;
+  background: var(--gs-success-main);
   animation: pulse 2s infinite;
 }
 
@@ -891,11 +891,11 @@ onUnmounted(() => {
 }
 
 .status-badge.running {
-  color: #4ae176;
+  color: var(--gs-success-main);
 }
 
 .status-badge.pending {
-  color: #94a3b8;
+  color: var(--gs-text-secondary);
 }
 
 /* System Footer */
@@ -903,7 +903,7 @@ onUnmounted(() => {
   display: flex;
   gap: 48px;
   padding-top: 32px;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid var(--gs-overlay-light);
 }
 
 .footer-item {
@@ -919,20 +919,20 @@ onUnmounted(() => {
 }
 
 .footer-bar.primary {
-  background: #60a5fa;
+  background: var(--gs-primary-main);
 }
 
 .footer-bar.tertiary {
-  background: #4ae176;
+  background: var(--gs-success-main);
 }
 
 .footer-bar.secondary {
-  background: #a4c9ff;
+  background: var(--gs-primary-main);
 }
 
 .footer-label {
   font-size: 10px;
-  color: #64748b;
+  color: var(--gs-text-disabled);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 4px;
@@ -941,7 +941,7 @@ onUnmounted(() => {
 .footer-value {
   font-size: 18px;
   font-family: 'Fira Code', monospace;
-  color: #ffffff;
+  color: var(--gs-text-primary);
 }
 
 /* Responsive */

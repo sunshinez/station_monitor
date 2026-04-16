@@ -201,8 +201,8 @@ onUnmounted(() => {
   position: fixed;
   inset: 0;
   background-image:
-    linear-gradient(rgba(30, 41, 59, 0.2) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(30, 41, 59, 0.2) 1px, transparent 1px);
+    linear-gradient(color-mix(in srgb, var(--gs-border-main), transparent 80%) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--gs-border-main), transparent 80%) 1px, transparent 1px);
   background-size: 40px 40px;
   pointer-events: none;
   z-index: 0;
@@ -320,7 +320,7 @@ onUnmounted(() => {
   border: 1px solid var(--border-card);
   padding: 2rem;
   position: relative;
-  box-shadow: 0 0 40px -10px rgba(96, 165, 250, 0.1);
+  box-shadow: 0 0 40px -10px var(--gs-overlay-light);
 }
 
 /* Decorative Corners */
@@ -367,7 +367,7 @@ onUnmounted(() => {
   justify-content: space-between;
   margin-bottom: 2.5rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid rgba(30, 41, 59, 0.5);
+  border-bottom: 1px solid color-mix(in srgb, var(--gs-border-main), transparent 50%);
 }
 
 .status-left {
@@ -382,7 +382,7 @@ onUnmounted(() => {
   background-color: var(--color-success);
   border-radius: 50%;
   animation: breathe 2s ease-in-out infinite;
-  box-shadow: 0 0 8px rgba(74, 225, 118, 0.5);
+  box-shadow: 0 0 8px var(--gs-glow-success);
 }
 
 @keyframes breathe {
@@ -448,7 +448,7 @@ onUnmounted(() => {
 
 .form-input {
   width: 100%;
-  background-color: rgba(11, 11, 16, 0.5);
+  background-color: color-mix(in srgb, var(--gs-bg-default), transparent 50%);
   border: 1px solid var(--border-card);
   padding: 0.875rem 1rem 0.875rem 2.75rem;
   font-family: var(--font-mono);
@@ -463,8 +463,8 @@ onUnmounted(() => {
 }
 
 .form-input:focus {
-  border-color: rgba(96, 165, 250, 0.5);
-  box-shadow: 0 0 0 1px rgba(96, 165, 250, 0.2);
+  border-color: color-mix(in srgb, var(--gs-primary-main), transparent 50%);
+  box-shadow: 0 0 0 1px var(--gs-overlay-medium);
 }
 
 /* Action Bar */
@@ -535,8 +535,8 @@ onUnmounted(() => {
 }
 
 .submit-btn:hover:not(:disabled) {
-  background-color: rgba(96, 165, 250, 0.9);
-  box-shadow: 0 0 25px rgba(96, 165, 250, 0.3);
+  background-color: color-mix(in srgb, var(--gs-primary-main), transparent 10%);
+  box-shadow: 0 0 25px var(--gs-glow-primary);
 }
 
 .submit-btn:active:not(:disabled) {
@@ -588,12 +588,12 @@ onUnmounted(() => {
 .glow-top-left {
   top: -10%;
   left: -10%;
-  background-color: rgba(96, 165, 250, 0.05);
+  background-color: var(--gs-overlay-light);
 }
 
 .glow-bottom-right {
   bottom: -10%;
   right: -10%;
-  background-color: rgba(30, 58, 138, 0.1);
+  background-color: var(--gs-overlay-light);
 }
 </style>
