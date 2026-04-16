@@ -103,6 +103,18 @@
             </div>
 
             <div class="panel-body">
+              <!-- 体制 Tab -->
+              <div class="system-tabs">
+                <button
+                  v-for="(sys, idx) in currentMacro.systemParams"
+                  :key="idx"
+                  :class="['system-tab', { active: activeSystemIndex === idx }]"
+                  @click="activeSystemIndex = idx"
+                >
+                  体制 {{ idx + 1 }}
+                </button>
+              </div>
+
               <!-- 天线收发参数 -->
               <section class="param-section">
                 <div class="section-header">
@@ -112,15 +124,15 @@
                 <div class="param-grid">
                   <div class="param-item">
                     <label class="param-label">发射频率 (MHz)</label>
-                    <input type="text" class="param-input" v-model="currentMacro.params.txFreq" />
+                    <input type="text" class="param-input" v-model="currentSystemParams.txFreq" />
                   </div>
                   <div class="param-item">
                     <label class="param-label">接收频率 (MHz)</label>
-                    <input type="text" class="param-input" v-model="currentMacro.params.rxFreq" />
+                    <input type="text" class="param-input" v-model="currentSystemParams.rxFreq" />
                   </div>
                   <div class="param-item">
                     <label class="param-label">极化方式</label>
-                    <select class="param-select" v-model="currentMacro.params.polarization">
+                    <select class="param-select" v-model="currentSystemParams.polarization">
                       <option>圆极化 (RHCP)</option>
                       <option>圆极化 (LHCP)</option>
                       <option>垂直极化</option>
@@ -130,8 +142,8 @@
                   <div class="param-item">
                     <label class="param-label">增益控制</label>
                     <div class="slider-control">
-                      <input type="range" class="param-slider" min="0" max="60" v-model="currentMacro.params.gain" />
-                      <span class="slider-value">{{ currentMacro.params.gain }}dB</span>
+                      <input type="range" class="param-slider" min="0" max="60" v-model="currentSystemParams.gain" />
+                      <span class="slider-value">{{ currentSystemParams.gain }}dB</span>
                     </div>
                   </div>
                 </div>
@@ -146,19 +158,19 @@
                 <div class="param-grid">
                   <div class="param-item">
                     <label class="param-label">本振频率 (GHz)</label>
-                    <input type="text" class="param-input secondary" v-model="currentMacro.params.loFreq" />
+                    <input type="text" class="param-input secondary" v-model="currentSystemParams.loFreq" />
                   </div>
                   <div class="param-item">
                     <label class="param-label">输出功率 (dBm)</label>
-                    <input type="text" class="param-input secondary" v-model="currentMacro.params.outputPower" />
+                    <input type="text" class="param-input secondary" v-model="currentSystemParams.outputPower" />
                   </div>
                   <div class="param-item">
                     <label class="param-label">衰减量 (dB)</label>
-                    <input type="text" class="param-input secondary" v-model="currentMacro.params.attenuation" />
+                    <input type="text" class="param-input secondary" v-model="currentSystemParams.attenuation" />
                   </div>
                   <div class="param-item">
                     <label class="param-label">变频补偿</label>
-                    <select class="param-select" v-model="currentMacro.params.compensation">
+                    <select class="param-select" v-model="currentSystemParams.compensation">
                       <option>自动补偿开启</option>
                       <option>手动固定补偿</option>
                     </select>
@@ -175,7 +187,7 @@
                 <div class="param-grid">
                   <div class="param-item">
                     <label class="param-label">调制方式</label>
-                    <select class="param-select" v-model="currentMacro.params.modulation">
+                    <select class="param-select" v-model="currentSystemParams.modulation">
                       <option>QPSK</option>
                       <option>UQPSK</option>
                       <option>8PSK</option>
@@ -184,7 +196,7 @@
                   </div>
                   <div class="param-item">
                     <label class="param-label">纠错编码</label>
-                    <select class="param-select" v-model="currentMacro.params.fec">
+                    <select class="param-select" v-model="currentSystemParams.fec">
                       <option>LDPC (7/8)</option>
                       <option>Turbo (1/2)</option>
                       <option>RS (255, 223)</option>
@@ -192,11 +204,11 @@
                   </div>
                   <div class="param-item">
                     <label class="param-label">码速率 (kbps)</label>
-                    <input type="text" class="param-input tertiary" v-model="currentMacro.params.symbolRate" />
+                    <input type="text" class="param-input tertiary" v-model="currentSystemParams.symbolRate" />
                   </div>
                   <div class="param-item">
                     <label class="param-label">副载波频率</label>
-                    <input type="text" class="param-input tertiary" v-model="currentMacro.params.subcarrier" />
+                    <input type="text" class="param-input tertiary" v-model="currentSystemParams.subcarrier" />
                   </div>
                 </div>
               </section>
@@ -211,7 +223,7 @@
                   <div class="param-item full">
                     <label class="param-label">存储路径</label>
                     <div class="path-input">
-                      <input type="text" class="param-input" readonly v-model="currentMacro.params.storagePath" />
+                      <input type="text" class="param-input" readonly v-model="currentSystemParams.storagePath" />
                       <button class="path-btn">
                         <FolderOpenIcon class="path-icon" />
                       </button>
@@ -220,7 +232,7 @@
                   <div class="param-grid">
                     <div class="param-item">
                       <label class="param-label">数据格式</label>
-                      <select class="param-select" v-model="currentMacro.params.dataFormat">
+                      <select class="param-select" v-model="currentSystemParams.dataFormat">
                         <option>CCSDS Frame</option>
                         <option>Raw Stream</option>
                         <option>JSON/KV</option>
@@ -228,7 +240,7 @@
                     </div>
                     <div class="param-item">
                       <label class="param-label">保存策略</label>
-                      <select class="param-select" v-model="currentMacro.params.retention">
+                      <select class="param-select" v-model="currentSystemParams.retention">
                         <option>保存 30 天</option>
                         <option>保存 90 天</option>
                         <option>永久保留</option>
@@ -236,7 +248,7 @@
                     </div>
                   </div>
                   <div class="param-checkbox">
-                    <input type="checkbox" id="auto-sync" class="checkbox" v-model="currentMacro.params.autoSync" />
+                    <input type="checkbox" id="auto-sync" class="checkbox" v-model="currentSystemParams.autoSync" />
                     <label for="auto-sync" class="checkbox-label">录毕自动同步至中心归档库</label>
                   </div>
                 </div>
@@ -264,7 +276,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, h } from 'vue'
+import { ref, computed, onMounted, onUnmounted, h } from 'vue'
 import UserIcon from '@/components/icons/UserIcon.vue'
 
 // 顶部导航图标
@@ -488,24 +500,68 @@ const selectedMacro = ref(1)
 
 const currentMacro = ref({
   name: 'XY-TELEMETRY-MOD-B',
-  params: {
-    txFreq: '2245.500',
-    rxFreq: '2085.000',
-    polarization: '圆极化 (RHCP)',
-    gain: 32,
-    loFreq: '8.450',
-    outputPower: '+15.0',
-    attenuation: '6.5',
-    compensation: '自动补偿开启',
-    modulation: 'QPSK',
-    fec: 'LDPC (7/8)',
-    symbolRate: '2048',
-    subcarrier: '64.0 kHz',
-    storagePath: '/mnt/storage/raw/XY21_0520',
-    dataFormat: 'CCSDS Frame',
-    retention: '保存 30 天',
-    autoSync: true
-  }
+  systemParams: [
+    {
+      txFreq: '2245.500',
+      rxFreq: '2085.000',
+      polarization: '圆极化 (RHCP)',
+      gain: 32,
+      loFreq: '8.450',
+      outputPower: '+15.0',
+      attenuation: '6.5',
+      compensation: '自动补偿开启',
+      modulation: 'QPSK',
+      fec: 'LDPC (7/8)',
+      symbolRate: '2048',
+      subcarrier: '64.0 kHz',
+      storagePath: '/mnt/storage/raw/XY21_0520',
+      dataFormat: 'CCSDS Frame',
+      retention: '保存 30 天',
+      autoSync: true
+    },
+    {
+      txFreq: '2245.600',
+      rxFreq: '2085.100',
+      polarization: '圆极化 (LHCP)',
+      gain: 28,
+      loFreq: '8.460',
+      outputPower: '+14.5',
+      attenuation: '7.0',
+      compensation: '手动固定补偿',
+      modulation: 'UQPSK',
+      fec: 'Turbo (1/2)',
+      symbolRate: '4096',
+      subcarrier: '32.0 kHz',
+      storagePath: '/mnt/storage/raw/XY21_0520',
+      dataFormat: 'Raw Stream',
+      retention: '保存 90 天',
+      autoSync: false
+    },
+    {
+      txFreq: '2245.700',
+      rxFreq: '2085.200',
+      polarization: '垂直极化',
+      gain: 30,
+      loFreq: '8.470',
+      outputPower: '+16.0',
+      attenuation: '5.5',
+      compensation: '自动补偿开启',
+      modulation: '8PSK',
+      fec: 'RS (255, 223)',
+      symbolRate: '1024',
+      subcarrier: '128.0 kHz',
+      storagePath: '/mnt/storage/raw/XY21_0520',
+      dataFormat: 'JSON/KV',
+      retention: '永久保留',
+      autoSync: true
+    }
+  ]
+})
+
+const activeSystemIndex = ref(0)
+
+const currentSystemParams = computed(() => {
+  return currentMacro.value.systemParams[activeSystemIndex.value]
 })
 
 const currentTime = ref('2024-05-20 15:44:22.043')
@@ -513,6 +569,7 @@ const currentTime = ref('2024-05-20 15:44:22.043')
 const selectMacro = (index: number) => {
   selectedMacro.value = index
   currentMacro.value.name = macroList.value[index].name
+  activeSystemIndex.value = 0
 }
 
 // 更新时间
@@ -1107,6 +1164,37 @@ onUnmounted(() => {
   flex: 1;
   overflow-y: auto;
   padding: 24px;
+}
+
+.system-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.system-tab {
+  background: #1b1b20;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  padding: 8px 16px;
+  color: #94a3b8;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.system-tab:hover {
+  border-color: rgba(96, 165, 250, 0.5);
+  color: #e4e1e9;
+}
+
+.system-tab.active {
+  background: rgba(96, 165, 250, 0.15);
+  border-color: #60a5fa;
+  color: #60a5fa;
+  font-weight: 600;
 }
 
 .param-section {
