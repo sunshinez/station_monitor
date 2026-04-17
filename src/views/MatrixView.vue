@@ -108,7 +108,7 @@
             <div class="footer-bar active"></div>
             <div class="footer-bar active"></div>
           </div>
-          <span class="footer-text">ASTRA GROUND STATION PROTOCOL • SECURE LINK • ALPHA 7-2</span>        </div>
+        </div>
       </div>
     </main>
 </template>
