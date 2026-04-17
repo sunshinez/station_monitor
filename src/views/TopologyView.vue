@@ -1,391 +1,314 @@
 <template>
   <main class="main-content">
-      <div class="bg-glow top-right"></div>
-      <div class="bg-glow bottom-right"></div>
+    <div class="bg-glow top-right"></div>
+    <div class="bg-glow bottom-right"></div>
 
-      <div class="content-wrapper">
-        <!-- Header Section -->
-        <div class="page-header">
-          <div>
-            <h1 class="page-title">系统拓扑图</h1>
-            <p class="page-subtitle">
-              站点编号: ALPHA-09 | 地方恒星时: {{ lstTime }} | 协调世界时: {{ utcTime }}
-            </p>
-          </div>
+    <div class="content-wrapper">
+      <!-- Header Section -->
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">系统拓扑图</h1>
+          <p class="page-subtitle">
+            站点编号: ALPHA-09 | 地方恒星时: {{ lstTime }} | 协调世界时: {{ utcTime }}
+          </p>
         </div>
+      </div>
 
-        <!-- Topology Canvas -->
-        <div class="topology-canvas">
-          <svg class="connection-lines" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-                <polygon points="0 0, 10 3.5, 0 7" fill="#a4c9ff" />
-              </marker>
-              <marker id="arrowhead-back" markerWidth="10" markerHeight="7" refX="1" refY="3.5" orient="auto">
-                <polygon points="10 0, 0 3.5, 10 7" fill="#a4c9ff" />
-              </marker>
-            </defs>
-            <!-- 天线到LNA -->
-            <path d="M 180 300 L 320 300" fill="none" marker-end="url(#arrowhead)" marker-start="url(#arrowhead-back)"
-                  stroke="#a4c9ff" stroke-dasharray="4 4" stroke-width="2" />
-            <!-- LNA到变频 -->
-            <path d="M 460 300 L 580 300" fill="none" marker-end="url(#arrowhead)" marker-start="url(#arrowhead-back)"
-                  stroke="#a4c9ff" stroke-width="2" />
-            <!-- 变频到矩阵 -->
-            <path d="M 720 300 L 840 200" fill="none" marker-end="url(#arrowhead)" marker-start="url(#arrowhead-back)"
-                  stroke="#a4c9ff" stroke-width="2" />
-            <path d="M 720 300 L 840 400" fill="none" marker-end="url(#arrowhead)" marker-start="url(#arrowhead-back)"
-                  stroke="#a4c9ff" stroke-width="2" />
-            <!-- 矩阵到解调器/存储 -->
-            <path d="M 980 200 L 1100 200" fill="none" marker-end="url(#arrowhead)" marker-start="url(#arrowhead-back)"
-                  stroke="#a4c9ff" stroke-width="2" />
-            <path d="M 980 400 L 1100 400" fill="none" marker-end="url(#arrowhead)" marker-start="url(#arrowhead-back)"
-                  stroke="#a4c9ff" stroke-width="2" />
-          </svg>
-          <div class="grid-bg"></div>
+      <!-- Topology Canvas -->
+      <div class="topology-canvas">
+        <VueFlow
+          v-model:nodes="nodes"
+          v-model:edges="edges"
+          :default-viewport="{ zoom: 1 }"
+          :min-zoom="0.5"
+          :max-zoom="2"
+          fit-view-on-init
+          class="topology-flow"
+        >
+          <Background pattern-color="#1b1b20" :gap="40" />
+          <Controls />
+          <template #node-topology="nodeProps">
+            <TopologyNode :data="nodeProps.data" />
+          </template>
+        </VueFlow>
+      </div>
 
-          <!-- Node: Satellite Antenna -->
-          <div class="node" style="top: 220px; left: 40px; width: 144px;">
-            <div class="node-card">
-              <div class="node-tags">
-                <span class="tag tag-control">分控</span>
-                <span class="tag tag-primary">主</span>
-              </div>
-              <SatelliteIcon class="node-icon" />
-              <div class="node-info">
-                <p class="node-type">天线</p>
-                <p class="node-name">TX/RX-01</p>
-              </div>
-              <div class="node-status">
-                <span class="status-dot success"></span>
-                <span class="status-text success">正常</span>
-              </div>
-            </div>
-            <div class="node-metrics">
-              <div class="metric">
-                <span>方位角:</span>
-                <span class="metric-value">{{ antennaMetrics.azimuth }}°</span>
-              </div>
-              <div class="metric">
-                <span>俯仰角:</span>
-                <span class="metric-value">{{ antennaMetrics.elevation }}°</span>
-              </div>
-            </div>
+      <!-- Status Legends -->
+      <div class="legends">
+        <div class="legend-item">
+          <span class="status-dot success"></span>
+          <span class="legend-label">正常运行</span>
+        </div>
+        <div class="legend-item">
+          <span class="status-dot error"></span>
+          <span class="legend-label">系统告警</span>
+        </div>
+        <div class="legend-item">
+          <span class="status-dot maintenance"></span>
+          <span class="legend-label">维护中</span>
+        </div>
+        <div class="legend-divider"></div>
+        <div class="legend-item">
+          <span class="tag-mini tag-primary">主</span>
+          <span class="legend-label">主用角色</span>
+        </div>
+        <div class="legend-item">
+          <span class="tag-mini tag-standby">备</span>
+          <span class="legend-label">备用角色</span>
+        </div>
+      </div>
+
+      <!-- Bottom Data Panel -->
+      <div class="data-panel">
+        <!-- Real-time Telemetry -->
+        <div class="panel telemetry-panel">
+          <div class="panel-header">
+            <h3 class="panel-title">实时遥测数据流</h3>
+            <span class="live-badge">直播源</span>
           </div>
-
-          <!-- Node: LNA -->
-          <div class="node" style="top: 245px; left: 320px; width: 160px;">
-            <div class="node-card">
-              <div class="node-tags">
-                <span class="tag tag-local">本控</span>
-                <span class="tag tag-primary">主</span>
-              </div>
-              <AntennaIcon class="node-icon" />
-              <div class="node-info">
-                <p class="node-type">低噪放大模块</p>
-                <p class="node-name">LNA-ALPHA</p>
-              </div>
-              <div class="node-status">
-                <span class="status-dot success"></span>
-                <span class="status-text success">GAIN: {{ lnaMetrics.gain }}dB</span>
-              </div>
+          <div class="telemetry-grid">
+            <div class="telemetry-item">
+              <p class="telemetry-label">信号强度</p>
+              <p class="telemetry-value">{{ telemetry.signalStrength }} dBm</p>
             </div>
-            <div class="node-metrics">
-              <div class="metric">
-                <span>温度:</span>
-                <span class="metric-value">{{ lnaMetrics.temperature }}°C</span>
-              </div>
-              <div class="metric">
-                <span>输入功率:</span>
-                <span class="metric-value">{{ lnaMetrics.inputPower }}dBm</span>
-              </div>
+            <div class="telemetry-item">
+              <p class="telemetry-label">丢包率</p>
+              <p class="telemetry-value success">{{ telemetry.packetLoss }}%</p>
             </div>
-          </div>
-
-          <!-- Node: Down-converter -->
-          <div class="node" style="top: 245px; left: 580px; width: 160px;">
-            <div class="node-card error">
-              <div class="node-tags">
-                <span class="tag tag-control">分控</span>
-                <span class="tag tag-standby">备</span>
-              </div>
-              <ConverterIcon class="node-icon pulse" />
-              <div class="node-info">
-                <p class="node-type">变频单元</p>
-                <p class="node-name">DNC-70</p>
-              </div>
-              <div class="node-status">
-                <span class="status-dot error"></span>
-                <span class="status-text error">危急</span>
-              </div>
+            <div class="telemetry-item">
+              <p class="telemetry-label">误码率 (Pre-Viterbi)</p>
+              <p class="telemetry-value">{{ telemetry.ber }}</p>
             </div>
-            <div class="node-metrics">
-              <div class="metric">
-                <span>本振频率:</span>
-                <span class="metric-value">{{ converterMetrics.loFreq }}GHz</span>
-              </div>
-              <div class="metric">
-                <span>电压误差:</span>
-                <span class="metric-value error">{{ converterMetrics.voltageError }}V</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Node: Matrix -->
-          <div class="node" style="top: 230px; left: 840px; width: 160px;">
-            <div class="node-card">
-              <div class="node-tags">
-                <span class="tag tag-control">分控</span>
-                <span class="tag tag-primary">主</span>
-              </div>
-              <MatrixIcon class="node-icon" />
-              <div class="node-info">
-                <p class="node-type">切换矩阵</p>
-                <p class="node-name">MX-V3</p>
-              </div>
-              <div class="node-status">
-                <span class="status-dot success"></span>
-                <span class="status-text success">已锁定</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Node: Demodulator -->
-          <div class="node" style="top: 100px; left: 1100px; width: 144px;">
-            <div class="node-card">
-              <WavesIcon class="node-icon" />
-              <div class="node-info">
-                <p class="node-type">解调器</p>
-                <p class="node-name">DEMOD-01</p>
-              </div>
-              <div class="node-status">
-                <span class="status-dot success"></span>
-                <span class="status-text success">同步成功</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Node: Storage -->
-          <div class="node" style="top: 380px; left: 1100px; width: 144px;">
-            <div class="node-card">
-              <DatabaseIcon class="node-icon" />
-              <div class="node-info">
-                <p class="node-type">存储系统</p>
-                <p class="node-name">SSD-ARRAY-B</p>
-              </div>
-              <div class="node-status">
-                <span class="status-dot success"></span>
-                <span class="status-text success">{{ storageMetrics.freeSpace }}% 空闲</span>
-              </div>
+            <div class="telemetry-item">
+              <p class="telemetry-label">核心温度</p>
+              <p class="telemetry-value">{{ telemetry.temperature }}°C</p>
             </div>
           </div>
         </div>
 
-        <!-- Status Legends -->
-        <div class="legends">
-          <div class="legend-item">
-            <span class="status-dot success"></span>
-            <span class="legend-label">正常运行</span>
+        <!-- Event Log -->
+        <div class="panel log-panel">
+          <div class="panel-header">
+            <h3 class="panel-title">事件日志</h3>
           </div>
-          <div class="legend-item">
-            <span class="status-dot error"></span>
-            <span class="legend-label">系统告警</span>
-          </div>
-          <div class="legend-item">
-            <span class="status-dot maintenance"></span>
-            <span class="legend-label">维护中</span>
-          </div>
-          <div class="legend-divider"></div>
-          <div class="legend-item">
-            <span class="tag-mini tag-primary">主</span>
-            <span class="legend-label">主用角色</span>
-          </div>
-          <div class="legend-item">
-            <span class="tag-mini tag-standby">备</span>
-            <span class="legend-label">备用角色</span>
-          </div>
-        </div>
-
-        <!-- Bottom Data Panel -->
-        <div class="data-panel">
-          <!-- Real-time Telemetry -->
-          <div class="panel telemetry-panel">
-            <div class="panel-header">
-              <h3 class="panel-title">实时遥测数据流</h3>
-              <span class="live-badge">直播源</span>
-            </div>
-            <div class="telemetry-grid">
-              <div class="telemetry-item">
-                <p class="telemetry-label">信号强度</p>
-                <p class="telemetry-value">{{ telemetry.signalStrength }} dBm</p>
-              </div>
-              <div class="telemetry-item">
-                <p class="telemetry-label">丢包率</p>
-                <p class="telemetry-value success">{{ telemetry.packetLoss }}%</p>
-              </div>
-              <div class="telemetry-item">
-                <p class="telemetry-label">误码率 (Pre-Viterbi)</p>
-                <p class="telemetry-value">{{ telemetry.ber }}</p>
-              </div>
-              <div class="telemetry-item">
-                <p class="telemetry-label">核心温度</p>
-                <p class="telemetry-value">{{ telemetry.temperature }}°C</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Event Log -->
-          <div class="panel log-panel">
-            <div class="panel-header">
-              <h3 class="panel-title">事件日志</h3>
-            </div>
-            <div class="log-list">
-              <div v-for="(log, index) in eventLogs" :key="index" class="log-item" :class="log.level">
-                <span class="log-time">{{ log.time }}</span>
-                <span class="log-message">{{ log.message }}</span>
-              </div>
+          <div class="log-list">
+            <div v-for="(log, index) in eventLogs" :key="index" class="log-item" :class="log.level">
+              <span class="log-time">{{ log.time }}</span>
+              <span class="log-message">{{ log.message }}</span>
             </div>
           </div>
         </div>
       </div>
-    </main>
+    </div>
+  </main>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, h } from 'vue'
-import UserIcon from '@/components/icons/UserIcon.vue'
-import SatelliteIcon from '@/components/icons/SatelliteIcon.vue'
-
-// Icons for top nav
-const SettingsIcon = {
-  render() {
-    return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
-      h('circle', { cx: '12', cy: '12', r: '3' }),
-      h('path', { d: 'M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z' })
-    ])
-  }
-}
-
-const NotificationIcon = {
-  render() {
-    return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
-      h('path', { d: 'M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9' }),
-      h('path', { d: 'M13.73 21a2 2 0 0 1-3.46 0' })
-    ])
-  }
-}
-
-// Icons for side menu
-const TopologyIcon = {
-  render() {
-    return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
-      h('circle', { cx: '12', cy: '5', r: '2' }),
-      h('circle', { cx: '5', cy: '19', r: '2' }),
-      h('circle', { cx: '19', cy: '19', r: '2' }),
-      h('path', { d: 'M12 7v8M7 17l5-2 5 2' })
-    ])
-  }
-}
-
-const ComponentIcon = {
-  render() {
-    return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
-      h('rect', { x: '4', y: '4', width: '16', height: '16', rx: '2' }),
-      h('path', { d: 'M4 12h16M12 4v16' })
-    ])
-  }
-}
-
-const GridIcon = {
-  render() {
-    return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
-      h('rect', { x: '3', y: '3', width: '7', height: '7' }),
-      h('rect', { x: '14', y: '3', width: '7', height: '7' }),
-      h('rect', { x: '3', y: '14', width: '7', height: '7' }),
-      h('rect', { x: '14', y: '14', width: '7', height: '7' })
-    ])
-  }
-}
-
-const DevicesIcon = {
-  render() {
-    return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2' }, [
-      h('rect', { x: '4', y: '4', width: '6', height: '6', rx: '1' }),
-      h('rect', { x: '14', y: '4', width: '6', height: '6', rx: '1' }),
-      h('rect', { x: '4', y: '14', width: '6', height: '6', rx: '1' }),
-      h('rect', { x: '14', y: '14', width: '6', height: '6', rx: '1' })
-    ])
-  }
-}
-
-// Icons for nodes
-const AntennaIcon = {
-  render() {
-    return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '1.5', class: 'node-icon-svg' }, [
-      h('path', { d: 'M12 2v20M6 8a6 6 0 0 1 12 0c0 3-2 5-6 10-4-5-6-7-6-10z' })
-    ])
-  }
-}
-
-const ConverterIcon = {
-  render() {
-    return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '1.5', class: 'node-icon-svg' }, [
-      h('path', { d: 'M7 16V4M17 8v12M3 12h4m10 0h4' })
-    ])
-  }
-}
-
-const MatrixIcon = {
-  render() {
-    return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '1.5', class: 'node-icon-svg' }, [
-      h('rect', { x: '3', y: '3', width: '18', height: '18', rx: '2' }),
-      h('path', { d: 'M3 9h18M3 15h18M9 3v18M15 3v18' })
-    ])
-  }
-}
-
-const WavesIcon = {
-  render() {
-    return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '1.5', class: 'node-icon-svg' }, [
-      h('path', { d: 'M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1' })
-    ])
-  }
-}
-
-const DatabaseIcon = {
-  render() {
-    return h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '1.5', class: 'node-icon-svg' }, [
-      h('ellipse', { cx: '12', cy: '5', rx: '9', ry: '3' }),
-      h('path', { d: 'M3 5V19A9 3 0 0 0 21 19V5' }),
-      h('path', { d: 'M3 12A9 3 0 0 0 21 12' })
-    ])
-  }
-}
+import { ref, shallowRef, onMounted, onUnmounted } from 'vue'
+import { VueFlow, type Node, type Edge, MarkerType } from '@vue-flow/core'
+import { Background } from '@vue-flow/background'
+import { Controls } from '@vue-flow/controls'
+import TopologyNode from '@/components/topology/TopologyNode.vue'
+import '@vue-flow/core/dist/style.css'
+import '@vue-flow/core/dist/theme-default.css'
+import '@vue-flow/controls/dist/style.css'
 
 // Time refs
 const lstTime = ref('14:22:05')
 const utcTime = ref('06:22:05')
 
-// Metrics refs
-const antennaMetrics = ref({
-  azimuth: 192.4,
-  elevation: 45.2
-})
+// Layout constants
+const CANVAS_HEIGHT = 1900
+const STEP_Y = 200
+const START_Y = 60
+const CENTER_Y = (CANVAS_HEIGHT - 200) / 2
 
-const lnaMetrics = ref({
-  gain: 60,
-  temperature: 24.5,
-  inputPower: -90
-})
+function createParallelNodes(
+  prefix: string,
+  label: string,
+  iconType: string,
+  x: number,
+  metricsFn: (index: number, isBackup: boolean) => Record<string, string | number>
+): Node[] {
+  const nodes: Node[] = []
+  for (let i = 1; i <= 8; i++) {
+    nodes.push({
+      id: `${prefix}-${i}`,
+      type: 'topology',
+      position: { x, y: START_Y + (i - 1) * STEP_Y },
+      data: {
+        label,
+        name: `${prefix.toUpperCase()}-${String(i).padStart(2, '0')}`,
+        iconType,
+        tags: [
+          { text: '分控', className: 'tag-control' },
+          { text: '主', className: 'tag-primary' }
+        ],
+        status: { type: 'success', text: '正常' },
+        metrics: metricsFn(i, false)
+      }
+    })
+  }
+  nodes.push({
+    id: `${prefix}-bak`,
+    type: 'topology',
+    position: { x, y: START_Y + 8 * STEP_Y },
+    data: {
+      label,
+      name: `${prefix.toUpperCase()}-备用`,
+      iconType,
+      tags: [
+        { text: '分控', className: 'tag-control' },
+        { text: '主', className: 'tag-primary' }
+      ],
+      status: { type: 'success', text: '待机' },
+      metrics: metricsFn(9, true)
+    }
+  })
+  return nodes
+}
 
-const converterMetrics = ref({
-  loFreq: 1.2,
-  voltageError: 0.8
-})
+const lnaNodes = createParallelNodes('lna', '低噪放大', 'antenna', 200, () => ({
+  '温度': '24.5°C',
+  '输入功率': '-90dBm',
+  '增益': '60dB'
+}))
 
-const storageMetrics = ref({
-  freeSpace: 92
-})
+const converterNodes = createParallelNodes('dnc', '变频单元', 'converter', 360, () => ({
+  '本振频率': '1.2GHz',
+  '电压误差': '0.8V'
+}))
+
+const demodNodes = createParallelNodes('demod', '解调器', 'waves', 680, () => ({
+  '误码率': '1.2e-7',
+  '信噪比': '12.5dB'
+}))
+
+const staticNodes: Node[] = [
+  {
+    id: 'antenna',
+    type: 'topology',
+    position: { x: 40, y: CENTER_Y },
+    data: {
+      label: '天线',
+      name: 'TX/RX-01',
+      iconType: 'satellite',
+      tags: [
+        { text: '分控', className: 'tag-control' },
+        { text: '主', className: 'tag-primary' }
+      ],
+      status: { type: 'success', text: '正常' },
+      metrics: {
+        '方位角': '192.4°',
+        '俯仰角': '45.2°'
+      }
+    }
+  },
+  {
+    id: 'matrix',
+    type: 'topology',
+    position: { x: 520, y: CENTER_Y },
+    data: {
+      label: '切换矩阵',
+      name: 'MX-V3',
+      iconType: 'matrix',
+      tags: [
+        { text: '分控', className: 'tag-control' },
+        { text: '主', className: 'tag-primary' }
+      ],
+      status: { type: 'success', text: '已锁定' },
+      metrics: {}
+    }
+  },
+  {
+    id: 'storage',
+    type: 'topology',
+    position: { x: 840, y: CENTER_Y },
+    data: {
+      label: '存储系统',
+      name: 'SSD-ARRAY-B',
+      iconType: 'database',
+      status: { type: 'success', text: '92% 空闲' },
+      metrics: {}
+    }
+  }
+]
+
+const nodes = shallowRef<Node[]>([
+  ...staticNodes,
+  ...lnaNodes,
+  ...converterNodes,
+  ...demodNodes
+])
+
+function buildEdges(): Edge[] {
+  const edges: Edge[] = []
+  const ids = ['1', '2', '3', '4', '5', '6', '7', '8', 'bak']
+
+  // antenna -> all LNAs
+  ids.forEach((id) => {
+    edges.push({
+      id: `e-antenna-lna-${id}`,
+      source: 'antenna',
+      target: `lna-${id}`,
+      type: 'smoothstep',
+      markerEnd: { type: MarkerType.Arrow, color: '#a4c9ff' },
+      style: { stroke: '#a4c9ff', strokeWidth: 2 }
+    })
+  })
+
+  // LNA -> Converter (one-to-one)
+  ids.forEach((id) => {
+    edges.push({
+      id: `e-lna-dnc-${id}`,
+      source: `lna-${id}`,
+      target: `dnc-${id}`,
+      type: 'smoothstep',
+      markerEnd: { type: MarkerType.Arrow, color: '#a4c9ff' },
+      style: { stroke: '#a4c9ff', strokeWidth: 2 }
+    })
+  })
+
+  // Converter -> Matrix (converge)
+  ids.forEach((id) => {
+    edges.push({
+      id: `e-dnc-matrix-${id}`,
+      source: `dnc-${id}`,
+      target: 'matrix',
+      type: 'smoothstep',
+      markerEnd: { type: MarkerType.Arrow, color: '#a4c9ff' },
+      style: { stroke: '#a4c9ff', strokeWidth: 2 }
+    })
+  })
+
+  // Matrix -> Demod (distribute)
+  ids.forEach((id) => {
+    edges.push({
+      id: `e-matrix-demod-${id}`,
+      source: 'matrix',
+      target: `demod-${id}`,
+      type: 'smoothstep',
+      markerEnd: { type: MarkerType.Arrow, color: '#a4c9ff' },
+      style: { stroke: '#a4c9ff', strokeWidth: 2 }
+    })
+  })
+
+  // Demod -> Storage (converge)
+  ids.forEach((id) => {
+    edges.push({
+      id: `e-demod-storage-${id}`,
+      source: `demod-${id}`,
+      target: 'storage',
+      type: 'smoothstep',
+      markerEnd: { type: MarkerType.Arrow, color: '#a4c9ff' },
+      style: { stroke: '#a4c9ff', strokeWidth: 2 }
+    })
+  })
+
+  return edges
+}
+
+const edges = shallowRef<Edge[]>(buildEdges())
 
 // Telemetry refs
 const telemetry = ref({
@@ -411,7 +334,6 @@ let dataInterval: number | null = null
 function updateTime() {
   const now = new Date()
   utcTime.value = now.toISOString().split('T')[1].split('.')[0]
-  // Simulate LST (Local Sidereal Time)
   const hours = now.getUTCHours()
   const minutes = now.getUTCMinutes()
   const seconds = now.getUTCSeconds()
@@ -421,15 +343,39 @@ function updateTime() {
 
 // Simulate real-time data updates
 function updateData() {
-  // Signal strength fluctuation
   telemetry.value.signalStrength = -64 + Math.random() * 2 - 1
-  // Packet loss fluctuation
   telemetry.value.packetLoss = Number((0.001 + Math.random() * 0.002).toFixed(3))
-  // Antenna position
-  antennaMetrics.value.azimuth = 192 + Math.random() * 0.5
-  antennaMetrics.value.elevation = 45 + Math.random() * 0.3
-  // LNA temperature
-  lnaMetrics.value.temperature = 24 + Math.random() * 1
+
+  const antenna = nodes.value.find((n) => n.id === 'antenna')!
+  antenna.data.metrics['方位角'] = `${(192 + Math.random() * 0.5).toFixed(1)}°`
+  antenna.data.metrics['俯仰角'] = `${(45 + Math.random() * 0.3).toFixed(1)}°`
+
+  // Update a few random LNAs
+  for (let i = 1; i <= 8; i++) {
+    const lna = nodes.value.find((n) => n.id === `lna-${i}`)!
+    lna.data.metrics['温度'] = `${(24 + Math.random() * 2).toFixed(1)}°C`
+    lna.data.metrics['输入功率'] = `${(-90 + Math.random() * 2).toFixed(1)}dBm`
+  }
+  const lnaBak = nodes.value.find((n) => n.id === 'lna-bak')!
+  lnaBak.data.metrics['温度'] = `${(24 + Math.random() * 2).toFixed(1)}°C`
+
+  // Update a few random converters
+  for (let i = 1; i <= 8; i++) {
+    const dnc = nodes.value.find((n) => n.id === `dnc-${i}`)!
+    dnc.data.metrics['电压误差'] = `${(0.5 + Math.random() * 0.5).toFixed(1)}V`
+  }
+  const dncBak = nodes.value.find((n) => n.id === 'dnc-bak')!
+  dncBak.data.metrics['电压误差'] = `${(0.5 + Math.random() * 0.5).toFixed(1)}V`
+
+  // Update demods
+  for (let i = 1; i <= 8; i++) {
+    const demod = nodes.value.find((n) => n.id === `demod-${i}`)!
+    demod.data.metrics['误码率'] = `${(1 + Math.random()).toFixed(1)}e-7`
+    demod.data.metrics['信噪比'] = `${(12 + Math.random() * 2).toFixed(1)}dB`
+  }
+  const demodBak = nodes.value.find((n) => n.id === 'demod-bak')!
+  demodBak.data.metrics['误码率'] = `${(1 + Math.random()).toFixed(1)}e-7`
+  demodBak.data.metrics['信噪比'] = `${(12 + Math.random() * 2).toFixed(1)}dB`
 }
 
 onMounted(() => {
@@ -461,208 +407,6 @@ onUnmounted(() => {
   --outline-variant: #424754;
 }
 
-.topology-page {
-  min-height: 100vh;
-  background-color: #131318;
-  color: #e4e1e9;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-}
-
-/* TopNavBar */
-.top-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 64px;
-  background: #131318;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 24px;
-  z-index: 50;
-}
-
-.logo {
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  color: #e4e1e9;
-  text-transform: uppercase;
-}
-
-.main-nav {
-  display: flex;
-  gap: 32px;
-}
-
-.nav-link {
-  font-size: 14px;
-  color: #94a3b8;
-  text-decoration: none;
-  transition: color 0.2s;
-  padding-bottom: 4px;
-  border-bottom: 2px solid transparent;
-}
-
-.nav-link:hover,
-.nav-link.active {
-  color: #e4e1e9;
-}
-
-.nav-link.active {
-  color: #e4e1e9;
-  border-bottom-color: #e4e1e9;
-  font-weight: 600;
-}
-
-.user-actions {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.icon-btn {
-  position: relative;
-  border-radius: 50%;
-  background: none;
-  border: none;
-  color: #94a3b8;
-  cursor: pointer;
-  padding: 8px;
-  transition: color 0.2s;
-}
-
-.icon-btn:hover {
-  color: #e4e1e9;
-}
-
-.icon {
-  width: 20px;
-  height: 20px;
-}
-
-.notification-dot {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #ffb4ab;
-}
-
-
-/* SideNavBar */
-.side-nav {
-  position: fixed;
-  left: 0;
-  top: 64px;
-  bottom: 0;
-  width: 256px;
-  background: #020617;
-  display: flex;
-  flex-direction: column;
-  z-index: 40;
-}
-
-.side-header {
-  padding: 32px 24px 24px;
-}
-
-.side-title {
-  font-size: 12px;
-  color: #e4e1e9;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin: 0 0 4px 0;
-}
-
-.side-subtitle {
-  font-size: 10px;
-  color: #64748b;
-  letter-spacing: 0.2em;
-  margin: 0;
-}
-
-.side-menu {
-  display: flex;
-  flex-direction: column;
-}
-
-.side-link {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 24px;
-  color: #64748b;
-  text-decoration: none;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  transition: all 0.3s;
-  border-right: 2px solid transparent;
-}
-
-.side-link:hover {
-  color: #93c5fd;
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.side-link.active {
-  color: #e4e1e9;
-  background: rgba(59, 130, 246, 0.1);
-  border-right-color: #e4e1e9;
-  font-weight: 600;
-}
-
-.side-icon {
-  width: 20px;
-  height: 20px;
-}
-
-.side-footer {
-  margin-top: auto;
-  padding: 24px;
-}
-
-.health-card {
-  background: #1b1b20;
-  padding: 16px;
-  border-radius: 8px;
-  border: 1px solid rgba(66, 71, 84, 0.1);
-}
-
-.health-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 8px;
-}
-
-.health-label {
-  font-size: 10px;
-  color: #64748b;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.health-bar {
-  height: 4px;
-  background: #1f2937;
-  border-radius: 2px;
-  overflow: hidden;
-}
-
-.health-fill {
-  height: 100%;
-  background: #60a5fa;
-  border-radius: 2px;
-  transition: width 0.3s;
-}
-
-/* Main Content */
 .main-content {
   position: relative;
   overflow: hidden;
@@ -725,210 +469,16 @@ onUnmounted(() => {
 /* Topology Canvas */
 .topology-canvas {
   position: relative;
-  height: 700px;
+  height: 1900px;
   background: rgba(14, 14, 19, 0.5);
   border-radius: 12px;
   border: 1px solid rgba(66, 71, 84, 0.1);
-  padding: 48px;
   overflow: hidden;
 }
 
-.connection-lines {
-  position: absolute;
-  inset: 0;
+.topology-flow {
   width: 100%;
   height: 100%;
-  pointer-events: none;
-  opacity: 0.6;
-}
-
-.grid-bg {
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(circle at 2px 2px, rgba(59, 130, 246, 0.05) 1px, transparent 0);
-  background-size: 40px 40px;
-  opacity: 0.3;
-  pointer-events: none;
-}
-
-/* Node Styles */
-.node {
-  position: absolute;
-}
-
-.node-card {
-  background: #2a292f;
-  padding: 16px;
-  border-radius: 8px;
-  border: 1px solid rgba(164, 201, 255, 0.2);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  transition: all 0.3s;
-  position: relative;
-}
-
-.node-card:hover {
-  border-color: rgba(164, 201, 255, 0.6);
-  transform: translateY(-4px);
-}
-
-.node-card.error {
-  border-color: rgba(255, 180, 171, 0.4);
-}
-
-.node-card.error:hover {
-  border-color: rgba(255, 180, 171, 0.8);
-}
-
-.node-tags {
-  position: absolute;
-  top: -12px;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  gap: 4px;
-  padding: 0 8px;
-}
-
-.tag {
-  padding: 2px 6px;
-  font-size: 9px;
-  font-weight: 700;
-  border-radius: 4px;
-  text-transform: uppercase;
-}
-
-.tag-control {
-  background: rgba(59, 130, 246, 0.2);
-  color: #e4e1e9;
-  border: 1px solid rgba(59, 130, 246, 0.4);
-}
-
-.tag-local {
-  background: rgba(100, 116, 139, 0.2);
-  color: #94a3b8;
-  border: 1px solid rgba(100, 116, 139, 0.4);
-}
-
-.tag-primary {
-  background: rgba(164, 201, 255, 0.2);
-  color: #a4c9ff;
-  border: 1px solid rgba(164, 201, 255, 0.4);
-}
-
-.tag-standby {
-  background: rgba(100, 116, 139, 0.2);
-  color: #94a3b8;
-  border: 1px solid rgba(100, 116, 139, 0.4);
-}
-
-.node-icon {
-  width: 40px;
-  height: 40px;
-  color: #a4c9ff;
-  margin-top: 8px;
-}
-
-.node-icon.pulse {
-  color: #ffb4ab;
-  animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 0.6; }
-  50% { opacity: 1; }
-}
-
-.node-info {
-  text-align: center;
-}
-
-.node-type {
-  font-size: 10px;
-  color: #c2c6d6;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin: 0 0 4px 0;
-}
-
-.node-name {
-  font-size: 12px;
-  font-weight: 700;
-  color: #ffffff;
-  margin: 0;
-}
-
-.node-status {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 4px;
-}
-
-.status-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-}
-
-.status-dot.success {
-  background: #4ae176;
-  box-shadow: 0 0 2px #4ae176, 0 0 12px rgba(74, 225, 118, 0.3);
-}
-
-.status-dot.error {
-  background: #ffb4ab;
-  box-shadow: 0 0 2px #ffb4ab, 0 0 12px rgba(255, 180, 171, 0.3);
-}
-
-.status-dot.maintenance {
-  background: rgba(164, 201, 255, 0.4);
-}
-
-.status-text {
-  font-family: 'Fira Code', monospace;
-  font-size: 10px;
-}
-
-.status-text.success {
-  color: #4ae176;
-}
-
-.status-text.error {
-  color: #ffb4ab;
-}
-
-.node-metrics {
-  margin-top: 16px;
-  background: rgba(14, 14, 19, 0.8);
-  padding: 8px;
-  border-radius: 6px;
-}
-
-.metric {
-  display: flex;
-  justify-content: space-between;
-  font-family: 'Fira Code', monospace;
-  font-size: 10px;
-  color: #64748b;
-  margin-bottom: 4px;
-}
-
-.metric:last-child {
-  margin-bottom: 0;
-}
-
-.metric-value {
-  color: #e4e1e9;
-}
-
-.metric-value.error {
-  color: #ffb4ab;
-  font-weight: 700;
 }
 
 /* Legends */
@@ -1087,10 +637,38 @@ onUnmounted(() => {
   text-transform: uppercase;
 }
 
-/* Node Icon SVG */
-:deep(.node-icon-svg) {
-  width: 40px;
-  height: 40px;
+/* Tag mini styles */
+.tag-primary {
+  background: rgba(164, 201, 255, 0.2);
+  color: #a4c9ff;
+  border: 1px solid rgba(164, 201, 255, 0.4);
+}
+
+.tag-standby {
+  background: rgba(100, 116, 139, 0.2);
+  color: #94a3b8;
+  border: 1px solid rgba(100, 116, 139, 0.4);
+}
+
+/* Status dots */
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.status-dot.success {
+  background: #4ae176;
+  box-shadow: 0 0 2px #4ae176, 0 0 12px rgba(74, 225, 118, 0.3);
+}
+
+.status-dot.error {
+  background: #ffb4ab;
+  box-shadow: 0 0 2px #ffb4ab, 0 0 12px rgba(255, 180, 171, 0.3);
+}
+
+.status-dot.maintenance {
+  background: rgba(164, 201, 255, 0.4);
 }
 
 /* Responsive */
@@ -1109,9 +687,6 @@ onUnmounted(() => {
 }
 
 @media (max-width: 1024px) {
-  .side-nav {
-    transform: translateX(-100%);
-  }
   .main-nav {
     display: none;
   }
