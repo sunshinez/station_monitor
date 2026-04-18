@@ -168,18 +168,18 @@ function createParallelNodes(
   return nodes
 }
 
-const lnaNodes = createParallelNodes('lna', '低噪放大', 'antenna', 200, () => ({
+const lnaNodes = createParallelNodes('lna', '低噪放大', 'antenna', 320, () => ({
   '温度': '24.5°C',
   '输入功率': '-90dBm',
   '增益': '60dB'
 }))
 
-const converterNodes = createParallelNodes('dnc', '变频单元', 'converter', 360, () => ({
+const converterNodes = createParallelNodes('dnc', '变频单元', 'converter', 600, () => ({
   '本振频率': '1.2GHz',
   '电压误差': '0.8V'
 }))
 
-const demodNodes = createParallelNodes('demod', '解调器', 'waves', 680, () => ({
+const demodNodes = createParallelNodes('demod', '解调器', 'waves', 880, () => ({
   '误码率': '1.2e-7',
   '信噪比': '12.5dB'
 }))
@@ -207,7 +207,7 @@ const staticNodes: Node[] = [
   {
     id: 'matrix',
     type: 'topology',
-    position: { x: 520, y: CENTER_Y },
+    position: { x: 740, y: CENTER_Y },
     data: {
       label: '切换矩阵',
       name: 'MX-V3',
@@ -223,7 +223,7 @@ const staticNodes: Node[] = [
   {
     id: 'storage',
     type: 'topology',
-    position: { x: 840, y: CENTER_Y },
+    position: { x: 1060, y: CENTER_Y },
     data: {
       label: '存储系统',
       name: 'SSD-ARRAY-B',

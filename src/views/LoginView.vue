@@ -143,32 +143,17 @@ const handleLogin = async () => {
   }
 
   loading.value = true
-  try {
-    const response = await fetch('/api/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        username: form.username,
-        password: form.password
-      })
-    })
+  // 模拟网络延迟
+  await new Promise(resolve => setTimeout(resolve, 500))
 
-    const data = await response.json()
-
-    if (data.success) {
-      localStorage.setItem('token', data.token)
-      router.push('/topology')
-    } else {
-      alert(data.message || '登录失败')
-    }
-  } catch (error) {
-    console.error('Login error:', error)
-    alert('网络错误，请稍后重试')
-  } finally {
-    loading.value = false
+  if (form.username === 'test' && form.password === '123456') {
+    localStorage.setItem('token', 'mock-token-for-test-user')
+    router.push('/topology')
+  } else {
+    alert('用户名或密码错误')
   }
+
+  loading.value = false
 }
 
 onMounted(() => {
